@@ -38,7 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLoginNombreAdmin = new System.Windows.Forms.TextBox();
             this.buttonBorrarAdmin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,12 +128,23 @@
             this.buttonBorrarAdmin.TabIndex = 8;
             this.buttonBorrarAdmin.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(76, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginAdministador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(550, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonBorrarAdmin);
             this.Controls.Add(this.textBoxLoginNombreAdmin);
             this.Controls.Add(this.label3);
@@ -145,6 +158,7 @@
             this.Text = "LoginAdministador";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxLoginNombreAdmin;
         private System.Windows.Forms.Button buttonBorrarAdmin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

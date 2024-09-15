@@ -31,14 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLoginIdCliente = new System.Windows.Forms.TextBox();
             this.buttonAceptarCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxLoginNomnreCliente = new System.Windows.Forms.TextBox();
             this.buttonBorrarCliente = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,6 +61,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(550, 60);
             this.panel2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(209, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "LOGIN CLIENTE";
             // 
             // label1
             // 
@@ -98,16 +110,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "ID:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(209, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "LOGIN CLIENTE";
-            // 
             // textBoxLoginNomnreCliente
             // 
             this.textBoxLoginNomnreCliente.Location = new System.Drawing.Point(271, 227);
@@ -126,12 +128,23 @@
             this.buttonBorrarCliente.TabIndex = 7;
             this.buttonBorrarCliente.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // LoginCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(550, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonBorrarCliente);
             this.Controls.Add(this.textBoxLoginNomnreCliente);
             this.Controls.Add(this.label2);
@@ -141,10 +154,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "LoginCliente";
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,5 +175,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxLoginNomnreCliente;
         private System.Windows.Forms.Button buttonBorrarCliente;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
