@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Cliente : Login
+    internal class Administrador : Login
     {
-        public int IDCliente { get; set; }
+        public int IDAdministrador { get; set; }
         public string Nombre { get; set; }
-        public List<Producto> Carrito { get; set; }
-
-
     }
 }
