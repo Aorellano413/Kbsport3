@@ -1,16 +1,16 @@
 ﻿namespace Vista
 {
-    partial class FormLogin
+    partial class LoginCliente
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,157 +20,131 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginCliente));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxContraseña = new System.Windows.Forms.TextBox();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonIngresar = new System.Windows.Forms.Button();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.labelContraseña = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelHora = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
-            this.HorFecha = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxLoginIdCliente = new System.Windows.Forms.TextBox();
+            this.buttonAceptarCliente = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxLoginNomnreCliente = new System.Windows.Forms.TextBox();
+            this.buttonBorrarCliente = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.textBoxContraseña);
-            this.panel1.Controls.Add(this.textBoxUsuario);
-            this.panel1.Controls.Add(this.buttonCancelar);
-            this.panel1.Controls.Add(this.buttonIngresar);
-            this.panel1.Controls.Add(this.lblUsuario);
-            this.panel1.Controls.Add(this.labelContraseña);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(337, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 390);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 353);
+            this.panel1.Size = new System.Drawing.Size(550, 60);
             this.panel1.TabIndex = 0;
             // 
-            // textBoxContraseña
+            // panel2
             // 
-            this.textBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxContraseña.Location = new System.Drawing.Point(86, 183);
-            this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.Size = new System.Drawing.Size(195, 28);
-            this.textBoxContraseña.TabIndex = 10;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(550, 60);
+            this.panel2.TabIndex = 1;
             // 
-            // textBoxUsuario
+            // label1
             // 
-            this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsuario.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsuario.Location = new System.Drawing.Point(86, 98);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(195, 28);
-            this.textBoxUsuario.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(164, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "NOMBRE:";
             // 
-            // buttonCancelar
+            // textBoxLoginIdCliente
             // 
-            this.buttonCancelar.FlatAppearance.BorderSize = 0;
-            this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancelar.Image")));
-            this.buttonCancelar.Location = new System.Drawing.Point(213, 228);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(68, 40);
-            this.buttonCancelar.TabIndex = 7;
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.textBoxLoginIdCliente.Location = new System.Drawing.Point(271, 136);
+            this.textBoxLoginIdCliente.Name = "textBoxLoginIdCliente";
+            this.textBoxLoginIdCliente.Size = new System.Drawing.Size(125, 20);
+            this.textBoxLoginIdCliente.TabIndex = 3;
             // 
-            // buttonIngresar
+            // buttonAceptarCliente
             // 
-            this.buttonIngresar.FlatAppearance.BorderSize = 0;
-            this.buttonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIngresar.Image = ((System.Drawing.Image)(resources.GetObject("buttonIngresar.Image")));
-            this.buttonIngresar.Location = new System.Drawing.Point(83, 217);
-            this.buttonIngresar.Name = "buttonIngresar";
-            this.buttonIngresar.Size = new System.Drawing.Size(84, 63);
-            this.buttonIngresar.TabIndex = 6;
-            this.buttonIngresar.UseVisualStyleBackColor = true;
+            this.buttonAceptarCliente.FlatAppearance.BorderSize = 0;
+            this.buttonAceptarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAceptarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAceptarCliente.Image")));
+            this.buttonAceptarCliente.Location = new System.Drawing.Point(166, 287);
+            this.buttonAceptarCliente.Name = "buttonAceptarCliente";
+            this.buttonAceptarCliente.Size = new System.Drawing.Size(66, 51);
+            this.buttonAceptarCliente.TabIndex = 4;
+            this.buttonAceptarCliente.UseVisualStyleBackColor = true;
             // 
-            // lblUsuario
+            // label2
             // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(80, 62);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(87, 33);
-            this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = "USUARIO";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(161, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "ID:";
             // 
-            // labelContraseña
+            // label3
             // 
-            this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña.Location = new System.Drawing.Point(80, 147);
-            this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(128, 33);
-            this.labelContraseña.TabIndex = 3;
-            this.labelContraseña.Text = "CONTRASEÑA";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(209, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "LOGIN CLIENTE";
             // 
-            // pictureBox1
+            // textBoxLoginNomnreCliente
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(44, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 218);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.textBoxLoginNomnreCliente.Location = new System.Drawing.Point(271, 227);
+            this.textBoxLoginNomnreCliente.Name = "textBoxLoginNomnreCliente";
+            this.textBoxLoginNomnreCliente.Size = new System.Drawing.Size(125, 20);
+            this.textBoxLoginNomnreCliente.TabIndex = 6;
             // 
-            // labelHora
+            // buttonBorrarCliente
             // 
-            this.labelHora.AutoSize = true;
-            this.labelHora.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHora.Location = new System.Drawing.Point(116, 9);
-            this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(45, 25);
-            this.labelHora.TabIndex = 2;
-            this.labelHora.Text = "Hora";
+            this.buttonBorrarCliente.FlatAppearance.BorderSize = 0;
+            this.buttonBorrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonBorrarCliente.Image")));
+            this.buttonBorrarCliente.Location = new System.Drawing.Point(305, 287);
+            this.buttonBorrarCliente.Name = "buttonBorrarCliente";
+            this.buttonBorrarCliente.Size = new System.Drawing.Size(66, 51);
+            this.buttonBorrarCliente.TabIndex = 7;
+            this.buttonBorrarCliente.UseVisualStyleBackColor = true;
             // 
-            // labelFecha
-            // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(39, 308);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(54, 25);
-            this.labelFecha.TabIndex = 3;
-            this.labelFecha.Text = "Fecha";
-            // 
-            // HorFecha
-            // 
-            this.HorFecha.Enabled = true;
-            this.HorFecha.Tick += new System.EventHandler(this.HorFecha_Tick);
-            // 
-            // FormLogin
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(700, 353);
-            this.Controls.Add(this.labelFecha);
-            this.Controls.Add(this.labelHora);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.Controls.Add(this.buttonBorrarCliente);
+            this.Controls.Add(this.textBoxLoginNomnreCliente);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonAceptarCliente);
+            this.Controls.Add(this.textBoxLoginIdCliente);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormLogin";
-            this.Text = "FormLogin";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,16 +153,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxContraseña;
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.Button buttonCancelar;
-        private System.Windows.Forms.Button buttonIngresar;
-        private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label labelContraseña;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelHora;
-        private System.Windows.Forms.Label labelFecha;
-        private System.Windows.Forms.Timer HorFecha;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxLoginIdCliente;
+        private System.Windows.Forms.Button buttonAceptarCliente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxLoginNomnreCliente;
+        private System.Windows.Forms.Button buttonBorrarCliente;
     }
 }
-

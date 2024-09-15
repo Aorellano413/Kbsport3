@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class FormLogin : Form
+    public partial class LoginCliente : Form
     {
-        public FormLogin()
+        public LoginCliente()
         {
             InitializeComponent();
         }
-
-        private void HorFecha_Tick(object sender, EventArgs e)
-        {
-            labelHora.Text = DateTime.Now.ToLongTimeString();
-            labelFecha.Text = DateTime.Now.ToLongDateString();
-        }
-
-       
     }
 }
