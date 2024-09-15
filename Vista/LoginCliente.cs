@@ -22,5 +22,7 @@ namespace Vista
             labelHora.Text = DateTime.Now.ToLongTimeString();
             labelFecha.Text = DateTime.Now.ToLongDateString();
         }
+
+       
     }
 }
