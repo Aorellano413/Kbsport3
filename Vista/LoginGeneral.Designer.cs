@@ -33,14 +33,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCliente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAtrasGeneral = new System.Windows.Forms.Button();
+            this.buttonExitGeneral = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAdmin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelFECHA = new System.Windows.Forms.Label();
             this.HORA = new System.Windows.Forms.Timer(this.components);
-            this.buttonAtrasGeneral = new System.Windows.Forms.Button();
-            this.buttonExitGeneral = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             // buttonCliente
             // 
+            this.buttonCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCliente.FlatAppearance.BorderSize = 0;
             this.buttonCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonCliente.Image")));
@@ -78,6 +79,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 55);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonAtrasGeneral
+            // 
+            this.buttonAtrasGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAtrasGeneral.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasGeneral.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasGeneral.Image")));
+            this.buttonAtrasGeneral.Location = new System.Drawing.Point(458, 3);
+            this.buttonAtrasGeneral.Name = "buttonAtrasGeneral";
+            this.buttonAtrasGeneral.Size = new System.Drawing.Size(47, 35);
+            this.buttonAtrasGeneral.TabIndex = 6;
+            this.buttonAtrasGeneral.UseVisualStyleBackColor = true;
+            this.buttonAtrasGeneral.Click += new System.EventHandler(this.buttonAtrasGeneral_Click);
+            // 
+            // buttonExitGeneral
+            // 
+            this.buttonExitGeneral.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExitGeneral.FlatAppearance.BorderSize = 0;
+            this.buttonExitGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitGeneral.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitGeneral.Image")));
+            this.buttonExitGeneral.Location = new System.Drawing.Point(511, 8);
+            this.buttonExitGeneral.Name = "buttonExitGeneral";
+            this.buttonExitGeneral.Size = new System.Drawing.Size(36, 24);
+            this.buttonExitGeneral.TabIndex = 7;
+            this.buttonExitGeneral.UseVisualStyleBackColor = true;
+            this.buttonExitGeneral.Click += new System.EventHandler(this.buttonExitGeneral_Click);
             // 
             // label3
             // 
@@ -101,6 +128,7 @@
             // 
             // buttonAdmin
             // 
+            this.buttonAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAdmin.FlatAppearance.BorderSize = 0;
             this.buttonAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdmin.Image")));
@@ -136,35 +164,11 @@
             this.HORA.Enabled = true;
             this.HORA.Tick += new System.EventHandler(this.HORA_Tick);
             // 
-            // buttonAtrasGeneral
-            // 
-            this.buttonAtrasGeneral.FlatAppearance.BorderSize = 0;
-            this.buttonAtrasGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtrasGeneral.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasGeneral.Image")));
-            this.buttonAtrasGeneral.Location = new System.Drawing.Point(458, 3);
-            this.buttonAtrasGeneral.Name = "buttonAtrasGeneral";
-            this.buttonAtrasGeneral.Size = new System.Drawing.Size(47, 35);
-            this.buttonAtrasGeneral.TabIndex = 6;
-            this.buttonAtrasGeneral.UseVisualStyleBackColor = true;
-            this.buttonAtrasGeneral.Click += new System.EventHandler(this.buttonAtrasGeneral_Click);
-            // 
-            // buttonExitGeneral
-            // 
-            this.buttonExitGeneral.FlatAppearance.BorderSize = 0;
-            this.buttonExitGeneral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExitGeneral.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitGeneral.Image")));
-            this.buttonExitGeneral.Location = new System.Drawing.Point(511, 8);
-            this.buttonExitGeneral.Name = "buttonExitGeneral";
-            this.buttonExitGeneral.Size = new System.Drawing.Size(36, 24);
-            this.buttonExitGeneral.TabIndex = 7;
-            this.buttonExitGeneral.UseVisualStyleBackColor = true;
-            this.buttonExitGeneral.Click += new System.EventHandler(this.buttonExitGeneral_Click);
-            // 
             // LoginGeneral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(550, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonAdmin);

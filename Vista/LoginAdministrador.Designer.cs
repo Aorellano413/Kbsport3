@@ -35,12 +35,12 @@
             this.buttonAceptarAdmin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonExitAdmin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonRegresarAdmin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLoginNombreAdmin = new System.Windows.Forms.TextBox();
             this.buttonBorrarAdmin = new System.Windows.Forms.Button();
-            this.buttonRegresarAdmin = new System.Windows.Forms.Button();
-            this.buttonExitAdmin = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             // 
             // buttonAceptarAdmin
             // 
+            this.buttonAceptarAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAceptarAdmin.FlatAppearance.BorderSize = 0;
             this.buttonAceptarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAceptarAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonAceptarAdmin.Image")));
@@ -105,6 +106,19 @@
             this.panel2.Size = new System.Drawing.Size(550, 60);
             this.panel2.TabIndex = 5;
             // 
+            // buttonExitAdmin
+            // 
+            this.buttonExitAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExitAdmin.FlatAppearance.BorderSize = 0;
+            this.buttonExitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitAdmin.Image")));
+            this.buttonExitAdmin.Location = new System.Drawing.Point(507, 3);
+            this.buttonExitAdmin.Name = "buttonExitAdmin";
+            this.buttonExitAdmin.Size = new System.Drawing.Size(40, 33);
+            this.buttonExitAdmin.TabIndex = 10;
+            this.buttonExitAdmin.UseVisualStyleBackColor = true;
+            this.buttonExitAdmin.Click += new System.EventHandler(this.buttonExitAdmin_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -114,6 +128,19 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonRegresarAdmin
+            // 
+            this.buttonRegresarAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRegresarAdmin.FlatAppearance.BorderSize = 0;
+            this.buttonRegresarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegresarAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarAdmin.Image")));
+            this.buttonRegresarAdmin.Location = new System.Drawing.Point(461, 3);
+            this.buttonRegresarAdmin.Name = "buttonRegresarAdmin";
+            this.buttonRegresarAdmin.Size = new System.Drawing.Size(40, 29);
+            this.buttonRegresarAdmin.TabIndex = 9;
+            this.buttonRegresarAdmin.UseVisualStyleBackColor = true;
+            this.buttonRegresarAdmin.Click += new System.EventHandler(this.buttonRegresarAdmin_Click);
             // 
             // label3
             // 
@@ -134,6 +161,7 @@
             // 
             // buttonBorrarAdmin
             // 
+            this.buttonBorrarAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBorrarAdmin.FlatAppearance.BorderSize = 0;
             this.buttonBorrarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBorrarAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonBorrarAdmin.Image")));
@@ -143,35 +171,11 @@
             this.buttonBorrarAdmin.TabIndex = 8;
             this.buttonBorrarAdmin.UseVisualStyleBackColor = true;
             // 
-            // buttonRegresarAdmin
-            // 
-            this.buttonRegresarAdmin.FlatAppearance.BorderSize = 0;
-            this.buttonRegresarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegresarAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarAdmin.Image")));
-            this.buttonRegresarAdmin.Location = new System.Drawing.Point(461, 3);
-            this.buttonRegresarAdmin.Name = "buttonRegresarAdmin";
-            this.buttonRegresarAdmin.Size = new System.Drawing.Size(40, 29);
-            this.buttonRegresarAdmin.TabIndex = 9;
-            this.buttonRegresarAdmin.UseVisualStyleBackColor = true;
-            this.buttonRegresarAdmin.Click += new System.EventHandler(this.buttonRegresarAdmin_Click);
-            // 
-            // buttonExitAdmin
-            // 
-            this.buttonExitAdmin.FlatAppearance.BorderSize = 0;
-            this.buttonExitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExitAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitAdmin.Image")));
-            this.buttonExitAdmin.Location = new System.Drawing.Point(507, 3);
-            this.buttonExitAdmin.Name = "buttonExitAdmin";
-            this.buttonExitAdmin.Size = new System.Drawing.Size(40, 33);
-            this.buttonExitAdmin.TabIndex = 10;
-            this.buttonExitAdmin.UseVisualStyleBackColor = true;
-            this.buttonExitAdmin.Click += new System.EventHandler(this.buttonExitAdmin_Click);
-            // 
             // LoginAdministador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(550, 450);
             this.Controls.Add(this.buttonBorrarAdmin);
             this.Controls.Add(this.textBoxLoginNombreAdmin);
