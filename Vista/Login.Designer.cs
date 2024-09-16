@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonExitLogin = new System.Windows.Forms.Button();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.buttonExitLogin);
             this.panel1.Controls.Add(this.textBoxContraseña);
             this.panel1.Controls.Add(this.textBoxUsuario);
             this.panel1.Controls.Add(this.buttonCancelar);
@@ -61,21 +63,35 @@
             this.panel1.Size = new System.Drawing.Size(363, 353);
             this.panel1.TabIndex = 0;
             // 
+            // buttonExitLogin
+            // 
+            this.buttonExitLogin.FlatAppearance.BorderSize = 0;
+            this.buttonExitLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitLogin.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitLogin.Image")));
+            this.buttonExitLogin.Location = new System.Drawing.Point(308, 0);
+            this.buttonExitLogin.Name = "buttonExitLogin";
+            this.buttonExitLogin.Size = new System.Drawing.Size(55, 34);
+            this.buttonExitLogin.TabIndex = 11;
+            this.buttonExitLogin.UseVisualStyleBackColor = true;
+            this.buttonExitLogin.Click += new System.EventHandler(this.buttonExitLogin_Click);
+            // 
             // textBoxContraseña
             // 
             this.textBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxContraseña.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxContraseña.Location = new System.Drawing.Point(86, 183);
             this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.Size = new System.Drawing.Size(195, 28);
+            this.textBoxContraseña.PasswordChar = '*';
+            this.textBoxContraseña.Size = new System.Drawing.Size(195, 26);
             this.textBoxContraseña.TabIndex = 10;
             // 
             // textBoxUsuario
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUsuario.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsuario.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsuario.Location = new System.Drawing.Point(86, 98);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(195, 28);
+            this.textBoxUsuario.Size = new System.Drawing.Size(195, 26);
             this.textBoxUsuario.TabIndex = 9;
             // 
             // buttonCancelar
@@ -88,6 +104,7 @@
             this.buttonCancelar.Size = new System.Drawing.Size(68, 40);
             this.buttonCancelar.TabIndex = 7;
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonIngresar
             // 
@@ -99,6 +116,7 @@
             this.buttonIngresar.Size = new System.Drawing.Size(84, 63);
             this.buttonIngresar.TabIndex = 6;
             this.buttonIngresar.UseVisualStyleBackColor = true;
+            this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
             // 
             // lblUsuario
             // 
@@ -189,6 +207,7 @@
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer HorFecha;
+        private System.Windows.Forms.Button buttonExitLogin;
     }
 }
 

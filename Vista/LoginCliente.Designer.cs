@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginCliente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLoginIdCliente = new System.Windows.Forms.TextBox();
@@ -38,7 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLoginNomnreCliente = new System.Windows.Forms.TextBox();
             this.buttonBorrarCliente = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonRegresarCliente = new System.Windows.Forms.Button();
+            this.buttonExitCliente = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +57,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.buttonRegresarCliente);
+            this.panel2.Controls.Add(this.buttonExitCliente);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -62,6 +66,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(550, 60);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -129,15 +143,29 @@
             this.buttonBorrarCliente.TabIndex = 7;
             this.buttonBorrarCliente.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // buttonRegresarCliente
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.buttonRegresarCliente.FlatAppearance.BorderSize = 0;
+            this.buttonRegresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarCliente.Image")));
+            this.buttonRegresarCliente.Location = new System.Drawing.Point(456, 2);
+            this.buttonRegresarCliente.Name = "buttonRegresarCliente";
+            this.buttonRegresarCliente.Size = new System.Drawing.Size(39, 35);
+            this.buttonRegresarCliente.TabIndex = 8;
+            this.buttonRegresarCliente.UseVisualStyleBackColor = true;
+            this.buttonRegresarCliente.Click += new System.EventHandler(this.buttonRegresarCliente_Click);
+            // 
+            // buttonExitCliente
+            // 
+            this.buttonExitCliente.FlatAppearance.BorderSize = 0;
+            this.buttonExitCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCliente.Image")));
+            this.buttonExitCliente.Location = new System.Drawing.Point(501, 1);
+            this.buttonExitCliente.Name = "buttonExitCliente";
+            this.buttonExitCliente.Size = new System.Drawing.Size(49, 37);
+            this.buttonExitCliente.TabIndex = 9;
+            this.buttonExitCliente.UseVisualStyleBackColor = true;
+            this.buttonExitCliente.Click += new System.EventHandler(this.buttonExitCliente_Click);
             // 
             // LoginCliente
             // 
@@ -155,7 +183,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginCliente";
-            this.Text = "Form1";
+            this.Text = "FormLoginCliente";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -176,5 +204,7 @@
         private System.Windows.Forms.TextBox textBoxLoginNomnreCliente;
         private System.Windows.Forms.Button buttonBorrarCliente;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonExitCliente;
+        private System.Windows.Forms.Button buttonRegresarCliente;
     }
 }

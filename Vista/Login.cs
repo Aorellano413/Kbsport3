@@ -15,6 +15,7 @@ namespace Vista
         public FormLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void HorFecha_Tick(object sender, EventArgs e)
@@ -23,6 +24,39 @@ namespace Vista
             labelFecha.Text = DateTime.Now.ToLongDateString();
         }
 
-       
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxUsuario.Text = "";
+            textBoxContraseña.Text = "";
+        }
+
+        private void buttonIngresar_Click(object sender, EventArgs e)
+        {
+
+            string usuario = textBoxUsuario.Text;
+            string contraseña = textBoxContraseña.Text;
+
+   
+            if (usuario == "ropa" && contraseña == "ropa123")
+            {
+                
+                LoginGeneral loginGeneralForm = new LoginGeneral();
+                loginGeneralForm.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos. Intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                textBoxUsuario.Text = "";
+                textBoxContraseña.Text = "";
+            }
+        }
+
+        private void buttonExitLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
     }
 }

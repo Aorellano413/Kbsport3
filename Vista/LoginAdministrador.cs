@@ -10,25 +10,24 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class LoginCliente : Form
+    public partial class LoginAdministador : Form
     {
-        public LoginCliente()
+        public LoginAdministador()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void buttonExitCliente_Click(object sender, EventArgs e)
+        private void buttonExitAdmin_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
 
-        private void buttonRegresarCliente_Click(object sender, EventArgs e)
+        private void buttonRegresarAdmin_Click(object sender, EventArgs e)
         {
             LoginGeneral loginGeneralForm = new LoginGeneral();
             loginGeneralForm.Show();
             this.Close();
         }
-
     }
 }

@@ -35,10 +35,12 @@
             this.buttonAceptarAdmin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLoginNombreAdmin = new System.Windows.Forms.TextBox();
             this.buttonBorrarAdmin = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonRegresarAdmin = new System.Windows.Forms.Button();
+            this.buttonExitAdmin = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,13 +95,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.buttonExitAdmin);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.buttonRegresarAdmin);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(550, 60);
             this.panel2.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -129,15 +143,29 @@
             this.buttonBorrarAdmin.TabIndex = 8;
             this.buttonBorrarAdmin.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // buttonRegresarAdmin
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.buttonRegresarAdmin.FlatAppearance.BorderSize = 0;
+            this.buttonRegresarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegresarAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarAdmin.Image")));
+            this.buttonRegresarAdmin.Location = new System.Drawing.Point(461, 3);
+            this.buttonRegresarAdmin.Name = "buttonRegresarAdmin";
+            this.buttonRegresarAdmin.Size = new System.Drawing.Size(40, 29);
+            this.buttonRegresarAdmin.TabIndex = 9;
+            this.buttonRegresarAdmin.UseVisualStyleBackColor = true;
+            this.buttonRegresarAdmin.Click += new System.EventHandler(this.buttonRegresarAdmin_Click);
+            // 
+            // buttonExitAdmin
+            // 
+            this.buttonExitAdmin.FlatAppearance.BorderSize = 0;
+            this.buttonExitAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitAdmin.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitAdmin.Image")));
+            this.buttonExitAdmin.Location = new System.Drawing.Point(507, 3);
+            this.buttonExitAdmin.Name = "buttonExitAdmin";
+            this.buttonExitAdmin.Size = new System.Drawing.Size(40, 33);
+            this.buttonExitAdmin.TabIndex = 10;
+            this.buttonExitAdmin.UseVisualStyleBackColor = true;
+            this.buttonExitAdmin.Click += new System.EventHandler(this.buttonExitAdmin_Click);
             // 
             // LoginAdministador
             // 
@@ -176,5 +204,7 @@
         private System.Windows.Forms.TextBox textBoxLoginNombreAdmin;
         private System.Windows.Forms.Button buttonBorrarAdmin;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonRegresarAdmin;
+        private System.Windows.Forms.Button buttonExitAdmin;
     }
 }
