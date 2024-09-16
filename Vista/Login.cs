@@ -58,5 +58,13 @@ namespace Vista
         {
             this.Close();   
         }
+
+        private void buttonNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            LoginNuevoUsuario loginClienteForm = new LoginNuevoUsuario();
+            loginClienteForm.Show();
+
+            this.Hide();
+        }
     }
 }

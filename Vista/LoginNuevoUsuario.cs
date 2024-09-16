@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class LoginCliente : Form
+    public partial class LoginNuevoUsuario : Form
     {
-        public LoginCliente()
+        public LoginNuevoUsuario()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

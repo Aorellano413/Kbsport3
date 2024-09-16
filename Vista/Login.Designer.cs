@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonNuevoUsuario = new System.Windows.Forms.Button();
             this.buttonExitLogin = new System.Windows.Forms.Button();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.buttonNuevoUsuario);
             this.panel1.Controls.Add(this.buttonExitLogin);
             this.panel1.Controls.Add(this.textBoxContraseña);
             this.panel1.Controls.Add(this.textBoxUsuario);
@@ -68,6 +70,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(363, 353);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonNuevoUsuario
+            // 
+            this.buttonNuevoUsuario.FlatAppearance.BorderSize = 0;
+            this.buttonNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNuevoUsuario.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevoUsuario.Image")));
+            this.buttonNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNuevoUsuario.Location = new System.Drawing.Point(79, 278);
+            this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
+            this.buttonNuevoUsuario.Size = new System.Drawing.Size(202, 63);
+            this.buttonNuevoUsuario.TabIndex = 12;
+            this.buttonNuevoUsuario.Text = "Crear nuevo usuario";
+            this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
+            this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
             // 
             // buttonExitLogin
             // 
@@ -264,6 +282,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonNuevoUsuario;
     }
 }
 

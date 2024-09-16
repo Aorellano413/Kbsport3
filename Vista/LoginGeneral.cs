@@ -21,10 +21,6 @@ namespace Vista
         private void buttonCliente_Click(object sender, EventArgs e)
         {
 
-            LoginCliente loginClienteForm = new LoginCliente();
-            loginClienteForm.Show();
-
-            this.Hide();
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)
