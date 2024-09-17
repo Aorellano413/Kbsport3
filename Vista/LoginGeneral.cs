@@ -25,8 +25,8 @@ namespace Vista
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
-            
-             LoginAdministador loginAdministradorForm = new LoginAdministador();
+
+            LoginAdministador loginAdministradorForm = new LoginAdministador();
             loginAdministradorForm.Show();
 
 
@@ -49,5 +49,9 @@ namespace Vista
             formLogin.Show();
             this.Close();
         }
+
+
+
+
     }
 }

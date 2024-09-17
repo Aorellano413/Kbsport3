@@ -25,8 +25,8 @@ namespace Vista
 
         private void buttonRegresarCliente_Click(object sender, EventArgs e)
         {
-            LoginGeneral loginGeneralForm = new LoginGeneral();
-            loginGeneralForm.Show();
+            FormLogin login = new FormLogin();  
+            login.Show();
             this.Close();
         }
 
