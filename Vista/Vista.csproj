@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InformeEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeEmpresa.Designer.cs">
+      <DependentUpon>InformeEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCliente.Designer.cs">
+      <DependentUpon>MenuCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus\MenuAgregarCamisetas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     <Compile Include="Menus\MenuStockCamisetas.Designer.cs">
       <DependentUpon>MenuStockCamisetas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="InformeEmpresa.resx">
+      <DependentUpon>InformeEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCliente.resx">
+      <DependentUpon>MenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus\MenuAgregarCamisetas.resx">
       <DependentUpon>MenuAgregarCamisetas.cs</DependentUpon>
     </EmbeddedResource>

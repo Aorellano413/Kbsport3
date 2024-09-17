@@ -36,12 +36,16 @@ namespace Vista
 
         private void buttonInforme_Click(object sender, EventArgs e)
         {
-
+            InformeEmpresa informeEmpresa = new InformeEmpresa();
+            informeEmpresa.Show();
+            this.Close();
         }
 
         private void ButtonMenuCliente_Click(object sender, EventArgs e)
         {
-
+            MenuCliente menuCliente = new MenuCliente();    
+            menuCliente.Show();
+            this.Close();
         }
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
