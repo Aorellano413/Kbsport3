@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class AgregarCamisetas
+    partial class MenuAgregarCamisetas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarCamisetas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAgregarCamisetas));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonFotoCamisas = new System.Windows.Forms.Button();
             this.textBoxAgregarCamisas = new System.Windows.Forms.TextBox();

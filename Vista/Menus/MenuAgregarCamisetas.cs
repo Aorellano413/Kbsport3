@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class AgregarCamisetas : Form
+    public partial class MenuAgregarCamisetas : Form
     {
-        public AgregarCamisetas()
+        public MenuAgregarCamisetas()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

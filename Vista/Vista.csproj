@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarCamisetas.cs">
+    <Compile Include="Menus\MenuAgregarCamisetas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarCamisetas.Designer.cs">
-      <DependentUpon>AgregarCamisetas.cs</DependentUpon>
+    <Compile Include="Menus\MenuAgregarCamisetas.Designer.cs">
+      <DependentUpon>MenuAgregarCamisetas.cs</DependentUpon>
     </Compile>
     <Compile Include="Logins\LoginNuevoUsuario.cs">
       <SubType>Form</SubType>
@@ -76,16 +76,22 @@
     <Compile Include="Logins\LoginGeneral.Designer.cs">
       <DependentUpon>LoginGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuGeneralAdministrador.cs">
+    <Compile Include="Menus\MenuGeneralAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuGeneralAdministrador.Designer.cs">
+    <Compile Include="Menus\MenuGeneralAdministrador.Designer.cs">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AgregarCamisetas.resx">
-      <DependentUpon>AgregarCamisetas.cs</DependentUpon>
+    <Compile Include="Menus\MenuStockCamisetas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\MenuStockCamisetas.Designer.cs">
+      <DependentUpon>MenuStockCamisetas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Menus\MenuAgregarCamisetas.resx">
+      <DependentUpon>MenuAgregarCamisetas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logins\LoginNuevoUsuario.resx">
       <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
@@ -99,7 +105,7 @@
     <EmbeddedResource Include="Logins\LoginGeneral.resx">
       <DependentUpon>LoginGeneral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuGeneralAdministrador.resx">
+    <EmbeddedResource Include="Menus\MenuGeneralAdministrador.resx">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -111,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Menus\MenuStockCamisetas.resx">
+      <DependentUpon>MenuStockCamisetas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

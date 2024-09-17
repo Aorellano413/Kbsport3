@@ -20,7 +20,7 @@ namespace Vista
 
         private void buttonAgregarCamisetas_Click(object sender, EventArgs e)
         {
-            AgregarCamisetas agregarCamisetas = new AgregarCamisetas();
+            MenuAgregarCamisetas agregarCamisetas = new MenuAgregarCamisetas();
             agregarCamisetas.Show();
             this.Close();
             
@@ -28,6 +28,9 @@ namespace Vista
 
         private void ButtonStockCamisetas_Click(object sender, EventArgs e)
         {
+            MenuStockCamisetas stockCamisetas  = new MenuStockCamisetas();
+            stockCamisetas.Show();
+            this.Close();
 
         }
 
