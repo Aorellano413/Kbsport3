@@ -46,43 +46,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginNuevoUsuario.cs">
+    <Compile Include="AgregarCamisetas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginNuevoUsuario.Designer.cs">
+    <Compile Include="AgregarCamisetas.Designer.cs">
+      <DependentUpon>AgregarCamisetas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logins\LoginNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logins\LoginNuevoUsuario.Designer.cs">
       <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Logins\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Logins\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginAdministrador.cs">
+    <Compile Include="Logins\LoginAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginAdministrador.Designer.cs">
+    <Compile Include="Logins\LoginAdministrador.Designer.cs">
       <DependentUpon>LoginAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginGeneral.cs">
+    <Compile Include="Logins\LoginGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginGeneral.Designer.cs">
+    <Compile Include="Logins\LoginGeneral.Designer.cs">
       <DependentUpon>LoginGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuGeneralAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuGeneralAdministrador.Designer.cs">
+      <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginNuevoUsuario.resx">
+    <EmbeddedResource Include="AgregarCamisetas.resx">
+      <DependentUpon>AgregarCamisetas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logins\LoginNuevoUsuario.resx">
       <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Logins\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginAdministrador.resx">
+    <EmbeddedResource Include="Logins\LoginAdministrador.resx">
       <DependentUpon>LoginAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginGeneral.resx">
+    <EmbeddedResource Include="Logins\LoginGeneral.resx">
       <DependentUpon>LoginGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGeneralAdministrador.resx">
+      <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -37,7 +37,7 @@ namespace Vista
             string contraseña = textBoxContraseña.Text;
 
    
-            if (usuario == "ropa" && contraseña == "ropa123")
+            if (usuario == "1" && contraseña == "1")
             {
                 
                 LoginGeneral loginGeneralForm = new LoginGeneral();

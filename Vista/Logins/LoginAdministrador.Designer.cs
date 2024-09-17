@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginAdministador));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLoginIdAdmin = new System.Windows.Forms.TextBox();
+            this.textBoxLoginContraseñaAdmin = new System.Windows.Forms.TextBox();
             this.buttonAceptarAdmin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,12 +64,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN ADMINSTRADOR";
             // 
-            // textBoxLoginIdAdmin
+            // textBoxLoginContraseñaAdmin
             // 
-            this.textBoxLoginIdAdmin.Location = new System.Drawing.Point(284, 117);
-            this.textBoxLoginIdAdmin.Name = "textBoxLoginIdAdmin";
-            this.textBoxLoginIdAdmin.Size = new System.Drawing.Size(121, 20);
-            this.textBoxLoginIdAdmin.TabIndex = 2;
+            this.textBoxLoginContraseñaAdmin.Location = new System.Drawing.Point(284, 215);
+            this.textBoxLoginContraseñaAdmin.Name = "textBoxLoginContraseñaAdmin";
+            this.textBoxLoginContraseñaAdmin.PasswordChar = '*';
+            this.textBoxLoginContraseñaAdmin.Size = new System.Drawing.Size(121, 20);
+            this.textBoxLoginContraseñaAdmin.TabIndex = 2;
             // 
             // buttonAceptarAdmin
             // 
@@ -82,16 +83,17 @@
             this.buttonAceptarAdmin.Size = new System.Drawing.Size(91, 45);
             this.buttonAceptarAdmin.TabIndex = 3;
             this.buttonAceptarAdmin.UseVisualStyleBackColor = true;
+            this.buttonAceptarAdmin.Click += new System.EventHandler(this.buttonAceptarAdmin_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(133, 117);
+            this.label2.Location = new System.Drawing.Point(133, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.Size = new System.Drawing.Size(115, 29);
             this.label2.TabIndex = 4;
-            this.label2.Text = "ID:";
+            this.label2.Text = "CONTRASEÑA";
             // 
             // panel2
             // 
@@ -147,7 +149,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(133, 196);
+            this.label3.Location = new System.Drawing.Point(133, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 29);
             this.label3.TabIndex = 6;
@@ -155,7 +157,7 @@
             // 
             // textBoxLoginNombreAdmin
             // 
-            this.textBoxLoginNombreAdmin.Location = new System.Drawing.Point(284, 205);
+            this.textBoxLoginNombreAdmin.Location = new System.Drawing.Point(284, 126);
             this.textBoxLoginNombreAdmin.Name = "textBoxLoginNombreAdmin";
             this.textBoxLoginNombreAdmin.Size = new System.Drawing.Size(121, 20);
             this.textBoxLoginNombreAdmin.TabIndex = 7;
@@ -171,6 +173,7 @@
             this.buttonBorrarAdmin.Size = new System.Drawing.Size(75, 48);
             this.buttonBorrarAdmin.TabIndex = 8;
             this.buttonBorrarAdmin.UseVisualStyleBackColor = true;
+            this.buttonBorrarAdmin.Click += new System.EventHandler(this.buttonBorrarAdmin_Click);
             // 
             // LoginAdministador
             // 
@@ -184,7 +187,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAceptarAdmin);
-            this.Controls.Add(this.textBoxLoginIdAdmin);
+            this.Controls.Add(this.textBoxLoginContraseñaAdmin);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginAdministador";
@@ -201,7 +204,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxLoginIdAdmin;
+        private System.Windows.Forms.TextBox textBoxLoginContraseñaAdmin;
         private System.Windows.Forms.Button buttonAceptarAdmin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;

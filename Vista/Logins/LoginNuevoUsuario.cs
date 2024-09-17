@@ -27,7 +27,7 @@ namespace Vista
         {
             FormLogin login = new FormLogin();  
             login.Show();
-            this.Close();
+            
         }
 
     }
