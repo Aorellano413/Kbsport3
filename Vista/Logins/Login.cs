@@ -40,9 +40,8 @@ namespace Vista
             if (usuario == "1" && contraseña == "1")
             {
                 
-                LoginGeneral loginGeneralForm = new LoginGeneral();
-                loginGeneralForm.Show();
-
+               MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                menuGeneralAdministrador.Show();       
                 this.Hide();
             }
             else

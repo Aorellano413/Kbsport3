@@ -40,10 +40,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLoginIdCliente = new System.Windows.Forms.TextBox();
+            this.textBoxLoginNombreCliente = new System.Windows.Forms.TextBox();
             this.buttonAceptarCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLoginNomnreCliente = new System.Windows.Forms.TextBox();
+            this.textBoxLoginContraseñaCliente = new System.Windows.Forms.TextBox();
             this.buttonBorrarCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -174,12 +174,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "CONTRASEÑA:";
             // 
-            // textBoxLoginIdCliente
+            // textBoxLoginNombreCliente
             // 
-            this.textBoxLoginIdCliente.Location = new System.Drawing.Point(289, 137);
-            this.textBoxLoginIdCliente.Name = "textBoxLoginIdCliente";
-            this.textBoxLoginIdCliente.Size = new System.Drawing.Size(125, 20);
-            this.textBoxLoginIdCliente.TabIndex = 3;
+            this.textBoxLoginNombreCliente.Location = new System.Drawing.Point(289, 137);
+            this.textBoxLoginNombreCliente.Name = "textBoxLoginNombreCliente";
+            this.textBoxLoginNombreCliente.Size = new System.Drawing.Size(125, 20);
+            this.textBoxLoginNombreCliente.TabIndex = 3;
             // 
             // buttonAceptarCliente
             // 
@@ -203,12 +203,13 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "USUARIO:";
             // 
-            // textBoxLoginNomnreCliente
+            // textBoxLoginContraseñaCliente
             // 
-            this.textBoxLoginNomnreCliente.Location = new System.Drawing.Point(289, 227);
-            this.textBoxLoginNomnreCliente.Name = "textBoxLoginNomnreCliente";
-            this.textBoxLoginNomnreCliente.Size = new System.Drawing.Size(125, 20);
-            this.textBoxLoginNomnreCliente.TabIndex = 6;
+            this.textBoxLoginContraseñaCliente.Location = new System.Drawing.Point(289, 227);
+            this.textBoxLoginContraseñaCliente.Name = "textBoxLoginContraseñaCliente";
+            this.textBoxLoginContraseñaCliente.PasswordChar = '*';
+            this.textBoxLoginContraseñaCliente.Size = new System.Drawing.Size(125, 20);
+            this.textBoxLoginContraseñaCliente.TabIndex = 6;
             // 
             // buttonBorrarCliente
             // 
@@ -221,6 +222,7 @@
             this.buttonBorrarCliente.Size = new System.Drawing.Size(66, 51);
             this.buttonBorrarCliente.TabIndex = 7;
             this.buttonBorrarCliente.UseVisualStyleBackColor = true;
+            this.buttonBorrarCliente.Click += new System.EventHandler(this.buttonBorrarCliente_Click);
             // 
             // LoginNuevoUsuario
             // 
@@ -229,10 +231,10 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(550, 450);
             this.Controls.Add(this.buttonBorrarCliente);
-            this.Controls.Add(this.textBoxLoginNomnreCliente);
+            this.Controls.Add(this.textBoxLoginContraseñaCliente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAceptarCliente);
-            this.Controls.Add(this.textBoxLoginIdCliente);
+            this.Controls.Add(this.textBoxLoginNombreCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -256,11 +258,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxLoginIdCliente;
+        private System.Windows.Forms.TextBox textBoxLoginNombreCliente;
         private System.Windows.Forms.Button buttonAceptarCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxLoginNomnreCliente;
+        private System.Windows.Forms.TextBox textBoxLoginContraseñaCliente;
         private System.Windows.Forms.Button buttonBorrarCliente;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExitCliente;

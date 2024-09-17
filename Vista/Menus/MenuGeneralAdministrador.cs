@@ -51,8 +51,8 @@ namespace Vista
 
         private void buttonAtrasAdministrador_Click(object sender, EventArgs e)
         {
-            LoginGeneral loginGeneral = new LoginGeneral();
-            loginGeneral.Show();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
             this.Close();
             
         }

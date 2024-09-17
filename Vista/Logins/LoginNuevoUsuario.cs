@@ -27,8 +27,14 @@ namespace Vista
         {
             FormLogin login = new FormLogin();  
             login.Show();
+            this.Close();
             
         }
 
+        private void buttonBorrarCliente_Click(object sender, EventArgs e)
+        {
+            textBoxLoginNombreCliente.Text = "";
+            textBoxLoginContraseñaCliente.Text = "";
+        }
     }
 }
