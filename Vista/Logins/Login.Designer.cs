@@ -129,7 +129,7 @@
             // 
             this.textBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxContraseña.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContraseña.Location = new System.Drawing.Point(82, 230);
+            this.textBoxContraseña.Location = new System.Drawing.Point(86, 232);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(195, 26);
