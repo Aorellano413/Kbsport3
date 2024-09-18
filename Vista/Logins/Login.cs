@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Vista
 {
     public partial class FormLogin : Form
     {
+        private ServicioUsuario servicioUsuario = new ServicioUsuario();
+
         public FormLogin()
         {
             InitializeComponent();
@@ -33,23 +36,46 @@ namespace Vista
         private void buttonIngresar_Click(object sender, EventArgs e)
         {
 
-            string usuario = textBoxUsuario.Text;
-            string contraseña = textBoxContraseña.Text;
-
-   
-            if (usuario == "1" && contraseña == "1")
+            if (string.IsNullOrEmpty(textBoxUsuario.Text))
             {
+                MessageBox.Show("Por favor, ingrese el nombre de usuario.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxContraseña.Text))
+            {
+                MessageBox.Show("Por favor, ingrese la contraseña.");
+                return;
+            }
+
+            if (ComboRoll.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione un rol.");
+                return;
+            }
+
+            string nombreUsuario = textBoxUsuario.Text;
+            string contraseña = textBoxContraseña.Text;
+            string rolSeleccionado = ComboRoll.SelectedItem.ToString();
+
+            var usuario = servicioUsuario.Autenticar(nombreUsuario, contraseña, rolSeleccionado);
+
+            if (usuario != null)
+            {
+                if (rolSeleccionado == "Administrador")
+                {
+                     MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                    menuGeneralAdministrador.Show();
+                    this.Hide();
+                }
+                else if (rolSeleccionado == "Cliente")
+                {
                 
-               MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                menuGeneralAdministrador.Show();       
-                this.Hide();
+                }
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos. Intente nuevamente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                textBoxUsuario.Text = "";
-                textBoxContraseña.Text = "";
+                MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ComboRoll = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.buttonNuevoUsuario = new System.Windows.Forms.Button();
             this.buttonExitLogin = new System.Windows.Forms.Button();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
@@ -56,6 +58,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.ComboRoll);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.buttonNuevoUsuario);
             this.panel1.Controls.Add(this.buttonExitLogin);
             this.panel1.Controls.Add(this.textBoxContraseña);
@@ -68,8 +72,30 @@
             this.panel1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(337, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(363, 353);
+            this.panel1.Size = new System.Drawing.Size(363, 381);
             this.panel1.TabIndex = 0;
+            // 
+            // ComboRoll
+            // 
+            this.ComboRoll.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboRoll.FormattingEnabled = true;
+            this.ComboRoll.Items.AddRange(new object[] {
+            "Administrador",
+            "Cliente"});
+            this.ComboRoll.Location = new System.Drawing.Point(79, 69);
+            this.ComboRoll.Name = "ComboRoll";
+            this.ComboRoll.Size = new System.Drawing.Size(208, 32);
+            this.ComboRoll.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(73, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 33);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "TIPO";
             // 
             // buttonNuevoUsuario
             // 
@@ -78,9 +104,9 @@
             this.buttonNuevoUsuario.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevoUsuario.Image")));
             this.buttonNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevoUsuario.Location = new System.Drawing.Point(79, 278);
+            this.buttonNuevoUsuario.Location = new System.Drawing.Point(79, 318);
             this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
-            this.buttonNuevoUsuario.Size = new System.Drawing.Size(202, 63);
+            this.buttonNuevoUsuario.Size = new System.Drawing.Size(202, 60);
             this.buttonNuevoUsuario.TabIndex = 12;
             this.buttonNuevoUsuario.Text = "Crear nuevo usuario";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -103,7 +129,7 @@
             // 
             this.textBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxContraseña.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContraseña.Location = new System.Drawing.Point(86, 183);
+            this.textBoxContraseña.Location = new System.Drawing.Point(82, 230);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(195, 26);
@@ -113,7 +139,7 @@
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsuario.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsuario.Location = new System.Drawing.Point(86, 98);
+            this.textBoxUsuario.Location = new System.Drawing.Point(82, 145);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(195, 26);
             this.textBoxUsuario.TabIndex = 9;
@@ -123,7 +149,7 @@
             this.buttonCancelar.FlatAppearance.BorderSize = 0;
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancelar.Image")));
-            this.buttonCancelar.Location = new System.Drawing.Point(213, 228);
+            this.buttonCancelar.Location = new System.Drawing.Point(209, 275);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(68, 40);
             this.buttonCancelar.TabIndex = 7;
@@ -135,7 +161,7 @@
             this.buttonIngresar.FlatAppearance.BorderSize = 0;
             this.buttonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIngresar.Image = ((System.Drawing.Image)(resources.GetObject("buttonIngresar.Image")));
-            this.buttonIngresar.Location = new System.Drawing.Point(83, 217);
+            this.buttonIngresar.Location = new System.Drawing.Point(79, 264);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(84, 63);
             this.buttonIngresar.TabIndex = 6;
@@ -146,7 +172,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(80, 62);
+            this.lblUsuario.Location = new System.Drawing.Point(76, 109);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(87, 33);
             this.lblUsuario.TabIndex = 4;
@@ -156,7 +182,7 @@
             // 
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña.Location = new System.Drawing.Point(80, 147);
+            this.labelContraseña.Location = new System.Drawing.Point(76, 194);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(128, 33);
             this.labelContraseña.TabIndex = 3;
@@ -186,7 +212,7 @@
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(38, 309);
+            this.labelFecha.Location = new System.Drawing.Point(40, 347);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(54, 25);
             this.labelFecha.TabIndex = 3;
@@ -200,7 +226,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 265);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 275);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(44, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -211,7 +237,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 274);
+            this.label1.Location = new System.Drawing.Point(57, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 12;
@@ -220,7 +246,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(7, 218);
+            this.pictureBox3.Location = new System.Drawing.Point(7, 228);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(44, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -231,7 +257,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 228);
+            this.label2.Location = new System.Drawing.Point(57, 238);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 23);
             this.label2.TabIndex = 14;
@@ -242,7 +268,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(700, 353);
+            this.ClientSize = new System.Drawing.Size(700, 381);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
@@ -283,6 +309,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonNuevoUsuario;
+        private System.Windows.Forms.ComboBox ComboRoll;
+        private System.Windows.Forms.Label label3;
     }
 }
 
