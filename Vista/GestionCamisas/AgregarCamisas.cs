@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.GestionCamisas;
 
 namespace Vista
 {
-    public partial class MenuAgregarCamisetas : Form
+    public partial class AgregarCamisas : Form
     {
-        public MenuAgregarCamisetas()
+        public AgregarCamisas()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -36,6 +37,26 @@ namespace Vista
             textBoxColorCamisas.Text = "";
             textBoxPrecioCamisas.Text = "";
             textBoxTallaCamisas.Text = "";
+            comboBoxTela.Text = "";
+        }
+
+        private void dataGridViewAgregarCamisas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonModificarCamisas_Click(object sender, EventArgs e)
+        {
+            ModificarCamisas modificarCamisas = new ModificarCamisas();
+            modificarCamisas.Show();
+            this.Close();
+        }
+
+        private void buttonValoresCamisas_Click(object sender, EventArgs e)
+        {
+            AsignarCamisas asignarCamisas = new AsignarCamisas();
+            asignarCamisas.Show();
+            this.Close();
         }
     }
 }

@@ -98,10 +98,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InformeEmpresa.cs">
+    <Compile Include="GestionCamisas\AsignarCamisas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InformeEmpresa.Designer.cs">
+    <Compile Include="GestionCamisas\AsignarCamisas.Designer.cs">
+      <DependentUpon>AsignarCamisas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionCamisas\EliminarCamisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionCamisas\EliminarCamisas.Designer.cs">
+      <DependentUpon>EliminarCamisas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informe\InformeEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informe\InformeEmpresa.Designer.cs">
       <DependentUpon>InformeEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus\MenuCliente.cs">
@@ -110,11 +122,11 @@
     <Compile Include="Menus\MenuCliente.Designer.cs">
       <DependentUpon>MenuCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\MenuAgregarCamisetas.cs">
+    <Compile Include="GestionCamisas\AgregarCamisas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menus\MenuAgregarCamisetas.Designer.cs">
-      <DependentUpon>MenuAgregarCamisetas.cs</DependentUpon>
+    <Compile Include="GestionCamisas\AgregarCamisas.Designer.cs">
+      <DependentUpon>AgregarCamisas.cs</DependentUpon>
     </Compile>
     <Compile Include="Logins\LoginNuevoUsuario.cs">
       <SubType>Form</SubType>
@@ -134,6 +146,12 @@
     <Compile Include="Menus\MenuGeneralAdministrador.Designer.cs">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionCamisas\ModificarCamisas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionCamisas\ModificarCamisas.Designer.cs">
+      <DependentUpon>ModificarCamisas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Menus\MenuStockCamisetas.cs">
@@ -142,14 +160,20 @@
     <Compile Include="Menus\MenuStockCamisetas.Designer.cs">
       <DependentUpon>MenuStockCamisetas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InformeEmpresa.resx">
+    <EmbeddedResource Include="GestionCamisas\AsignarCamisas.resx">
+      <DependentUpon>AsignarCamisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionCamisas\ModificarCamisas.resx">
+      <DependentUpon>ModificarCamisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informe\InformeEmpresa.resx">
       <DependentUpon>InformeEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\MenuCliente.resx">
       <DependentUpon>MenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\MenuAgregarCamisetas.resx">
-      <DependentUpon>MenuAgregarCamisetas.cs</DependentUpon>
+    <EmbeddedResource Include="GestionCamisas\AgregarCamisas.resx">
+      <DependentUpon>AgregarCamisas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logins\LoginNuevoUsuario.resx">
       <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
