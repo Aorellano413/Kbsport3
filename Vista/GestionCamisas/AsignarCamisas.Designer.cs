@@ -29,38 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AsignarCamisas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAsignarValores = new System.Windows.Forms.DataGridView();
             this.buttonAsignarValoresCamisas = new System.Windows.Forms.Button();
             this.buttonAsignarCerrar = new System.Windows.Forms.Button();
             this.comboBoxCamisas = new System.Windows.Forms.ComboBox();
             this.buttonBuscarCamisas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.buttonAtrasAsignar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsignarValores)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewAsignarValores
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 142);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 240);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewAsignarValores.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewAsignarValores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewAsignarValores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewAsignarValores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGridViewAsignarValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAsignarValores.Location = new System.Drawing.Point(12, 142);
+            this.dataGridViewAsignarValores.Name = "dataGridViewAsignarValores";
+            this.dataGridViewAsignarValores.Size = new System.Drawing.Size(776, 240);
+            this.dataGridViewAsignarValores.TabIndex = 0;
             // 
             // buttonAsignarValoresCamisas
             // 
             this.buttonAsignarValoresCamisas.FlatAppearance.BorderSize = 0;
             this.buttonAsignarValoresCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAsignarValoresCamisas.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAsignarValoresCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAsignarValoresCamisas.Image")));
             this.buttonAsignarValoresCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAsignarValoresCamisas.Location = new System.Drawing.Point(604, 58);
+            this.buttonAsignarValoresCamisas.Location = new System.Drawing.Point(587, 58);
             this.buttonAsignarValoresCamisas.Name = "buttonAsignarValoresCamisas";
-            this.buttonAsignarValoresCamisas.Size = new System.Drawing.Size(184, 78);
+            this.buttonAsignarValoresCamisas.Size = new System.Drawing.Size(201, 78);
             this.buttonAsignarValoresCamisas.TabIndex = 2;
             this.buttonAsignarValoresCamisas.Text = "ASIGNAR VALORES";
-            this.buttonAsignarValoresCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAsignarValoresCamisas.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.buttonAsignarValoresCamisas.UseVisualStyleBackColor = true;
             // 
             // buttonAsignarCerrar
@@ -96,31 +98,45 @@
             this.buttonBuscarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonBuscarCamisas.UseVisualStyleBackColor = true;
             // 
+            // buttonAtrasAsignar
+            // 
+            this.buttonAtrasAsignar.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasAsignar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasAsignar.Image")));
+            this.buttonAtrasAsignar.Location = new System.Drawing.Point(674, 1);
+            this.buttonAtrasAsignar.Name = "buttonAtrasAsignar";
+            this.buttonAtrasAsignar.Size = new System.Drawing.Size(45, 23);
+            this.buttonAtrasAsignar.TabIndex = 6;
+            this.buttonAtrasAsignar.UseVisualStyleBackColor = true;
+            this.buttonAtrasAsignar.Click += new System.EventHandler(this.buttonAtrasAsignar_Click);
+            // 
             // AsignarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 407);
+            this.Controls.Add(this.buttonAtrasAsignar);
             this.Controls.Add(this.buttonBuscarCamisas);
             this.Controls.Add(this.comboBoxCamisas);
             this.Controls.Add(this.buttonAsignarCerrar);
             this.Controls.Add(this.buttonAsignarValoresCamisas);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewAsignarValores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AsignarCamisas";
             this.Text = "AsignarValores";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsignarValores)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAsignarValores;
         private System.Windows.Forms.Button buttonAsignarValoresCamisas;
         private System.Windows.Forms.Button buttonAsignarCerrar;
         private System.Windows.Forms.ComboBox comboBoxCamisas;
         private System.Windows.Forms.Button buttonBuscarCamisas;
+        private System.Windows.Forms.Button buttonAtrasAsignar;
     }
 }

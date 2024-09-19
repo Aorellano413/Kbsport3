@@ -190,6 +190,7 @@
             this.buttonInventarioTelas.Size = new System.Drawing.Size(143, 118);
             this.buttonInventarioTelas.TabIndex = 12;
             this.buttonInventarioTelas.UseVisualStyleBackColor = true;
+            this.buttonInventarioTelas.Click += new System.EventHandler(this.buttonInventarioTelas_Click);
             // 
             // buttonGestionarTelas
             // 

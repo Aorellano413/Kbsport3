@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class MenuStockCamisetas
+    partial class InventariosCamisas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuStockCamisetas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventariosCamisas));
             this.dataGridViewStockCamisas = new System.Windows.Forms.DataGridView();
             this.textBoxStockCamisas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();

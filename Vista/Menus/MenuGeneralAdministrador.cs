@@ -28,7 +28,7 @@ namespace Vista
 
         private void ButtonStockCamisetas_Click(object sender, EventArgs e)
         {
-            MenuStockCamisetas stockCamisetas  = new MenuStockCamisetas();
+            InventariosCamisas stockCamisetas  = new InventariosCamisas();
             stockCamisetas.Show();
             this.Close();
 
@@ -43,9 +43,7 @@ namespace Vista
 
         private void ButtonMenuCliente_Click(object sender, EventArgs e)
         {
-            MenuCliente menuCliente = new MenuCliente();    
-            menuCliente.Show();
-            this.Close();
+            
         }
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
@@ -61,5 +59,9 @@ namespace Vista
             
         }
 
+        private void buttonInventarioTelas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

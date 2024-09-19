@@ -15,6 +15,20 @@ namespace Vista
         public EliminarCamisas()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+        }
+
+        private void buttonSalirEliminar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonAtrasEliminar_Click(object sender, EventArgs e)
+        {
+            AgregarCamisas agregarCamisas = new AgregarCamisas();
+            agregarCamisas.Show();
+            this.Close(); ;
         }
     }
 }

@@ -49,7 +49,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRegistrarCamisas = new System.Windows.Forms.Button();
             this.buttonEliminarCamisas = new System.Windows.Forms.Button();
             this.buttonValoresCamisas = new System.Windows.Forms.Button();
             this.buttonModificarCamisas = new System.Windows.Forms.Button();
@@ -265,20 +265,21 @@
             this.button9.Text = "AÑADIR";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonRegistrarCamisas
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(548, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 79);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "REGISTRAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRegistrarCamisas.FlatAppearance.BorderSize = 0;
+            this.buttonRegistrarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegistrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegistrarCamisas.Image")));
+            this.buttonRegistrarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(548, 357);
+            this.buttonRegistrarCamisas.Name = "buttonRegistrarCamisas";
+            this.buttonRegistrarCamisas.Size = new System.Drawing.Size(162, 79);
+            this.buttonRegistrarCamisas.TabIndex = 26;
+            this.buttonRegistrarCamisas.Text = "REGISTRAR";
+            this.buttonRegistrarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRegistrarCamisas.UseVisualStyleBackColor = true;
+            this.buttonRegistrarCamisas.Click += new System.EventHandler(this.buttonRegistrarCamisas_Click);
             // 
             // buttonEliminarCamisas
             // 
@@ -287,13 +288,14 @@
             this.buttonEliminarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarCamisas.Image")));
             this.buttonEliminarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminarCamisas.Location = new System.Drawing.Point(548, 152);
+            this.buttonEliminarCamisas.Location = new System.Drawing.Point(548, 173);
             this.buttonEliminarCamisas.Name = "buttonEliminarCamisas";
             this.buttonEliminarCamisas.Size = new System.Drawing.Size(162, 73);
             this.buttonEliminarCamisas.TabIndex = 27;
             this.buttonEliminarCamisas.Text = "ELIMINAR";
             this.buttonEliminarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonEliminarCamisas.UseVisualStyleBackColor = true;
+            this.buttonEliminarCamisas.Click += new System.EventHandler(this.buttonEliminarCamisas_Click);
             // 
             // buttonValoresCamisas
             // 
@@ -318,7 +320,7 @@
             this.buttonModificarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModificarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonModificarCamisas.Image")));
             this.buttonModificarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificarCamisas.Location = new System.Drawing.Point(548, 223);
+            this.buttonModificarCamisas.Location = new System.Drawing.Point(548, 267);
             this.buttonModificarCamisas.Name = "buttonModificarCamisas";
             this.buttonModificarCamisas.Size = new System.Drawing.Size(162, 76);
             this.buttonModificarCamisas.TabIndex = 29;
@@ -336,7 +338,7 @@
             this.Controls.Add(this.buttonModificarCamisas);
             this.Controls.Add(this.buttonValoresCamisas);
             this.Controls.Add(this.buttonEliminarCamisas);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRegistrarCamisas);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -387,7 +389,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRegistrarCamisas;
         private System.Windows.Forms.Button buttonEliminarCamisas;
         private System.Windows.Forms.Button buttonValoresCamisas;
         private System.Windows.Forms.Button buttonModificarCamisas;

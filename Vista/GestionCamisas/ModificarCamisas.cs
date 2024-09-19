@@ -22,5 +22,12 @@ namespace Vista
         {
             this.Close();
         }
+
+        private void buttonAtrasModificar_Click(object sender, EventArgs e)
+        {
+            AgregarCamisas agregarCamisas = new AgregarCamisas();
+            agregarCamisas.Show();
+            this.Close();
+        }
     }
 }

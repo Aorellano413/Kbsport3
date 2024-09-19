@@ -47,6 +47,7 @@
             this.buttonTelaLimpiar = new System.Windows.Forms.Button();
             this.buttonPrecioLimpiar = new System.Windows.Forms.Button();
             this.buttonCerrarModificar = new System.Windows.Forms.Button();
+            this.buttonAtrasModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModificarCamisas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,12 +207,24 @@
             this.buttonCerrarModificar.FlatAppearance.BorderSize = 0;
             this.buttonCerrarModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrarModificar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCerrarModificar.Image")));
-            this.buttonCerrarModificar.Location = new System.Drawing.Point(707, 3);
+            this.buttonCerrarModificar.Location = new System.Drawing.Point(751, 3);
             this.buttonCerrarModificar.Name = "buttonCerrarModificar";
-            this.buttonCerrarModificar.Size = new System.Drawing.Size(81, 29);
+            this.buttonCerrarModificar.Size = new System.Drawing.Size(37, 29);
             this.buttonCerrarModificar.TabIndex = 18;
             this.buttonCerrarModificar.UseVisualStyleBackColor = true;
             this.buttonCerrarModificar.Click += new System.EventHandler(this.buttonCerrarModificar_Click);
+            // 
+            // buttonAtrasModificar
+            // 
+            this.buttonAtrasModificar.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasModificar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasModificar.Image")));
+            this.buttonAtrasModificar.Location = new System.Drawing.Point(696, 3);
+            this.buttonAtrasModificar.Name = "buttonAtrasModificar";
+            this.buttonAtrasModificar.Size = new System.Drawing.Size(40, 29);
+            this.buttonAtrasModificar.TabIndex = 19;
+            this.buttonAtrasModificar.UseVisualStyleBackColor = true;
+            this.buttonAtrasModificar.Click += new System.EventHandler(this.buttonAtrasModificar_Click);
             // 
             // ModificarCamisas
             // 
@@ -219,6 +232,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAtrasModificar);
             this.Controls.Add(this.buttonCerrarModificar);
             this.Controls.Add(this.buttonPrecioLimpiar);
             this.Controls.Add(this.buttonTelaLimpiar);
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Button buttonTelaLimpiar;
         private System.Windows.Forms.Button buttonPrecioLimpiar;
         private System.Windows.Forms.Button buttonCerrarModificar;
+        private System.Windows.Forms.Button buttonAtrasModificar;
     }
 }

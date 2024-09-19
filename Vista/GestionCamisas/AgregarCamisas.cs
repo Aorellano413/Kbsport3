@@ -58,5 +58,17 @@ namespace Vista
             asignarCamisas.Show();
             this.Close();
         }
+
+        private void buttonEliminarCamisas_Click(object sender, EventArgs e)
+        {
+            EliminarCamisas eliminarCamisas = new EliminarCamisas();
+            eliminarCamisas.Show();
+            this.Close();
+        }
+
+        private void buttonRegistrarCamisas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
