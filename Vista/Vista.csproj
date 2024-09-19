@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionTelas\EliminarTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTelas\EliminarTela.Designer.cs">
+      <DependentUpon>EliminarTela.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionCamisas\AsignarCamisas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="Informe\InformeEmpresa.Designer.cs">
       <DependentUpon>InformeEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventarios\InventariosTelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\InventariosTelas.Designer.cs">
+      <DependentUpon>InventariosTelas.cs</DependentUpon>
     </Compile>
     <Compile Include="Menus\MenuCliente.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,12 @@
     <Compile Include="GestionCamisas\ModificarCamisas.Designer.cs">
       <DependentUpon>ModificarCamisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionTelas\ModificarTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTelas\ModificarTela.Designer.cs">
+      <DependentUpon>ModificarTela.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Inventarios\InventariosCamisas.cs">
@@ -160,6 +178,15 @@
     <Compile Include="Inventarios\InventariosCamisas.Designer.cs">
       <DependentUpon>InventariosCamisas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionTelas\AgregarTela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionTelas\AgregarTela.Designer.cs">
+      <DependentUpon>AgregarTela.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GestionTelas\EliminarTela.resx">
+      <DependentUpon>EliminarTela.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionCamisas\AsignarCamisas.resx">
       <DependentUpon>AsignarCamisas.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Informe\InformeEmpresa.resx">
       <DependentUpon>InformeEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventarios\InventariosTelas.resx">
+      <DependentUpon>InventariosTelas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\MenuCliente.resx">
       <DependentUpon>MenuCliente.cs</DependentUpon>
@@ -187,6 +217,9 @@
     <EmbeddedResource Include="Menus\MenuGeneralAdministrador.resx">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionTelas\ModificarTela.resx">
+      <DependentUpon>ModificarTela.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -198,6 +231,9 @@
     </Compile>
     <EmbeddedResource Include="Inventarios\InventariosCamisas.resx">
       <DependentUpon>InventariosCamisas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionTelas\AgregarTela.resx">
+      <DependentUpon>AgregarTela.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -223,5 +259,6 @@
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

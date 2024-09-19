@@ -61,7 +61,16 @@ namespace Vista
 
         private void buttonInventarioTelas_Click(object sender, EventArgs e)
         {
+            InventariosTelas inventariosTelas = new InventariosTelas();
+            inventariosTelas.Show();
+            this.Close();
+        }
 
+        private void buttonGestionarTelas_Click(object sender, EventArgs e)
+        {
+           AgregarTela agregarTela = new AgregarTela(); 
+            agregarTela.Show();
+            this.Close();
         }
     }
 }

@@ -202,6 +202,7 @@
             this.buttonGestionarTelas.Size = new System.Drawing.Size(143, 118);
             this.buttonGestionarTelas.TabIndex = 13;
             this.buttonGestionarTelas.UseVisualStyleBackColor = true;
+            this.buttonGestionarTelas.Click += new System.EventHandler(this.buttonGestionarTelas_Click);
             // 
             // label7
             // 
