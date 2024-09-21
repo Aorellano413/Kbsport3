@@ -38,6 +38,9 @@
             // 
             // dataGridViewEliminarTela
             // 
+            this.dataGridViewEliminarTela.AllowUserToAddRows = false;
+            this.dataGridViewEliminarTela.AllowUserToDeleteRows = false;
+            this.dataGridViewEliminarTela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEliminarTela.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewEliminarTela.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEliminarTela.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -45,6 +48,9 @@
             this.dataGridViewEliminarTela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEliminarTela.Location = new System.Drawing.Point(12, 80);
             this.dataGridViewEliminarTela.Name = "dataGridViewEliminarTela";
+            this.dataGridViewEliminarTela.ReadOnly = true;
+            this.dataGridViewEliminarTela.RowHeadersVisible = false;
+            this.dataGridViewEliminarTela.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEliminarTela.Size = new System.Drawing.Size(541, 260);
             this.dataGridViewEliminarTela.TabIndex = 0;
             // 
@@ -70,6 +76,7 @@
             this.textBoxBuscarTela.Name = "textBoxBuscarTela";
             this.textBoxBuscarTela.Size = new System.Drawing.Size(135, 20);
             this.textBoxBuscarTela.TabIndex = 2;
+            this.textBoxBuscarTela.TextChanged += new System.EventHandler(this.textBoxBuscarTela_TextChanged);
             // 
             // buttonAtrasTela
             // 

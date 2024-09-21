@@ -86,7 +86,7 @@
             this.buttonEliminarTela.Text = "BORRAR TELA";
             this.buttonEliminarTela.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonEliminarTela.UseVisualStyleBackColor = true;
-   
+            this.buttonEliminarTela.Click += new System.EventHandler(this.buttonEliminarTela_Click);
             // 
             // buttonModificarTela
             // 
@@ -102,7 +102,7 @@
             this.buttonModificarTela.Text = " MODIFICAR ";
             this.buttonModificarTela.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonModificarTela.UseVisualStyleBackColor = true;
-            
+            this.buttonModificarTela.Click += new System.EventHandler(this.buttonModificarTela_Click);
             // 
             // label2
             // 

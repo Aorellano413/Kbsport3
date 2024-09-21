@@ -18,11 +18,26 @@ namespace Vista
         private void buttonGuardarTela_Click(object sender, EventArgs e)
         {
             string nombre = textBoxNombreTela.Text.Trim();
+            string stockText = textBoxStockTela.Text.Trim();
             int stock;
 
-            if (string.IsNullOrEmpty(nombre) || !int.TryParse(textBoxStockTela.Text, out stock))
+
+            if (string.IsNullOrEmpty(nombre) || !System.Text.RegularExpressions.Regex.IsMatch(nombre, @"^[a-zA-Z\s]+$"))
             {
-                MessageBox.Show("Por favor, ingrese datos válidos.");
+                MessageBox.Show("Por favor, ingrese un nombre válido (solo letras).");
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(stockText) || !int.TryParse(stockText, out stock) || stock < 0)
+            {
+                MessageBox.Show("Por favor, ingrese un stock válido (solo números positivos).");
+                return;
+            }
+
+            if (inventario.ExisteTela(nombre))
+            {
+                MessageBox.Show("Ya existe una tela con ese nombre. Por favor, elija otro.");
                 return;
             }
 
@@ -37,14 +52,11 @@ namespace Vista
                 inventario.InsertarTela(tela);
                 MessageBox.Show("Tela guardada exitosamente.");
 
-                
                 InventariosTelas inventarioForm = Application.OpenForms["InventariosTelas"] as InventariosTelas;
                 if (inventarioForm != null)
                 {
-                    inventarioForm.ActualizarInventario(); 
+                    inventarioForm.ActualizarInventario();
                 }
-
-                
             }
             catch (Exception ex)
             {
@@ -56,6 +68,20 @@ namespace Vista
         {
             MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
             menuGeneralAdministrador.Show();
+            this.Close();
+        }
+
+        private void buttonModificarTela_Click(object sender, EventArgs e)
+        {
+            ModificarTela tela = new ModificarTela();
+            tela.Show();
+            this.Close();
+        }
+
+        private void buttonEliminarTela_Click(object sender, EventArgs e)
+        {
+            EliminarTela tela = new EliminarTela();
+            tela.Show();
             this.Close();
         }
     }

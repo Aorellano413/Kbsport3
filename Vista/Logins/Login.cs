@@ -64,13 +64,13 @@ namespace Vista
             {
                 if (rolSeleccionado == "Administrador")
                 {
-                     MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                    MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
                     menuGeneralAdministrador.Show();
                     this.Hide();
                 }
                 else if (rolSeleccionado == "Cliente")
                 {
-                
+
                 }
             }
             else
@@ -81,7 +81,7 @@ namespace Vista
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
 
         private void buttonNuevoUsuario_Click(object sender, EventArgs e)

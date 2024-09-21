@@ -9,7 +9,7 @@ namespace Vista
     public partial class InventariosTelas : Form
     {
         InventarioBD inventario = new InventarioBD();
-        DataTable dtInventario; // Guardamos el DataTable original para restablecer
+        DataTable dtInventario;
 
         public InventariosTelas()
         {
@@ -20,8 +20,8 @@ namespace Vista
 
         public void ActualizarInventario()
         {
-            dtInventario = inventario.MostrarInventario(); 
-            dataGridViewMostrarTelas.DataSource = dtInventario; 
+            dtInventario = inventario.MostrarInventario();
+            dataGridViewMostrarTelas.DataSource = dtInventario;
         }
 
         private void buttonAtrasTelas_Click(object sender, EventArgs e)
@@ -33,25 +33,25 @@ namespace Vista
 
         private void textBoxBuscarTelas_TextChanged(object sender, EventArgs e)
         {
-            string filtro = textBoxBuscarTelas.Text.Trim().ToLower(); 
-            if (string.IsNullOrEmpty(filtro))
+            string nombre = textBoxBuscarTelas.Text.Trim();
+            if (!string.IsNullOrEmpty(nombre))
             {
-                dataGridViewMostrarTelas.DataSource = dtInventario; 
+                DataTable dt = inventario.BuscarTelaPorNombre(nombre);
+                dataGridViewMostrarTelas.DataSource = dt;
             }
             else
             {
-                
-                var filteredRows = dtInventario.AsEnumerable()
-                    .Where(row => row.Field<string>("nombre").ToLower().Contains(filtro));
-                dataGridViewMostrarTelas.DataSource = filteredRows.CopyToDataTable(); 
+                DataTable dt = inventario.MostrarInventario();
+                dataGridViewMostrarTelas.DataSource = dt;
             }
+
         }
 
         private void buttonRestablecerTelas_Click(object sender, EventArgs e)
         {
-  
+
             dataGridViewMostrarTelas.DataSource = dtInventario;
-            textBoxBuscarTelas.Clear(); 
+            textBoxBuscarTelas.Clear();
         }
     }
 }

@@ -17,5 +17,25 @@ namespace Logica
         {
             datos.InsertarTela(tela);
         }
+
+        public DataTable BuscarTelaPorNombre(string nombre)
+        {
+            return datos.BuscarTelaPorNombre(nombre);
+        }
+
+        public void EliminarTela(int idTela)
+        {
+            datos.EliminarTela(idTela);
+        }
+
+        public void ActualizarTela(Tela tela)
+        {
+            datos.ActualizarTela(tela);
+        }
+        public bool ExisteTela(string nombre)
+        {
+            return datos.ExisteTela(nombre);
+        }
+
     }
 }
