@@ -29,39 +29,46 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventariosTelas));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridViewMostrarTelas = new System.Windows.Forms.DataGridView();
+            this.buttonRestablecerTelas = new System.Windows.Forms.Button();
             this.textBoxBuscarTelas = new System.Windows.Forms.TextBox();
             this.buttonAtrasTelas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMostrarTelas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewMostrarTelas
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 328);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewMostrarTelas.AllowUserToAddRows = false;
+            this.dataGridViewMostrarTelas.AllowUserToDeleteRows = false;
+            this.dataGridViewMostrarTelas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewMostrarTelas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewMostrarTelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewMostrarTelas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewMostrarTelas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewMostrarTelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMostrarTelas.Location = new System.Drawing.Point(12, 71);
+            this.dataGridViewMostrarTelas.Name = "dataGridViewMostrarTelas";
+            this.dataGridViewMostrarTelas.ReadOnly = true;
+            this.dataGridViewMostrarTelas.RowHeadersVisible = false;
+            this.dataGridViewMostrarTelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMostrarTelas.Size = new System.Drawing.Size(776, 328);
+            this.dataGridViewMostrarTelas.TabIndex = 0;
             // 
-            // button1
+            // buttonRestablecerTelas
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(174, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "RESTABLECER";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRestablecerTelas.FlatAppearance.BorderSize = 0;
+            this.buttonRestablecerTelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRestablecerTelas.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestablecerTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecerTelas.Image")));
+            this.buttonRestablecerTelas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRestablecerTelas.Location = new System.Drawing.Point(174, 31);
+            this.buttonRestablecerTelas.Name = "buttonRestablecerTelas";
+            this.buttonRestablecerTelas.Size = new System.Drawing.Size(185, 34);
+            this.buttonRestablecerTelas.TabIndex = 1;
+            this.buttonRestablecerTelas.Text = "RESTABLECER";
+            this.buttonRestablecerTelas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRestablecerTelas.UseVisualStyleBackColor = true;
+            this.buttonRestablecerTelas.Click += new System.EventHandler(this.buttonRestablecerTelas_Click);
             // 
             // textBoxBuscarTelas
             // 
@@ -69,6 +76,7 @@
             this.textBoxBuscarTelas.Name = "textBoxBuscarTelas";
             this.textBoxBuscarTelas.Size = new System.Drawing.Size(156, 20);
             this.textBoxBuscarTelas.TabIndex = 2;
+            this.textBoxBuscarTelas.TextChanged += new System.EventHandler(this.textBoxBuscarTelas_TextChanged);
             // 
             // buttonAtrasTelas
             // 
@@ -90,12 +98,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonAtrasTelas);
             this.Controls.Add(this.textBoxBuscarTelas);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.buttonRestablecerTelas);
+            this.Controls.Add(this.dataGridViewMostrarTelas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InventariosTelas";
             this.Text = "InventariosTelas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMostrarTelas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,8 +111,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewMostrarTelas;
+        private System.Windows.Forms.Button buttonRestablecerTelas;
         private System.Windows.Forms.TextBox textBoxBuscarTelas;
         private System.Windows.Forms.Button buttonAtrasTelas;
     }
