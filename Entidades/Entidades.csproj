@@ -95,7 +95,6 @@
   <ItemGroup>
     <Compile Include="Administrador.cs" />
     <Compile Include="Camisa.cs" />
-    <Compile Include="CamisaTela.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DetallePedido.cs" />
     <Compile Include="FacturaCamisa.cs" />
