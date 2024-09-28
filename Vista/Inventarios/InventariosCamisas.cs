@@ -1,21 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica; 
 
 namespace Vista
 {
     public partial class InventariosCamisas : Form
     {
+        CamisasBD camisasBD = new CamisasBD(); 
+        DataTable dt = new DataTable(); 
+
         public InventariosCamisas()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            CargarCamisas(); 
+        }
+
+        private void CargarCamisas()
+        {
+            dt = camisasBD.ObtenerTodasLasCamisas();
+            dataGridViewStockCamisas.DataSource = dt; 
         }
 
         private void buttonSalirStock_Click(object sender, EventArgs e)

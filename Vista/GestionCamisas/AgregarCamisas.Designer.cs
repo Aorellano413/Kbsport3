@@ -44,24 +44,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxTela = new System.Windows.Forms.ComboBox();
             this.dataGridViewAgregarCamisas = new System.Windows.Forms.DataGridView();
-            this.buttonColorAñadir = new System.Windows.Forms.Button();
-            this.buttonTelaAñadir = new System.Windows.Forms.Button();
-            this.buttonPrecioAñadir = new System.Windows.Forms.Button();
-            this.buttonEquipoAñadir = new System.Windows.Forms.Button();
-            this.buttonTallaAñadir = new System.Windows.Forms.Button();
             this.buttonRegistrarCamisas = new System.Windows.Forms.Button();
             this.buttonEliminarCamisas = new System.Windows.Forms.Button();
             this.buttonValoresCamisas = new System.Windows.Forms.Button();
             this.buttonModificarCamisas = new System.Windows.Forms.Button();
-            this.dataGridViewFoto = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCamisas = new System.Windows.Forms.DataGridView();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.buttonFotoAñadir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonStock = new System.Windows.Forms.Button();
             this.textBoxStcok = new System.Windows.Forms.TextBox();
+            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,71 +207,6 @@
             this.dataGridViewAgregarCamisas.Size = new System.Drawing.Size(650, 150);
             this.dataGridViewAgregarCamisas.TabIndex = 15;
             // 
-            // buttonColorAñadir
-            // 
-            this.buttonColorAñadir.FlatAppearance.BorderSize = 0;
-            this.buttonColorAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonColorAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonColorAñadir.Location = new System.Drawing.Point(313, 284);
-            this.buttonColorAñadir.Name = "buttonColorAñadir";
-            this.buttonColorAñadir.Size = new System.Drawing.Size(100, 45);
-            this.buttonColorAñadir.TabIndex = 20;
-            this.buttonColorAñadir.Text = "AÑADIR";
-            this.buttonColorAñadir.UseVisualStyleBackColor = true;
-            this.buttonColorAñadir.Click += new System.EventHandler(this.buttonColorAñadir_Click);
-            // 
-            // buttonTelaAñadir
-            // 
-            this.buttonTelaAñadir.FlatAppearance.BorderSize = 0;
-            this.buttonTelaAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTelaAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTelaAñadir.Location = new System.Drawing.Point(313, 224);
-            this.buttonTelaAñadir.Name = "buttonTelaAñadir";
-            this.buttonTelaAñadir.Size = new System.Drawing.Size(100, 45);
-            this.buttonTelaAñadir.TabIndex = 22;
-            this.buttonTelaAñadir.Text = "AÑADIR";
-            this.buttonTelaAñadir.UseVisualStyleBackColor = true;
-            this.buttonTelaAñadir.Click += new System.EventHandler(this.buttonTelaAñadir_Click);
-            // 
-            // buttonPrecioAñadir
-            // 
-            this.buttonPrecioAñadir.FlatAppearance.BorderSize = 0;
-            this.buttonPrecioAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPrecioAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrecioAñadir.Location = new System.Drawing.Point(313, 173);
-            this.buttonPrecioAñadir.Name = "buttonPrecioAñadir";
-            this.buttonPrecioAñadir.Size = new System.Drawing.Size(100, 45);
-            this.buttonPrecioAñadir.TabIndex = 23;
-            this.buttonPrecioAñadir.Text = "AÑADIR";
-            this.buttonPrecioAñadir.UseVisualStyleBackColor = true;
-            this.buttonPrecioAñadir.Click += new System.EventHandler(this.buttonPrecioAñadir_Click);
-            // 
-            // buttonEquipoAñadir
-            // 
-            this.buttonEquipoAñadir.FlatAppearance.BorderSize = 0;
-            this.buttonEquipoAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEquipoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEquipoAñadir.Location = new System.Drawing.Point(313, 71);
-            this.buttonEquipoAñadir.Name = "buttonEquipoAñadir";
-            this.buttonEquipoAñadir.Size = new System.Drawing.Size(100, 45);
-            this.buttonEquipoAñadir.TabIndex = 24;
-            this.buttonEquipoAñadir.Text = "AÑADIR";
-            this.buttonEquipoAñadir.UseVisualStyleBackColor = true;
-            this.buttonEquipoAñadir.Click += new System.EventHandler(this.buttonEquipoAñadir_Click);
-            // 
-            // buttonTallaAñadir
-            // 
-            this.buttonTallaAñadir.FlatAppearance.BorderSize = 0;
-            this.buttonTallaAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTallaAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTallaAñadir.Location = new System.Drawing.Point(313, 122);
-            this.buttonTallaAñadir.Name = "buttonTallaAñadir";
-            this.buttonTallaAñadir.Size = new System.Drawing.Size(100, 45);
-            this.buttonTallaAñadir.TabIndex = 25;
-            this.buttonTallaAñadir.Text = "AÑADIR";
-            this.buttonTallaAñadir.UseVisualStyleBackColor = true;
-            this.buttonTallaAñadir.Click += new System.EventHandler(this.buttonTallaAñadir_Click);
-            // 
             // buttonRegistrarCamisas
             // 
             this.buttonRegistrarCamisas.FlatAppearance.BorderSize = 0;
@@ -284,7 +214,7 @@
             this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegistrarCamisas.Image")));
             this.buttonRegistrarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(627, 178);
+            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(534, 176);
             this.buttonRegistrarCamisas.Name = "buttonRegistrarCamisas";
             this.buttonRegistrarCamisas.Size = new System.Drawing.Size(162, 79);
             this.buttonRegistrarCamisas.TabIndex = 26;
@@ -300,7 +230,7 @@
             this.buttonEliminarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarCamisas.Image")));
             this.buttonEliminarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminarCamisas.Location = new System.Drawing.Point(627, 82);
+            this.buttonEliminarCamisas.Location = new System.Drawing.Point(534, 80);
             this.buttonEliminarCamisas.Name = "buttonEliminarCamisas";
             this.buttonEliminarCamisas.Size = new System.Drawing.Size(162, 73);
             this.buttonEliminarCamisas.TabIndex = 27;
@@ -316,7 +246,7 @@
             this.buttonValoresCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValoresCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonValoresCamisas.Image")));
             this.buttonValoresCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValoresCamisas.Location = new System.Drawing.Point(419, 82);
+            this.buttonValoresCamisas.Location = new System.Drawing.Point(326, 80);
             this.buttonValoresCamisas.Name = "buttonValoresCamisas";
             this.buttonValoresCamisas.Size = new System.Drawing.Size(162, 73);
             this.buttonValoresCamisas.TabIndex = 28;
@@ -332,7 +262,7 @@
             this.buttonModificarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModificarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonModificarCamisas.Image")));
             this.buttonModificarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificarCamisas.Location = new System.Drawing.Point(419, 178);
+            this.buttonModificarCamisas.Location = new System.Drawing.Point(326, 176);
             this.buttonModificarCamisas.Name = "buttonModificarCamisas";
             this.buttonModificarCamisas.Size = new System.Drawing.Size(162, 76);
             this.buttonModificarCamisas.TabIndex = 29;
@@ -341,23 +271,29 @@
             this.buttonModificarCamisas.UseVisualStyleBackColor = true;
             this.buttonModificarCamisas.Click += new System.EventHandler(this.buttonModificarCamisas_Click);
             // 
-            // dataGridViewFoto
+            // dataGridViewCamisas
             // 
-            this.dataGridViewFoto.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dataGridViewFoto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewFoto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataGridViewFoto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewFoto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFoto.Location = new System.Drawing.Point(12, 453);
-            this.dataGridViewFoto.Name = "dataGridViewFoto";
-            this.dataGridViewFoto.Size = new System.Drawing.Size(777, 182);
-            this.dataGridViewFoto.TabIndex = 30;
+            this.dataGridViewCamisas.AllowUserToAddRows = false;
+            this.dataGridViewCamisas.AllowUserToDeleteRows = false;
+            this.dataGridViewCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridViewCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCamisas.Location = new System.Drawing.Point(12, 470);
+            this.dataGridViewCamisas.Name = "dataGridViewCamisas";
+            this.dataGridViewCamisas.ReadOnly = true;
+            this.dataGridViewCamisas.RowHeadersVisible = false;
+            this.dataGridViewCamisas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCamisas.Size = new System.Drawing.Size(741, 182);
+            this.dataGridViewCamisas.TabIndex = 30;
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(419, 284);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(339, 259);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
-            this.pictureBoxFoto.Size = new System.Drawing.Size(277, 111);
+            this.pictureBoxFoto.Size = new System.Drawing.Size(149, 118);
             this.pictureBoxFoto.TabIndex = 31;
             this.pictureBoxFoto.TabStop = false;
             // 
@@ -366,11 +302,14 @@
             this.buttonFotoAñadir.FlatAppearance.BorderSize = 0;
             this.buttonFotoAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFotoAñadir.Location = new System.Drawing.Point(702, 314);
+            this.buttonFotoAñadir.Image = ((System.Drawing.Image)(resources.GetObject("buttonFotoAñadir.Image")));
+            this.buttonFotoAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFotoAñadir.Location = new System.Drawing.Point(339, 396);
             this.buttonFotoAñadir.Name = "buttonFotoAñadir";
-            this.buttonFotoAñadir.Size = new System.Drawing.Size(100, 45);
+            this.buttonFotoAñadir.Size = new System.Drawing.Size(149, 45);
             this.buttonFotoAñadir.TabIndex = 32;
-            this.buttonFotoAñadir.Text = "AÑADIR";
+            this.buttonFotoAñadir.Text = "AÑADIR IMAGEN";
+            this.buttonFotoAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonFotoAñadir.UseVisualStyleBackColor = true;
             this.buttonFotoAñadir.Click += new System.EventHandler(this.buttonFotoAñadir_Click);
             // 
@@ -384,19 +323,6 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "STOCK";
             // 
-            // buttonStock
-            // 
-            this.buttonStock.FlatAppearance.BorderSize = 0;
-            this.buttonStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonStock.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStock.Location = new System.Drawing.Point(313, 341);
-            this.buttonStock.Name = "buttonStock";
-            this.buttonStock.Size = new System.Drawing.Size(100, 45);
-            this.buttonStock.TabIndex = 34;
-            this.buttonStock.Text = "AÑADIR";
-            this.buttonStock.UseVisualStyleBackColor = true;
-            this.buttonStock.Click += new System.EventHandler(this.buttonStock_Click);
-            // 
             // textBoxStcok
             // 
             this.textBoxStcok.Location = new System.Drawing.Point(138, 357);
@@ -404,27 +330,38 @@
             this.textBoxStcok.Size = new System.Drawing.Size(130, 20);
             this.textBoxStcok.TabIndex = 35;
             // 
+            // buttonLimpiar
+            // 
+            this.buttonLimpiar.FlatAppearance.BorderSize = 0;
+            this.buttonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpiar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpiar.Image")));
+            this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLimpiar.Location = new System.Drawing.Point(28, 398);
+            this.buttonLimpiar.Name = "buttonLimpiar";
+            this.buttonLimpiar.Size = new System.Drawing.Size(155, 40);
+            this.buttonLimpiar.TabIndex = 36;
+            this.buttonLimpiar.Text = "LIMPIAR CAMPOS";
+            this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonLimpiar.UseVisualStyleBackColor = true;
+            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click_1);
+            // 
             // AgregarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(814, 677);
+            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxStcok);
-            this.Controls.Add(this.buttonStock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonFotoAñadir);
             this.Controls.Add(this.pictureBoxFoto);
-            this.Controls.Add(this.dataGridViewFoto);
+            this.Controls.Add(this.dataGridViewCamisas);
             this.Controls.Add(this.buttonModificarCamisas);
             this.Controls.Add(this.buttonValoresCamisas);
             this.Controls.Add(this.buttonEliminarCamisas);
             this.Controls.Add(this.buttonRegistrarCamisas);
-            this.Controls.Add(this.buttonTallaAñadir);
-            this.Controls.Add(this.buttonEquipoAñadir);
-            this.Controls.Add(this.buttonPrecioAñadir);
-            this.Controls.Add(this.buttonTelaAñadir);
-            this.Controls.Add(this.buttonColorAñadir);
             this.Controls.Add(this.dataGridViewAgregarCamisas);
             this.Controls.Add(this.comboBoxTela);
             this.Controls.Add(this.label7);
@@ -443,7 +380,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -467,20 +404,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxTela;
         private System.Windows.Forms.DataGridView dataGridViewAgregarCamisas;
-        private System.Windows.Forms.Button buttonColorAñadir;
-        private System.Windows.Forms.Button buttonTelaAñadir;
-        private System.Windows.Forms.Button buttonPrecioAñadir;
-        private System.Windows.Forms.Button buttonEquipoAñadir;
-        private System.Windows.Forms.Button buttonTallaAñadir;
         private System.Windows.Forms.Button buttonRegistrarCamisas;
         private System.Windows.Forms.Button buttonEliminarCamisas;
         private System.Windows.Forms.Button buttonValoresCamisas;
         private System.Windows.Forms.Button buttonModificarCamisas;
-        private System.Windows.Forms.DataGridView dataGridViewFoto;
+        private System.Windows.Forms.DataGridView dataGridViewCamisas;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.Button buttonFotoAñadir;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonStock;
         private System.Windows.Forms.TextBox textBoxStcok;
+        private System.Windows.Forms.Button buttonLimpiar;
     }
 }

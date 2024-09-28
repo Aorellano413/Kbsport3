@@ -14,16 +14,20 @@ namespace Logica
             return datos.MostrarNuevaTabla();
         }
 
-     
         public bool InsertarCamisa(Camisa nuevaCamisa)
         {
-   
             return datos.InsertarCamisa(nuevaCamisa);
         }
 
         public List<Tela> ObtenerTelas()
         {
             return datos.ObtenerTelas();
+        }
+
+        public DataTable ObtenerTodasLasCamisas()
+        {
+            return datos.ObtenerTodasLasCamisas(); 
+
         }
     }
 }

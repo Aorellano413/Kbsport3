@@ -34,11 +34,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSalirStock = new System.Windows.Forms.Button();
             this.buttonDevolverStock = new System.Windows.Forms.Button();
-            this.EQUIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TALLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COLOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FOTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockCamisas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,12 +47,6 @@
             this.dataGridViewStockCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewStockCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStockCamisas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EQUIPO,
-            this.TALLA,
-            this.PRECIO,
-            this.COLOR,
-            this.FOTO});
             this.dataGridViewStockCamisas.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridViewStockCamisas.Location = new System.Drawing.Point(28, 67);
             this.dataGridViewStockCamisas.Name = "dataGridViewStockCamisas";
@@ -116,37 +105,7 @@
             this.buttonDevolverStock.UseVisualStyleBackColor = true;
             this.buttonDevolverStock.Click += new System.EventHandler(this.buttonDevolverStock_Click);
             // 
-            // EQUIPO
-            // 
-            this.EQUIPO.HeaderText = "EQUIPO";
-            this.EQUIPO.Name = "EQUIPO";
-            this.EQUIPO.ReadOnly = true;
-            // 
-            // TALLA
-            // 
-            this.TALLA.HeaderText = "TALLA";
-            this.TALLA.Name = "TALLA";
-            this.TALLA.ReadOnly = true;
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            this.PRECIO.ReadOnly = true;
-            // 
-            // COLOR
-            // 
-            this.COLOR.HeaderText = "COLOR";
-            this.COLOR.Name = "COLOR";
-            this.COLOR.ReadOnly = true;
-            // 
-            // FOTO
-            // 
-            this.FOTO.HeaderText = "FOTO";
-            this.FOTO.Name = "FOTO";
-            this.FOTO.ReadOnly = true;
-            // 
-            // StockCamisetas
+            // InventariosCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +117,7 @@
             this.Controls.Add(this.textBoxStockCamisas);
             this.Controls.Add(this.dataGridViewStockCamisas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "StockCamisetas";
+            this.Name = "InventariosCamisas";
             this.Text = "StockCamisetas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockCamisas)).EndInit();
             this.ResumeLayout(false);
@@ -171,11 +130,6 @@
         private System.Windows.Forms.DataGridView dataGridViewStockCamisas;
         private System.Windows.Forms.TextBox textBoxStockCamisas;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EQUIPO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TALLA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COLOR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FOTO;
         private System.Windows.Forms.Button buttonSalirStock;
         private System.Windows.Forms.Button buttonDevolverStock;
     }
