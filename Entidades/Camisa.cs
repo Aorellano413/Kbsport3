@@ -12,8 +12,7 @@ namespace Entidades
         public string Equipo { get; set; }      
         public string Talla { get; set; }       
         public decimal Precio { get; set; }     
-        public string Tela { get; set; }        
-        public string Color { get; set; }       
+        public string Tela { get; set; }             
         public int Stock { get; set; }          
         public string Foto { get; set; }
 

@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Entidades;
 using Logica;
@@ -50,12 +48,11 @@ namespace Vista
             textBoxStcok.KeyPress += new KeyPressEventHandler(ValidarSoloNumeros);
         }
 
-   
         private void ValidarSoloLetras(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
                 MessageBox.Show("Solo se permiten letras.");
             }
         }
@@ -64,7 +61,7 @@ namespace Vista
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
                 MessageBox.Show("Solo se permiten números.");
             }
         }
@@ -111,19 +108,12 @@ namespace Vista
             Tela telaSeleccionada = (Tela)comboBoxTela.SelectedItem;
             int stock;
             int.TryParse(textBoxStcok.Text, out stock);
-            string color = textBoxColorCamisas.Text;
 
             string foto = pictureBoxFoto.Tag as string;
 
             if (string.IsNullOrEmpty(foto))
             {
                 MessageBox.Show("Por favor, seleccione una imagen para la camiseta.");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(color))
-            {
-                MessageBox.Show("Por favor, ingrese un color para la camiseta.");
                 return;
             }
 
@@ -134,7 +124,6 @@ namespace Vista
                 Precio = precio,
                 Tela = telaSeleccionada?.Nombre,
                 Stock = stock,
-                Color = color,
                 Foto = foto
             };
 
@@ -144,7 +133,6 @@ namespace Vista
             {
                 MessageBox.Show("Camiseta registrada con éxito.");
 
-                
                 DataRow nuevaFila = dt.NewRow();
                 nuevaFila["EQUIPO"] = equipo;
                 nuevaFila["TALLA"] = talla;
@@ -160,9 +148,6 @@ namespace Vista
                 MessageBox.Show("Error al registrar la camiseta. Intente de nuevo.");
             }
         }
-
-
-
 
         private void buttonFotoAñadir_Click(object sender, EventArgs e)
         {
@@ -185,20 +170,17 @@ namespace Vista
             }
         }
 
-
         private void buttonLimpiar_Click_1(object sender, EventArgs e)
         {
-
             textBoxAgregarCamisas.Clear();
             textBoxTallaCamisas.Clear();
             textBoxPrecioCamisas.Clear();
             textBoxStcok.Clear();
 
-            comboBoxTela.SelectedIndex = -1; 
-         
-            pictureBoxFoto.Image = null;
-            pictureBoxFoto.Tag = null; 
-        }
+            comboBoxTela.SelectedIndex = -1;
 
+            pictureBoxFoto.Image = null;
+            pictureBoxFoto.Tag = null;
+        }
     }
 }

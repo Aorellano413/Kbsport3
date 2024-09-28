@@ -31,12 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarCamisas));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxAgregarCamisas = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTallaCamisas = new System.Windows.Forms.TextBox();
             this.textBoxPrecioCamisas = new System.Windows.Forms.TextBox();
-            this.textBoxColorCamisas = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCerrarCamisas = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,16 +75,6 @@
             this.textBoxAgregarCamisas.Size = new System.Drawing.Size(130, 20);
             this.textBoxAgregarCamisas.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 284);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "COLOR";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -120,13 +108,6 @@
             this.textBoxPrecioCamisas.Name = "textBoxPrecioCamisas";
             this.textBoxPrecioCamisas.Size = new System.Drawing.Size(130, 20);
             this.textBoxPrecioCamisas.TabIndex = 8;
-            // 
-            // textBoxColorCamisas
-            // 
-            this.textBoxColorCamisas.Location = new System.Drawing.Point(138, 293);
-            this.textBoxColorCamisas.Name = "textBoxColorCamisas";
-            this.textBoxColorCamisas.Size = new System.Drawing.Size(130, 20);
-            this.textBoxColorCamisas.TabIndex = 9;
             // 
             // panel1
             // 
@@ -178,7 +159,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 226);
+            this.label7.Location = new System.Drawing.Point(23, 226);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 29);
             this.label7.TabIndex = 13;
@@ -304,7 +285,7 @@
             this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFotoAñadir.Image = ((System.Drawing.Image)(resources.GetObject("buttonFotoAñadir.Image")));
             this.buttonFotoAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFotoAñadir.Location = new System.Drawing.Point(339, 396);
+            this.buttonFotoAñadir.Location = new System.Drawing.Point(339, 383);
             this.buttonFotoAñadir.Name = "buttonFotoAñadir";
             this.buttonFotoAñadir.Size = new System.Drawing.Size(149, 45);
             this.buttonFotoAñadir.TabIndex = 32;
@@ -317,7 +298,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 347);
+            this.label5.Location = new System.Drawing.Point(23, 273);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 29);
             this.label5.TabIndex = 33;
@@ -325,7 +306,7 @@
             // 
             // textBoxStcok
             // 
-            this.textBoxStcok.Location = new System.Drawing.Point(138, 357);
+            this.textBoxStcok.Location = new System.Drawing.Point(138, 283);
             this.textBoxStcok.Name = "textBoxStcok";
             this.textBoxStcok.Size = new System.Drawing.Size(130, 20);
             this.textBoxStcok.TabIndex = 35;
@@ -337,7 +318,7 @@
             this.buttonLimpiar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpiar.Image")));
             this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiar.Location = new System.Drawing.Point(28, 398);
+            this.buttonLimpiar.Location = new System.Drawing.Point(28, 323);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(155, 40);
             this.buttonLimpiar.TabIndex = 36;
@@ -366,12 +347,10 @@
             this.Controls.Add(this.comboBoxTela);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBoxColorCamisas);
             this.Controls.Add(this.textBoxPrecioCamisas);
             this.Controls.Add(this.textBoxTallaCamisas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxAgregarCamisas);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -391,12 +370,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxAgregarCamisas;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxTallaCamisas;
         private System.Windows.Forms.TextBox textBoxPrecioCamisas;
-        private System.Windows.Forms.TextBox textBoxColorCamisas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonAtrasCamisas;

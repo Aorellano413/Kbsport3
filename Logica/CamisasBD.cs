@@ -9,11 +9,6 @@ namespace Logica
     {
         InventarioCamisas datos = new InventarioCamisas();
 
-        public DataTable MostrarNuevaTabla()
-        {
-            return datos.MostrarNuevaTabla();
-        }
-
         public bool InsertarCamisa(Camisa nuevaCamisa)
         {
             return datos.InsertarCamisa(nuevaCamisa);
@@ -26,8 +21,12 @@ namespace Logica
 
         public DataTable ObtenerTodasLasCamisas()
         {
-            return datos.ObtenerTodasLasCamisas(); 
+            return datos.ObtenerTodasLasCamisas();
+        }
 
+        public DataTable ObtenerCamisasPorNombre(string nombre)
+        {
+            return datos.ObtenerCamisasPorNombre(nombre);
         }
     }
 }

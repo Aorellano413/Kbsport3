@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventariosCamisas));
             this.dataGridViewStockCamisas = new System.Windows.Forms.DataGridView();
-            this.textBoxStockCamisas = new System.Windows.Forms.TextBox();
+            this.textBoxNombreCamisas = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSalirStock = new System.Windows.Forms.Button();
             this.buttonDevolverStock = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.dataGridViewStockCamisas.AllowUserToAddRows = false;
             this.dataGridViewStockCamisas.AllowUserToDeleteRows = false;
             this.dataGridViewStockCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewStockCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewStockCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -56,12 +56,13 @@
             this.dataGridViewStockCamisas.Size = new System.Drawing.Size(731, 371);
             this.dataGridViewStockCamisas.TabIndex = 0;
             // 
-            // textBoxStockCamisas
+            // textBoxNombreCamisas
             // 
-            this.textBoxStockCamisas.Location = new System.Drawing.Point(28, 31);
-            this.textBoxStockCamisas.Name = "textBoxStockCamisas";
-            this.textBoxStockCamisas.Size = new System.Drawing.Size(120, 20);
-            this.textBoxStockCamisas.TabIndex = 2;
+            this.textBoxNombreCamisas.Location = new System.Drawing.Point(28, 31);
+            this.textBoxNombreCamisas.Name = "textBoxNombreCamisas";
+            this.textBoxNombreCamisas.Size = new System.Drawing.Size(120, 20);
+            this.textBoxNombreCamisas.TabIndex = 2;
+            this.textBoxNombreCamisas.TextChanged += new System.EventHandler(this.textBoxNombreCamisas_TextChanged);
             // 
             // button1
             // 
@@ -114,7 +115,7 @@
             this.Controls.Add(this.buttonDevolverStock);
             this.Controls.Add(this.buttonSalirStock);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBoxStockCamisas);
+            this.Controls.Add(this.textBoxNombreCamisas);
             this.Controls.Add(this.dataGridViewStockCamisas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InventariosCamisas";
@@ -128,7 +129,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewStockCamisas;
-        private System.Windows.Forms.TextBox textBoxStockCamisas;
+        private System.Windows.Forms.TextBox textBoxNombreCamisas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonSalirStock;
         private System.Windows.Forms.Button buttonDevolverStock;

@@ -10,18 +10,6 @@ namespace Persistencia
     {
         ConexionDAL conexion = new ConexionDAL();
 
-        
-        public DataTable MostrarNuevaTabla()
-        {
-            using (MySqlConnection conn = conexion.AbrirConexion())
-            {
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Kb_sport3.Camisas;", conn);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return table;
-            }
-        }
         public DataTable ObtenerTodasLasCamisas()
         {
             DataTable dt = new DataTable();
@@ -29,7 +17,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas"; 
+                    string query = "SELECT * FROM Kb_sport3.Camisas";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -42,7 +30,27 @@ namespace Persistencia
             return dt;
         }
 
+        public DataTable ObtenerCamisasPorNombre(string nombre)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @nombre";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%"); // Filtra por el nombre
 
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener las camisas por nombre: " + ex.Message);
+            }
+            return dt;
+        }
 
         public bool InsertarCamisa(Camisa camisa)
         {
@@ -50,21 +58,18 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "INSERT INTO Kb_sport3.Camisas (equipo, talla, precio, tela, color, stock, foto) " +
-                                   "VALUES (@equipo, @talla, @precio, @tela, @color, @stock, @foto)";
+                    string query = "INSERT INTO Kb_sport3.Camisas (equipo, talla, precio, tela, stock, foto) " +
+                                   "VALUES (@equipo, @talla, @precio, @tela, @stock, @foto)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    
                     cmd.Parameters.AddWithValue("@equipo", camisa.Equipo);
                     cmd.Parameters.AddWithValue("@talla", camisa.Talla);
                     cmd.Parameters.AddWithValue("@precio", camisa.Precio);
                     cmd.Parameters.AddWithValue("@tela", camisa.Tela);
-                    cmd.Parameters.AddWithValue("@color", camisa.Color);
                     cmd.Parameters.AddWithValue("@stock", camisa.Stock);
-                    cmd.Parameters.AddWithValue("@foto", camisa.Foto); 
+                    cmd.Parameters.AddWithValue("@foto", camisa.Foto);
 
-                   
                     int result = cmd.ExecuteNonQuery();
                     return result > 0;
                 }
@@ -90,7 +95,7 @@ namespace Persistencia
                         {
                             Tela tela = new Tela
                             {
-                                Id = reader.GetInt32("id_tela"), 
+                                Id = reader.GetInt32("id_tela"),
                                 Nombre = reader.GetString("nombre")
                             };
                             telas.Add(tela);
@@ -100,7 +105,5 @@ namespace Persistencia
             }
             return telas;
         }
-
-
     }
 }
