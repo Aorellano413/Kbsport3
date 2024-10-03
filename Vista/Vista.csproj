@@ -140,11 +140,11 @@
     <Compile Include="GestionCamisas\AgregarCamisas.Designer.cs">
       <DependentUpon>AgregarCamisas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logins\LoginNuevoUsuario.cs">
+    <Compile Include="Logins\LoginCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Logins\LoginNuevoUsuario.Designer.cs">
-      <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
+    <Compile Include="Logins\LoginCliente.Designer.cs">
+      <DependentUpon>LoginCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Logins\Login.cs">
       <SubType>Form</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="GestionCamisas\AgregarCamisas.resx">
       <DependentUpon>AgregarCamisas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Logins\LoginNuevoUsuario.resx">
-      <DependentUpon>LoginNuevoUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Logins\LoginCliente.resx">
+      <DependentUpon>LoginCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logins\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

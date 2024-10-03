@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class LoginNuevoUsuario : Form
+    public partial class LoginCliente : Form
     {
-        public LoginNuevoUsuario()
+        public LoginCliente()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -33,8 +33,8 @@ namespace Vista
 
         private void buttonBorrarCliente_Click(object sender, EventArgs e)
         {
-            textBoxLoginNombreCliente.Text = "";
-            textBoxLoginContraseñaCliente.Text = "";
+            txtCedula.Text = "";
+            txtApellido.Text = "";
         }
     }
 }

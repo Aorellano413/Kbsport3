@@ -66,7 +66,7 @@ namespace Vista
 
         private void buttonNuevoUsuario_Click(object sender, EventArgs e)
         {
-            LoginNuevoUsuario loginClienteForm = new LoginNuevoUsuario();
+            LoginCliente loginClienteForm = new LoginCliente();
             loginClienteForm.Show();
             this.Hide();
         }
