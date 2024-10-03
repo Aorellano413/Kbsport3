@@ -34,7 +34,11 @@
             this.buttonSalirCliente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLiga = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbLiga = new System.Windows.Forms.ComboBox();
+            this.cbEquipo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
+            this.panelLiga.SuspendLayout();
             this.SuspendLayout();
             // 
             // Colombiana
@@ -84,11 +88,42 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.cbEquipo);
+            this.panelLiga.Controls.Add(this.cbLiga);
+            this.panelLiga.Controls.Add(this.label1);
             this.panelLiga.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLiga.Location = new System.Drawing.Point(0, 55);
             this.panelLiga.Name = "panelLiga";
             this.panelLiga.Size = new System.Drawing.Size(200, 490);
             this.panelLiga.TabIndex = 11;
+            this.panelLiga.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLiga_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(11, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Liga";
+            // 
+            // cbLiga
+            // 
+            this.cbLiga.FormattingEnabled = true;
+            this.cbLiga.Location = new System.Drawing.Point(55, 32);
+            this.cbLiga.Name = "cbLiga";
+            this.cbLiga.Size = new System.Drawing.Size(133, 21);
+            this.cbLiga.TabIndex = 1;
+            this.cbLiga.SelectedIndexChanged += new System.EventHandler(this.cbLiga_SelectedIndexChanged);
+            // 
+            // cbEquipo
+            // 
+            this.cbEquipo.FormattingEnabled = true;
+            this.cbEquipo.Location = new System.Drawing.Point(53, 97);
+            this.cbEquipo.Name = "cbEquipo";
+            this.cbEquipo.Size = new System.Drawing.Size(134, 21);
+            this.cbEquipo.TabIndex = 2;
             // 
             // Catalogo
             // 
@@ -103,6 +138,8 @@
             this.Name = "Catalogo";
             this.Text = "Catalogo";
             this.panel1.ResumeLayout(false);
+            this.panelLiga.ResumeLayout(false);
+            this.panelLiga.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -114,5 +151,8 @@
         private System.Windows.Forms.Button buttonSalirCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLiga;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbEquipo;
+        private System.Windows.Forms.ComboBox cbLiga;
     }
 }

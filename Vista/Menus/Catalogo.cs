@@ -80,6 +80,14 @@ namespace Vista
             this.Close();
         }
 
-      
+        private void panelLiga_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbLiga_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

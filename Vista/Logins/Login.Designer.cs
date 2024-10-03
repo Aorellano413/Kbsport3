@@ -78,9 +78,9 @@
             this.buttonNuevoUsuario.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevoUsuario.Image")));
             this.buttonNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevoUsuario.Location = new System.Drawing.Point(79, 318);
+            this.buttonNuevoUsuario.Location = new System.Drawing.Point(13, 318);
             this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
-            this.buttonNuevoUsuario.Size = new System.Drawing.Size(202, 60);
+            this.buttonNuevoUsuario.Size = new System.Drawing.Size(198, 60);
             this.buttonNuevoUsuario.TabIndex = 12;
             this.buttonNuevoUsuario.Text = "Ingresar como cliente";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
