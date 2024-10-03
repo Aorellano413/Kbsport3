@@ -16,6 +16,7 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            NOMBRE.Text = "Andres Orellano";
         }
 
         private void buttonAgregarCamisetas_Click(object sender, EventArgs e)
@@ -23,12 +24,12 @@ namespace Vista
             AgregarCamisas agregarCamisetas = new AgregarCamisas();
             agregarCamisetas.Show();
             this.Close();
-            
+
         }
 
         private void ButtonStockCamisetas_Click(object sender, EventArgs e)
         {
-            InventariosCamisas stockCamisetas  = new InventariosCamisas();
+            InventariosCamisas stockCamisetas = new InventariosCamisas();
             stockCamisetas.Show();
             this.Close();
 
@@ -43,7 +44,9 @@ namespace Vista
 
         private void ButtonMenuCliente_Click(object sender, EventArgs e)
         {
-            
+            Catalogo catalogo = new Catalogo();
+            catalogo.Show();
+            this.Close();
         }
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
@@ -56,7 +59,7 @@ namespace Vista
             FormLogin formLogin = new FormLogin();
             formLogin.Show();
             this.Close();
-            
+
         }
 
         private void buttonInventarioTelas_Click(object sender, EventArgs e)
@@ -68,9 +71,15 @@ namespace Vista
 
         private void buttonGestionarTelas_Click(object sender, EventArgs e)
         {
-           AgregarTela agregarTela = new AgregarTela(); 
+            AgregarTela agregarTela = new AgregarTela();
             agregarTela.Show();
             this.Close();
+        }
+
+        private void HorFechaAdmin_Tick(object sender, EventArgs e)
+        {
+            hora.Text = DateTime.Now.ToLongTimeString();
+            fecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

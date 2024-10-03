@@ -10,6 +10,6 @@ namespace Entidades
     {
         public int Id { get; set; }
         public string Usuario { get; set; }
-        public string Contra { get; set; }
+        public string Contraseña { get; set; }
     }
 }

@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menus\Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Catalogo.Designer.cs">
+      <DependentUpon>Catalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionTelas\EliminarTela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +133,6 @@
     </Compile>
     <Compile Include="Inventarios\InventariosTelas.Designer.cs">
       <DependentUpon>InventariosTelas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menus\MenuCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menus\MenuCliente.Designer.cs">
-      <DependentUpon>MenuCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionCamisas\AgregarCamisas.cs">
       <SubType>Form</SubType>
@@ -202,9 +202,6 @@
     <EmbeddedResource Include="Inventarios\InventariosTelas.resx">
       <DependentUpon>InventariosTelas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menus\MenuCliente.resx">
-      <DependentUpon>MenuCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GestionCamisas\AgregarCamisas.resx">
       <DependentUpon>AgregarCamisas.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logins\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Catalogo.resx">
+      <DependentUpon>Catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\MenuGeneralAdministrador.resx">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>

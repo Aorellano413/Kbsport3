@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ComboRoll = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.buttonNuevoUsuario = new System.Windows.Forms.Button();
             this.buttonExitLogin = new System.Windows.Forms.Button();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
@@ -58,8 +56,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.ComboRoll);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.buttonNuevoUsuario);
             this.panel1.Controls.Add(this.buttonExitLogin);
             this.panel1.Controls.Add(this.textBoxContraseña);
@@ -75,28 +71,6 @@
             this.panel1.Size = new System.Drawing.Size(363, 381);
             this.panel1.TabIndex = 0;
             // 
-            // ComboRoll
-            // 
-            this.ComboRoll.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboRoll.FormattingEnabled = true;
-            this.ComboRoll.Items.AddRange(new object[] {
-            "Administrador",
-            "Cliente"});
-            this.ComboRoll.Location = new System.Drawing.Point(79, 69);
-            this.ComboRoll.Name = "ComboRoll";
-            this.ComboRoll.Size = new System.Drawing.Size(208, 32);
-            this.ComboRoll.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 33);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "TIPO";
-            // 
             // buttonNuevoUsuario
             // 
             this.buttonNuevoUsuario.FlatAppearance.BorderSize = 0;
@@ -108,7 +82,7 @@
             this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
             this.buttonNuevoUsuario.Size = new System.Drawing.Size(202, 60);
             this.buttonNuevoUsuario.TabIndex = 12;
-            this.buttonNuevoUsuario.Text = "Crear nuevo usuario";
+            this.buttonNuevoUsuario.Text = "Ingresar como cliente";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
             this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
@@ -309,8 +283,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonNuevoUsuario;
-        private System.Windows.Forms.ComboBox ComboRoll;
-        private System.Windows.Forms.Label label3;
     }
 }
 

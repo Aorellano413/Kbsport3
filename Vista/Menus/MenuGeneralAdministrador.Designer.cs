@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuGeneralAdministrador));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.buttonGestionarCamisas = new System.Windows.Forms.Button();
             this.ButtonStockCamisetas = new System.Windows.Forms.Button();
             this.ButtonMenuCliente = new System.Windows.Forms.Button();
@@ -45,37 +45,33 @@
             this.buttonGestionarTelas = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.NOMBRE = new System.Windows.Forms.Label();
+            this.HorFechaAdmin = new System.Windows.Forms.Timer(this.components);
+            this.fecha = new System.Windows.Forms.Label();
+            this.hora = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.hora);
+            this.panel1.Controls.Add(this.fecha);
+            this.panel1.Controls.Add(this.NOMBRE);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 603);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(516, 53);
+            this.panel1.Size = new System.Drawing.Size(1094, 53);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(126, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ADMINISTRADOR";
             // 
             // buttonGestionarCamisas
             // 
             this.buttonGestionarCamisas.FlatAppearance.BorderSize = 0;
             this.buttonGestionarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGestionarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonGestionarCamisas.Image")));
-            this.buttonGestionarCamisas.Location = new System.Drawing.Point(325, 59);
+            this.buttonGestionarCamisas.Location = new System.Drawing.Point(28, 59);
             this.buttonGestionarCamisas.Name = "buttonGestionarCamisas";
-            this.buttonGestionarCamisas.Size = new System.Drawing.Size(143, 118);
+            this.buttonGestionarCamisas.Size = new System.Drawing.Size(211, 155);
             this.buttonGestionarCamisas.TabIndex = 1;
             this.buttonGestionarCamisas.UseVisualStyleBackColor = true;
             this.buttonGestionarCamisas.Click += new System.EventHandler(this.buttonAgregarCamisetas_Click);
@@ -85,9 +81,9 @@
             this.ButtonStockCamisetas.FlatAppearance.BorderSize = 0;
             this.ButtonStockCamisetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonStockCamisetas.Image = ((System.Drawing.Image)(resources.GetObject("ButtonStockCamisetas.Image")));
-            this.ButtonStockCamisetas.Location = new System.Drawing.Point(28, 59);
+            this.ButtonStockCamisetas.Location = new System.Drawing.Point(466, 59);
             this.ButtonStockCamisetas.Name = "ButtonStockCamisetas";
-            this.ButtonStockCamisetas.Size = new System.Drawing.Size(143, 118);
+            this.ButtonStockCamisetas.Size = new System.Drawing.Size(200, 155);
             this.ButtonStockCamisetas.TabIndex = 2;
             this.ButtonStockCamisetas.UseVisualStyleBackColor = true;
             this.ButtonStockCamisetas.Click += new System.EventHandler(this.ButtonStockCamisetas_Click);
@@ -97,9 +93,9 @@
             this.ButtonMenuCliente.FlatAppearance.BorderSize = 0;
             this.ButtonMenuCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMenuCliente.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMenuCliente.Image")));
-            this.ButtonMenuCliente.Location = new System.Drawing.Point(325, 405);
+            this.ButtonMenuCliente.Location = new System.Drawing.Point(822, 276);
             this.ButtonMenuCliente.Name = "ButtonMenuCliente";
-            this.ButtonMenuCliente.Size = new System.Drawing.Size(143, 118);
+            this.ButtonMenuCliente.Size = new System.Drawing.Size(200, 155);
             this.ButtonMenuCliente.TabIndex = 3;
             this.ButtonMenuCliente.UseVisualStyleBackColor = true;
             this.ButtonMenuCliente.Click += new System.EventHandler(this.ButtonMenuCliente_Click);
@@ -109,9 +105,9 @@
             this.buttonInforme.FlatAppearance.BorderSize = 0;
             this.buttonInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInforme.Image = ((System.Drawing.Image)(resources.GetObject("buttonInforme.Image")));
-            this.buttonInforme.Location = new System.Drawing.Point(30, 405);
+            this.buttonInforme.Location = new System.Drawing.Point(822, 59);
             this.buttonInforme.Name = "buttonInforme";
-            this.buttonInforme.Size = new System.Drawing.Size(143, 118);
+            this.buttonInforme.Size = new System.Drawing.Size(200, 155);
             this.buttonInforme.TabIndex = 4;
             this.buttonInforme.UseVisualStyleBackColor = true;
             this.buttonInforme.Click += new System.EventHandler(this.buttonInforme_Click);
@@ -121,7 +117,7 @@
             this.buttonAtrasAdministrador.FlatAppearance.BorderSize = 0;
             this.buttonAtrasAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasAdministrador.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasAdministrador.Image")));
-            this.buttonAtrasAdministrador.Location = new System.Drawing.Point(438, 12);
+            this.buttonAtrasAdministrador.Location = new System.Drawing.Point(1016, 3);
             this.buttonAtrasAdministrador.Name = "buttonAtrasAdministrador";
             this.buttonAtrasAdministrador.Size = new System.Drawing.Size(30, 32);
             this.buttonAtrasAdministrador.TabIndex = 5;
@@ -133,7 +129,7 @@
             this.buttonCerrarAdministrador.FlatAppearance.BorderSize = 0;
             this.buttonCerrarAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrarAdministrador.Image = ((System.Drawing.Image)(resources.GetObject("buttonCerrarAdministrador.Image")));
-            this.buttonCerrarAdministrador.Location = new System.Drawing.Point(474, 12);
+            this.buttonCerrarAdministrador.Location = new System.Drawing.Point(1052, 3);
             this.buttonCerrarAdministrador.Name = "buttonCerrarAdministrador";
             this.buttonCerrarAdministrador.Size = new System.Drawing.Size(30, 32);
             this.buttonCerrarAdministrador.TabIndex = 6;
@@ -144,7 +140,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(320, 180);
+            this.label2.Location = new System.Drawing.Point(55, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 29);
             this.label2.TabIndex = 1;
@@ -154,7 +150,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(58, 536);
+            this.label4.Location = new System.Drawing.Point(887, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 29);
             this.label4.TabIndex = 8;
@@ -164,7 +160,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 536);
+            this.label5.Location = new System.Drawing.Point(868, 455);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 29);
             this.label5.TabIndex = 9;
@@ -174,7 +170,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(23, 180);
+            this.label6.Location = new System.Drawing.Point(477, 217);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 29);
             this.label6.TabIndex = 11;
@@ -185,9 +181,9 @@
             this.buttonInventarioTelas.FlatAppearance.BorderSize = 0;
             this.buttonInventarioTelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInventarioTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonInventarioTelas.Image")));
-            this.buttonInventarioTelas.Location = new System.Drawing.Point(28, 234);
+            this.buttonInventarioTelas.Location = new System.Drawing.Point(466, 276);
             this.buttonInventarioTelas.Name = "buttonInventarioTelas";
-            this.buttonInventarioTelas.Size = new System.Drawing.Size(143, 118);
+            this.buttonInventarioTelas.Size = new System.Drawing.Size(200, 155);
             this.buttonInventarioTelas.TabIndex = 12;
             this.buttonInventarioTelas.UseVisualStyleBackColor = true;
             this.buttonInventarioTelas.Click += new System.EventHandler(this.buttonInventarioTelas_Click);
@@ -197,9 +193,9 @@
             this.buttonGestionarTelas.FlatAppearance.BorderSize = 0;
             this.buttonGestionarTelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGestionarTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonGestionarTelas.Image")));
-            this.buttonGestionarTelas.Location = new System.Drawing.Point(328, 234);
+            this.buttonGestionarTelas.Location = new System.Drawing.Point(28, 297);
             this.buttonGestionarTelas.Name = "buttonGestionarTelas";
-            this.buttonGestionarTelas.Size = new System.Drawing.Size(143, 118);
+            this.buttonGestionarTelas.Size = new System.Drawing.Size(200, 155);
             this.buttonGestionarTelas.TabIndex = 13;
             this.buttonGestionarTelas.UseVisualStyleBackColor = true;
             this.buttonGestionarTelas.Click += new System.EventHandler(this.buttonGestionarTelas_Click);
@@ -208,7 +204,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(320, 355);
+            this.label7.Location = new System.Drawing.Point(65, 455);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 29);
             this.label7.TabIndex = 14;
@@ -218,18 +214,53 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 355);
+            this.label8.Location = new System.Drawing.Point(489, 455);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(165, 29);
             this.label8.TabIndex = 15;
             this.label8.Text = "INVENTARIOS TELAS";
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.AutoSize = true;
+            this.NOMBRE.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NOMBRE.Location = new System.Drawing.Point(12, 15);
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.Size = new System.Drawing.Size(78, 29);
+            this.NOMBRE.TabIndex = 16;
+            this.NOMBRE.Text = "NOMBRE";
+            // 
+            // HorFechaAdmin
+            // 
+            this.HorFechaAdmin.Enabled = true;
+            this.HorFechaAdmin.Tick += new System.EventHandler(this.HorFechaAdmin_Tick);
+            // 
+            // fecha
+            // 
+            this.fecha.AutoSize = true;
+            this.fecha.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fecha.Location = new System.Drawing.Point(799, 15);
+            this.fecha.Name = "fecha";
+            this.fecha.Size = new System.Drawing.Size(62, 29);
+            this.fecha.TabIndex = 17;
+            this.fecha.Text = "FECHA";
+            // 
+            // hora
+            // 
+            this.hora.AutoSize = true;
+            this.hora.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hora.Location = new System.Drawing.Point(523, 15);
+            this.hora.Name = "hora";
+            this.hora.Size = new System.Drawing.Size(55, 29);
+            this.hora.TabIndex = 18;
+            this.hora.Text = "HORA";
             // 
             // MenuGeneralAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(516, 656);
+            this.ClientSize = new System.Drawing.Size(1094, 656);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonGestionarTelas);
@@ -262,7 +293,6 @@
         private System.Windows.Forms.Button ButtonStockCamisetas;
         private System.Windows.Forms.Button ButtonMenuCliente;
         private System.Windows.Forms.Button buttonInforme;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAtrasAdministrador;
         private System.Windows.Forms.Button buttonCerrarAdministrador;
         private System.Windows.Forms.Label label2;
@@ -273,5 +303,9 @@
         private System.Windows.Forms.Button buttonGestionarTelas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label NOMBRE;
+        private System.Windows.Forms.Label fecha;
+        private System.Windows.Forms.Timer HorFechaAdmin;
+        private System.Windows.Forms.Label hora;
     }
 }

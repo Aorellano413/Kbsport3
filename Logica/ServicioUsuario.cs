@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Persistencia;
+﻿using Persistencia;
 using Entidades;
 
 namespace Logica
@@ -12,17 +7,9 @@ namespace Logica
     {
         private DatosUsuario datosUsuario = new DatosUsuario();
 
-        public object Autenticar(string nombreUsuario, string contraseña, string rol)
+        public Administrador Autenticar(string nombreUsuario, string contraseña)
         {
-            if (rol == "Administrador")
-            {
-                return datosUsuario.ObtenerAdministrador(nombreUsuario, contraseña);
-            }
-            else if (rol == "Cliente")
-            {
-                return datosUsuario.ObtenerCliente(nombreUsuario, contraseña);
-            }
-            return null;
+            return datosUsuario.ObtenerAdministrador(nombreUsuario, contraseña);
         }
     }
 }

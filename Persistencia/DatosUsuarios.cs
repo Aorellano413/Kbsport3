@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Entidades;
 using MySql.Data.MySqlClient;
 
@@ -12,49 +8,58 @@ namespace Persistencia
     {
         private ConexionDAL conexionDAL = new ConexionDAL();
 
-        public Cliente ObtenerCliente(string usuario, string contra)
+        
+        public Cliente ObtenerCliente(int cedula)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "SELECT * FROM CLIENTES WHERE Usuario = @usuario AND Contra = @contra";
+                string query = "SELECT * FROM CLIENTES WHERE Cedula = @cedula"; 
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contra", contra);
+                cmd.Parameters.AddWithValue("@cedula", cedula);
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
                         return new Cliente
                         {
-                            Id = reader.GetInt32("Id"),
-                            Usuario = reader.GetString("Usuario"),
-                            Contra = reader.GetString("Contra")
+                            Cedula = reader.GetInt32("Cedula"),
+                            Nombre = reader.GetString("Nombre"),
+                            Apellido = reader.GetString("Apellido"),
+                            Telefono = reader.GetInt32("Telefono"),
+                            Direccion = reader.GetString("Direccion")
                         };
                     }
                 }
             }
             return null;
         }
+
+
         public void AgregarCliente(Cliente cliente)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "INSERT INTO CLIENTES (Usuario, Contra) VALUES (@usuario, @contra)";
+                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion) VALUES (@cedula, @nombre, @apellido, @telefono, @direccion)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@usuario", cliente.Usuario);
-                cmd.Parameters.AddWithValue("@contra", cliente.Contra);
+                cmd.Parameters.AddWithValue("@cedula", cliente.Cedula);
+                cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
+                cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
 
                 cmd.ExecuteNonQuery();
             }
         }
-        public Administrador ObtenerAdministrador(string usuario, string contra)
+
+
+        public Administrador ObtenerAdministrador(string usuario, string contraseña)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "SELECT * FROM ADMINISTRADORES WHERE Usuario = @usuario AND Contra = @contra";
+                string query = "SELECT * FROM ADMINISTRADORES WHERE Usuario = @usuario AND Contraseña = @contraseña";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contra", contra);
+                cmd.Parameters.AddWithValue("@contraseña", contraseña);
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -63,14 +68,13 @@ namespace Persistencia
                         {
                             Id = reader.GetInt32("Id"),
                             Usuario = reader.GetString("Usuario"),
-                            Contra = reader.GetString("Contra")
+                            Contraseña = reader.GetString("Contraseña")
                         };
                     }
                 }
             }
             return null;
         }
-
 
     }
 }

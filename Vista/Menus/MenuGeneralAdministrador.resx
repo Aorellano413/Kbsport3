@@ -325,7 +325,7 @@
   <data name="buttonCerrarAdministrador.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5wAAAOcB8BtYtQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGMSURBVFhHYxgF
+        5gAAAOYBIly6UQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGMSURBVFhHYxgF
         o2AUjAIcQByIc4G4nEoYZBbITKIAIy8zy5MCCfXfHfL6/6mB84FmAc18DDIbYgV+ICbHxv3usbH/f2pi
         WTaudyCzIVbgBxKKHDxvsBlCCQaZCTIbYgV+AHfAVQOv/9Uy2v8rpbXAeJmq1f9DOi7/d2s5gg3dp+0E
         xqvVrMFqJyoagdWFCcv9L5PSBOsFiZPtgHXqtv/1uQXgcblRw+7/Fg37/8bcQmBDrXhF/q9Rt/nvLyQD
@@ -370,7 +370,7 @@
   <data name="buttonGestionarTelas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAm2SURBVHhe7ZoL
+        vwAADr8BOAVTJAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAm2SURBVHhe7ZoL
         UFTXGceRlyDK+ykoKI9UC4rNJBoBlRiiIvjARgI2AUzRRmOQUmu1ydRmNGq00XRkOlqnUzvGOr7QmvGB
         z+CMjtVK6xtlfDs6hlg7bRNjC1+//3HP5d7ds8uu7gKb+s38Bvaec+9+3/+ex3fOWY9n9sye2JKYvcw/
         mdPML5jezP+FdWVuMGRGMwNRChnU+dZaKUMv9IqgpgVv0L7yXCpKTyQ/by+9GF8yv2bSmW+d4S3T7yYP
@@ -415,4 +415,7 @@
         isTxF2YKBK48B3hmz8zD438cKi67zVP/YAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="HorFechaAdmin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

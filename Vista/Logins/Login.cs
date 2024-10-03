@@ -1,12 +1,5 @@
 ﻿using Logica;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista
@@ -35,7 +28,6 @@ namespace Vista
 
         private void buttonIngresar_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(textBoxUsuario.Text))
             {
                 MessageBox.Show("Por favor, ingrese el nombre de usuario.");
@@ -48,30 +40,18 @@ namespace Vista
                 return;
             }
 
-            if (ComboRoll.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, seleccione un rol.");
-                return;
-            }
-
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
-            string rolSeleccionado = ComboRoll.SelectedItem.ToString();
 
-            var usuario = servicioUsuario.Autenticar(nombreUsuario, contraseña, rolSeleccionado);
+       
+            var usuario = servicioUsuario.Autenticar(nombreUsuario, contraseña);
 
             if (usuario != null)
             {
-                if (rolSeleccionado == "Administrador")
-                {
-                    MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                    menuGeneralAdministrador.Show();
-                    this.Hide();
-                }
-                else if (rolSeleccionado == "Cliente")
-                {
-
-                }
+      
+                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                menuGeneralAdministrador.Show();
+                this.Hide();
             }
             else
             {
@@ -88,8 +68,9 @@ namespace Vista
         {
             LoginNuevoUsuario loginClienteForm = new LoginNuevoUsuario();
             loginClienteForm.Show();
-
             this.Hide();
         }
+
+        
     }
 }
