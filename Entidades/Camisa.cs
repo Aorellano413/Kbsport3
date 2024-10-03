@@ -8,7 +8,9 @@ namespace Entidades
 {
     public class Camisa
     {
-        public int Id { get; set; }             
+        public int Id { get; set; }      
+        
+        public string Liga { get; set; }
         public string Equipo { get; set; }      
         public string Talla { get; set; }       
         public decimal Precio { get; set; }     

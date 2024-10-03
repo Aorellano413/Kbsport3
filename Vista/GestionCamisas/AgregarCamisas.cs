@@ -25,6 +25,7 @@ namespace Vista
 
         private void InicializarDataTable()
         {
+            dt.Columns.Add("LIGA"); // Agregamos la columna 'Liga' a la tabla
             dt.Columns.Add("EQUIPO");
             dt.Columns.Add("TALLA");
             dt.Columns.Add("PRECIO");
@@ -101,6 +102,7 @@ namespace Vista
 
         private void buttonRegistrarCamisas_Click(object sender, EventArgs e)
         {
+            string liga = textBoxLiga.Text; // Captura el valor de la liga
             string equipo = textBoxAgregarCamisas.Text;
             string talla = textBoxTallaCamisas.Text;
             decimal precio;
@@ -119,6 +121,7 @@ namespace Vista
 
             Camisa nuevaCamisa = new Camisa
             {
+                Liga = liga, 
                 Equipo = equipo,
                 Talla = talla,
                 Precio = precio,
@@ -134,6 +137,7 @@ namespace Vista
                 MessageBox.Show("Camiseta registrada con éxito.");
 
                 DataRow nuevaFila = dt.NewRow();
+                nuevaFila["LIGA"] = liga; 
                 nuevaFila["EQUIPO"] = equipo;
                 nuevaFila["TALLA"] = talla;
                 nuevaFila["PRECIO"] = precio;
@@ -172,6 +176,7 @@ namespace Vista
 
         private void buttonLimpiar_Click_1(object sender, EventArgs e)
         {
+            textBoxLiga.Clear(); 
             textBoxAgregarCamisas.Clear();
             textBoxTallaCamisas.Clear();
             textBoxPrecioCamisas.Clear();

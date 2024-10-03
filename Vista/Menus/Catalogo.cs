@@ -21,7 +21,7 @@ namespace Vista
         private void CargarCamisasConFotos()
         {
             DataTable camisas = camisasBD.ObtenerTodasLasCamisas();
-            flowLayoutPanelCamisas.Controls.Clear();
+            Colombiana.Controls.Clear();
 
             foreach (DataRow fila in camisas.Rows)
             {
@@ -47,7 +47,7 @@ namespace Vista
 
                 panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
 
-                flowLayoutPanelCamisas.Controls.Add(panelCamisa);
+                Colombiana.Controls.Add(panelCamisa);
             }
         }
 
@@ -79,5 +79,7 @@ namespace Vista
         {
             this.Close();
         }
+
+      
     }
 }

@@ -52,6 +52,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxStcok = new System.Windows.Forms.TextBox();
             this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.textBoxLiga = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).BeginInit();
@@ -62,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 77);
+            this.label1.Location = new System.Drawing.Point(17, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 29);
             this.label1.TabIndex = 0;
@@ -70,7 +72,7 @@
             // 
             // textBoxAgregarCamisas
             // 
-            this.textBoxAgregarCamisas.Location = new System.Drawing.Point(138, 86);
+            this.textBoxAgregarCamisas.Location = new System.Drawing.Point(132, 126);
             this.textBoxAgregarCamisas.Name = "textBoxAgregarCamisas";
             this.textBoxAgregarCamisas.Size = new System.Drawing.Size(130, 20);
             this.textBoxAgregarCamisas.TabIndex = 2;
@@ -79,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 178);
+            this.label3.Location = new System.Drawing.Point(17, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 29);
             this.label3.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 126);
+            this.label4.Location = new System.Drawing.Point(17, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 29);
             this.label4.TabIndex = 5;
@@ -97,14 +99,14 @@
             // 
             // textBoxTallaCamisas
             // 
-            this.textBoxTallaCamisas.Location = new System.Drawing.Point(138, 135);
+            this.textBoxTallaCamisas.Location = new System.Drawing.Point(132, 175);
             this.textBoxTallaCamisas.Name = "textBoxTallaCamisas";
             this.textBoxTallaCamisas.Size = new System.Drawing.Size(130, 20);
             this.textBoxTallaCamisas.TabIndex = 7;
             // 
             // textBoxPrecioCamisas
             // 
-            this.textBoxPrecioCamisas.Location = new System.Drawing.Point(138, 186);
+            this.textBoxPrecioCamisas.Location = new System.Drawing.Point(132, 226);
             this.textBoxPrecioCamisas.Name = "textBoxPrecioCamisas";
             this.textBoxPrecioCamisas.Size = new System.Drawing.Size(130, 20);
             this.textBoxPrecioCamisas.TabIndex = 8;
@@ -159,7 +161,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 226);
+            this.label7.Location = new System.Drawing.Point(17, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 29);
             this.label7.TabIndex = 13;
@@ -168,7 +170,7 @@
             // comboBoxTela
             // 
             this.comboBoxTela.FormattingEnabled = true;
-            this.comboBoxTela.Location = new System.Drawing.Point(138, 236);
+            this.comboBoxTela.Location = new System.Drawing.Point(132, 276);
             this.comboBoxTela.Name = "comboBoxTela";
             this.comboBoxTela.Size = new System.Drawing.Size(130, 21);
             this.comboBoxTela.TabIndex = 14;
@@ -298,7 +300,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 273);
+            this.label5.Location = new System.Drawing.Point(17, 313);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 29);
             this.label5.TabIndex = 33;
@@ -306,7 +308,7 @@
             // 
             // textBoxStcok
             // 
-            this.textBoxStcok.Location = new System.Drawing.Point(138, 283);
+            this.textBoxStcok.Location = new System.Drawing.Point(132, 323);
             this.textBoxStcok.Name = "textBoxStcok";
             this.textBoxStcok.Size = new System.Drawing.Size(130, 20);
             this.textBoxStcok.TabIndex = 35;
@@ -318,7 +320,7 @@
             this.buttonLimpiar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpiar.Image")));
             this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiar.Location = new System.Drawing.Point(28, 323);
+            this.buttonLimpiar.Location = new System.Drawing.Point(22, 363);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(155, 40);
             this.buttonLimpiar.TabIndex = 36;
@@ -327,12 +329,31 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click_1);
             // 
+            // textBoxLiga
+            // 
+            this.textBoxLiga.Location = new System.Drawing.Point(132, 80);
+            this.textBoxLiga.Name = "textBoxLiga";
+            this.textBoxLiga.Size = new System.Drawing.Size(130, 20);
+            this.textBoxLiga.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(18, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 29);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "LIGA";
+            // 
             // AgregarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(814, 677);
+            this.Controls.Add(this.textBoxLiga);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxStcok);
             this.Controls.Add(this.label5);
@@ -391,5 +412,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxStcok;
         private System.Windows.Forms.Button buttonLimpiar;
+        private System.Windows.Forms.TextBox textBoxLiga;
+        private System.Windows.Forms.Label label2;
     }
 }

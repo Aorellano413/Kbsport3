@@ -17,7 +17,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas";
+                    string query = "SELECT * FROM Kb_sport3.Camisas"; 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -30,6 +30,7 @@ namespace Persistencia
             return dt;
         }
 
+        
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
             DataTable dt = new DataTable();
@@ -39,7 +40,7 @@ namespace Persistencia
                 {
                     string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @nombre";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%"); // Filtra por el nombre
+                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");   
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -52,17 +53,19 @@ namespace Persistencia
             return dt;
         }
 
+        
         public bool InsertarCamisa(Camisa camisa)
         {
             try
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "INSERT INTO Kb_sport3.Camisas (equipo, talla, precio, tela, stock, foto) " +
-                                   "VALUES (@equipo, @talla, @precio, @tela, @stock, @foto)";
+                    string query = "INSERT INTO Kb_sport3.Camisas (liga, equipo, talla, precio, tela, stock, foto) " +
+                                   "VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
+                    cmd.Parameters.AddWithValue("@liga", camisa.Liga);
                     cmd.Parameters.AddWithValue("@equipo", camisa.Equipo);
                     cmd.Parameters.AddWithValue("@talla", camisa.Talla);
                     cmd.Parameters.AddWithValue("@precio", camisa.Precio);
