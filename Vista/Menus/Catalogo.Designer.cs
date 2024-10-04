@@ -96,7 +96,7 @@
             this.panelLiga.Name = "panelLiga";
             this.panelLiga.Size = new System.Drawing.Size(200, 490);
             this.panelLiga.TabIndex = 11;
-            this.panelLiga.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLiga_Paint);
+           
             // 
             // label1
             // 
@@ -115,7 +115,7 @@
             this.cbLiga.Name = "cbLiga";
             this.cbLiga.Size = new System.Drawing.Size(133, 21);
             this.cbLiga.TabIndex = 1;
-            this.cbLiga.SelectedIndexChanged += new System.EventHandler(this.cbLiga_SelectedIndexChanged);
+            
             // 
             // cbEquipo
             // 

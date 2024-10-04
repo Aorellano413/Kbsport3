@@ -51,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -66,16 +67,16 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 390);
+            this.panel1.Location = new System.Drawing.Point(0, 450);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(550, 60);
+            this.panel1.Size = new System.Drawing.Size(670, 60);
             this.panel1.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(438, 12);
+            this.label5.Location = new System.Drawing.Point(549, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 29);
             this.label5.TabIndex = 12;
@@ -84,7 +85,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(385, 0);
+            this.pictureBox3.Location = new System.Drawing.Point(496, 0);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(47, 56);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -121,7 +122,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(550, 60);
+            this.panel2.Size = new System.Drawing.Size(670, 60);
             this.panel2.TabIndex = 1;
             // 
             // buttonRegresarCliente
@@ -130,7 +131,7 @@
             this.buttonRegresarCliente.FlatAppearance.BorderSize = 0;
             this.buttonRegresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarCliente.Image")));
-            this.buttonRegresarCliente.Location = new System.Drawing.Point(456, 2);
+            this.buttonRegresarCliente.Location = new System.Drawing.Point(573, 4);
             this.buttonRegresarCliente.Name = "buttonRegresarCliente";
             this.buttonRegresarCliente.Size = new System.Drawing.Size(39, 35);
             this.buttonRegresarCliente.TabIndex = 8;
@@ -143,7 +144,7 @@
             this.buttonExitCliente.FlatAppearance.BorderSize = 0;
             this.buttonExitCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExitCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitCliente.Image")));
-            this.buttonExitCliente.Location = new System.Drawing.Point(501, 1);
+            this.buttonExitCliente.Location = new System.Drawing.Point(618, 3);
             this.buttonExitCliente.Name = "buttonExitCliente";
             this.buttonExitCliente.Size = new System.Drawing.Size(49, 37);
             this.buttonExitCliente.TabIndex = 9;
@@ -164,7 +165,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(179, 9);
+            this.label3.Location = new System.Drawing.Point(268, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 29);
             this.label3.TabIndex = 6;
@@ -174,7 +175,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(35, 193);
+            this.label1.Location = new System.Drawing.Point(35, 213);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 29);
             this.label1.TabIndex = 2;
@@ -182,7 +183,7 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(184, 91);
+            this.txtCedula.Location = new System.Drawing.Point(184, 111);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(125, 20);
             this.txtCedula.TabIndex = 3;
@@ -193,17 +194,18 @@
             this.buttonAceptarCliente.FlatAppearance.BorderSize = 0;
             this.buttonAceptarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAceptarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAceptarCliente.Image")));
-            this.buttonAceptarCliente.Location = new System.Drawing.Point(366, 333);
+            this.buttonAceptarCliente.Location = new System.Drawing.Point(40, 372);
             this.buttonAceptarCliente.Name = "buttonAceptarCliente";
             this.buttonAceptarCliente.Size = new System.Drawing.Size(66, 51);
             this.buttonAceptarCliente.TabIndex = 4;
             this.buttonAceptarCliente.UseVisualStyleBackColor = true;
+            this.buttonAceptarCliente.Click += new System.EventHandler(this.buttonAceptarCliente_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 81);
+            this.label2.Location = new System.Drawing.Point(35, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 29);
             this.label2.TabIndex = 5;
@@ -211,9 +213,8 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(184, 202);
+            this.txtApellido.Location = new System.Drawing.Point(184, 222);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.PasswordChar = '*';
             this.txtApellido.Size = new System.Drawing.Size(125, 20);
             this.txtApellido.TabIndex = 6;
             // 
@@ -223,7 +224,7 @@
             this.buttonBorrrar.FlatAppearance.BorderSize = 0;
             this.buttonBorrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBorrrar.Image = ((System.Drawing.Image)(resources.GetObject("buttonBorrrar.Image")));
-            this.buttonBorrrar.Location = new System.Drawing.Point(481, 333);
+            this.buttonBorrrar.Location = new System.Drawing.Point(245, 372);
             this.buttonBorrrar.Name = "buttonBorrrar";
             this.buttonBorrrar.Size = new System.Drawing.Size(66, 51);
             this.buttonBorrrar.TabIndex = 7;
@@ -232,9 +233,8 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(186, 258);
+            this.txtTelefono.Location = new System.Drawing.Point(186, 278);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.PasswordChar = '*';
             this.txtTelefono.Size = new System.Drawing.Size(125, 20);
             this.txtTelefono.TabIndex = 11;
             // 
@@ -242,7 +242,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(35, 141);
+            this.label6.Location = new System.Drawing.Point(35, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 29);
             this.label6.TabIndex = 10;
@@ -250,7 +250,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(186, 151);
+            this.txtNombre.Location = new System.Drawing.Point(186, 171);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(125, 20);
             this.txtNombre.TabIndex = 9;
@@ -259,7 +259,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 249);
+            this.label7.Location = new System.Drawing.Point(35, 269);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(93, 29);
             this.label7.TabIndex = 8;
@@ -267,9 +267,8 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(186, 311);
+            this.txtDireccion.Location = new System.Drawing.Point(186, 331);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.PasswordChar = '*';
             this.txtDireccion.Size = new System.Drawing.Size(125, 20);
             this.txtDireccion.TabIndex = 13;
             // 
@@ -277,18 +276,30 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(35, 302);
+            this.label8.Location = new System.Drawing.Point(35, 322);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 29);
             this.label8.TabIndex = 12;
             this.label8.Text = "DIRECCION:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(12, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(457, 23);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "INGRESA SOLAMENTE LA CEDULA SI YA HAS REGISTRADO ANTERIORMENTE";
             // 
             // LoginCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(550, 450);
+            this.ClientSize = new System.Drawing.Size(670, 510);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtTelefono);
@@ -342,5 +353,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

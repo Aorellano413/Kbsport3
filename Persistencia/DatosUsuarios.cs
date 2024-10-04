@@ -8,12 +8,12 @@ namespace Persistencia
     {
         private ConexionDAL conexionDAL = new ConexionDAL();
 
-        
+
         public Cliente ObtenerCliente(int cedula)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "SELECT * FROM CLIENTES WHERE Cedula = @cedula"; 
+                string query = "SELECT * FROM CLIENTES WHERE Cedula = @cedula";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@cedula", cedula);
                 using (var reader = cmd.ExecuteReader())
@@ -25,7 +25,7 @@ namespace Persistencia
                             Cedula = reader.GetInt32("Cedula"),
                             Nombre = reader.GetString("Nombre"),
                             Apellido = reader.GetString("Apellido"),
-                            Telefono = reader.GetInt32("Telefono"),
+                            Telefono = reader.GetString("Telefono"),  
                             Direccion = reader.GetString("Direccion")
                         };
                     }
@@ -33,6 +33,7 @@ namespace Persistencia
             }
             return null;
         }
+
 
 
         public void AgregarCliente(Cliente cliente)

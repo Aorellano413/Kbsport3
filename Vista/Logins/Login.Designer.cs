@@ -78,7 +78,7 @@
             this.buttonNuevoUsuario.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevoUsuario.Image")));
             this.buttonNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevoUsuario.Location = new System.Drawing.Point(13, 318);
+            this.buttonNuevoUsuario.Location = new System.Drawing.Point(76, 312);
             this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
             this.buttonNuevoUsuario.Size = new System.Drawing.Size(198, 60);
             this.buttonNuevoUsuario.TabIndex = 12;
@@ -92,7 +92,7 @@
             this.buttonExitLogin.FlatAppearance.BorderSize = 0;
             this.buttonExitLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExitLogin.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitLogin.Image")));
-            this.buttonExitLogin.Location = new System.Drawing.Point(308, 0);
+            this.buttonExitLogin.Location = new System.Drawing.Point(305, 4);
             this.buttonExitLogin.Name = "buttonExitLogin";
             this.buttonExitLogin.Size = new System.Drawing.Size(55, 34);
             this.buttonExitLogin.TabIndex = 11;
@@ -103,7 +103,7 @@
             // 
             this.textBoxContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxContraseña.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContraseña.Location = new System.Drawing.Point(86, 232);
+            this.textBoxContraseña.Location = new System.Drawing.Point(93, 206);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(195, 26);
@@ -113,7 +113,7 @@
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsuario.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsuario.Location = new System.Drawing.Point(82, 145);
+            this.textBoxUsuario.Location = new System.Drawing.Point(89, 119);
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(195, 26);
             this.textBoxUsuario.TabIndex = 9;
@@ -123,7 +123,7 @@
             this.buttonCancelar.FlatAppearance.BorderSize = 0;
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancelar.Image")));
-            this.buttonCancelar.Location = new System.Drawing.Point(209, 275);
+            this.buttonCancelar.Location = new System.Drawing.Point(216, 249);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(68, 40);
             this.buttonCancelar.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.buttonIngresar.FlatAppearance.BorderSize = 0;
             this.buttonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIngresar.Image = ((System.Drawing.Image)(resources.GetObject("buttonIngresar.Image")));
-            this.buttonIngresar.Location = new System.Drawing.Point(79, 264);
+            this.buttonIngresar.Location = new System.Drawing.Point(86, 238);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(84, 63);
             this.buttonIngresar.TabIndex = 6;
@@ -146,7 +146,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(76, 109);
+            this.lblUsuario.Location = new System.Drawing.Point(83, 83);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(87, 33);
             this.lblUsuario.TabIndex = 4;
@@ -156,7 +156,7 @@
             // 
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContraseña.Location = new System.Drawing.Point(76, 194);
+            this.labelContraseña.Location = new System.Drawing.Point(83, 168);
             this.labelContraseña.Name = "labelContraseña";
             this.labelContraseña.Size = new System.Drawing.Size(128, 33);
             this.labelContraseña.TabIndex = 3;
