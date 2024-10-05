@@ -14,7 +14,7 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            CargarCamisas(); // Cargar todas las camisas al inicio
+            CargarCamisas(); 
         }
 
         private void CargarCamisas()

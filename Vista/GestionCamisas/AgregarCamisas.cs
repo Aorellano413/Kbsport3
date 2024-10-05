@@ -109,12 +109,13 @@ namespace Vista
                 return;
             }
 
-            string liga = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;  // Corregido
+            string liga = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;
             string talla = ((Entidades.Talla)comboBoxTalla.SelectedItem).Nombre;
             string precio = textBoxPrecio.Text;
             string stock = textBoxStcok.Text;
             string tela = ((Entidades.Tela)comboBoxTela.SelectedItem).Nombre;
             string equipo = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
+
 
             DataRow nuevaFila = dt.NewRow();
             nuevaFila["LIGA"] = liga;
@@ -127,6 +128,21 @@ namespace Vista
 
             dt.Rows.Add(nuevaFila);
 
+
+            Camisa nuevaCamisa = new Camisa
+            {
+                Liga = liga,
+                Equipo = equipo,
+                Talla = talla,
+                Precio = Convert.ToDecimal(precio),
+                Tela = tela,
+                Stock = Convert.ToInt32(stock),
+                Foto = rutaImagenSeleccionada
+            };
+
+            camisasBD.InsertarCamisa(nuevaCamisa);
+
+
             comboBoxliga.SelectedIndex = -1;
             comboBoxTalla.SelectedIndex = -1;
             textBoxPrecio.Clear();
@@ -136,6 +152,7 @@ namespace Vista
             rutaImagenSeleccionada = null;
             pictureBoxFoto.Image = null;
         }
+
 
 
         private void buttonCerrarCamisas_Click(object sender, EventArgs e)
