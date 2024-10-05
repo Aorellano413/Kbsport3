@@ -19,6 +19,21 @@ namespace Logica
             return datos.ObtenerTelas();
         }
 
+        public List<Liga> ObtenerLigas()
+        {
+            return datos.ObtenerLigas();
+        }
+
+        public List<Equipo> ObtenerEquipos()
+        {
+            return datos.ObtenerEquipos();
+        }
+
+        public List<Talla> ObtenerTallas()
+        {
+            return datos.ObtenerTallas();
+        }
+
         public DataTable ObtenerTodasLasCamisas()
         {
             return datos.ObtenerTodasLasCamisas();

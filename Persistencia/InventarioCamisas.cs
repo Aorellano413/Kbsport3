@@ -8,7 +8,7 @@ namespace Persistencia
 {
     public class InventarioCamisas
     {
-        ConexionDAL conexion = new ConexionDAL();
+        private readonly ConexionDAL conexion = new ConexionDAL();
 
         public DataTable ObtenerTodasLasCamisas()
         {
@@ -29,7 +29,6 @@ namespace Persistencia
             }
             return dt;
         }
-
 
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
@@ -52,6 +51,7 @@ namespace Persistencia
             }
             return dt;
         }
+
         public bool InsertarCamisa(Camisa camisa)
         {
             try
@@ -81,6 +81,90 @@ namespace Persistencia
                 return false;
             }
         }
+
+        public List<Liga> ObtenerLigas()
+        {
+            List<Liga> ligas = new List<Liga>();
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "SELECT id_liga, nombre FROM Kb_sport3.Liga;";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Liga liga = new Liga
+                            {
+                                Id = reader.GetInt32("id_liga"),
+                                Nombre = reader.GetString("nombre")
+                            };
+                            ligas.Add(liga);
+                        }
+                    }
+                }
+            }
+            return ligas;
+        }
+
+        public List<Equipo> ObtenerEquipos()
+        {
+            List<Equipo> equipos = new List<Equipo>();
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "SELECT id_equipo, nombre FROM Kb_sport3.Equipo;";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Equipo equipo = new Equipo
+                            {
+                                Id = reader.GetInt32("id_equipo"),
+                                Nombre = reader.GetString("nombre")
+                            };
+                            equipos.Add(equipo);
+                        }
+                    }
+                }
+            }
+            return equipos;
+        }
+
+        public List<Talla> ObtenerTallas()
+        {
+            List<Talla> tallas = new List<Talla>();
+            try
+            {
+                using (MySqlConnection connection = conexion.AbrirConexion())
+                {
+                    string query = "SELECT id_talla, nombre FROM Kb_sport3.Talla;";
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Talla talla = new Talla
+                                {
+                                    Id = reader.GetInt32("id_talla"),
+                                    Nombre = reader.GetString("nombre")
+                                };
+                                tallas.Add(talla);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener las tallas: " + ex.Message);
+            }
+            return tallas;
+        }
+
+
 
         public List<Tela> ObtenerTelas()
         {

@@ -32,7 +32,7 @@ namespace Persistencia
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
             {
-                string query = "INSERT INTO telas (nombre, stock) VALUES (@nombre, @stock)";
+                string query = "INSERT INTO Kb_sport3.telas (nombre, stock) VALUES (@nombre, @stock)";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@nombre", tela.Nombre);
@@ -69,7 +69,7 @@ namespace Persistencia
                     try
                     {
                         string nombreTela = "";
-                        string queryGetNombreTela = "SELECT nombre FROM telas WHERE id_tela = @idTela;";
+                        string queryGetNombreTela = "SELECT nombre FROM Kb_sport3.telas WHERE id_tela = @idTela;";
                         using (MySqlCommand cmdGetNombreTela = new MySqlCommand(queryGetNombreTela, conn, transaction))
                         {
                             cmdGetNombreTela.Parameters.AddWithValue("@idTela", idTela);
@@ -82,7 +82,7 @@ namespace Persistencia
                             }
                         }
 
-                        string queryDeleteTela = "DELETE FROM telas WHERE id_tela = @idTela;";
+                        string queryDeleteTela = "DELETE FROM Kb_sport3.telas WHERE id_tela = @idTela;";
                         using (MySqlCommand cmdDeleteTela = new MySqlCommand(queryDeleteTela, conn, transaction))
                         {
                             cmdDeleteTela.Parameters.AddWithValue("@idTela", idTela);
@@ -113,6 +113,7 @@ namespace Persistencia
                 }
             }
         }
+
         public bool ExisteTela(string nombre)
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
@@ -127,5 +128,45 @@ namespace Persistencia
             }
         }
 
+
+
+        public void InsertarEquipo(Equipo equipo)
+        {
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "INSERT INTO Kb_sport3.equipo (nombre) VALUES (@nombre)";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", equipo.Nombre);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void InsertarTalla(Talla talla)
+        {
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "INSERT INTO Kb_sport3.talla (nombre) VALUES (@nombre)";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", talla.Nombre);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void InsertarLiga(Liga liga)
+        {
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "INSERT INTO Kb_sport3.liga (nombre) VALUES (@nombre)";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", liga.Nombre);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

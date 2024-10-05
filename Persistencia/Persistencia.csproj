@@ -93,7 +93,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CamisaFiltrado.cs" />
     <Compile Include="ConexionDAL.cs" />
     <Compile Include="DatosInventario.cs" />
     <Compile Include="DatosUsuarios.cs" />

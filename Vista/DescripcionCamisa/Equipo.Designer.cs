@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Equipo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAtrasEquipo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxEquipo = new System.Windows.Forms.TextBox();
             this.buttonAceptarEquipo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonAtrasEquipo = new System.Windows.Forms.Button();
             this.buttonBorrarEquipo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +50,18 @@
             this.panel1.Size = new System.Drawing.Size(563, 43);
             this.panel1.TabIndex = 0;
             // 
+            // buttonAtrasEquipo
+            // 
+            this.buttonAtrasEquipo.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasEquipo.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasEquipo.Image")));
+            this.buttonAtrasEquipo.Location = new System.Drawing.Point(528, 3);
+            this.buttonAtrasEquipo.Name = "buttonAtrasEquipo";
+            this.buttonAtrasEquipo.Size = new System.Drawing.Size(32, 36);
+            this.buttonAtrasEquipo.TabIndex = 5;
+            this.buttonAtrasEquipo.UseVisualStyleBackColor = true;
+            this.buttonAtrasEquipo.Click += new System.EventHandler(this.buttonAtrasEquipo_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -60,12 +72,12 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "EQUIPO DE FUTBOL";
             // 
-            // textBox1
+            // textBoxEquipo
             // 
-            this.textBox1.Location = new System.Drawing.Point(290, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxEquipo.Location = new System.Drawing.Point(290, 90);
+            this.textBoxEquipo.Name = "textBoxEquipo";
+            this.textBoxEquipo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEquipo.TabIndex = 2;
             // 
             // buttonAceptarEquipo
             // 
@@ -89,18 +101,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "NOMBRE DE EQUIPO DE FUTBOL:\r\n";
             // 
-            // buttonAtrasEquipo
-            // 
-            this.buttonAtrasEquipo.FlatAppearance.BorderSize = 0;
-            this.buttonAtrasEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtrasEquipo.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasEquipo.Image")));
-            this.buttonAtrasEquipo.Location = new System.Drawing.Point(528, 3);
-            this.buttonAtrasEquipo.Name = "buttonAtrasEquipo";
-            this.buttonAtrasEquipo.Size = new System.Drawing.Size(32, 36);
-            this.buttonAtrasEquipo.TabIndex = 5;
-            this.buttonAtrasEquipo.UseVisualStyleBackColor = true;
-            this.buttonAtrasEquipo.Click += new System.EventHandler(this.buttonAtrasEquipo_Click);
-            // 
             // buttonBorrarEquipo
             // 
             this.buttonBorrarEquipo.FlatAppearance.BorderSize = 0;
@@ -122,7 +122,7 @@
             this.Controls.Add(this.buttonBorrarEquipo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAceptarEquipo);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxEquipo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Equipo";
@@ -138,7 +138,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxEquipo;
         private System.Windows.Forms.Button buttonAceptarEquipo;
         private System.Windows.Forms.Button buttonAtrasEquipo;
         private System.Windows.Forms.Label label2;

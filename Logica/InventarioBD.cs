@@ -18,6 +18,21 @@ namespace Logica
             datos.InsertarTela(tela);
         }
 
+        public void InsertarEquipo(Equipo equipo) 
+        {
+            datos.InsertarEquipo(equipo);
+        }
+
+        public void InsertarTalla(Talla talla) 
+        {
+            datos.InsertarTalla(talla);
+        }
+
+        public void InsertarLiga(Liga liga) 
+        {
+            datos.InsertarLiga(liga);
+        }
+
         public DataTable BuscarTelaPorNombre(string nombre)
         {
             return datos.BuscarTelaPorNombre(nombre);
@@ -32,10 +47,10 @@ namespace Logica
         {
             datos.ActualizarTela(tela);
         }
+
         public bool ExisteTela(string nombre)
         {
             return datos.ExisteTela(nombre);
         }
-
     }
 }

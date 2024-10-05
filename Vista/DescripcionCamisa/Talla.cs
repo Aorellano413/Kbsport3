@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
 
 namespace Vista
 {
     public partial class Talla : Form
     {
+        InventarioBD inventario = new InventarioBD();
+
         public string Nombre { get; internal set; }
 
         public Talla()
@@ -27,14 +30,58 @@ namespace Vista
             this.Close();
         }
 
-        private void buttonAcepetarTalla_Click(object sender, EventArgs e)
+        private void buttonAceptarTalla_Click(object sender, EventArgs e)
         {
+            string nombre = txtTalla.Text.Trim();
 
+            try
+            {
+
+                Entidades.Talla nuevaTalla = new Entidades.Talla
+                {
+                    Nombre = nombre
+                };
+
+
+                inventario.InsertarTalla(nuevaTalla);
+                MessageBox.Show("Talla guardada exitosamente.");
+
+                txtTalla.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void buttonBorrarTalla_Click(object sender, EventArgs e)
         {
+            txtTalla.Clear();
+        }
 
+        private void buttonAcepetarTalla_Click(object sender, EventArgs e)
+        {
+
+            string nombre = txtTalla.Text.Trim();
+
+            try
+            {
+
+                Entidades.Talla nuevaTalla = new Entidades.Talla
+                {
+                    Nombre = nombre
+                };
+
+
+                inventario.InsertarTalla(nuevaTalla);
+                MessageBox.Show("Talla guardada exitosamente.");
+
+                txtTalla.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

@@ -285,6 +285,10 @@
       <Project>{bf9be730-8ffd-408d-993d-dc607d407ab6}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
+      <Project>{f5c807b0-bac3-4752-87b9-a091409f9e6b}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
