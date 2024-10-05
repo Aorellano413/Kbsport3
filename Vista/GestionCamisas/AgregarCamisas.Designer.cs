@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarCamisas));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAgregarCamisas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTallaCamisas = new System.Windows.Forms.TextBox();
             this.textBoxPrecioCamisas = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCerrarCamisas = new System.Windows.Forms.Button();
@@ -52,8 +50,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxStcok = new System.Windows.Forms.TextBox();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.textBoxLiga = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxEquipo = new System.Windows.Forms.ComboBox();
+            this.comboBoxLiga = new System.Windows.Forms.ComboBox();
+            this.comboBoxTalla = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).BeginInit();
@@ -69,13 +69,6 @@
             this.label1.Size = new System.Drawing.Size(69, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "EQUIPO";
-            // 
-            // textBoxAgregarCamisas
-            // 
-            this.textBoxAgregarCamisas.Location = new System.Drawing.Point(132, 126);
-            this.textBoxAgregarCamisas.Name = "textBoxAgregarCamisas";
-            this.textBoxAgregarCamisas.Size = new System.Drawing.Size(130, 20);
-            this.textBoxAgregarCamisas.TabIndex = 2;
             // 
             // label3
             // 
@@ -96,13 +89,6 @@
             this.label4.Size = new System.Drawing.Size(60, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "TALLA";
-            // 
-            // textBoxTallaCamisas
-            // 
-            this.textBoxTallaCamisas.Location = new System.Drawing.Point(132, 175);
-            this.textBoxTallaCamisas.Name = "textBoxTallaCamisas";
-            this.textBoxTallaCamisas.Size = new System.Drawing.Size(130, 20);
-            this.textBoxTallaCamisas.TabIndex = 7;
             // 
             // textBoxPrecioCamisas
             // 
@@ -329,13 +315,6 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click_1);
             // 
-            // textBoxLiga
-            // 
-            this.textBoxLiga.Location = new System.Drawing.Point(132, 80);
-            this.textBoxLiga.Name = "textBoxLiga";
-            this.textBoxLiga.Size = new System.Drawing.Size(130, 20);
-            this.textBoxLiga.TabIndex = 38;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -346,13 +325,39 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "LIGA";
             // 
+            // comboBoxEquipo
+            // 
+            this.comboBoxEquipo.FormattingEnabled = true;
+            this.comboBoxEquipo.Location = new System.Drawing.Point(132, 125);
+            this.comboBoxEquipo.Name = "comboBoxEquipo";
+            this.comboBoxEquipo.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxEquipo.TabIndex = 38;
+            // 
+            // comboBoxLiga
+            // 
+            this.comboBoxLiga.FormattingEnabled = true;
+            this.comboBoxLiga.Location = new System.Drawing.Point(132, 84);
+            this.comboBoxLiga.Name = "comboBoxLiga";
+            this.comboBoxLiga.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxLiga.TabIndex = 39;
+            // 
+            // comboBoxTalla
+            // 
+            this.comboBoxTalla.FormattingEnabled = true;
+            this.comboBoxTalla.Location = new System.Drawing.Point(132, 174);
+            this.comboBoxTalla.Name = "comboBoxTalla";
+            this.comboBoxTalla.Size = new System.Drawing.Size(130, 21);
+            this.comboBoxTalla.TabIndex = 40;
+            // 
             // AgregarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(814, 677);
-            this.Controls.Add(this.textBoxLiga);
+            this.Controls.Add(this.comboBoxTalla);
+            this.Controls.Add(this.comboBoxLiga);
+            this.Controls.Add(this.comboBoxEquipo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxStcok);
@@ -369,10 +374,8 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPrecioCamisas);
-            this.Controls.Add(this.textBoxTallaCamisas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxAgregarCamisas);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarCamisas";
@@ -390,10 +393,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxAgregarCamisas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxTallaCamisas;
         private System.Windows.Forms.TextBox textBoxPrecioCamisas;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
@@ -412,7 +413,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxStcok;
         private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.TextBox textBoxLiga;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxEquipo;
+        private System.Windows.Forms.ComboBox comboBoxLiga;
+        private System.Windows.Forms.ComboBox comboBoxTalla;
     }
 }

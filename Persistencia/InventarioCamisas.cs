@@ -17,7 +17,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas"; 
+                    string query = "SELECT * FROM Kb_sport3.Camisas";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -30,7 +30,7 @@ namespace Persistencia
             return dt;
         }
 
-        
+
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
             DataTable dt = new DataTable();
@@ -40,7 +40,7 @@ namespace Persistencia
                 {
                     string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @nombre";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");   
+                    cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -52,51 +52,6 @@ namespace Persistencia
             }
             return dt;
         }
-
-        //public DataTable ObtenerCamisasPorEquipo(string equipo)
-        //{
-        //    DataTable dt = new DataTable();
-        //    try
-        //    {
-        //        using (MySqlConnection conn = conexion.AbrirConexion())
-        //        {
-        //            string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @equipo";
-        //            MySqlCommand cmd = new MySqlCommand(query, conn);
-        //            cmd.Parameters.AddWithValue("@equipo", "%" + equipo + "%");
-
-        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-        //            adapter.Fill(dt);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error al obtener las camisas por equipo: " + ex.Message);
-        //    }
-        //    return dt;
-        //}
-
-        //public DataTable ObtenerCamisasPorLiga(string Liga)
-        //{
-        //    DataTable dt = new DataTable();
-        //    try
-        //    {
-        //        using (MySqlConnection conn = conexion.AbrirConexion())
-        //        {
-        //            string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @nombre";
-        //            MySqlCommand cmd = new MySqlCommand(query, conn);
-        //            cmd.Parameters.AddWithValue("@Liga", "%" + Liga + "%");
-
-        //            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-        //            adapter.Fill(dt);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error al obtener las camisas por liga: " + ex.Message);
-        //    }
-        //    return dt;
-        //}
-
         public bool InsertarCamisa(Camisa camisa)
         {
             try

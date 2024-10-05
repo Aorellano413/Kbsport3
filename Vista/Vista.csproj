@@ -98,6 +98,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DescripcionCamisa\Equipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DescripcionCamisa\Equipo.Designer.cs">
+      <DependentUpon>Equipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DescripcionCamisa\Liga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DescripcionCamisa\Liga.Designer.cs">
+      <DependentUpon>Liga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menus\Catalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +196,21 @@
     <Compile Include="GestionTelas\AgregarTela.Designer.cs">
       <DependentUpon>AgregarTela.cs</DependentUpon>
     </Compile>
+    <Compile Include="DescripcionCamisa\Talla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DescripcionCamisa\Talla.Designer.cs">
+      <DependentUpon>Talla.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DescripcionCamisa\Equipo.resx">
+      <DependentUpon>Equipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescripcionCamisa\Liga.resx">
+      <DependentUpon>Liga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DescripcionCamisa\Talla.resx">
+      <DependentUpon>Talla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionTelas\EliminarTela.resx">
       <DependentUpon>EliminarTela.cs</DependentUpon>
     </EmbeddedResource>

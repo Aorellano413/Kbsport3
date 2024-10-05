@@ -81,5 +81,26 @@ namespace Vista
             hora.Text = DateTime.Now.ToLongTimeString();
             fecha.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void buttonEquipo_Click(object sender, EventArgs e)
+        {
+            Equipo equipo = new Equipo();
+            equipo.Show();
+            this.Close();
+        }
+
+        private void buttonTalla_Click(object sender, EventArgs e)
+        {
+            Talla talla = new Talla();
+            talla.Show();
+            this.Close();
+        }
+
+        private void buttonLiga_Click(object sender, EventArgs e)
+        {
+            Liga liga = new Liga();
+            liga.Show();
+            this.Close();
+        }
     }
 }
