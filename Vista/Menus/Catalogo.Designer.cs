@@ -34,9 +34,17 @@
             this.buttonSalirCliente = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelLiga = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbLiga = new System.Windows.Forms.ComboBox();
-            this.cbEquipo = new System.Windows.Forms.ComboBox();
+            this.buttonitalia = new System.Windows.Forms.Button();
+            this.buttonEspaña = new System.Windows.Forms.Button();
+            this.buttonInglaterra = new System.Windows.Forms.Button();
+            this.buttonColombia = new System.Windows.Forms.Button();
+            this.buttonConfirmar = new System.Windows.Forms.Button();
+            this.txtEfectivo = new System.Windows.Forms.TextBox();
+            this.labelTotalApagar = new System.Windows.Forms.Label();
+            this.labelEfectivo = new System.Windows.Forms.Label();
+            this.labelPagar = new System.Windows.Forms.Label();
+            this.labelCambioRegreso = new System.Windows.Forms.Label();
+            this.labelCambio = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             this.SuspendLayout();
@@ -88,49 +96,138 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelLiga.Controls.Add(this.cbEquipo);
-            this.panelLiga.Controls.Add(this.cbLiga);
-            this.panelLiga.Controls.Add(this.label1);
+            this.panelLiga.Controls.Add(this.buttonitalia);
+            this.panelLiga.Controls.Add(this.buttonEspaña);
+            this.panelLiga.Controls.Add(this.buttonInglaterra);
+            this.panelLiga.Controls.Add(this.buttonColombia);
             this.panelLiga.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLiga.Location = new System.Drawing.Point(0, 55);
             this.panelLiga.Name = "panelLiga";
-            this.panelLiga.Size = new System.Drawing.Size(200, 490);
+            this.panelLiga.Size = new System.Drawing.Size(200, 580);
             this.panelLiga.TabIndex = 11;
-           
             // 
-            // label1
+            // buttonitalia
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(11, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Liga";
+            this.buttonitalia.FlatAppearance.BorderSize = 0;
+            this.buttonitalia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonitalia.Location = new System.Drawing.Point(3, 435);
+            this.buttonitalia.Name = "buttonitalia";
+            this.buttonitalia.Size = new System.Drawing.Size(194, 139);
+            this.buttonitalia.TabIndex = 3;
+            this.buttonitalia.UseVisualStyleBackColor = true;
             // 
-            // cbLiga
+            // buttonEspaña
             // 
-            this.cbLiga.FormattingEnabled = true;
-            this.cbLiga.Location = new System.Drawing.Point(55, 32);
-            this.cbLiga.Name = "cbLiga";
-            this.cbLiga.Size = new System.Drawing.Size(133, 21);
-            this.cbLiga.TabIndex = 1;
-            
+            this.buttonEspaña.FlatAppearance.BorderSize = 0;
+            this.buttonEspaña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEspaña.Location = new System.Drawing.Point(3, 290);
+            this.buttonEspaña.Name = "buttonEspaña";
+            this.buttonEspaña.Size = new System.Drawing.Size(194, 139);
+            this.buttonEspaña.TabIndex = 2;
+            this.buttonEspaña.UseVisualStyleBackColor = true;
             // 
-            // cbEquipo
+            // buttonInglaterra
             // 
-            this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(53, 97);
-            this.cbEquipo.Name = "cbEquipo";
-            this.cbEquipo.Size = new System.Drawing.Size(134, 21);
-            this.cbEquipo.TabIndex = 2;
+            this.buttonInglaterra.FlatAppearance.BorderSize = 0;
+            this.buttonInglaterra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInglaterra.Location = new System.Drawing.Point(3, 145);
+            this.buttonInglaterra.Name = "buttonInglaterra";
+            this.buttonInglaterra.Size = new System.Drawing.Size(194, 139);
+            this.buttonInglaterra.TabIndex = 1;
+            this.buttonInglaterra.UseVisualStyleBackColor = true;
+            // 
+            // buttonColombia
+            // 
+            this.buttonColombia.FlatAppearance.BorderSize = 0;
+            this.buttonColombia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonColombia.Location = new System.Drawing.Point(3, 0);
+            this.buttonColombia.Name = "buttonColombia";
+            this.buttonColombia.Size = new System.Drawing.Size(194, 139);
+            this.buttonColombia.TabIndex = 0;
+            this.buttonColombia.UseVisualStyleBackColor = true;
+            // 
+            // buttonConfirmar
+            // 
+            this.buttonConfirmar.FlatAppearance.BorderSize = 0;
+            this.buttonConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("buttonConfirmar.Image")));
+            this.buttonConfirmar.Location = new System.Drawing.Point(206, 587);
+            this.buttonConfirmar.Name = "buttonConfirmar";
+            this.buttonConfirmar.Size = new System.Drawing.Size(45, 42);
+            this.buttonConfirmar.TabIndex = 17;
+            this.buttonConfirmar.UseVisualStyleBackColor = true;
+            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
+            // 
+            // txtEfectivo
+            // 
+            this.txtEfectivo.Location = new System.Drawing.Point(352, 516);
+            this.txtEfectivo.Name = "txtEfectivo";
+            this.txtEfectivo.Size = new System.Drawing.Size(100, 20);
+            this.txtEfectivo.TabIndex = 21;
+            // 
+            // labelTotalApagar
+            // 
+            this.labelTotalApagar.AutoSize = true;
+            this.labelTotalApagar.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalApagar.Location = new System.Drawing.Point(347, 455);
+            this.labelTotalApagar.Name = "labelTotalApagar";
+            this.labelTotalApagar.Size = new System.Drawing.Size(23, 29);
+            this.labelTotalApagar.TabIndex = 20;
+            this.labelTotalApagar.Text = "0";
+            // 
+            // labelEfectivo
+            // 
+            this.labelEfectivo.AutoSize = true;
+            this.labelEfectivo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEfectivo.Location = new System.Drawing.Point(206, 507);
+            this.labelEfectivo.Name = "labelEfectivo";
+            this.labelEfectivo.Size = new System.Drawing.Size(97, 29);
+            this.labelEfectivo.TabIndex = 18;
+            this.labelEfectivo.Text = "EFECTIVO  :";
+            // 
+            // labelPagar
+            // 
+            this.labelPagar.AutoSize = true;
+            this.labelPagar.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPagar.Location = new System.Drawing.Point(206, 455);
+            this.labelPagar.Name = "labelPagar";
+            this.labelPagar.Size = new System.Drawing.Size(140, 29);
+            this.labelPagar.TabIndex = 19;
+            this.labelPagar.Text = "TOTAL A PAGAR :";
+            // 
+            // labelCambioRegreso
+            // 
+            this.labelCambioRegreso.AutoSize = true;
+            this.labelCambioRegreso.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCambioRegreso.Location = new System.Drawing.Point(347, 555);
+            this.labelCambioRegreso.Name = "labelCambioRegreso";
+            this.labelCambioRegreso.Size = new System.Drawing.Size(23, 29);
+            this.labelCambioRegreso.TabIndex = 23;
+            this.labelCambioRegreso.Text = "0";
+            // 
+            // labelCambio
+            // 
+            this.labelCambio.AutoSize = true;
+            this.labelCambio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCambio.Location = new System.Drawing.Point(206, 555);
+            this.labelCambio.Name = "labelCambio";
+            this.labelCambio.Size = new System.Drawing.Size(75, 29);
+            this.labelCambio.TabIndex = 22;
+            this.labelCambio.Text = "CAMBIO:";
             // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1134, 545);
+            this.ClientSize = new System.Drawing.Size(1134, 635);
+            this.Controls.Add(this.labelCambioRegreso);
+            this.Controls.Add(this.labelCambio);
+            this.Controls.Add(this.buttonConfirmar);
+            this.Controls.Add(this.txtEfectivo);
+            this.Controls.Add(this.labelTotalApagar);
+            this.Controls.Add(this.labelEfectivo);
+            this.Controls.Add(this.labelPagar);
             this.Controls.Add(this.panelLiga);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Colombiana);
@@ -139,8 +236,8 @@
             this.Text = "Catalogo";
             this.panel1.ResumeLayout(false);
             this.panelLiga.ResumeLayout(false);
-            this.panelLiga.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,8 +248,16 @@
         private System.Windows.Forms.Button buttonSalirCliente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLiga;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbEquipo;
-        private System.Windows.Forms.ComboBox cbLiga;
+        private System.Windows.Forms.Button buttonEspaña;
+        private System.Windows.Forms.Button buttonInglaterra;
+        private System.Windows.Forms.Button buttonitalia;
+        private System.Windows.Forms.Button buttonColombia;
+        private System.Windows.Forms.Button buttonConfirmar;
+        private System.Windows.Forms.TextBox txtEfectivo;
+        private System.Windows.Forms.Label labelTotalApagar;
+        private System.Windows.Forms.Label labelEfectivo;
+        private System.Windows.Forms.Label labelPagar;
+        private System.Windows.Forms.Label labelCambioRegreso;
+        private System.Windows.Forms.Label labelCambio;
     }
 }

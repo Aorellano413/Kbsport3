@@ -10,6 +10,8 @@ namespace Vista
     {
         CamisasBD camisasBD = new CamisasBD();
         private Panel panelSeleccionado = null;
+        private decimal totalAPagar = 0;
+        private decimal efectivoIngresado = 0;
 
         public Catalogo()
         {
@@ -18,13 +20,18 @@ namespace Vista
             CargarCamisasConFotos();
         }
 
-        private void CargarCamisasConFotos()
+        private void CargarCamisasConFotos(string liga = null)
         {
             DataTable camisas = camisasBD.ObtenerTodasLasCamisas();
             Colombiana.Controls.Clear();
 
             foreach (DataRow fila in camisas.Rows)
             {
+                if (liga != null && fila["liga"].ToString() != liga)
+                {
+                    continue;
+                }
+
                 PictureBox pictureBoxFoto = new PictureBox();
                 pictureBoxFoto.Size = new Size(100, 100);
                 pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -45,7 +52,10 @@ namespace Vista
                 panelCamisa.Controls.Add(labelInfo);
                 labelInfo.Location = new Point(10, 120);
 
+
                 panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila); 
+                labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila); 
 
                 Colombiana.Controls.Add(panelCamisa);
             }
@@ -65,8 +75,13 @@ namespace Vista
             string tallaSeleccionada = datosCamisa["talla"].ToString();
             decimal precioSeleccionado = Convert.ToDecimal(datosCamisa["precio"]);
 
-            MessageBox.Show($"Has seleccionado la camisa del equipo {equipoSeleccionado}, Talla: {tallaSeleccionada}, Precio: {precioSeleccionado:C}");
+            totalAPagar += precioSeleccionado;
+            labelTotalApagar.Text = totalAPagar.ToString("C");
+
+            MessageBox.Show($"Has seleccionado la camisa del equipo {equipoSeleccionado}, Talla: {tallaSeleccionada}, Precio: {precioSeleccionado:C}.\nTotal a pagar: {totalAPagar:C}");
         }
+
+
 
         private void buttonAtrasCliente_Click(object sender, EventArgs e)
         {
@@ -80,6 +95,32 @@ namespace Vista
             this.Close();
         }
 
-       
+        private void buttonConfirmar_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtEfectivo.Text, out efectivoIngresado))
+            {
+                if (efectivoIngresado >= totalAPagar)
+                {
+                    decimal cambio = efectivoIngresado - totalAPagar;
+                    labelCambioRegreso.Text = cambio.ToString("C");
+
+              
+                    MessageBox.Show("Compra exitosa,Gracias por prefeir Kb_sport3");
+                    totalAPagar = 0;
+                    labelTotalApagar.Text = totalAPagar.ToString("C");
+                    txtEfectivo.Clear();
+                    labelCambioRegreso.Text = "$0"; 
+                }
+                else
+                {
+                    labelCambioRegreso.Text = $"Falta: {(totalAPagar - efectivoIngresado):C}";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese una cantidad válida de efectivo.");
+            }
+        }
+
     }
 }
