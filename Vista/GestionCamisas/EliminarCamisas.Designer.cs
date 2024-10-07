@@ -66,7 +66,7 @@
             // 
             // textBuscarCa
             // 
-            this.textBuscarCa.Location = new System.Drawing.Point(12, 28);
+            this.textBuscarCa.Location = new System.Drawing.Point(12, 40);
             this.textBuscarCa.Name = "textBuscarCa";
             this.textBuscarCa.Size = new System.Drawing.Size(150, 20);
             this.textBuscarCa.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.buttonAtrasEliminar.FlatAppearance.BorderSize = 0;
             this.buttonAtrasEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasEliminar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasEliminar.Image")));
-            this.buttonAtrasEliminar.Location = new System.Drawing.Point(724, 2);
+            this.buttonAtrasEliminar.Location = new System.Drawing.Point(12, 2);
             this.buttonAtrasEliminar.Name = "buttonAtrasEliminar";
             this.buttonAtrasEliminar.Size = new System.Drawing.Size(29, 32);
             this.buttonAtrasEliminar.TabIndex = 15;

@@ -153,7 +153,7 @@
             this.buttonAtrasAdministrador.FlatAppearance.BorderSize = 0;
             this.buttonAtrasAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasAdministrador.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasAdministrador.Image")));
-            this.buttonAtrasAdministrador.Location = new System.Drawing.Point(1016, 3);
+            this.buttonAtrasAdministrador.Location = new System.Drawing.Point(12, 3);
             this.buttonAtrasAdministrador.Name = "buttonAtrasAdministrador";
             this.buttonAtrasAdministrador.Size = new System.Drawing.Size(30, 32);
             this.buttonAtrasAdministrador.TabIndex = 5;

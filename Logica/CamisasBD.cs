@@ -43,5 +43,11 @@ namespace Logica
         {
             return datos.ObtenerCamisasPorNombre(nombre);
         }
+
+
+        public DataTable ObtenerCamisasPorLiga(string liga)
+        {
+            return datos.ObtenerCamisasPorLiga(liga);
+        }
     }
 }

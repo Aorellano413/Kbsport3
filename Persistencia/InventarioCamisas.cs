@@ -52,6 +52,30 @@ namespace Persistencia
             return dt;
         }
 
+        public DataTable ObtenerCamisasPorLiga(string liga)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+              
+                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE liga LIKE @liga";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@liga", "%" + liga + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener las camisas por liga: " + ex.Message);
+            }
+            return dt;
+        }
+
+
         public bool InsertarCamisa(Camisa camisa)
         {
             try

@@ -58,7 +58,7 @@
             // 
             // textBoxNombreCamisas
             // 
-            this.textBoxNombreCamisas.Location = new System.Drawing.Point(28, 31);
+            this.textBoxNombreCamisas.Location = new System.Drawing.Point(28, 33);
             this.textBoxNombreCamisas.Name = "textBoxNombreCamisas";
             this.textBoxNombreCamisas.Size = new System.Drawing.Size(120, 20);
             this.textBoxNombreCamisas.TabIndex = 2;
@@ -68,11 +68,12 @@
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(180, 23);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 38);
+            this.button1.Size = new System.Drawing.Size(139, 38);
             this.button1.TabIndex = 3;
             this.button1.Text = "RESTABLECER";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -98,7 +99,7 @@
             this.buttonDevolverStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDevolverStock.Image = ((System.Drawing.Image)(resources.GetObject("buttonDevolverStock.Image")));
             this.buttonDevolverStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDevolverStock.Location = new System.Drawing.Point(718, 3);
+            this.buttonDevolverStock.Location = new System.Drawing.Point(1, 3);
             this.buttonDevolverStock.Name = "buttonDevolverStock";
             this.buttonDevolverStock.Size = new System.Drawing.Size(35, 29);
             this.buttonDevolverStock.TabIndex = 5;

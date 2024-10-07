@@ -131,7 +131,7 @@
             this.buttonRegresarCliente.FlatAppearance.BorderSize = 0;
             this.buttonRegresarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegresarCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarCliente.Image")));
-            this.buttonRegresarCliente.Location = new System.Drawing.Point(573, 4);
+            this.buttonRegresarCliente.Location = new System.Drawing.Point(3, 11);
             this.buttonRegresarCliente.Name = "buttonRegresarCliente";
             this.buttonRegresarCliente.Size = new System.Drawing.Size(39, 35);
             this.buttonRegresarCliente.TabIndex = 8;
@@ -154,7 +154,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(47, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 56);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

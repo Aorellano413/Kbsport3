@@ -119,7 +119,7 @@
             this.buttonAtrasCamisas.FlatAppearance.BorderSize = 0;
             this.buttonAtrasCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasCamisas.Image")));
-            this.buttonAtrasCamisas.Location = new System.Drawing.Point(728, 2);
+            this.buttonAtrasCamisas.Location = new System.Drawing.Point(3, 2);
             this.buttonAtrasCamisas.Name = "buttonAtrasCamisas";
             this.buttonAtrasCamisas.Size = new System.Drawing.Size(39, 35);
             this.buttonAtrasCamisas.TabIndex = 13;

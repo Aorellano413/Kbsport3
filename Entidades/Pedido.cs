@@ -10,7 +10,6 @@ namespace Entidades
     {
         public int Id { get; set; }
         public DateTime FechaPedido { get; set; }
-        public int IdCliente { get; set; }
-        public List<DetallePedido> Detalles { get; set; } = new List<DetallePedido>();
+        public int Cedula { get; set; }
     }
 }

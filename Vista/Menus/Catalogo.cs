@@ -23,11 +23,11 @@ namespace Vista
         private void CargarCamisasConFotos(string liga = null)
         {
             DataTable camisas = camisasBD.ObtenerTodasLasCamisas();
-            Colombiana.Controls.Clear();
+            flowLayoutPanelCamisasVentas.Controls.Clear();
 
             foreach (DataRow fila in camisas.Rows)
             {
-                if (liga != null && fila["liga"].ToString() != liga)
+                if (liga != null && fila["liga"].ToString().ToLower() != liga.ToLower())
                 {
                     continue;
                 }
@@ -52,12 +52,11 @@ namespace Vista
                 panelCamisa.Controls.Add(labelInfo);
                 labelInfo.Location = new Point(10, 120);
 
-
                 panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
-                pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila); 
-                labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila); 
+                pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
 
-                Colombiana.Controls.Add(panelCamisa);
+                flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
 
@@ -81,8 +80,6 @@ namespace Vista
             MessageBox.Show($"Has seleccionado la camisa del equipo {equipoSeleccionado}, Talla: {tallaSeleccionada}, Precio: {precioSeleccionado:C}.\nTotal a pagar: {totalAPagar:C}");
         }
 
-
-
         private void buttonAtrasCliente_Click(object sender, EventArgs e)
         {
             MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
@@ -104,12 +101,11 @@ namespace Vista
                     decimal cambio = efectivoIngresado - totalAPagar;
                     labelCambioRegreso.Text = cambio.ToString("C");
 
-              
-                    MessageBox.Show("Compra exitosa,Gracias por prefeir Kb_sport3");
+                    MessageBox.Show("Compra exitosa. Gracias por preferir Kb_sport3");
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
-                    labelCambioRegreso.Text = "$0"; 
+                    labelCambioRegreso.Text = "$0";
                 }
                 else
                 {
@@ -122,5 +118,18 @@ namespace Vista
             }
         }
 
+        private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = textBoxFiltrar.Text;
+            CargarCamisasConFotos(filtro);
+        }
+
+        private void buttonRestablecerCatalogo_Click(object sender, EventArgs e)
+        {
+
+            textBoxFiltrar.Clear();
+
+            CargarCamisasConFotos();
+        }
     }
 }

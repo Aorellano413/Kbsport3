@@ -219,7 +219,7 @@
             this.buttonAtrasModificar.FlatAppearance.BorderSize = 0;
             this.buttonAtrasModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasModificar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasModificar.Image")));
-            this.buttonAtrasModificar.Location = new System.Drawing.Point(696, 3);
+            this.buttonAtrasModificar.Location = new System.Drawing.Point(12, 3);
             this.buttonAtrasModificar.Name = "buttonAtrasModificar";
             this.buttonAtrasModificar.Size = new System.Drawing.Size(40, 29);
             this.buttonAtrasModificar.TabIndex = 19;

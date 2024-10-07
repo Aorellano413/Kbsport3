@@ -80,7 +80,7 @@
             // comboBoxCamisas
             // 
             this.comboBoxCamisas.FormattingEnabled = true;
-            this.comboBoxCamisas.Location = new System.Drawing.Point(84, 53);
+            this.comboBoxCamisas.Location = new System.Drawing.Point(78, 64);
             this.comboBoxCamisas.Name = "comboBoxCamisas";
             this.comboBoxCamisas.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCamisas.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.buttonBuscarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuscarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonBuscarCamisas.Image")));
             this.buttonBuscarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBuscarCamisas.Location = new System.Drawing.Point(12, 29);
+            this.buttonBuscarCamisas.Location = new System.Drawing.Point(12, 40);
             this.buttonBuscarCamisas.Name = "buttonBuscarCamisas";
             this.buttonBuscarCamisas.Size = new System.Drawing.Size(48, 45);
             this.buttonBuscarCamisas.TabIndex = 5;
@@ -103,9 +103,9 @@
             this.buttonAtrasAsignar.FlatAppearance.BorderSize = 0;
             this.buttonAtrasAsignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasAsignar.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasAsignar.Image")));
-            this.buttonAtrasAsignar.Location = new System.Drawing.Point(674, 1);
+            this.buttonAtrasAsignar.Location = new System.Drawing.Point(0, 1);
             this.buttonAtrasAsignar.Name = "buttonAtrasAsignar";
-            this.buttonAtrasAsignar.Size = new System.Drawing.Size(45, 23);
+            this.buttonAtrasAsignar.Size = new System.Drawing.Size(45, 33);
             this.buttonAtrasAsignar.TabIndex = 6;
             this.buttonAtrasAsignar.UseVisualStyleBackColor = true;
             this.buttonAtrasAsignar.Click += new System.EventHandler(this.buttonAtrasAsignar_Click);
