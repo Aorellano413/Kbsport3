@@ -7,11 +7,11 @@ namespace Entidades
     {
         public int Id { get; set; }
 
-        public string Liga { get; set; }
-        public string Equipo { get; set; }
-        public string Talla { get; set; }
+        public int IdLiga { get; set; }    
+        public int IdEquipo { get; set; }   
+        public int IdTalla { get; set; }  
         public decimal Precio { get; set; }
-        public string Tela { get; set; }
+        public int IdTela { get; set; }     
         public int Stock { get; set; }
         public string Foto { get; set; }
 

@@ -27,8 +27,8 @@ namespace Vista
             InicializarDataTable();
             CargarTelas();
             CargarEquipos();
-            CargarLigas();  // Cargar las ligas en el ComboBox
-            CargarTallas(); // Cargar las tallas en el ComboBox
+            CargarLigas();
+            CargarTallas();
         }
 
         private void InicializarDataTable()
@@ -49,7 +49,7 @@ namespace Vista
             var telas = camisasBD.ObtenerTelas();
             comboBoxTela.DataSource = telas;
             comboBoxTela.DisplayMember = "Nombre";
-            comboBoxTela.ValueMember = "Id";
+            comboBoxTela.ValueMember = "Id_tela";
         }
 
         private void CargarEquipos()
@@ -57,7 +57,7 @@ namespace Vista
             var equipos = camisasBD.ObtenerEquipos();
             comboBoxEquipo.DataSource = equipos;
             comboBoxEquipo.DisplayMember = "Nombre";
-            comboBoxEquipo.ValueMember = "Id";
+            comboBoxEquipo.ValueMember = "Id_equipo";
         }
 
         private void CargarLigas()
@@ -65,7 +65,7 @@ namespace Vista
             var ligas = camisasBD.ObtenerLigas();
             comboBoxliga.DataSource = ligas;
             comboBoxliga.DisplayMember = "Nombre";
-            comboBoxliga.ValueMember = "Id";
+            comboBoxliga.ValueMember = "Id_liga";
         }
 
         private void CargarTallas()
@@ -73,7 +73,7 @@ namespace Vista
             var tallas = camisasBD.ObtenerTallas();
             comboBoxTalla.DataSource = tallas;
             comboBoxTalla.DisplayMember = "Nombre";
-            comboBoxTalla.ValueMember = "Id";
+            comboBoxTalla.ValueMember = "Id_talla";
         }
 
         private void buttonFotoAñadir_Click_1(object sender, EventArgs e)
@@ -109,21 +109,31 @@ namespace Vista
                 return;
             }
 
-            string liga = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;
-            string talla = ((Entidades.Talla)comboBoxTalla.SelectedItem).Nombre;
+
             string precio = textBoxPrecio.Text;
             string stock = textBoxStcok.Text;
-            string tela = ((Entidades.Tela)comboBoxTela.SelectedItem).Nombre;
-            string equipo = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
+
+
+            int ligaId = ((Entidades.Liga)comboBoxliga.SelectedItem).Id_liga;
+            string ligaNombre = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;
+
+            int tallaId = ((Entidades.Talla)comboBoxTalla.SelectedItem).Id_talla;
+            string tallaNombre = ((Entidades.Talla)comboBoxTalla.SelectedItem).Nombre;
+
+            int telaId = ((Entidades.Tela)comboBoxTela.SelectedItem).Id_tela;
+            string telaNombre = ((Entidades.Tela)comboBoxTela.SelectedItem).Nombre;
+
+            int equipoId = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Id_equipo;
+            string equipoNombre = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
 
 
             DataRow nuevaFila = dt.NewRow();
-            nuevaFila["LIGA"] = liga;
-            nuevaFila["EQUIPO"] = equipo;
-            nuevaFila["TALLA"] = talla;
+            nuevaFila["LIGA"] = ligaNombre;
+            nuevaFila["EQUIPO"] = equipoNombre;
+            nuevaFila["TALLA"] = tallaNombre;
             nuevaFila["PRECIO"] = precio;
             nuevaFila["STOCK"] = stock;
-            nuevaFila["TELA"] = tela;
+            nuevaFila["TELA"] = telaNombre;
             nuevaFila["FOTO"] = rutaImagenSeleccionada;
 
             dt.Rows.Add(nuevaFila);
@@ -131,14 +141,16 @@ namespace Vista
 
             Camisa nuevaCamisa = new Camisa
             {
-                Liga = liga,
-                Equipo = equipo,
-                Talla = talla,
+                IdLiga = ligaId,
+                IdEquipo = equipoId,
+                IdTalla = tallaId,
                 Precio = Convert.ToDecimal(precio),
-                Tela = tela,
+                IdTela = telaId,
                 Stock = Convert.ToInt32(stock),
                 Foto = rutaImagenSeleccionada
             };
+
+
 
             camisasBD.InsertarCamisa(nuevaCamisa);
 
@@ -152,8 +164,6 @@ namespace Vista
             rutaImagenSeleccionada = null;
             pictureBoxFoto.Image = null;
         }
-
-
 
         private void buttonCerrarCamisas_Click(object sender, EventArgs e)
         {

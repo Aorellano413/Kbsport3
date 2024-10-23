@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Talla
     {
-        public int Id { get; set; }
+        public int Id_talla { get; set; }
         public string Nombre { get; set; }
     }
 }

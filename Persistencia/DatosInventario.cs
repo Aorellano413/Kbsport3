@@ -7,7 +7,7 @@ namespace Persistencia
 {
     public class DatosInventario
     {
-        ConexionDAL conexion = new ConexionDAL();
+        private readonly ConexionDAL conexion = new ConexionDAL();
 
         public DataTable MostrarInventario()
         {
@@ -91,9 +91,11 @@ namespace Persistencia
 
                         transaction.Commit();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         transaction.Rollback();
+
+                        Console.WriteLine($"Error al eliminar tela: {ex.Message}");
                     }
                 }
             }
@@ -106,7 +108,7 @@ namespace Persistencia
                 string query = "UPDATE Kb_sport3.telas SET nombre = @nombre, stock = @stock WHERE id_tela = @id";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
-                    cmd.Parameters.AddWithValue("@id", tela.Id);
+                    cmd.Parameters.AddWithValue("@id", tela.Id_tela);
                     cmd.Parameters.AddWithValue("@nombre", tela.Nombre);
                     cmd.Parameters.AddWithValue("@stock", tela.Stock);
                     cmd.ExecuteNonQuery();
@@ -127,8 +129,6 @@ namespace Persistencia
                 }
             }
         }
-
-
 
         public void InsertarEquipo(Equipo equipo)
         {

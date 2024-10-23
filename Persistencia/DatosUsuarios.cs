@@ -25,7 +25,7 @@ namespace Persistencia
                             Cedula = reader.GetInt32("Cedula"),
                             Nombre = reader.GetString("Nombre"),
                             Apellido = reader.GetString("Apellido"),
-                            Telefono = reader.GetString("Telefono"),  
+                            Telefono = reader.GetString("Telefono"),
                             Direccion = reader.GetString("Direccion")
                         };
                     }
@@ -52,25 +52,28 @@ namespace Persistencia
             }
         }
 
-
         public Administrador ObtenerAdministrador(string usuario, string contraseña)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "SELECT * FROM ADMINISTRADORES WHERE Usuario = @usuario AND Contraseña = @contraseña";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contraseña", contraseña);
-                using (var reader = cmd.ExecuteReader())
+                string query = "SELECT Id_Administrador, Usuario, Contraseña FROM Administradores WHERE Usuario = @usuario AND Contraseña = @contraseña";
+
+                using (var cmd = new MySqlCommand(query, connection))
                 {
-                    if (reader.Read())
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        return new Administrador
+                        if (reader.Read())
                         {
-                            Id = reader.GetInt32("Id"),
-                            Usuario = reader.GetString("Usuario"),
-                            Contraseña = reader.GetString("Contraseña")
-                        };
+                            return new Administrador
+                            {
+                                IdAdministrador = reader.GetInt32("Id_Administrador"),
+                                Usuario = reader.GetString("Usuario"),
+                                Contraseña = reader.GetString("Contraseña")
+                            };
+                        }
                     }
                 }
             }

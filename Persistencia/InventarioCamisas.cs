@@ -17,7 +17,23 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas";
+ 
+                    string query = @"
+                SELECT 
+                    c.id_camisa,
+                    l.nombre AS Liga,
+                    e.nombre AS Equipo,
+                    t.nombre AS Talla,
+                    c.precio,
+                    c.stock,
+                    tl.nombre AS Tela,
+                    c.foto
+                FROM Kb_sport3.Camisas c
+                JOIN Kb_sport3.Liga l ON c.id_liga = l.id_liga
+                JOIN Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+                JOIN Kb_sport3.Talla t ON c.id_talla = t.id_talla
+                JOIN Kb_sport3.Telas tl ON c.id_tela = tl.id_tela;";
+
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -29,6 +45,7 @@ namespace Persistencia
             }
             return dt;
         }
+
 
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
@@ -59,7 +76,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-              
+
                     string query = "SELECT * FROM Kb_sport3.Camisas WHERE liga LIKE @liga";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@liga", "%" + liga + "%");
@@ -82,16 +99,17 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "INSERT INTO Kb_sport3.Camisas (liga, equipo, talla, precio, tela, stock, foto) " +
+                    string query = "INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, id_talla, precio, id_tela, stock, foto) " +
                                    "VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
 
-                    cmd.Parameters.AddWithValue("@liga", camisa.Liga);
-                    cmd.Parameters.AddWithValue("@equipo", camisa.Equipo);
-                    cmd.Parameters.AddWithValue("@talla", camisa.Talla);
+
+                    cmd.Parameters.AddWithValue("@liga", camisa.IdLiga);
+                    cmd.Parameters.AddWithValue("@equipo", camisa.IdEquipo);
+                    cmd.Parameters.AddWithValue("@talla", camisa.IdTalla);
                     cmd.Parameters.AddWithValue("@precio", camisa.Precio);
-                    cmd.Parameters.AddWithValue("@tela", camisa.Tela);
+                    cmd.Parameters.AddWithValue("@tela", camisa.IdTela);
                     cmd.Parameters.AddWithValue("@stock", camisa.Stock);
                     cmd.Parameters.AddWithValue("@foto", camisa.Foto);
 
@@ -120,7 +138,7 @@ namespace Persistencia
                         {
                             Liga liga = new Liga
                             {
-                                Id = reader.GetInt32("id_liga"),
+                                Id_liga = reader.GetInt32("id_liga"),
                                 Nombre = reader.GetString("nombre")
                             };
                             ligas.Add(liga);
@@ -145,7 +163,7 @@ namespace Persistencia
                         {
                             Equipo equipo = new Equipo
                             {
-                                Id = reader.GetInt32("id_equipo"),
+                                Id_equipo = reader.GetInt32("id_equipo"),
                                 Nombre = reader.GetString("nombre")
                             };
                             equipos.Add(equipo);
@@ -172,7 +190,7 @@ namespace Persistencia
                             {
                                 Talla talla = new Talla
                                 {
-                                    Id = reader.GetInt32("id_talla"),
+                                    Id_talla = reader.GetInt32("id_talla"),
                                     Nombre = reader.GetString("nombre")
                                 };
                                 tallas.Add(talla);
@@ -204,7 +222,7 @@ namespace Persistencia
                         {
                             Tela tela = new Tela
                             {
-                                Id = reader.GetInt32("id_tela"),
+                                Id_tela = reader.GetInt32("id_tela"),
                                 Nombre = reader.GetString("nombre")
                             };
                             telas.Add(tela);

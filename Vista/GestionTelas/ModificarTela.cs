@@ -45,7 +45,7 @@ namespace Vista
 
                 Tela tela = new Tela
                 {
-                    Id = idTela,
+                    Id_tela = idTela,
                     Nombre = nombre,
                     Stock = stock
                 };
