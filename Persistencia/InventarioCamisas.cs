@@ -54,7 +54,29 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE equipo LIKE @nombre";
+                    string query = @"
+                SELECT 
+                    c.id_camisa,
+                    l.nombre AS Liga,
+                    e.nombre AS Equipo,
+                    t.nombre AS Tela,
+                    ta.nombre AS Talla,
+                    c.precio,
+                    c.stock,
+                    c.foto
+                FROM 
+                    Kb_sport3.Camisas c
+                JOIN 
+                    Kb_sport3.Liga l ON c.id_liga = l.id_liga
+                JOIN 
+                    Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+                JOIN 
+                    Kb_sport3.Telas t ON c.id_tela = t.id_tela
+                JOIN 
+                    Kb_sport3.Talla ta ON c.id_talla = ta.id_talla
+                WHERE 
+                    e.nombre LIKE @nombre;";
+
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
 
@@ -68,6 +90,7 @@ namespace Persistencia
             }
             return dt;
         }
+
 
         public DataTable ObtenerCamisasPorLiga(string liga)
         {
