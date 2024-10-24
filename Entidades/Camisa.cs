@@ -5,17 +5,7 @@ namespace Entidades
 {
     public class Camisa
     {
-        private int idCamisa;
-        private string nombreCamisa;
-
-        public Camisa(int idCamisa, string nombreCamisa, decimal precio, int cantidad)
-        {
-            this.idCamisa = idCamisa;
-            this.nombreCamisa = nombreCamisa;
-            Precio = precio;
-            Cantidad = cantidad;
-        }
-
+    
         public int Id { get; set; }
 
         public int IdLiga { get; set; }    
@@ -30,6 +20,6 @@ namespace Entidades
         public List<Liga> Ligas { get; set; } = new List<Liga>();
         public List<Equipo> Equipos { get; set; } = new List<Equipo>();
         public List<Talla> Tallas { get; set; } = new List<Talla>();
-        public object Cantidad { get; set; }
+
     }
 }
