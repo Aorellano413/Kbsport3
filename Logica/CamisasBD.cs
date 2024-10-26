@@ -14,6 +14,11 @@ namespace Logica
             return datos.InsertarCamisa(nuevaCamisa);
         }
 
+        public bool EliminarCamisa(int idCamisa)
+        {
+            return datos.EliminarCamisa(idCamisa);
+        }
+
         public List<Tela> ObtenerTelas()
         {
             return datos.ObtenerTelas();
@@ -22,6 +27,11 @@ namespace Logica
         public List<Liga> ObtenerLigas()
         {
             return datos.ObtenerLigas();
+        }
+
+        public void AsignarTelasCamisas(int idCamisa, List<CamisaTela> telas)
+        {
+            datos.AsignarTelasCamisas(idCamisa, telas);
         }
 
         public List<Equipo> ObtenerEquipos()
@@ -39,11 +49,15 @@ namespace Logica
             return datos.ObtenerTodasLasCamisas();
         }
 
+        public List<CamisaTela> ObtenerTelasDeCamisa(int idCamisa)
+        {
+            return datos.ObtenerTelasDeCamisa(idCamisa);
+        }
+
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
             return datos.ObtenerCamisasPorNombre(nombre);
         }
-
 
         public DataTable ObtenerCamisasPorLiga(string liga)
         {

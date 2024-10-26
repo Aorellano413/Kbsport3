@@ -1,23 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista
 {
     public partial class EliminarCamisas : Form
     {
+        private CamisasBD camisasBD = new CamisasBD();
+        private DataTable dtCamisas = new DataTable();
+
         public EliminarCamisas()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            CargarCamisas();
         }
+
+        private void CargarCamisas()
+        {
+            dtCamisas = camisasBD.ObtenerTodasLasCamisas();
+            dataGridViewEliminarCamisas.DataSource = dtCamisas;
+        }
+
+        private void buttonEliminarCamisas_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewEliminarCamisas.SelectedRows.Count > 0)
+            {
+                int idCamisa = Convert.ToInt32(dataGridViewEliminarCamisas.SelectedRows[0].Cells["id_camisa"].Value);
+                bool eliminado = camisasBD.EliminarCamisa(idCamisa);
+
+                if (eliminado)
+                {
+                    MessageBox.Show("Camisa eliminada con éxito.");
+                    CargarCamisas();
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar la camisa.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una camisa para eliminar.");
+            }
+        }
+
 
         private void buttonSalirEliminar_Click(object sender, EventArgs e)
         {
@@ -28,7 +57,7 @@ namespace Vista
         {
             AgregarCamisas agregarCamisas = new AgregarCamisas();
             agregarCamisas.Show();
-            this.Close(); ;
+            this.Close();
         }
     }
 }

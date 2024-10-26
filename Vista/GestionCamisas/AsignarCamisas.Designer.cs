@@ -32,7 +32,7 @@
             this.dataGridViewAsignarValores = new System.Windows.Forms.DataGridView();
             this.buttonAsignarValoresCamisas = new System.Windows.Forms.Button();
             this.buttonAsignarCerrar = new System.Windows.Forms.Button();
-            this.comboBoxCamisas = new System.Windows.Forms.ComboBox();
+            this.comboBoxCamisasAsignar = new System.Windows.Forms.ComboBox();
             this.buttonBuscarCamisas = new System.Windows.Forms.Button();
             this.buttonAtrasAsignar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAsignarValores)).BeginInit();
@@ -77,13 +77,14 @@
             this.buttonAsignarCerrar.UseVisualStyleBackColor = true;
             this.buttonAsignarCerrar.Click += new System.EventHandler(this.buttonAsignarCerrar_Click);
             // 
-            // comboBoxCamisas
+            // comboBoxCamisasAsignar
             // 
-            this.comboBoxCamisas.FormattingEnabled = true;
-            this.comboBoxCamisas.Location = new System.Drawing.Point(78, 64);
-            this.comboBoxCamisas.Name = "comboBoxCamisas";
-            this.comboBoxCamisas.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCamisas.TabIndex = 4;
+            this.comboBoxCamisasAsignar.FormattingEnabled = true;
+            this.comboBoxCamisasAsignar.Location = new System.Drawing.Point(78, 64);
+            this.comboBoxCamisasAsignar.Name = "comboBoxCamisasAsignar";
+            this.comboBoxCamisasAsignar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCamisasAsignar.TabIndex = 4;
+            this.comboBoxCamisasAsignar.SelectedIndexChanged += new System.EventHandler(this.comboBoxCamisasAsignar_SelectedIndexChanged);
             // 
             // buttonBuscarCamisas
             // 
@@ -118,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(800, 407);
             this.Controls.Add(this.buttonAtrasAsignar);
             this.Controls.Add(this.buttonBuscarCamisas);
-            this.Controls.Add(this.comboBoxCamisas);
+            this.Controls.Add(this.comboBoxCamisasAsignar);
             this.Controls.Add(this.buttonAsignarCerrar);
             this.Controls.Add(this.buttonAsignarValoresCamisas);
             this.Controls.Add(this.dataGridViewAsignarValores);
@@ -135,7 +136,7 @@
         private System.Windows.Forms.DataGridView dataGridViewAsignarValores;
         private System.Windows.Forms.Button buttonAsignarValoresCamisas;
         private System.Windows.Forms.Button buttonAsignarCerrar;
-        private System.Windows.Forms.ComboBox comboBoxCamisas;
+        private System.Windows.Forms.ComboBox comboBoxCamisasAsignar;
         private System.Windows.Forms.Button buttonBuscarCamisas;
         private System.Windows.Forms.Button buttonAtrasAsignar;
     }

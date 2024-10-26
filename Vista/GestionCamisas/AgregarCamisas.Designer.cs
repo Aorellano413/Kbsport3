@@ -181,6 +181,7 @@
             this.buttonEliminarCamisas.Text = "ELIMINAR";
             this.buttonEliminarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonEliminarCamisas.UseVisualStyleBackColor = true;
+            this.buttonEliminarCamisas.Click += new System.EventHandler(this.buttonEliminarCamisas_Click);
             // 
             // buttonValoresCamisas
             // 
@@ -211,6 +212,7 @@
             this.buttonModificarCamisas.Text = "MODIFICAR ";
             this.buttonModificarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonModificarCamisas.UseVisualStyleBackColor = true;
+            this.buttonModificarCamisas.Click += new System.EventHandler(this.buttonModificarCamisas_Click);
             // 
             // dataGridViewCamisas
             // 

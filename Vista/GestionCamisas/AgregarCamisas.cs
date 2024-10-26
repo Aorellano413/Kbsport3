@@ -176,5 +176,19 @@ namespace Vista
             menuGeneralAdministrador.Show();
             this.Close();
         }
+
+        private void buttonModificarCamisas_Click(object sender, EventArgs e)
+        {
+            AsignarCamisas asignarCamisas = new AsignarCamisas();
+            asignarCamisas.Show();
+            this.Close();
+        }
+
+        private void buttonEliminarCamisas_Click(object sender, EventArgs e)
+        {
+            EliminarCamisas camisas = new EliminarCamisas();
+            camisas.Show();
+            this.Close();
+        }
     }
 }

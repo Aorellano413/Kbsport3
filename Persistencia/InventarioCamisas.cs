@@ -17,7 +17,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
- 
+
                     string query = @"
                 SELECT 
                     c.id_camisa,
@@ -229,7 +229,93 @@ namespace Persistencia
             return tallas;
         }
 
+        public void AsignarTelasCamisas(int idCamisa, List<CamisaTela> telas)
+        {
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                foreach (var camisaTela in telas)
+                {
+                    string query = @"
+                UPDATE TELAS_CAMISAS 
+                SET cantidad = @cantidad 
+                WHERE id_tela = @idTela AND id_camisa = @idCamisa;";
 
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@cantidad", camisaTela.Cantidad);
+                        cmd.Parameters.AddWithValue("@idTela", camisaTela.IdTela);
+                        cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public List<CamisaTela> ObtenerTelasDeCamisa(int idCamisa)
+        {
+            List<CamisaTela> telas = new List<CamisaTela>();
+            try
+            {
+                using (MySqlConnection connection = conexion.AbrirConexion())
+                {
+                    string query = @"
+                SELECT 
+                    tc.id_tela, 
+                    t.nombre AS NombreTela, 
+                    tc.cantidad 
+                FROM 
+                    TELAS_CAMISAS tc
+                JOIN 
+                    Telas t ON tc.id_tela = t.id_tela
+                WHERE 
+                    tc.id_camisa = @idCamisa;";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CamisaTela camisaTela = new CamisaTela
+                                {
+                                    IdTela = reader.GetInt32("id_tela"),
+                                    NombreTela = reader.GetString("NombreTela"),
+                                    Cantidad = reader.GetInt32("cantidad")
+                                };
+                                telas.Add(camisaTela);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener las telas de la camisa: " + ex.Message);
+            }
+            return telas;
+        }
+
+        public bool EliminarCamisa(int idCamisa)
+        {
+            try
+            {
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+                    string query = "DELETE FROM Kb_sport3.Camisas WHERE id_camisa = @idCamisa;";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
+
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al eliminar la camisa: " + ex.Message);
+                return false;
+            }
+        }
 
         public List<Tela> ObtenerTelas()
         {

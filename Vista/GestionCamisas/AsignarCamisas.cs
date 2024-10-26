@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,12 @@ namespace Vista.GestionCamisas
 {
     public partial class AsignarCamisas : Form
     {
+
+
         public AsignarCamisas()
         {
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
@@ -23,11 +28,18 @@ namespace Vista.GestionCamisas
             this.Close();
         }
 
+
         private void buttonAtrasAsignar_Click(object sender, EventArgs e)
         {
             AgregarCamisas agregarCamisas = new AgregarCamisas();
             agregarCamisas.Show();
             this.Close();
         }
+
+        private void comboBoxCamisasAsignar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

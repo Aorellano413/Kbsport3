@@ -39,6 +39,9 @@
             // 
             // dataGridViewEliminarCamisas
             // 
+            this.dataGridViewEliminarCamisas.AllowUserToAddRows = false;
+            this.dataGridViewEliminarCamisas.AllowUserToDeleteRows = false;
+            this.dataGridViewEliminarCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewEliminarCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dataGridViewEliminarCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEliminarCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -46,6 +49,9 @@
             this.dataGridViewEliminarCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEliminarCamisas.Location = new System.Drawing.Point(12, 69);
             this.dataGridViewEliminarCamisas.Name = "dataGridViewEliminarCamisas";
+            this.dataGridViewEliminarCamisas.ReadOnly = true;
+            this.dataGridViewEliminarCamisas.RowHeadersVisible = false;
+            this.dataGridViewEliminarCamisas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEliminarCamisas.Size = new System.Drawing.Size(776, 243);
             this.dataGridViewEliminarCamisas.TabIndex = 0;
             // 
@@ -63,6 +69,7 @@
             this.buttonEliminarCamisas.Text = "ELIMINAR";
             this.buttonEliminarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonEliminarCamisas.UseVisualStyleBackColor = true;
+            this.buttonEliminarCamisas.Click += new System.EventHandler(this.buttonEliminarCamisas_Click);
             // 
             // textBuscarCa
             // 

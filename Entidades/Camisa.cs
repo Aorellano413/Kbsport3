@@ -6,7 +6,7 @@ namespace Entidades
     public class Camisa
     {
     
-        public int Id { get; set; }
+        public int IdCamisa { get; set; }
 
         public int IdLiga { get; set; }    
         public int IdEquipo { get; set; }   
