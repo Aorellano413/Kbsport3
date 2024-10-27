@@ -230,12 +230,6 @@
     <Compile Include="Menus\MenuGeneralAdministrador.Designer.cs">
       <DependentUpon>MenuGeneralAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionCamisas\ModificarCamisas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GestionCamisas\ModificarCamisas.Designer.cs">
-      <DependentUpon>ModificarCamisas.cs</DependentUpon>
-    </Compile>
     <Compile Include="GestionTelas\ModificarTela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,9 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionCamisas\EliminarCamisas.resx">
       <DependentUpon>EliminarCamisas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GestionCamisas\ModificarCamisas.resx">
-      <DependentUpon>ModificarCamisas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informe\InformeEmpresa.resx">
       <DependentUpon>InformeEmpresa.cs</DependentUpon>

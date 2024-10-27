@@ -2,6 +2,7 @@
 using Persistencia;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace Logica
 {
@@ -9,10 +10,29 @@ namespace Logica
     {
         InventarioCamisas datos = new InventarioCamisas();
 
+
         public bool InsertarCamisa(Camisa nuevaCamisa)
         {
-            return datos.InsertarCamisa(nuevaCamisa);
+
+            bool resultado = datos.InsertarCamisa(nuevaCamisa);
+
+            if (resultado)
+            {
+
+                List<CamisaTela> telas = nuevaCamisa.Telas.Select(t => new CamisaTela
+                {
+                    IdTela = t.Id_tela,
+                    NombreTela = t.Nombre,
+                    Cantidad = t.Stock
+                }).ToList();
+
+                datos.AsignarCantidadTelas(nuevaCamisa.IdCamisa, telas);
+            }
+
+            return resultado;
         }
+
+
 
         public bool EliminarCamisa(int idCamisa)
         {
@@ -39,7 +59,7 @@ namespace Logica
             return datos.ObtenerEquipos();
         }
 
-        
+
         public DataTable ObtenerTodasLasCamisas()
         {
             return datos.ObtenerTodasLasCamisas();

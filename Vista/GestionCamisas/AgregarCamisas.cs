@@ -137,7 +137,7 @@ namespace Vista
 
             camisasBD.InsertarCamisa(nuevaCamisa);
 
-            // Limpiar campos
+
             comboBoxliga.SelectedIndex = -1;
             textBoxPrecio.Clear();
             textBoxStcok.Clear();
@@ -160,7 +160,7 @@ namespace Vista
             this.Close();
         }
 
-        private void buttonModificarCamisas_Click(object sender, EventArgs e)
+        private void buttonValoresCamisas_Click(object sender, EventArgs e)
         {
             AsignarCamisas asignarCamisas = new AsignarCamisas();
             asignarCamisas.Show();
@@ -188,14 +188,16 @@ namespace Vista
 
                     rutaImagenSeleccionada = openFileDialog.FileName;
 
-        
+
                     pictureBoxFoto.Image = Image.FromFile(rutaImagenSeleccionada);
                     pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
 
-        
-                    MessageBox.Show("Imagen seleccionada: " + rutaImagenSeleccionada, "Imagen Cargada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
                 }
             }
         }
+
+
     }
 }

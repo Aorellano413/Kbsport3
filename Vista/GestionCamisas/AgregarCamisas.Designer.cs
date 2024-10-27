@@ -40,7 +40,6 @@
             this.buttonRegistrarCamisas = new System.Windows.Forms.Button();
             this.buttonEliminarCamisas = new System.Windows.Forms.Button();
             this.buttonValoresCamisas = new System.Windows.Forms.Button();
-            this.buttonModificarCamisas = new System.Windows.Forms.Button();
             this.dataGridViewCamisas = new System.Windows.Forms.DataGridView();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.buttonFotoAñadir = new System.Windows.Forms.Button();
@@ -158,7 +157,7 @@
             this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegistrarCamisas.Image")));
             this.buttonRegistrarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(640, 174);
+            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(432, 161);
             this.buttonRegistrarCamisas.Name = "buttonRegistrarCamisas";
             this.buttonRegistrarCamisas.Size = new System.Drawing.Size(162, 79);
             this.buttonRegistrarCamisas.TabIndex = 26;
@@ -197,22 +196,7 @@
             this.buttonValoresCamisas.Text = "VALORES";
             this.buttonValoresCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonValoresCamisas.UseVisualStyleBackColor = true;
-            // 
-            // buttonModificarCamisas
-            // 
-            this.buttonModificarCamisas.FlatAppearance.BorderSize = 0;
-            this.buttonModificarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonModificarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModificarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonModificarCamisas.Image")));
-            this.buttonModificarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificarCamisas.Location = new System.Drawing.Point(432, 174);
-            this.buttonModificarCamisas.Name = "buttonModificarCamisas";
-            this.buttonModificarCamisas.Size = new System.Drawing.Size(162, 76);
-            this.buttonModificarCamisas.TabIndex = 29;
-            this.buttonModificarCamisas.Text = "MODIFICAR ";
-            this.buttonModificarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonModificarCamisas.UseVisualStyleBackColor = true;
-            this.buttonModificarCamisas.Click += new System.EventHandler(this.buttonModificarCamisas_Click);
+            this.buttonValoresCamisas.Click += new System.EventHandler(this.buttonValoresCamisas_Click);
             // 
             // dataGridViewCamisas
             // 
@@ -234,7 +218,7 @@
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(445, 257);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(640, 245);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(149, 118);
             this.pictureBoxFoto.TabIndex = 31;
@@ -247,7 +231,7 @@
             this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFotoAñadir.Image = ((System.Drawing.Image)(resources.GetObject("buttonFotoAñadir.Image")));
             this.buttonFotoAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFotoAñadir.Location = new System.Drawing.Point(445, 381);
+            this.buttonFotoAñadir.Location = new System.Drawing.Point(640, 181);
             this.buttonFotoAñadir.Name = "buttonFotoAñadir";
             this.buttonFotoAñadir.Size = new System.Drawing.Size(149, 45);
             this.buttonFotoAñadir.TabIndex = 32;
@@ -364,7 +348,6 @@
             this.Controls.Add(this.buttonFotoAñadir);
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.dataGridViewCamisas);
-            this.Controls.Add(this.buttonModificarCamisas);
             this.Controls.Add(this.buttonValoresCamisas);
             this.Controls.Add(this.buttonEliminarCamisas);
             this.Controls.Add(this.buttonRegistrarCamisas);
@@ -399,7 +382,6 @@
         private System.Windows.Forms.Button buttonRegistrarCamisas;
         private System.Windows.Forms.Button buttonEliminarCamisas;
         private System.Windows.Forms.Button buttonValoresCamisas;
-        private System.Windows.Forms.Button buttonModificarCamisas;
         private System.Windows.Forms.DataGridView dataGridViewCamisas;
         private System.Windows.Forms.PictureBox pictureBoxFoto;
         private System.Windows.Forms.Button buttonFotoAñadir;
