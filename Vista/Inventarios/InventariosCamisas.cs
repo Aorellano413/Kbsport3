@@ -14,7 +14,7 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            CargarCamisas(); 
+            CargarCamisas();
         }
 
         private void CargarCamisas()
@@ -29,11 +29,11 @@ namespace Vista
 
             if (string.IsNullOrEmpty(nombre))
             {
-                CargarCamisas(); 
+                CargarCamisas();
             }
             else
             {
-       
+
                 DataTable camisasFiltradas = camisasBD.ObtenerCamisasPorNombre(nombre);
                 dataGridViewStockCamisas.DataSource = camisasFiltradas;
             }

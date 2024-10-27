@@ -50,9 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.HorFechaAdmin = new System.Windows.Forms.Timer(this.components);
             this.buttonLiga = new System.Windows.Forms.Button();
-            this.buttonTalla = new System.Windows.Forms.Button();
             this.buttonEquipo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -266,24 +264,12 @@
             this.buttonLiga.FlatAppearance.BorderSize = 0;
             this.buttonLiga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLiga.Image = ((System.Drawing.Image)(resources.GetObject("buttonLiga.Image")));
-            this.buttonLiga.Location = new System.Drawing.Point(822, 504);
+            this.buttonLiga.Location = new System.Drawing.Point(466, 504);
             this.buttonLiga.Name = "buttonLiga";
             this.buttonLiga.Size = new System.Drawing.Size(200, 155);
             this.buttonLiga.TabIndex = 16;
             this.buttonLiga.UseVisualStyleBackColor = true;
             this.buttonLiga.Click += new System.EventHandler(this.buttonLiga_Click);
-            // 
-            // buttonTalla
-            // 
-            this.buttonTalla.FlatAppearance.BorderSize = 0;
-            this.buttonTalla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTalla.Image = ((System.Drawing.Image)(resources.GetObject("buttonTalla.Image")));
-            this.buttonTalla.Location = new System.Drawing.Point(466, 504);
-            this.buttonTalla.Name = "buttonTalla";
-            this.buttonTalla.Size = new System.Drawing.Size(200, 155);
-            this.buttonTalla.TabIndex = 17;
-            this.buttonTalla.UseVisualStyleBackColor = true;
-            this.buttonTalla.Click += new System.EventHandler(this.buttonTalla_Click);
             // 
             // buttonEquipo
             // 
@@ -296,16 +282,6 @@
             this.buttonEquipo.TabIndex = 18;
             this.buttonEquipo.UseVisualStyleBackColor = true;
             this.buttonEquipo.Click += new System.EventHandler(this.buttonEquipo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(535, 662);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 29);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "TALLA";
             // 
             // label3
             // 
@@ -321,7 +297,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(901, 662);
+            this.label9.Location = new System.Drawing.Point(545, 662);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 29);
             this.label9.TabIndex = 21;
@@ -335,9 +311,7 @@
             this.ClientSize = new System.Drawing.Size(1094, 750);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonEquipo);
-            this.Controls.Add(this.buttonTalla);
             this.Controls.Add(this.buttonLiga);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -386,9 +360,7 @@
         private System.Windows.Forms.Timer HorFechaAdmin;
         private System.Windows.Forms.Label hora;
         private System.Windows.Forms.Button buttonLiga;
-        private System.Windows.Forms.Button buttonTalla;
         private System.Windows.Forms.Button buttonEquipo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
     }

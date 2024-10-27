@@ -89,12 +89,7 @@ namespace Vista
             this.Close();
         }
 
-        private void buttonTalla_Click(object sender, EventArgs e)
-        {
-            Talla talla = new Talla();
-            talla.Show();
-            this.Close();
-        }
+     
 
         private void buttonLiga_Click(object sender, EventArgs e)
         {

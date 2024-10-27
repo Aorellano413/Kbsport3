@@ -15,7 +15,7 @@ namespace Vista
         public List<Tela> telas = new List<Tela>();
         public List<Liga> Ligas = new List<Liga>();
         public List<Equipo> Equipos = new List<Equipo>();
-        public List<Talla> Tallas = new List<Talla>();
+
         CamisasBD camisasBD = new CamisasBD();
         DataTable dt = new DataTable();
         private string rutaImagenSeleccionada;
@@ -28,7 +28,6 @@ namespace Vista
             CargarTelas();
             CargarEquipos();
             CargarLigas();
-            CargarTallas();
         }
 
         private void InicializarDataTable()
@@ -68,15 +67,7 @@ namespace Vista
             comboBoxliga.ValueMember = "Id_liga";
         }
 
-        private void CargarTallas()
-        {
-            var tallas = camisasBD.ObtenerTallas();
-            comboBoxTalla.DataSource = tallas;
-            comboBoxTalla.DisplayMember = "Nombre";
-            comboBoxTalla.ValueMember = "Id_talla";
-        }
-
-        private void buttonFotoAñadir_Click_1(object sender, EventArgs e)
+        private void buttonFotoAñadir_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -98,27 +89,23 @@ namespace Vista
         private void buttonRegistrarCamisas_Click(object sender, EventArgs e)
         {
             if (comboBoxliga.SelectedItem == null ||
-                comboBoxTalla.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(textBoxPrecio.Text) ||
                 string.IsNullOrWhiteSpace(textBoxStcok.Text) ||
                 comboBoxTela.SelectedItem == null ||
                 comboBoxEquipo.SelectedItem == null ||
-                string.IsNullOrEmpty(rutaImagenSeleccionada))
+                string.IsNullOrEmpty(rutaImagenSeleccionada) ||
+                string.IsNullOrWhiteSpace(textBoxTalla.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos y seleccione una imagen antes de registrar la camisa.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-
             string precio = textBoxPrecio.Text;
             string stock = textBoxStcok.Text;
-
+            string talla = textBoxTalla.Text;
 
             int ligaId = ((Entidades.Liga)comboBoxliga.SelectedItem).Id_liga;
             string ligaNombre = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;
-
-            int tallaId = ((Entidades.Talla)comboBoxTalla.SelectedItem).Id_talla;
-            string tallaNombre = ((Entidades.Talla)comboBoxTalla.SelectedItem).Nombre;
 
             int telaId = ((Entidades.Tela)comboBoxTela.SelectedItem).Id_tela;
             string telaNombre = ((Entidades.Tela)comboBoxTela.SelectedItem).Nombre;
@@ -126,11 +113,10 @@ namespace Vista
             int equipoId = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Id_equipo;
             string equipoNombre = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
 
-
             DataRow nuevaFila = dt.NewRow();
             nuevaFila["LIGA"] = ligaNombre;
             nuevaFila["EQUIPO"] = equipoNombre;
-            nuevaFila["TALLA"] = tallaNombre;
+            nuevaFila["TALLA"] = talla;
             nuevaFila["PRECIO"] = precio;
             nuevaFila["STOCK"] = stock;
             nuevaFila["TELA"] = telaNombre;
@@ -138,27 +124,24 @@ namespace Vista
 
             dt.Rows.Add(nuevaFila);
 
-
             Camisa nuevaCamisa = new Camisa
             {
                 IdLiga = ligaId,
                 IdEquipo = equipoId,
-                IdTalla = tallaId,
+                Talla = talla,
                 Precio = Convert.ToDecimal(precio),
                 IdTela = telaId,
                 Stock = Convert.ToInt32(stock),
                 Foto = rutaImagenSeleccionada
             };
 
-
-
             camisasBD.InsertarCamisa(nuevaCamisa);
 
-
+            // Limpiar campos
             comboBoxliga.SelectedIndex = -1;
-            comboBoxTalla.SelectedIndex = -1;
             textBoxPrecio.Clear();
             textBoxStcok.Clear();
+            textBoxTalla.Clear();
             comboBoxTela.SelectedIndex = -1;
             comboBoxEquipo.SelectedIndex = -1;
             rutaImagenSeleccionada = null;
@@ -189,6 +172,30 @@ namespace Vista
             EliminarCamisas camisas = new EliminarCamisas();
             camisas.Show();
             this.Close();
+        }
+
+        private void buttonFotoAñadir_Click_1(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    rutaImagenSeleccionada = openFileDialog.FileName;
+
+        
+                    pictureBoxFoto.Image = Image.FromFile(rutaImagenSeleccionada);
+                    pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
+
+        
+                    MessageBox.Show("Imagen seleccionada: " + rutaImagenSeleccionada, "Imagen Cargada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

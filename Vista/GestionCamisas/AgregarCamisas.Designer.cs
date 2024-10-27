@@ -52,8 +52,8 @@
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
             this.comboBoxEquipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxTalla = new System.Windows.Forms.ComboBox();
             this.comboBoxliga = new System.Windows.Forms.ComboBox();
+            this.textBoxTalla = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).BeginInit();
@@ -331,14 +331,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "EQUIPO";
             // 
-            // comboBoxTalla
-            // 
-            this.comboBoxTalla.FormattingEnabled = true;
-            this.comboBoxTalla.Location = new System.Drawing.Point(132, 160);
-            this.comboBoxTalla.Name = "comboBoxTalla";
-            this.comboBoxTalla.Size = new System.Drawing.Size(130, 21);
-            this.comboBoxTalla.TabIndex = 44;
-            // 
             // comboBoxliga
             // 
             this.comboBoxliga.FormattingEnabled = true;
@@ -347,14 +339,21 @@
             this.comboBoxliga.Size = new System.Drawing.Size(130, 21);
             this.comboBoxliga.TabIndex = 45;
             // 
+            // textBoxTalla
+            // 
+            this.textBoxTalla.Location = new System.Drawing.Point(132, 161);
+            this.textBoxTalla.Name = "textBoxTalla";
+            this.textBoxTalla.Size = new System.Drawing.Size(130, 20);
+            this.textBoxTalla.TabIndex = 46;
+            // 
             // AgregarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(814, 677);
+            this.Controls.Add(this.textBoxTalla);
             this.Controls.Add(this.comboBoxliga);
-            this.Controls.Add(this.comboBoxTalla);
             this.Controls.Add(this.comboBoxEquipo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPrecio);
@@ -412,7 +411,7 @@
         private System.Windows.Forms.TextBox textBoxPrecio;
         private System.Windows.Forms.ComboBox comboBoxEquipo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxTalla;
         private System.Windows.Forms.ComboBox comboBoxliga;
+        private System.Windows.Forms.TextBox textBoxTalla;
     }
 }

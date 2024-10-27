@@ -17,22 +17,24 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-
                     string query = @"
                 SELECT 
                     c.id_camisa,
                     l.nombre AS Liga,
                     e.nombre AS Equipo,
-                    t.nombre AS Talla,
+                    t.nombre AS Tela,
+                    c.talla,
                     c.precio,
                     c.stock,
-                    tl.nombre AS Tela,
                     c.foto
-                FROM Kb_sport3.Camisas c
-                JOIN Kb_sport3.Liga l ON c.id_liga = l.id_liga
-                JOIN Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
-                JOIN Kb_sport3.Talla t ON c.id_talla = t.id_talla
-                JOIN Kb_sport3.Telas tl ON c.id_tela = tl.id_tela;";
+                FROM 
+                    Kb_sport3.Camisas c
+                JOIN 
+                    Kb_sport3.Liga l ON c.id_liga = l.id_liga
+                JOIN 
+                    Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+                JOIN 
+                    Kb_sport3.Telas t ON c.id_tela = t.id_tela;";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -41,10 +43,11 @@ namespace Persistencia
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al obtener las camisas: " + ex.Message);
+                Console.WriteLine("Error al obtener todas las camisas: " + ex.Message);
             }
             return dt;
         }
+
 
 
         public DataTable ObtenerCamisasPorNombre(string nombre)
@@ -91,7 +94,6 @@ namespace Persistencia
             return dt;
         }
 
-
         public DataTable ObtenerCamisasPorLiga(string liga)
         {
             DataTable dt = new DataTable();
@@ -99,8 +101,7 @@ namespace Persistencia
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-
-                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE liga LIKE @liga";
+                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE liga LIKE @liga;";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@liga", "%" + liga + "%");
 
@@ -115,22 +116,19 @@ namespace Persistencia
             return dt;
         }
 
-
         public bool InsertarCamisa(Camisa camisa)
         {
             try
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, id_talla, precio, id_tela, stock, foto) " +
+                    string query = "INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, talla, precio, id_tela, stock, foto) " +
                                    "VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-
-
                     cmd.Parameters.AddWithValue("@liga", camisa.IdLiga);
                     cmd.Parameters.AddWithValue("@equipo", camisa.IdEquipo);
-                    cmd.Parameters.AddWithValue("@talla", camisa.IdTalla);
+                    cmd.Parameters.AddWithValue("@talla", camisa.Talla);
                     cmd.Parameters.AddWithValue("@precio", camisa.Precio);
                     cmd.Parameters.AddWithValue("@tela", camisa.IdTela);
                     cmd.Parameters.AddWithValue("@stock", camisa.Stock);
@@ -195,38 +193,6 @@ namespace Persistencia
                 }
             }
             return equipos;
-        }
-
-        public List<Talla> ObtenerTallas()
-        {
-            List<Talla> tallas = new List<Talla>();
-            try
-            {
-                using (MySqlConnection connection = conexion.AbrirConexion())
-                {
-                    string query = "SELECT id_talla, nombre FROM Kb_sport3.Talla;";
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                Talla talla = new Talla
-                                {
-                                    Id_talla = reader.GetInt32("id_talla"),
-                                    Nombre = reader.GetString("nombre")
-                                };
-                                tallas.Add(talla);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al obtener las tallas: " + ex.Message);
-            }
-            return tallas;
         }
 
         public void AsignarTelasCamisas(int idCamisa, List<CamisaTela> telas)
@@ -341,5 +307,7 @@ namespace Persistencia
             }
             return telas;
         }
+
+
     }
 }

@@ -23,10 +23,7 @@ namespace Logica
             datos.InsertarEquipo(equipo);
         }
 
-        public void InsertarTalla(Talla talla) 
-        {
-            datos.InsertarTalla(talla);
-        }
+       
 
         public void InsertarLiga(Liga liga) 
         {

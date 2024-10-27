@@ -143,18 +143,7 @@ namespace Persistencia
             }
         }
 
-        public void InsertarTalla(Talla talla)
-        {
-            using (MySqlConnection connection = conexion.AbrirConexion())
-            {
-                string query = "INSERT INTO Kb_sport3.talla (nombre) VALUES (@nombre)";
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@nombre", talla.Nombre);
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
+       
 
         public void InsertarLiga(Liga liga)
         {

@@ -39,11 +39,7 @@ namespace Logica
             return datos.ObtenerEquipos();
         }
 
-        public List<Talla> ObtenerTallas()
-        {
-            return datos.ObtenerTallas();
-        }
-
+        
         public DataTable ObtenerTodasLasCamisas()
         {
             return datos.ObtenerTodasLasCamisas();
