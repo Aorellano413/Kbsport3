@@ -115,68 +115,54 @@ namespace Persistencia
             return dt;
         }
 
-        public bool InsertarCamisa(Camisa nuevaCamisa)
+        public bool InsertarCamisa(Camisa Camisa)
         {
-            try
+            using (MySqlConnection conn = conexion.AbrirConexion())
             {
-                using (MySqlConnection conn = conexion.AbrirConexion())
+
+                if (conn.State != ConnectionState.Open)
                 {
 
-                    string query = "INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, talla, precio, id_tela, stock, foto) " +
-                                   "VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)";
+                }
 
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@liga", nuevaCamisa.IdLiga);
-                    cmd.Parameters.AddWithValue("@equipo", nuevaCamisa.IdEquipo);
-                    cmd.Parameters.AddWithValue("@talla", nuevaCamisa.Talla);
-                    cmd.Parameters.AddWithValue("@precio", nuevaCamisa.Precio);
-                    cmd.Parameters.AddWithValue("@tela", nuevaCamisa.IdTela);
-                    cmd.Parameters.AddWithValue("@stock", nuevaCamisa.Stock);
-                    cmd.Parameters.AddWithValue("@foto", nuevaCamisa.Foto);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, talla, precio, id_tela, stock, foto) VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)", conn);
+                cmd.Parameters.AddWithValue("@liga", Camisa.IdLiga);
+                cmd.Parameters.AddWithValue("@equipo", Camisa.IdEquipo);
+                cmd.Parameters.AddWithValue("@talla", Camisa.Talla);
+                cmd.Parameters.AddWithValue("@precio", Camisa.Precio);
+                cmd.Parameters.AddWithValue("@tela", Camisa.IdTela);
+                cmd.Parameters.AddWithValue("@stock", Camisa.Stock);
+                cmd.Parameters.AddWithValue("@foto", Camisa.Foto);
+                cmd.ExecuteNonQuery();
 
-                    int result = cmd.ExecuteNonQuery();
 
-                    if (result > 0)
+                Camisa.IdCamisa = (int)cmd.LastInsertedId;
+
+
+                foreach (var tela in Camisa.Telas)
+                {
+                    MySqlCommand cmdCheck = new MySqlCommand("SELECT COUNT(*) FROM TELAS WHERE id_tela = @idTela", conn);
+                    cmdCheck.Parameters.AddWithValue("@idTela", tela.Id_tela);
+                    int count = Convert.ToInt32(cmdCheck.ExecuteScalar());
+
+                    if (count > 0)
                     {
 
-                        nuevaCamisa.IdCamisa = (int)cmd.LastInsertedId;
-
-
-                        foreach (var tela in nuevaCamisa.Telas)
-                        {
-
-                            MySqlCommand cmdCheck = new MySqlCommand("SELECT COUNT(*) FROM TELAS WHERE id_tela = @idTela", conn);
-                            cmdCheck.Parameters.AddWithValue("@idTela", tela.Id_tela);
-                            int count = Convert.ToInt32(cmdCheck.ExecuteScalar());
-
-                            if (count > 0)
-                            {
-
-                                cmd = new MySqlCommand("INSERT INTO Kb_sport3.Camisas_Telas (id_camisa, id_tela, cantidad) VALUES (@id_camisa, @id_tela, @cantidad)", conn);
-                                cmd.Parameters.AddWithValue("@id_camisa", nuevaCamisa.IdCamisa);
-                                cmd.Parameters.AddWithValue("@id_tela", tela.Id_tela);
-                                cmd.Parameters.AddWithValue("@cantidad", tela.Stock);
-                                cmd.ExecuteNonQuery();
-                            }
-                            else
-                            {
-                                throw new Exception($"Tela con id {tela.Id_tela} no existe.");
-                            }
-                        }
-
-                        return true;
+                        cmd = new MySqlCommand("INSERT INTO Kb_sport3.Camisas_Telas (id_camisa, id_tela, cantidad) VALUES (@id_camisa, @id_tela, @cantidad)", conn);
+                        cmd.Parameters.AddWithValue("@id_camisa", Camisa.IdCamisa);
+                        cmd.Parameters.AddWithValue("@id_tela", tela.Id_tela);
+                        cmd.Parameters.AddWithValue("@cantidad", tela.Stock);
+                        cmd.ExecuteNonQuery();
                     }
-                    return false;
+                    else
+                    {
+                        throw new Exception($"Tela con id {tela.Id_tela} no existe.");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al insertar la camisa: " + ex.Message);
-                return false;
+
+                return true;
             }
         }
-
-
         public List<Liga> ObtenerLigas()
         {
             List<Liga> ligas = new List<Liga>();

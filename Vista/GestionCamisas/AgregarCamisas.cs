@@ -124,7 +124,7 @@ namespace Vista
 
             dt.Rows.Add(nuevaFila);
 
-            Camisa nuevaCamisa = new Camisa
+            Camisa Camisa = new Camisa
             {
                 IdLiga = ligaId,
                 IdEquipo = equipoId,
@@ -135,7 +135,7 @@ namespace Vista
                 Foto = rutaImagenSeleccionada
             };
 
-            camisasBD.InsertarCamisa(nuevaCamisa);
+            camisasBD.InsertarCamisa(Camisa);
 
 
             comboBoxliga.SelectedIndex = -1;

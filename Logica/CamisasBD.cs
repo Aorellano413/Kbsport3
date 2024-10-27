@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Persistencia;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -78,6 +79,11 @@ namespace Logica
         public DataTable ObtenerCamisasPorLiga(string liga)
         {
             return datos.ObtenerCamisasPorLiga(liga);
+        }
+
+        public DataTable ObtenerCamisasPorNombre()
+        {
+            throw new NotImplementedException();
         }
     }
 }
