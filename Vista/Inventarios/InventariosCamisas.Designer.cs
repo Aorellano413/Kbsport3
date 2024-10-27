@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventariosCamisas));
             this.dataGridViewStockCamisas = new System.Windows.Forms.DataGridView();
             this.textBoxNombreCamisas = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonRestablecer = new System.Windows.Forms.Button();
             this.buttonSalirStock = new System.Windows.Forms.Button();
             this.buttonDevolverStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockCamisas)).BeginInit();
@@ -64,20 +64,20 @@
             this.textBoxNombreCamisas.TabIndex = 2;
             this.textBoxNombreCamisas.TextChanged += new System.EventHandler(this.textBoxNombreCamisas_TextChanged);
             // 
-            // button1
+            // buttonRestablecer
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(180, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "RESTABLECER";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRestablecer.FlatAppearance.BorderSize = 0;
+            this.buttonRestablecer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRestablecer.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestablecer.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecer.Image")));
+            this.buttonRestablecer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRestablecer.Location = new System.Drawing.Point(180, 23);
+            this.buttonRestablecer.Name = "buttonRestablecer";
+            this.buttonRestablecer.Size = new System.Drawing.Size(139, 38);
+            this.buttonRestablecer.TabIndex = 3;
+            this.buttonRestablecer.Text = "RESTABLECER";
+            this.buttonRestablecer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonRestablecer.UseVisualStyleBackColor = true;
             // 
             // buttonSalirStock
             // 
@@ -115,7 +115,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonDevolverStock);
             this.Controls.Add(this.buttonSalirStock);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRestablecer);
             this.Controls.Add(this.textBoxNombreCamisas);
             this.Controls.Add(this.dataGridViewStockCamisas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -131,7 +131,7 @@
 
         private System.Windows.Forms.DataGridView dataGridViewStockCamisas;
         private System.Windows.Forms.TextBox textBoxNombreCamisas;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonRestablecer;
         private System.Windows.Forms.Button buttonSalirStock;
         private System.Windows.Forms.Button buttonDevolverStock;
     }

@@ -63,7 +63,7 @@ namespace Persistencia
                     l.nombre AS Liga,
                     e.nombre AS Equipo,
                     t.nombre AS Tela,
-                    ta.nombre AS Talla,
+                    c.talla, 
                     c.precio,
                     c.stock,
                     c.foto
@@ -75,8 +75,6 @@ namespace Persistencia
                     Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
                 JOIN 
                     Kb_sport3.Telas t ON c.id_tela = t.id_tela
-                JOIN 
-                    Kb_sport3.Talla ta ON c.id_talla = ta.id_talla
                 WHERE 
                     e.nombre LIKE @nombre;";
 
@@ -93,6 +91,7 @@ namespace Persistencia
             }
             return dt;
         }
+
 
         public DataTable ObtenerCamisasPorLiga(string liga)
         {

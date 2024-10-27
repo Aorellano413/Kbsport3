@@ -50,5 +50,7 @@ namespace Vista
             menuGeneralAdministrador.Show();
             this.Close();
         }
+
+        
     }
 }
