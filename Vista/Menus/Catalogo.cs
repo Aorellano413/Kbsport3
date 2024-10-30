@@ -12,11 +12,18 @@ namespace Vista
         private Panel panelSeleccionado = null;
         private decimal totalAPagar = 0;
         private decimal efectivoIngresado = 0;
-
+        public static bool esInvitado { get; private set; } = false;
         public Catalogo()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            if (FormLogin.esInvitado)
+            {
+
+                txtEfectivo.Enabled = false;
+            }
+
             CargarCamisasConFotos();
         }
 
@@ -32,20 +39,25 @@ namespace Vista
                     continue;
                 }
 
-                PictureBox pictureBoxFoto = new PictureBox();
-                pictureBoxFoto.Size = new Size(100, 100);
-                pictureBoxFoto.SizeMode = PictureBoxSizeMode.StretchImage;
-                string rutaImagen = fila["foto"].ToString();
-                pictureBoxFoto.Image = Image.FromFile(rutaImagen);
+                PictureBox pictureBoxFoto = new PictureBox
+                {
+                    Size = new Size(100, 100),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Image = Image.FromFile(fila["foto"].ToString())
+                };
 
-                Label labelInfo = new Label();
-                labelInfo.Text = $"Equipo: {fila["equipo"]}\nTalla: {fila["talla"]}\nPrecio: ${fila["precio"]}";
-                labelInfo.AutoSize = true;
+                Label labelInfo = new Label
+                {
+                    Text = $"Equipo: {fila["equipo"]}\nTalla: {fila["talla"]}\nPrecio: ${fila["precio"]}",
+                    AutoSize = true
+                };
 
-                Panel panelCamisa = new Panel();
-                panelCamisa.BorderStyle = BorderStyle.FixedSingle;
-                panelCamisa.Size = new Size(150, 200);
-                panelCamisa.Margin = new Padding(10);
+                Panel panelCamisa = new Panel
+                {
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(150, 200),
+                    Margin = new Padding(10)
+                };
 
                 panelCamisa.Controls.Add(pictureBoxFoto);
                 pictureBoxFoto.Location = new Point(25, 10);
@@ -94,6 +106,13 @@ namespace Vista
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
+            if (FormLogin.esInvitado)
+            {
+                MessageBox.Show("No puede realizar compras como invitado. Por favor, regístrese para poder hacer las compras deseadas.",
+                                "Acción no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (decimal.TryParse(txtEfectivo.Text, out efectivoIngresado))
             {
                 if (efectivoIngresado >= totalAPagar)
@@ -101,7 +120,7 @@ namespace Vista
                     decimal cambio = efectivoIngresado - totalAPagar;
                     labelCambioRegreso.Text = cambio.ToString("C");
 
-                    MessageBox.Show("Compra exitosa. Gracias por preferir Kb_sport3");
+                    MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3");
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -126,10 +145,10 @@ namespace Vista
 
         private void buttonRestablecerCatalogo_Click(object sender, EventArgs e)
         {
-
             textBoxFiltrar.Clear();
-
             CargarCamisasConFotos();
         }
     }
 }
+
+

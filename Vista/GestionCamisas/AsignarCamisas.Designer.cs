@@ -60,15 +60,15 @@
             // 
             this.buttonAsignarValoresCamisas.FlatAppearance.BorderSize = 0;
             this.buttonAsignarValoresCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAsignarValoresCamisas.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAsignarValoresCamisas.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAsignarValoresCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAsignarValoresCamisas.Image")));
             this.buttonAsignarValoresCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAsignarValoresCamisas.Location = new System.Drawing.Point(587, 58);
+            this.buttonAsignarValoresCamisas.Location = new System.Drawing.Point(542, 58);
             this.buttonAsignarValoresCamisas.Name = "buttonAsignarValoresCamisas";
-            this.buttonAsignarValoresCamisas.Size = new System.Drawing.Size(201, 78);
+            this.buttonAsignarValoresCamisas.Size = new System.Drawing.Size(246, 78);
             this.buttonAsignarValoresCamisas.TabIndex = 2;
             this.buttonAsignarValoresCamisas.Text = "ASIGNAR VALORES";
-            this.buttonAsignarValoresCamisas.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.buttonAsignarValoresCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAsignarValoresCamisas.UseVisualStyleBackColor = true;
             // 
             // buttonAsignarCerrar

@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonInvitado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.buttonInvitado);
             this.panel1.Controls.Add(this.buttonNuevoUsuario);
             this.panel1.Controls.Add(this.buttonExitLogin);
             this.panel1.Controls.Add(this.textBoxContraseña);
@@ -85,7 +87,6 @@
             this.buttonNuevoUsuario.Text = "Ingresar como cliente";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
-            this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
             // 
             // buttonExitLogin
             // 
@@ -237,6 +238,22 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "301 5318600";
             // 
+            // buttonInvitado
+            // 
+            this.buttonInvitado.FlatAppearance.BorderSize = 0;
+            this.buttonInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInvitado.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInvitado.Image = ((System.Drawing.Image)(resources.GetObject("buttonInvitado.Image")));
+            this.buttonInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonInvitado.Location = new System.Drawing.Point(3, 4);
+            this.buttonInvitado.Name = "buttonInvitado";
+            this.buttonInvitado.Size = new System.Drawing.Size(218, 63);
+            this.buttonInvitado.TabIndex = 13;
+            this.buttonInvitado.Text = "INGRESAR INVITADO";
+            this.buttonInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonInvitado.UseVisualStyleBackColor = true;
+            this.buttonInvitado.Click += new System.EventHandler(this.buttonInvitado_Click);
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +300,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonNuevoUsuario;
+        private System.Windows.Forms.Button buttonInvitado;
     }
 }
 

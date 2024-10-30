@@ -119,13 +119,17 @@ namespace Persistencia
         {
             using (MySqlConnection conn = conexion.AbrirConexion())
             {
-
                 if (conn.State != ConnectionState.Open)
                 {
-
+                    throw new Exception("No se pudo abrir la conexión a la base de datos.");
                 }
 
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, talla, precio, id_tela, stock, foto) VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)", conn);
+                MySqlCommand cmd = new MySqlCommand(
+                    "INSERT INTO Kb_sport3.Camisas (id_liga, id_equipo, talla, precio, id_tela, stock, foto) " +
+                    "VALUES (@liga, @equipo, @talla, @precio, @tela, @stock, @foto)",
+                    conn
+                );
+
                 cmd.Parameters.AddWithValue("@liga", Camisa.IdLiga);
                 cmd.Parameters.AddWithValue("@equipo", Camisa.IdEquipo);
                 cmd.Parameters.AddWithValue("@talla", Camisa.Talla);
@@ -133,36 +137,12 @@ namespace Persistencia
                 cmd.Parameters.AddWithValue("@tela", Camisa.IdTela);
                 cmd.Parameters.AddWithValue("@stock", Camisa.Stock);
                 cmd.Parameters.AddWithValue("@foto", Camisa.Foto);
+
                 cmd.ExecuteNonQuery();
-
-
-                Camisa.IdCamisa = (int)cmd.LastInsertedId;
-
-
-                foreach (var tela in Camisa.Telas)
-                {
-                    MySqlCommand cmdCheck = new MySqlCommand("SELECT COUNT(*) FROM TELAS WHERE id_tela = @idTela", conn);
-                    cmdCheck.Parameters.AddWithValue("@idTela", tela.Id_tela);
-                    int count = Convert.ToInt32(cmdCheck.ExecuteScalar());
-
-                    if (count > 0)
-                    {
-
-                        cmd = new MySqlCommand("INSERT INTO Kb_sport3.Camisas_Telas (id_camisa, id_tela, cantidad) VALUES (@id_camisa, @id_tela, @cantidad)", conn);
-                        cmd.Parameters.AddWithValue("@id_camisa", Camisa.IdCamisa);
-                        cmd.Parameters.AddWithValue("@id_tela", tela.Id_tela);
-                        cmd.Parameters.AddWithValue("@cantidad", tela.Stock);
-                        cmd.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        throw new Exception($"Tela con id {tela.Id_tela} no existe.");
-                    }
-                }
-
                 return true;
             }
         }
+
         public List<Liga> ObtenerLigas()
         {
             List<Liga> ligas = new List<Liga>();
@@ -211,96 +191,6 @@ namespace Persistencia
                 }
             }
             return equipos;
-        }
-
-        public void AsignarTelasCamisas(int idCamisa, List<CamisaTela> telas)
-        {
-            using (MySqlConnection connection = conexion.AbrirConexion())
-            {
-                foreach (var camisaTela in telas)
-                {
-                    string query = @"
-                UPDATE TELAS_CAMISAS 
-                SET cantidad = @cantidad 
-                WHERE id_tela = @idTela AND id_camisa = @idCamisa;";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@cantidad", camisaTela.Cantidad);
-                        cmd.Parameters.AddWithValue("@idTela", camisaTela.IdTela);
-                        cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-        }
-
-        public void AsignarCantidadTelas(int idCamisa, List<CamisaTela> telas)
-        {
-            using (MySqlConnection connection = conexion.AbrirConexion())
-            {
-                foreach (var camisaTela in telas)
-                {
-                    string query = @"
-                UPDATE Camisas_Telas 
-                SET cantidad = @cantidad 
-                WHERE id_tela = @idTela AND id_camisa = @idCamisa;";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@cantidad", camisaTela.Cantidad);
-                        cmd.Parameters.AddWithValue("@idTela", camisaTela.IdTela);
-                        cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-        }
-
-
-        public List<CamisaTela> ObtenerTelasDeCamisa(int idCamisa)
-        {
-            List<CamisaTela> telas = new List<CamisaTela>();
-            try
-            {
-                using (MySqlConnection connection = conexion.AbrirConexion())
-                {
-                    string query = @"
-                SELECT 
-                    tc.id_tela, 
-                    t.nombre AS NombreTela, 
-                    tc.cantidad 
-                FROM 
-                    TELAS_CAMISAS tc
-                JOIN 
-                    Telas t ON tc.id_tela = t.id_tela
-                WHERE 
-                    tc.id_camisa = @idCamisa;";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                CamisaTela camisaTela = new CamisaTela
-                                {
-                                    IdTela = reader.GetInt32("id_tela"),
-                                    NombreTela = reader.GetString("NombreTela"),
-                                    Cantidad = reader.GetInt32("cantidad")
-                                };
-                                telas.Add(camisaTela);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al obtener las telas de la camisa: " + ex.Message);
-            }
-            return telas;
         }
 
         public bool EliminarCamisa(int idCamisa)

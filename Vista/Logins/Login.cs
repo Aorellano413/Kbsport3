@@ -7,6 +7,7 @@ namespace Vista
     public partial class FormLogin : Form
     {
         private ServicioUsuario servicioUsuario = new ServicioUsuario();
+        public static bool esInvitado { get; private set; } = false;
 
         public FormLogin()
         {
@@ -43,12 +44,12 @@ namespace Vista
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-       
+
             var usuario = servicioUsuario.Autenticar(nombreUsuario, contraseña);
 
             if (usuario != null)
             {
-      
+
                 MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
                 menuGeneralAdministrador.Show();
                 this.Hide();
@@ -64,13 +65,13 @@ namespace Vista
             this.Close();
         }
 
-        private void buttonNuevoUsuario_Click(object sender, EventArgs e)
+
+        private void buttonInvitado_Click(object sender, EventArgs e)
         {
-            LoginCliente loginClienteForm = new LoginCliente();
-            loginClienteForm.Show();
+            esInvitado = true;
+            Catalogo catalogo = new Catalogo();
+            catalogo.Show();
             this.Hide();
         }
-
-        
     }
 }
