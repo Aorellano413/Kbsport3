@@ -12,9 +12,20 @@ namespace Logica
         InventarioCamisas datos = new InventarioCamisas();
 
 
-        public void InsertarCamisa(Camisa nuevaCamisa, Tela tela)
+        public void InsertarCamisa(Camisa nuevaCamisa)
         {
-            datos.InsertarCamisa(nuevaCamisa, tela);
+
+            datos.InsertarCamisa(nuevaCamisa);
+
+            List<CamisaTela> telas = nuevaCamisa.Telas.Select(t => new CamisaTela
+            {
+                IdTelaCamisa = t.Id_tela,
+                NombreTela = t.Nombre,
+                Cantidad = t.Stock
+            }).ToList();
+
+
+            datos.AsignarCantidadTelas(nuevaCamisa.IdCamisa, telas);
         }
 
 

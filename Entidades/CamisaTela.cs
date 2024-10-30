@@ -8,7 +8,7 @@ namespace Entidades
 {
     public   class CamisaTela
     {
-        public int IdTela { get; set; }
+        public int IdTelaCamisa { get; set; }
         public string NombreTela { get; set; }
         public int Cantidad { get; set; }
     }
