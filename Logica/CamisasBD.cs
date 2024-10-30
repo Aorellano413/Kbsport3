@@ -12,11 +12,11 @@ namespace Logica
         InventarioCamisas datos = new InventarioCamisas();
 
 
-        public bool InsertarCamisa(Camisa nuevaCamisa)
+        public void InsertarCamisa(Camisa nuevaCamisa, Tela tela)
         {
-
-            return datos.InsertarCamisa(nuevaCamisa);
+            datos.InsertarCamisa(nuevaCamisa, tela);
         }
+
 
         public bool EliminarCamisa(int idCamisa)
         {

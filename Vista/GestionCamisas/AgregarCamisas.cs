@@ -96,9 +96,11 @@ namespace Vista
                 string.IsNullOrEmpty(rutaImagenSeleccionada) ||
                 string.IsNullOrWhiteSpace(textBoxTalla.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos y seleccione una imagen antes de registrar la camisa.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, complete todos los campos y seleccione una imagen antes de registrar la camisa.",
+                                "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
 
             string precio = textBoxPrecio.Text;
             string stock = textBoxStcok.Text;
@@ -113,6 +115,7 @@ namespace Vista
             int equipoId = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Id_equipo;
             string equipoNombre = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
 
+
             DataRow nuevaFila = dt.NewRow();
             nuevaFila["LIGA"] = ligaNombre;
             nuevaFila["EQUIPO"] = equipoNombre;
@@ -124,7 +127,8 @@ namespace Vista
 
             dt.Rows.Add(nuevaFila);
 
-            Camisa Camisa = new Camisa
+
+            Camisa nuevaCamisa = new Camisa
             {
                 IdLiga = ligaId,
                 IdEquipo = equipoId,
@@ -135,8 +139,14 @@ namespace Vista
                 Foto = rutaImagenSeleccionada
             };
 
-            camisasBD.InsertarCamisa(Camisa);
+            Tela telaSeleccionada = new Tela
+            {
+                Id_tela = telaId,
+                Nombre = telaNombre,
+                Stock = Convert.ToInt32(stock)
+            };
 
+            camisasBD.InsertarCamisa(nuevaCamisa, telaSeleccionada);
 
             comboBoxliga.SelectedIndex = -1;
             textBoxPrecio.Clear();
@@ -146,6 +156,7 @@ namespace Vista
             comboBoxEquipo.SelectedIndex = -1;
             rutaImagenSeleccionada = null;
             pictureBoxFoto.Image = null;
+
         }
 
         private void buttonCerrarCamisas_Click(object sender, EventArgs e)
