@@ -16,18 +16,7 @@ namespace Logica
         {
 
             datos.InsertarCamisa(nuevaCamisa);
-
-            List<CamisaTela> telas = nuevaCamisa.Telas.Select(t => new CamisaTela
-            {
-                IdTelaCamisa = t.Id_tela,
-                NombreTela = t.Nombre,
-                Cantidad = t.Stock
-            }).ToList();
-
-
-            datos.AsignarCantidadTelas(nuevaCamisa.IdCamisa, telas);
         }
-
 
         public bool EliminarCamisa(int idCamisa)
         {

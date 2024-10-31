@@ -146,7 +146,7 @@ namespace Vista
                 Stock = Convert.ToInt32(stock)
             };
 
-            camisasBD.InsertarCamisa(nuevaCamisa, telaSeleccionada);
+            camisasBD.InsertarCamisa(nuevaCamisa,telaSeleccionada);
 
             comboBoxliga.SelectedIndex = -1;
             textBoxPrecio.Clear();
