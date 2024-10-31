@@ -157,7 +157,8 @@ namespace Persistencia
 
                     cmdTelasCamisas.Parameters.AddWithValue("@idCamisa", idCamisa);
                     cmdTelasCamisas.Parameters.AddWithValue("@idTela", camisa.IdTela);
-                    cmdTelasCamisas.Parameters.AddWithValue("@cantidad", camisa.Stock);
+                    cmdTelasCamisas.Parameters.AddWithValue("@cantidad", 0);
+
 
                     cmdTelasCamisas.ExecuteNonQuery();
                 }
