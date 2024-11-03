@@ -73,5 +73,12 @@ namespace Vista
             catalogo.Show();
             this.Hide();
         }
+
+        private void buttonNuevoUsuario_Click(object sender, EventArgs e)
+        {
+            LoginCliente loginCliente = new LoginCliente();
+            loginCliente.Show();
+            this.Hide();
+        }
     }
 }

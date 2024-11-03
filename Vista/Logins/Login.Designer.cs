@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonInvitado = new System.Windows.Forms.Button();
             this.buttonNuevoUsuario = new System.Windows.Forms.Button();
             this.buttonExitLogin = new System.Windows.Forms.Button();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonInvitado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,6 +73,22 @@
             this.panel1.Size = new System.Drawing.Size(363, 381);
             this.panel1.TabIndex = 0;
             // 
+            // buttonInvitado
+            // 
+            this.buttonInvitado.FlatAppearance.BorderSize = 0;
+            this.buttonInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInvitado.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInvitado.Image = ((System.Drawing.Image)(resources.GetObject("buttonInvitado.Image")));
+            this.buttonInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonInvitado.Location = new System.Drawing.Point(3, 4);
+            this.buttonInvitado.Name = "buttonInvitado";
+            this.buttonInvitado.Size = new System.Drawing.Size(218, 63);
+            this.buttonInvitado.TabIndex = 13;
+            this.buttonInvitado.Text = "INGRESAR INVITADO";
+            this.buttonInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonInvitado.UseVisualStyleBackColor = true;
+            this.buttonInvitado.Click += new System.EventHandler(this.buttonInvitado_Click);
+            // 
             // buttonNuevoUsuario
             // 
             this.buttonNuevoUsuario.FlatAppearance.BorderSize = 0;
@@ -87,6 +103,7 @@
             this.buttonNuevoUsuario.Text = "Ingresar como cliente";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonNuevoUsuario.UseVisualStyleBackColor = true;
+            this.buttonNuevoUsuario.Click += new System.EventHandler(this.buttonNuevoUsuario_Click);
             // 
             // buttonExitLogin
             // 
@@ -237,22 +254,6 @@
             this.label2.Size = new System.Drawing.Size(87, 23);
             this.label2.TabIndex = 14;
             this.label2.Text = "301 5318600";
-            // 
-            // buttonInvitado
-            // 
-            this.buttonInvitado.FlatAppearance.BorderSize = 0;
-            this.buttonInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInvitado.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInvitado.Image = ((System.Drawing.Image)(resources.GetObject("buttonInvitado.Image")));
-            this.buttonInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonInvitado.Location = new System.Drawing.Point(3, 4);
-            this.buttonInvitado.Name = "buttonInvitado";
-            this.buttonInvitado.Size = new System.Drawing.Size(218, 63);
-            this.buttonInvitado.TabIndex = 13;
-            this.buttonInvitado.Text = "INGRESAR INVITADO";
-            this.buttonInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonInvitado.UseVisualStyleBackColor = true;
-            this.buttonInvitado.Click += new System.EventHandler(this.buttonInvitado_Click);
             // 
             // FormLogin
             // 
