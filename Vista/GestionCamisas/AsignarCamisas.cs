@@ -18,18 +18,28 @@ namespace Vista.GestionCamisas
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             camisasBD = new CamisasBD();
+            InitializeDataGridView();
             CargarCamisas();
+        }
+
+        private void InitializeDataGridView()
+        {
+            dataGridViewAsignarValores.Columns.Clear();
+
+            // Se eliminó la columna de ID Tela
+            dataGridViewAsignarValores.Columns.Add("NombreTela", "Nombre Tela");
+            dataGridViewAsignarValores.Columns.Add("Cantidad", "Cantidad");
+
+            dataGridViewAsignarValores.Columns["Cantidad"].ReadOnly = false;
         }
 
         private void CargarCamisas()
         {
             DataTable camisasDataTable = camisasBD.ObtenerNombresDeCamisas();
             comboBoxCamisasAsignar.DataSource = camisasDataTable;
-            comboBoxCamisasAsignar.DisplayMember = "nombre_equipo";
-            comboBoxCamisasAsignar.ValueMember = "id_camisa";
+            comboBoxCamisasAsignar.DisplayMember = "nombre_equipo"; 
+            comboBoxCamisasAsignar.ValueMember = "id_camisa"; 
         }
-
-
 
         private void buttonBuscarCamisas_Click(object sender, EventArgs e)
         {
@@ -45,7 +55,6 @@ namespace Vista.GestionCamisas
                 foreach (var camisaTela in telas)
                 {
                     int rowIndex = dataGridViewAsignarValores.Rows.Add();
-                    dataGridViewAsignarValores.Rows[rowIndex].Cells["IdTela"].Value = camisaTela.IdTelaCamisa;
                     dataGridViewAsignarValores.Rows[rowIndex].Cells["NombreTela"].Value = camisaTela.NombreTela;
                     dataGridViewAsignarValores.Rows[rowIndex].Cells["Cantidad"].Value = camisaTela.Cantidad;
                     dataGridViewAsignarValores.Rows[rowIndex].Cells["Cantidad"].ReadOnly = false;
