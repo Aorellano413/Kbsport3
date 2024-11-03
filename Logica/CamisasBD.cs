@@ -11,10 +11,8 @@ namespace Logica
     {
         InventarioCamisas datos = new InventarioCamisas();
 
-
         public void InsertarCamisa(Camisa nuevaCamisa)
         {
-
             datos.InsertarCamisa(nuevaCamisa);
 
             List<CamisaTela> telas = nuevaCamisa.Telas.Select(t => new CamisaTela
@@ -23,7 +21,6 @@ namespace Logica
                 NombreTela = t.Nombre,
                 Cantidad = t.Stock
             }).ToList();
-
 
             datos.AsignarCantidadTelas(nuevaCamisa.IdCamisa, telas);
         }
@@ -53,17 +50,24 @@ namespace Logica
             return datos.ObtenerTodasLasCamisas();
         }
 
+        public DataTable ObtenerNombresDeCamisas()
+        {
+            return datos.ObtenerNombresDeCamisas();
+        }
+
         public DataTable ObtenerCamisasPorNombre(string nombre)
         {
             return datos.ObtenerCamisasPorNombre(nombre);
         }
+
         public DataTable ObtenerCamisasPorLiga(string liga)
         {
             return datos.ObtenerCamisasPorLiga(liga);
         }
-        public DataTable ObtenerCamisasPorNombre()
+
+        public List<CamisaTela> ObtenerTelasDeCamisa(int idCamisa)
         {
-            throw new NotImplementedException();
+            return datos.ObtenerTelasDeCamisa(idCamisa);
         }
     }
 }

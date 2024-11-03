@@ -244,6 +244,55 @@ namespace Persistencia
             }
         }
 
+        public DataTable ObtenerNombresDeCamisas()
+        {
+            DataTable dt = new DataTable();
+            using (MySqlConnection conn = conexion.AbrirConexion())
+            {
+                string query = "SELECT c.id_camisa, e.nombre AS nombre_equipo FROM Camisas c JOIN Equipo e ON c.id_equipo = e.id_equipo";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+
+        public List<CamisaTela> ObtenerTelasDeCamisa(int idCamisa)
+        {
+            List<CamisaTela> telas = new List<CamisaTela>();
+            using (MySqlConnection conn = conexion.AbrirConexion())
+            {
+                string query = "SELECT t.id_tela, t.nombre AS nombre_tela, tc.cantidad " +
+                               "FROM Telas t " +
+                               "JOIN TELAS_CAMISAS tc ON t.id_tela = tc.id_tela " +
+                               "WHERE tc.id_camisa = @idCamisa";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            telas.Add(new CamisaTela
+                            {
+                                IdTelaCamisa = reader.GetInt32(reader.GetOrdinal("id_tela")),
+                                NombreTela = reader.GetString(reader.GetOrdinal("nombre_tela")),
+                                Cantidad = reader.GetInt32(reader.GetOrdinal("cantidad"))
+                            });
+                        }
+                    }
+                }
+            }
+            return telas;
+        }
+
+
+
         public bool EliminarCamisa(int idCamisa)
         {
             try
