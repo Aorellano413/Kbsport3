@@ -60,6 +60,12 @@ namespace Logica
             return datos.ObtenerCamisasPorNombre(nombre);
         }
 
+        public void AsignarCantidadTelas(int idCamisa, List<CamisaTela> telas)
+        {
+            datos.AsignarCantidadTelas(idCamisa, telas);
+        }
+
+
         public DataTable ObtenerCamisasPorLiga(string liga)
         {
             return datos.ObtenerCamisasPorLiga(liga);

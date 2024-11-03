@@ -40,7 +40,6 @@
             // 
             // dataGridViewAsignarValores
             // 
-            this.dataGridViewAsignarValores.AllowUserToAddRows = false;
             this.dataGridViewAsignarValores.AllowUserToDeleteRows = false;
             this.dataGridViewAsignarValores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAsignarValores.BackgroundColor = System.Drawing.SystemColors.Info;
@@ -50,7 +49,6 @@
             this.dataGridViewAsignarValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAsignarValores.Location = new System.Drawing.Point(12, 142);
             this.dataGridViewAsignarValores.Name = "dataGridViewAsignarValores";
-            this.dataGridViewAsignarValores.ReadOnly = true;
             this.dataGridViewAsignarValores.RowHeadersVisible = false;
             this.dataGridViewAsignarValores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAsignarValores.Size = new System.Drawing.Size(776, 240);
@@ -70,6 +68,7 @@
             this.buttonAsignarValoresCamisas.Text = "ASIGNAR VALORES";
             this.buttonAsignarValoresCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonAsignarValoresCamisas.UseVisualStyleBackColor = true;
+            this.buttonAsignarValoresCamisas.Click += new System.EventHandler(this.buttonAsignarValoresCamisas_Click);
             // 
             // buttonAsignarCerrar
             // 
