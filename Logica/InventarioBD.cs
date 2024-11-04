@@ -18,14 +18,12 @@ namespace Logica
             datos.InsertarTela(tela);
         }
 
-        public void InsertarEquipo(Equipo equipo) 
+        public void InsertarEquipo(Equipo equipo)
         {
             datos.InsertarEquipo(equipo);
         }
 
-       
-
-        public void InsertarLiga(Liga liga) 
+        public void InsertarLiga(Liga liga)
         {
             datos.InsertarLiga(liga);
         }
@@ -48,6 +46,11 @@ namespace Logica
         public bool ExisteTela(string nombre)
         {
             return datos.ExisteTela(nombre);
+        }
+
+        public void DescontarStockTela(int idTela, int cantidad)
+        {
+            datos.DescontarStockTela(idTela, cantidad);
         }
     }
 }

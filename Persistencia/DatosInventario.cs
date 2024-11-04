@@ -130,6 +130,20 @@ namespace Persistencia
             }
         }
 
+        public void DescontarStockTela(int idTela, int cantidad)
+        {
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "UPDATE Kb_sport3.telas SET stock = stock - @cantidad WHERE id_tela = @idTela";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmd.Parameters.AddWithValue("@idTela", idTela);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void InsertarEquipo(Equipo equipo)
         {
             using (MySqlConnection connection = conexion.AbrirConexion())

@@ -156,6 +156,7 @@
     <Compile Include="ConexionDAL.cs" />
     <Compile Include="DatosFactura.cs" />
     <Compile Include="DatosInventario.cs" />
+    <Compile Include="DatosPedido.cs" />
     <Compile Include="DatosUsuarios.cs" />
     <Compile Include="InventarioCamisas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
