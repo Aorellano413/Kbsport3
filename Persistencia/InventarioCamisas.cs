@@ -48,6 +48,67 @@ namespace Persistencia
             return dt;
         }
 
+        public Camisa ObtenerCamisaPorId(int idCamisa)
+        {
+            Camisa camisa = null;
+            try
+            {
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+                    string query = @"
+            SELECT 
+                c.id_camisa,
+                c.id_liga,
+                c.id_equipo,
+                c.talla,
+                c.precio,
+                c.stock,
+                c.foto,
+                l.nombre AS NombreLiga,
+                e.nombre AS NombreEquipo,
+                t.nombre AS NombreTela
+            FROM 
+                Kb_sport3.Camisas c
+            JOIN 
+                Kb_sport3.Liga l ON c.id_liga = l.id_liga
+            JOIN 
+                Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+            JOIN 
+                Kb_sport3.Telas t ON c.id_tela = t.id_tela
+            WHERE 
+                c.id_camisa = @IdCamisa;";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@IdCamisa", idCamisa);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        camisa = new Camisa
+                        {
+                            IdCamisa = reader.GetInt32("id_camisa"),
+                            IdLiga = reader.GetInt32("id_liga"),
+                            IdEquipo = reader.GetInt32("id_equipo"),
+                            Talla = reader.GetString("talla"),
+                            Precio = reader.GetDecimal("precio"),
+                            Stock = reader.GetInt32("stock"),
+                            Foto = reader.GetString("foto"),
+                            Ligas = new List<Liga> { new Liga { Nombre = reader.GetString("NombreLiga") } },
+                            Equipos = new List<Equipo> { new Equipo { Nombre = reader.GetString("NombreEquipo") } },
+                            Telas = new List<Tela> { new Tela { Nombre = reader.GetString("NombreTela") } }
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener la camisa por ID: " + ex.Message);
+            }
+            return camisa;
+        }
+
+
 
 
         public DataTable ObtenerCamisasPorNombre(string nombre)

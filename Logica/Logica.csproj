@@ -155,6 +155,7 @@
   <ItemGroup>
     <Compile Include="CamisasBD.cs" />
     <Compile Include="InventarioBD.cs" />
+    <Compile Include="PedidosBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioUsuario.cs" />
   </ItemGroup>

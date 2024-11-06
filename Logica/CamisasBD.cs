@@ -35,7 +35,7 @@ namespace Logica
             return datos.ObtenerTelas();
         }
 
-        public List<Liga> ObtenerLigas()
+        public List<Liga> ObtenerLigas()  
         {
             return datos.ObtenerLigas();
         }

@@ -10,13 +10,13 @@ namespace Vista
 {
     public partial class Catalogo : Form
     {
+        private PedidosBD pedidosBD = new PedidosBD();
         private InventarioBD inventarioBD = new InventarioBD();
         private CamisasBD camisasBD = new CamisasBD();
         private Panel panelSeleccionado = null;
         private decimal totalAPagar = 0;
         private decimal efectivoIngresado = 0;
         public static bool esInvitado { get; private set; } = false;
-
 
         private Dictionary<int, int> camisasSeleccionadas = new Dictionary<int, int>();
 
@@ -86,7 +86,6 @@ namespace Vista
             int idCamisa = Convert.ToInt32(datosCamisa["id_camisa"]);
             decimal precioSeleccionado = Convert.ToDecimal(datosCamisa["precio"]);
 
-
             totalAPagar += precioSeleccionado;
             labelTotalApagar.Text = totalAPagar.ToString("C");
 
@@ -126,22 +125,45 @@ namespace Vista
                     decimal cambio = efectivoIngresado - totalAPagar;
                     labelCambioRegreso.Text = cambio.ToString("C");
 
-    
-                    foreach (var entry in camisasSeleccionadas)
+                    Pedido pedido = new Pedido
                     {
-                        int idCamisa = entry.Key;
-                        int cantidadSeleccionada = entry.Value; 
+                        FechaPedido = DateTime.Now,
+                        Id = 1 
+                    };
 
-                        List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(idCamisa);
+                    int idPedido = pedidosBD.CrearPedido(pedido);
+                    List<DetallePedido> detallesPedido = new List<DetallePedido>();
 
-                        foreach (var tela in telas)
+                    foreach (Control control in flowLayoutPanelCamisasVentas.Controls)
+                    {
+                        if (control is Panel panelCamisa && panelCamisa.Tag != null)
                         {
-                            int cantidadTotal = tela.Cantidad * cantidadSeleccionada; 
-                            inventarioBD.DescontarStockTela(tela.IdTelaCamisa, cantidadTotal);
+                            int idCamisa = (int)panelCamisa.Tag;
+
+                            int cantidadSeleccionada = ObtenerCantidadSeleccionada(panelCamisa);
+                     
+
+                            DetallePedido detalle = new DetallePedido
+                            {
+                                Cantidad = cantidadSeleccionada,
+                                IdPedido = idPedido,
+                                IdCamisa = idCamisa
+                            };
+
+                            pedidosBD.AgregarDetallePedido(detalle);
+                            detallesPedido.Add(detalle);
+
+                            List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(idCamisa);
+                            foreach (var tela in telas)
+                            {
+                                int cantidadTotal = tela.Cantidad * cantidadSeleccionada;
+                                inventarioBD.DescontarStockTela(tela.IdTelaCamisa, cantidadTotal);
+                            }
                         }
                     }
 
                     MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3.");
+
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -170,5 +192,19 @@ namespace Vista
             textBoxFiltrar.Clear();
             CargarCamisasConFotos();
         }
+
+        private int ObtenerCantidadSeleccionada(Panel panelCamisa)
+        {
+            int idCamisa = Convert.ToInt32(panelCamisa.Tag);
+
+  
+            if (camisasSeleccionadas.ContainsKey(idCamisa))
+            {
+                return camisasSeleccionadas[idCamisa];
+            }
+            return 0;  
+        }
+
+       
     }
 }
