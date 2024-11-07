@@ -8,6 +8,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using Entidades;
 using Logica;
+using System.Linq;
 
 namespace Vista
 {
@@ -42,7 +43,6 @@ namespace Vista
                     continue;
                 }
 
-                // Obtener la tela de la camisa
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
 
@@ -79,8 +79,6 @@ namespace Vista
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
-
-
 
         private void SeleccionarCamisa(Panel panelCamisa, DataRow datosCamisa)
         {
@@ -127,7 +125,7 @@ namespace Vista
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-            if (decimal.TryParse(txtEfectivo.Text, out efectivoIngresado))
+            if (decimal.TryParse(txtEfectivo.Text, out decimal efectivoIngresado))
             {
                 if (efectivoIngresado >= totalAPagar)
                 {
@@ -143,14 +141,13 @@ namespace Vista
                     int idPedido = pedidosBD.CrearPedido(pedido);
                     List<DetallePedido> detallesPedido = new List<DetallePedido>();
 
+                    // Recorrer todos los paneles en flowLayoutPanelCamisasVentas
                     foreach (Control control in flowLayoutPanelCamisasVentas.Controls)
                     {
                         if (control is Panel panelCamisa && panelCamisa.Tag != null)
                         {
                             int idCamisa = (int)panelCamisa.Tag;
-
                             int cantidadSeleccionada = ObtenerCantidadSeleccionada(panelCamisa);
-
 
                             DetallePedido detalle = new DetallePedido
                             {
@@ -159,9 +156,10 @@ namespace Vista
                                 IdCamisa = idCamisa
                             };
 
-                            pedidosBD.AgregarDetallePedido(detalle);
+                            // Agregar cada detalle del pedido
                             detallesPedido.Add(detalle);
 
+                            // Actualizar el inventario
                             List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(idCamisa);
                             foreach (var tela in telas)
                             {
@@ -171,8 +169,15 @@ namespace Vista
                         }
                     }
 
+                    // Ahora pasamos toda la lista detallesPedido a CrearPDF para generar el PDF con todas las camisas seleccionadas
+                    if (detallesPedido.Count > 0)
+                    {
+                        CrearPDF(detallesPedido);  // Pasamos todos los detalles seleccionados
+                    }
+
                     MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3.");
 
+                    // Resetear los valores
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -190,9 +195,78 @@ namespace Vista
             }
         }
 
+        private void CrearPDF(List<DetallePedido> detallesPedido)
+        {
+            string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string rutaPDF = Path.Combine(rutaEscritorio, "FacturaKB_Sport3.pdf");
 
+            Document documento = new Document(PageSize.A4);
+            PdfWriter.GetInstance(documento, new FileStream(rutaPDF, FileMode.Create));
 
+            documento.Open();
 
+            // Ruta del logo con el nombre y ubicación especificados
+            string rutaLogo = @"E:\Universidad\BASE DE DATOS\Krsport3.png"; // Ruta a tu imagen
+
+            // Verificar si el archivo de la imagen existe
+            if (File.Exists(rutaLogo))
+            {
+                try
+                {
+                    // Usamos iTextSharp.text.Image para trabajar con el logo
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(rutaLogo);
+
+                    // Escalar la imagen si es necesario
+                    logo.ScaleToFit(100, 100);
+
+                    // Centrar la imagen (opcional)
+                    logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+
+                    // Agregar el logo al documento
+                    documento.Add(logo);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar la imagen: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("La imagen no se encuentra en la ruta especificada.");
+            }
+
+            // Título de la factura
+            documento.Add(new Paragraph("Factura de Compra KB Sport3"));
+            documento.Add(new Paragraph("\n"));
+
+            // Agregar los detalles de cada camisa seleccionada
+            decimal totalFactura = 0;  // Variable para calcular el total de la factura
+            foreach (var detallePedido in detallesPedido)
+            {
+                if (detallePedido.Cantidad > 0)  // Solo incluir camisas con cantidad mayor a 0
+                {
+                    Camisa camisa = camisasBD.ObtenerCamisaPorId(detallePedido.IdCamisa); // Obtener los detalles de la camisa
+
+                    // Agregar la información de la camisa al documento
+                    decimal totalCamisa = camisa.Precio * detallePedido.Cantidad;
+                    documento.Add(new Paragraph($"Talla: {camisa.Talla}"));
+                    documento.Add(new Paragraph($"Precio: {camisa.Precio.ToString("C")}"));
+                    documento.Add(new Paragraph($"Cantidad: {detallePedido.Cantidad}"));
+                    documento.Add(new Paragraph($"Total: {totalCamisa.ToString("C")}\n"));
+
+                    totalFactura += totalCamisa;  // Acumulamos el total de la factura
+                }
+            }
+
+            // Agregar el total de la factura
+            documento.Add(new Paragraph($"Total a pagar: {totalFactura.ToString("C")}"));
+
+            // Cerrar el documento
+            documento.Close();
+
+            // Informar al usuario que el PDF ha sido generado
+            MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3.pdf'.");
+        }
 
         private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
         {
@@ -200,24 +274,13 @@ namespace Vista
             CargarCamisasConFotos(filtro);
         }
 
-        private void buttonRestablecerCatalogo_Click(object sender, EventArgs e)
-        {
-            textBoxFiltrar.Clear();
-            CargarCamisasConFotos();
-        }
-
         private int ObtenerCantidadSeleccionada(Panel panelCamisa)
         {
-            int idCamisa = Convert.ToInt32(panelCamisa.Tag);
-
-
-            if (camisasSeleccionadas.ContainsKey(idCamisa))
+            if (camisasSeleccionadas.TryGetValue((int)panelCamisa.Tag, out int cantidad))
             {
-                return camisasSeleccionadas[idCamisa];
+                return cantidad;
             }
             return 0;
         }
-
-
     }
 }

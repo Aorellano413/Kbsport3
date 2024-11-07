@@ -195,7 +195,6 @@
             this.buttonRestablecerCatalogo.Text = "Restablecer";
             this.buttonRestablecerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRestablecerCatalogo.UseVisualStyleBackColor = true;
-            this.buttonRestablecerCatalogo.Click += new System.EventHandler(this.buttonRestablecerCatalogo_Click);
             // 
             // label1
             // 
@@ -288,7 +287,6 @@
             // 
             this.buttonPDF.FlatAppearance.BorderSize = 0;
             this.buttonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPDF.Image = ((System.Drawing.Image)(resources.GetObject("buttonPDF.Image")));
             this.buttonPDF.Location = new System.Drawing.Point(1059, 584);
             this.buttonPDF.Name = "buttonPDF";
             this.buttonPDF.Size = new System.Drawing.Size(75, 51);
