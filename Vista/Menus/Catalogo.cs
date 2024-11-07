@@ -137,7 +137,7 @@ namespace Vista
                     Pedido pedido = new Pedido
                     {
                         FechaPedido = DateTime.Now,
-                        Id = 1 
+                        Id = 1
                     };
 
                     int idPedido = pedidosBD.CrearPedido(pedido);
@@ -150,7 +150,7 @@ namespace Vista
                             int idCamisa = (int)panelCamisa.Tag;
 
                             int cantidadSeleccionada = ObtenerCantidadSeleccionada(panelCamisa);
-                     
+
 
                             DetallePedido detalle = new DetallePedido
                             {
@@ -190,10 +190,9 @@ namespace Vista
             }
         }
 
-        private void buttonPDF_Click(object sender, EventArgs e)
-        {
-           
-        }
+
+
+
 
         private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
         {
@@ -211,14 +210,14 @@ namespace Vista
         {
             int idCamisa = Convert.ToInt32(panelCamisa.Tag);
 
-  
+
             if (camisasSeleccionadas.ContainsKey(idCamisa))
             {
                 return camisasSeleccionadas[idCamisa];
             }
-            return 0;  
+            return 0;
         }
 
-        
+
     }
 }

@@ -294,7 +294,6 @@
             this.buttonPDF.Size = new System.Drawing.Size(75, 51);
             this.buttonPDF.TabIndex = 24;
             this.buttonPDF.UseVisualStyleBackColor = true;
-            this.buttonPDF.Click += new System.EventHandler(this.buttonPDF_Click);
             // 
             // Catalogo
             // 
