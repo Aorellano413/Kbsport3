@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using Entidades;
 using Logica;
 
@@ -39,16 +42,20 @@ namespace Vista
                     continue;
                 }
 
+                // Obtener la tela de la camisa
+                List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
+                string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
+
                 PictureBox pictureBoxFoto = new PictureBox
                 {
                     Size = new Size(100, 100),
                     SizeMode = PictureBoxSizeMode.StretchImage,
-                    Image = Image.FromFile(fila["foto"].ToString())
+                    Image = System.Drawing.Image.FromFile(fila["foto"].ToString())
                 };
 
                 Label labelInfo = new Label
                 {
-                    Text = $"Equipo: {fila["equipo"]}\nTalla: {fila["talla"]}\nPrecio: ${fila["precio"]}",
+                    Text = $"Nombre: {fila["equipo"]}\nTela: {nombreTela}\nEquipo: {fila["equipo"]}\nPrecio: ${fila["precio"]}",
                     AutoSize = true
                 };
 
@@ -72,6 +79,8 @@ namespace Vista
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
+
+
 
         private void SeleccionarCamisa(Panel panelCamisa, DataRow datosCamisa)
         {
@@ -181,6 +190,11 @@ namespace Vista
             }
         }
 
+        private void buttonPDF_Click(object sender, EventArgs e)
+        {
+           
+        }
+
         private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
         {
             string filtro = textBoxFiltrar.Text;
@@ -205,6 +219,6 @@ namespace Vista
             return 0;  
         }
 
-       
+        
     }
 }

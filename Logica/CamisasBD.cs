@@ -75,5 +75,10 @@ namespace Logica
         {
             return datos.ObtenerTelasDeCamisa(idCamisa);
         }
+
+        public Camisa ObtenerCamisaPorId(int idCamisa)
+        {
+            return datos.ObtenerCamisaPorId(idCamisa);
+        }
     }
 }

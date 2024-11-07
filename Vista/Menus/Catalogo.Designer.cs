@@ -50,6 +50,7 @@
             this.labelPagar = new System.Windows.Forms.Label();
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
+            this.buttonPDF = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -219,7 +220,7 @@
             this.buttonConfirmar.FlatAppearance.BorderSize = 0;
             this.buttonConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("buttonConfirmar.Image")));
-            this.buttonConfirmar.Location = new System.Drawing.Point(1068, 572);
+            this.buttonConfirmar.Location = new System.Drawing.Point(1008, 593);
             this.buttonConfirmar.Name = "buttonConfirmar";
             this.buttonConfirmar.Size = new System.Drawing.Size(45, 42);
             this.buttonConfirmar.TabIndex = 17;
@@ -283,12 +284,25 @@
             this.labelCambio.TabIndex = 22;
             this.labelCambio.Text = "CAMBIO:";
             // 
+            // buttonPDF
+            // 
+            this.buttonPDF.FlatAppearance.BorderSize = 0;
+            this.buttonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPDF.Image = ((System.Drawing.Image)(resources.GetObject("buttonPDF.Image")));
+            this.buttonPDF.Location = new System.Drawing.Point(1059, 584);
+            this.buttonPDF.Name = "buttonPDF";
+            this.buttonPDF.Size = new System.Drawing.Size(75, 51);
+            this.buttonPDF.TabIndex = 24;
+            this.buttonPDF.UseVisualStyleBackColor = true;
+            this.buttonPDF.Click += new System.EventHandler(this.buttonPDF_Click);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1134, 635);
+            this.Controls.Add(this.buttonPDF);
             this.Controls.Add(this.labelCambioRegreso);
             this.Controls.Add(this.labelCambio);
             this.Controls.Add(this.buttonConfirmar);
@@ -337,5 +351,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button buttonPDF;
     }
 }
