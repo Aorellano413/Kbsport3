@@ -76,7 +76,7 @@
             // 
             this.textBoxEquipo.Location = new System.Drawing.Point(290, 90);
             this.textBoxEquipo.Name = "textBoxEquipo";
-            this.textBoxEquipo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEquipo.Size = new System.Drawing.Size(140, 20);
             this.textBoxEquipo.TabIndex = 2;
             // 
             // buttonAceptarEquipo
@@ -106,7 +106,7 @@
             this.buttonBorrarEquipo.FlatAppearance.BorderSize = 0;
             this.buttonBorrarEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBorrarEquipo.Image = ((System.Drawing.Image)(resources.GetObject("buttonBorrarEquipo.Image")));
-            this.buttonBorrarEquipo.Location = new System.Drawing.Point(353, 140);
+            this.buttonBorrarEquipo.Location = new System.Drawing.Point(393, 140);
             this.buttonBorrarEquipo.Name = "buttonBorrarEquipo";
             this.buttonBorrarEquipo.Size = new System.Drawing.Size(37, 36);
             this.buttonBorrarEquipo.TabIndex = 4;

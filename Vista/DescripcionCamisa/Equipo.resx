@@ -131,33 +131,30 @@
   </data>
   <data name="buttonAceptarEquipo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rwAAAK8BK7AVuQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIFSURBVEhLrVXb
-        SsNAEM1H+OAVP0ebpNnYr/Cu6Ad4RwVfFEEUEUVEKCRVrPqkPinigz6I9fILXrAXFFvjOrPdiNls2qR6
-        4ECyM3NmM9mdUSqB7JAWPWX0ajY5BN5qFikwwrNuGweqTXpiVqKZu4eHntSbNMtYBqESkFaho9lmUrUS
-        rTy8MkDYgKCcIBKGOX2HxLmMHJpl9oEj7EgqEIYOlpTLeRFLmTFw+BQCaqGDVeCyZbCa11aWIGbbrEQD
-        l2d1X5U4heLC5SLtPRrw2+CQMHE8irBQU2nWrtcpolAs0MGTYdFewsq4P1Y0VuXGzSYTd/H49uT3s0i3
-        ghfGZ6hCd+cunC+Hzl7MyXzTClySB4mBDhwP0cWrJd+6uPOS80mnzmd8fkjdJneQgORFQz+I5z7yTGAr
-        s/2zHmHnLvOYwHM8ddukz+8vXKKMzcxWpJ3/YhYT3AuLdOR0jBadIpfyA8Unz6c9MQHMBP7kkbNxaZII
-        4si0gi1XYmAUk0QUh3IbnQr2c3gJbMujZxMsSVRxYPmiIeBlRTB6iF+ClNmCCJVZYuIIY9dohMX/bHav
-        alKt5/JlqLbRDoZ/adeq3aFzWS/4/P3TwMFDw+XkwOzgmBUCw/AVWrTGZSojvhevgz4yD0Fhhn4Je79n
-        wIQFm3Qps0tLkX0QygCxbyHxOY22n6MohaJ8A0KtjWd99HenAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOsAAADrASts18IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACF0lEQVRYR73Xz0sWQRzH8RUSqTDwomBnoUzQwP4DUYIURfDsWSTEHySd9BZ00iyKAjG6lyc9iZIX
+        b948+Ad4Kw9iFmq+P4/PyjR+Z57dp338wAtknpn97q6zs7NJlenCN/zEIVbLbTeSfvzCX4/aBlDT9MIq
+        nvoNnWAheYBJvMJbfESseEp9PuE9NHYaD5E5t/AGZ7AKVEPHWkI9KuYdrIMUQXcymg6cwxpcBB37EYKZ
+        hTWwSKoRzCKsQUVSjWA+wBpUjdAkVo1gPsMalIdWxfu4jXH4J6IaZp7hBG7nvL5Cj7GbZbh9VOPaYjUE
+        rWJux7zW0QA/U/D7qpZqlvIE/3vlW7gDP3XYhDVGNbuRrJUbLPr/aSltwWNsw++zg0ZYeQ2/v0u1k2On
+        wac13Y2ucgPp77togpU5uMey6L0RPYHn8HMX37GHZjUYmYF1PF/pBDR5rB+ldIuM3EPr5Z/XMoasy7lq
+        lyZCbBLOI2tGkfUtejUJlUqP4UtUyghOYY33/cEw/slTxDYcsZdIH7I+yrrQQZhZgTUoZU3KHmTZKaW+
+        IBhto6xBKU2uF9ACo2j5PoLVN0Rbu2AWYA3yHWDfa8tKW7NgdHXWoCKpRjDaLmV9jKqhY7cjGt0ia3AR
+        orc/Ta225Zpf/l4hGvfDRE9H3g8TbcE1dgJtKCQ3+mkWigpYb1CdWM0/TtN0Qvs/fZ7/KP+ttpxJkgsn
+        plb+dD97JAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="buttonBorrarEquipo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        gwAAAIMBYu+7WgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIhSURBVEhL7Za7
-        a1pRHMdNk6EgaR1q62KKFR/gc/WFCL4HdxelbkVEFPwTnByU6BDELhVsFnEQlzqoiKJ0UnwtgQyWbnYo
-        TQKF/vo75+ptY28Sr2PJFz7o/XHO93se3nMU7KAD5APyCWmuId8/IocILz1BTpA3f/EWOd2qETLIu63a
-        a+TuUKFQ+FmhUCyVSuU+fJXL5VcikegCrcis/5FQKpUuU6kU7Es4HAaZTHaDXi8Yy9t6KpFIvnB13JVQ
-        KAQ4SBLwnLHcEk4vp1arV0aj8Qdf9Hr9FVkisVh8vrbjVqPRmPX7feBDr9eDZrMJtVpttba5U8cWi2W5
-        WCyAL4PBANxuN1mel4wVt56Zzea9AobD4SbgFWPFLTZgPB5DLpeDVqvFmlQqFSiXy+xzp9OBbDYLo9GI
-        f0AkEgG73Q5arZaa1et10Gg0oNPpoFqt0hpuLjgcDggGg/wDnE4nxGIxakiei8UieDwe8Pv9kM/naQ1/
-        OZBIJMBqtT4GPAb80X8UgI0hGo2yL1qpVKI1r9cLhUKB1kh4PB4Hm822c8CxyWSiAZlMBvD4BZ/PR83I
-        qalSqQBvLuh2u7QWCARom3Q6TQ87l8tFAu497ARockk6EyaTCf3cMJvNYDqd3qqRNvP5HNrtNhgMhu9o
-        wXldssIRneG6/tw+8++DHIjJZPIXzo7803hQh3irneEGfsMRXSM3D3CNe7HCmb/HvkeMxUYCwW+BaG6/
-        91drfAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOsAAADrASts18IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAABO0lEQVRYR93XMUoDYRDF8QUvoSheIVYqlvY2ojdQO0XQJjcIwRt4AL2AlbESOyvLQEARC1srFcT8
+        Z9lBkCHszHxb6INfsQv7PsKGR1IFMocBXvHd+MIDNtF5DiGHvmPSeG7uvWEeneYKcthGffWTc8j9nfqq
+        w8hB9/j9Sfch97fqq/+QFewWIl2uLOMD8k5LkC7pbJ1TWEUZJ2idG1glGSO0zjoOClvD30of14XswZ0z
+        WO8y4gjuHMMqi9iGO7LpVlnEKtyRb61VFrEAdxZhlXl9Qn5DuCMPycNWqccjwnmCVepxi3DuYJV6XCCc
+        S1ilHkOEU2KMQiOkKTFGoRHSlBij0AhpSoxRaIQ02TEKj5AmO0apEdJkxig1QprMGKVGSJMZo9QIaaTE
+        Km9D/sim08MLrANmGWMJM1JVU6p9ve+ViXCmAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

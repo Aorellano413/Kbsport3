@@ -9,6 +9,5 @@ namespace Entidades
         public string Contraseña { get; set; }
 
         public int IdPersonaAdministrador { get; set; } 
-        public PersonaAdministrador PersonaAdministrador { get; set; }  
     }
 }

@@ -285,6 +285,9 @@ namespace Vista
             synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, Liga BetPlay Dimayor, Premier League y Serie A.");
         }
 
-       
+        private void buttonGPT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

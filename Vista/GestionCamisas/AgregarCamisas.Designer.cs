@@ -32,7 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonCerrarCamisas = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAtrasCamisas = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@
             this.buttonFotoAñadir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxStcok = new System.Windows.Forms.TextBox();
-            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxTela = new System.Windows.Forms.ComboBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
@@ -82,7 +80,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.buttonCerrarCamisas);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.buttonAtrasCamisas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -90,18 +87,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(814, 54);
             this.panel1.TabIndex = 12;
-            // 
-            // buttonCerrarCamisas
-            // 
-            this.buttonCerrarCamisas.FlatAppearance.BorderSize = 0;
-            this.buttonCerrarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCerrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonCerrarCamisas.Image")));
-            this.buttonCerrarCamisas.Location = new System.Drawing.Point(773, 3);
-            this.buttonCerrarCamisas.Name = "buttonCerrarCamisas";
-            this.buttonCerrarCamisas.Size = new System.Drawing.Size(29, 32);
-            this.buttonCerrarCamisas.TabIndex = 14;
-            this.buttonCerrarCamisas.UseVisualStyleBackColor = true;
-            this.buttonCerrarCamisas.Click += new System.EventHandler(this.buttonCerrarCamisas_Click);
             // 
             // label6
             // 
@@ -154,12 +139,12 @@
             // 
             this.buttonRegistrarCamisas.FlatAppearance.BorderSize = 0;
             this.buttonRegistrarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegistrarCamisas.Image")));
             this.buttonRegistrarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(432, 161);
+            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(432, 141);
             this.buttonRegistrarCamisas.Name = "buttonRegistrarCamisas";
-            this.buttonRegistrarCamisas.Size = new System.Drawing.Size(162, 79);
+            this.buttonRegistrarCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonRegistrarCamisas.TabIndex = 26;
             this.buttonRegistrarCamisas.Text = "REGISTRAR";
             this.buttonRegistrarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,12 +155,12 @@
             // 
             this.buttonEliminarCamisas.FlatAppearance.BorderSize = 0;
             this.buttonEliminarCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEliminarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEliminarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarCamisas.Image")));
             this.buttonEliminarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonEliminarCamisas.Location = new System.Drawing.Point(640, 78);
             this.buttonEliminarCamisas.Name = "buttonEliminarCamisas";
-            this.buttonEliminarCamisas.Size = new System.Drawing.Size(162, 73);
+            this.buttonEliminarCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonEliminarCamisas.TabIndex = 27;
             this.buttonEliminarCamisas.Text = "ELIMINAR";
             this.buttonEliminarCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -186,12 +171,12 @@
             // 
             this.buttonValoresCamisas.FlatAppearance.BorderSize = 0;
             this.buttonValoresCamisas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonValoresCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValoresCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValoresCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonValoresCamisas.Image")));
             this.buttonValoresCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValoresCamisas.Location = new System.Drawing.Point(432, 78);
+            this.buttonValoresCamisas.Location = new System.Drawing.Point(432, 71);
             this.buttonValoresCamisas.Name = "buttonValoresCamisas";
-            this.buttonValoresCamisas.Size = new System.Drawing.Size(162, 73);
+            this.buttonValoresCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonValoresCamisas.TabIndex = 28;
             this.buttonValoresCamisas.Text = "VALORES";
             this.buttonValoresCamisas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,9 +203,9 @@
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(640, 245);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(624, 187);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
-            this.pictureBoxFoto.Size = new System.Drawing.Size(149, 118);
+            this.pictureBoxFoto.Size = new System.Drawing.Size(163, 118);
             this.pictureBoxFoto.TabIndex = 31;
             this.pictureBoxFoto.TabStop = false;
             // 
@@ -228,12 +213,12 @@
             // 
             this.buttonFotoAñadir.FlatAppearance.BorderSize = 0;
             this.buttonFotoAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFotoAñadir.Image = ((System.Drawing.Image)(resources.GetObject("buttonFotoAñadir.Image")));
             this.buttonFotoAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFotoAñadir.Location = new System.Drawing.Point(640, 181);
+            this.buttonFotoAñadir.Location = new System.Drawing.Point(640, 141);
             this.buttonFotoAñadir.Name = "buttonFotoAñadir";
-            this.buttonFotoAñadir.Size = new System.Drawing.Size(149, 45);
+            this.buttonFotoAñadir.Size = new System.Drawing.Size(133, 40);
             this.buttonFotoAñadir.TabIndex = 32;
             this.buttonFotoAñadir.Text = "AÑADIR IMAGEN";
             this.buttonFotoAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -256,21 +241,6 @@
             this.textBoxStcok.Name = "textBoxStcok";
             this.textBoxStcok.Size = new System.Drawing.Size(130, 20);
             this.textBoxStcok.TabIndex = 35;
-            // 
-            // buttonLimpiar
-            // 
-            this.buttonLimpiar.FlatAppearance.BorderSize = 0;
-            this.buttonLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpiar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("buttonLimpiar.Image")));
-            this.buttonLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLimpiar.Location = new System.Drawing.Point(22, 342);
-            this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(155, 40);
-            this.buttonLimpiar.TabIndex = 36;
-            this.buttonLimpiar.Text = "LIMPIAR CAMPOS";
-            this.buttonLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonLimpiar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -342,7 +312,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.textBoxStcok);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonFotoAñadir);
@@ -376,7 +345,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonAtrasCamisas;
-        private System.Windows.Forms.Button buttonCerrarCamisas;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridViewAgregarCamisas;
         private System.Windows.Forms.Button buttonRegistrarCamisas;
@@ -387,7 +355,6 @@
         private System.Windows.Forms.Button buttonFotoAñadir;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxStcok;
-        private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxTela;
         private System.Windows.Forms.TextBox textBoxPrecio;

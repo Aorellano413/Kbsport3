@@ -139,7 +139,7 @@
             // 
             this.dateTimePickerInforme2.Location = new System.Drawing.Point(102, 120);
             this.dateTimePickerInforme2.Name = "dateTimePickerInforme2";
-            this.dateTimePickerInforme2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerInforme2.Size = new System.Drawing.Size(203, 20);
             this.dateTimePickerInforme2.TabIndex = 7;
             // 
             // InformeEmpresa

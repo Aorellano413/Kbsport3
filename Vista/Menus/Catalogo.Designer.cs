@@ -51,6 +51,7 @@
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
+            this.buttonGPT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -117,6 +118,7 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.buttonGPT);
             this.panelLiga.Controls.Add(this.label3);
             this.panelLiga.Controls.Add(this.pictureBox3);
             this.panelLiga.Controls.Add(this.label4);
@@ -303,6 +305,22 @@
             this.Chatvoz.UseVisualStyleBackColor = true;
             this.Chatvoz.Click += new System.EventHandler(this.Chatvoz_Click);
             // 
+            // buttonGPT
+            // 
+            this.buttonGPT.FlatAppearance.BorderSize = 0;
+            this.buttonGPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGPT.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGPT.Image = ((System.Drawing.Image)(resources.GetObject("buttonGPT.Image")));
+            this.buttonGPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGPT.Location = new System.Drawing.Point(19, 209);
+            this.buttonGPT.Name = "buttonGPT";
+            this.buttonGPT.Size = new System.Drawing.Size(161, 53);
+            this.buttonGPT.TabIndex = 25;
+            this.buttonGPT.Text = "CHAT VOZ PARA LAS LIGAS";
+            this.buttonGPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGPT.UseVisualStyleBackColor = true;
+            this.buttonGPT.Click += new System.EventHandler(this.buttonGPT_Click);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +377,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Chatvoz;
+        private System.Windows.Forms.Button buttonGPT;
     }
 }

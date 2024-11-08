@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liga));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRegresarliga = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonBorrarLiga = new System.Windows.Forms.Button();
             this.buttonAceptarLiga = new System.Windows.Forms.Button();
             this.txtLiga = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonRegresarliga = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(563, 43);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonRegresarliga
+            // 
+            this.buttonRegresarliga.FlatAppearance.BorderSize = 0;
+            this.buttonRegresarliga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegresarliga.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarliga.Image")));
+            this.buttonRegresarliga.Location = new System.Drawing.Point(517, 1);
+            this.buttonRegresarliga.Name = "buttonRegresarliga";
+            this.buttonRegresarliga.Size = new System.Drawing.Size(43, 39);
+            this.buttonRegresarliga.TabIndex = 12;
+            this.buttonRegresarliga.UseVisualStyleBackColor = true;
+            this.buttonRegresarliga.Click += new System.EventHandler(this.buttonRegresarliga_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(173, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "LIGA DE EQUIPO DE FUTBOL";
             // 
             // buttonBorrarLiga
             // 
@@ -90,28 +112,6 @@
             this.label3.Size = new System.Drawing.Size(219, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "LIGA DE EQUIPO DE FUTBOL";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(219, 29);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "LIGA DE EQUIPO DE FUTBOL";
-            // 
-            // buttonRegresarliga
-            // 
-            this.buttonRegresarliga.FlatAppearance.BorderSize = 0;
-            this.buttonRegresarliga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegresarliga.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarliga.Image")));
-            this.buttonRegresarliga.Location = new System.Drawing.Point(517, 1);
-            this.buttonRegresarliga.Name = "buttonRegresarliga";
-            this.buttonRegresarliga.Size = new System.Drawing.Size(43, 39);
-            this.buttonRegresarliga.TabIndex = 12;
-            this.buttonRegresarliga.UseVisualStyleBackColor = true;
-            this.buttonRegresarliga.Click += new System.EventHandler(this.buttonRegresarliga_Click);
             // 
             // Liga
             // 

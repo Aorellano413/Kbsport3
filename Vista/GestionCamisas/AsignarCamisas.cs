@@ -113,10 +113,6 @@ namespace Vista.GestionCamisas
 
 
 
-        private void buttonAsignarCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void buttonAtrasAsignar_Click(object sender, EventArgs e)
         {
