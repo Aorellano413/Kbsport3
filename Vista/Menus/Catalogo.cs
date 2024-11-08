@@ -55,9 +55,10 @@ namespace Vista
 
                 Label labelInfo = new Label
                 {
-                    Text = $"Nombre: {fila["equipo"]}\nTela: {nombreTela}\nEquipo: {fila["equipo"]}\nPrecio: ${fila["precio"]}",
+                    Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nPrecio: ${fila["precio"]}",
                     AutoSize = true
                 };
+
 
                 Panel panelCamisa = new Panel
                 {

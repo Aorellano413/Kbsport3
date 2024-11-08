@@ -26,7 +26,7 @@ namespace Persistencia
                             Apellido = reader.GetString("Apellido"),
                             Telefono = reader.GetString("Telefono"),
                             Direccion = reader.GetString("Direccion"),
-                            CorreoElectronico = reader.GetString("CorreoElectronico") 
+                            Correo_electronico = reader.GetString("correo_electronico") // Corregido aquí
                         };
                     }
                 }
@@ -38,7 +38,7 @@ namespace Persistencia
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion, CorreoElectronico) " +
+                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion, correo_electronico) " + // Corregido aquí
                                "VALUES (@cedula, @nombre, @apellido, @telefono, @direccion, @correo)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@cedula", cliente.Cedula);
@@ -46,7 +46,7 @@ namespace Persistencia
                 cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
                 cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
                 cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
-                cmd.Parameters.AddWithValue("@correo", cliente.CorreoElectronico); 
+                cmd.Parameters.AddWithValue("@correo", cliente.Correo_electronico);
 
                 cmd.ExecuteNonQuery();
             }

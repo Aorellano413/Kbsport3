@@ -63,7 +63,7 @@ namespace Vista
                     Apellido = txtApellido.Text,
                     Telefono = txtTelefono.Text,
                     Direccion = txtDireccion.Text,
-                    CorreoElectronico = textBoxCorreo.Text 
+                    Correo_electronico = textBoxCorreo.Text 
                 };
 
                 servicioUsuario.AgregarCliente(cliente);
