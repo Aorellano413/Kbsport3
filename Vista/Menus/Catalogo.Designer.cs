@@ -52,6 +52,7 @@
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
             this.buttonGPT = new System.Windows.Forms.Button();
+            this.textBoxPreguntaCliente = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -118,6 +119,7 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.textBoxPreguntaCliente);
             this.panelLiga.Controls.Add(this.buttonGPT);
             this.panelLiga.Controls.Add(this.label3);
             this.panelLiga.Controls.Add(this.pictureBox3);
@@ -312,14 +314,21 @@
             this.buttonGPT.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGPT.Image = ((System.Drawing.Image)(resources.GetObject("buttonGPT.Image")));
             this.buttonGPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGPT.Location = new System.Drawing.Point(19, 209);
+            this.buttonGPT.Location = new System.Drawing.Point(50, 217);
             this.buttonGPT.Name = "buttonGPT";
-            this.buttonGPT.Size = new System.Drawing.Size(161, 53);
+            this.buttonGPT.Size = new System.Drawing.Size(104, 53);
             this.buttonGPT.TabIndex = 25;
-            this.buttonGPT.Text = "CHAT VOZ PARA LAS LIGAS";
+            this.buttonGPT.Text = "CHAT LINEA";
             this.buttonGPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGPT.UseVisualStyleBackColor = true;
             this.buttonGPT.Click += new System.EventHandler(this.buttonGPT_Click);
+            // 
+            // textBoxPreguntaCliente
+            // 
+            this.textBoxPreguntaCliente.Location = new System.Drawing.Point(23, 276);
+            this.textBoxPreguntaCliente.Name = "textBoxPreguntaCliente";
+            this.textBoxPreguntaCliente.Size = new System.Drawing.Size(152, 20);
+            this.textBoxPreguntaCliente.TabIndex = 31;
             // 
             // Catalogo
             // 
@@ -378,5 +387,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Chatvoz;
         private System.Windows.Forms.Button buttonGPT;
+        private System.Windows.Forms.TextBox textBoxPreguntaCliente;
     }
 }

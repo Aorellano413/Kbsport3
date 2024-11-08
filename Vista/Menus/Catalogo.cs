@@ -141,7 +141,6 @@ namespace Vista
                     int idPedido = pedidosBD.CrearPedido(pedido);
                     List<DetallePedido> detallesPedido = new List<DetallePedido>();
 
-
                     foreach (Control control in flowLayoutPanelCamisasVentas.Controls)
                     {
                         if (control is Panel panelCamisa && panelCamisa.Tag != null)
@@ -156,19 +155,20 @@ namespace Vista
                                 IdCamisa = idCamisa
                             };
 
-
+                     
+                            pedidosBD.AgregarDetallePedido(detalle);
                             detallesPedido.Add(detalle);
-
 
                             List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(idCamisa);
                             foreach (var tela in telas)
                             {
                                 int cantidadTotal = tela.Cantidad * cantidadSeleccionada;
+                                
                                 inventarioBD.DescontarStockTela(tela.IdTelaCamisa, cantidadTotal);
                             }
+
                         }
                     }
-
 
                     if (detallesPedido.Count > 0)
                     {
@@ -194,6 +194,7 @@ namespace Vista
             }
         }
 
+
         private void CrearPDF(List<DetallePedido> detallesPedido)
         {
             string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -204,7 +205,6 @@ namespace Vista
 
             documento.Open();
 
-
             string rutaLogo = @"E:\Universidad\BASE DE DATOS\Krsport3.png";
 
             if (File.Exists(rutaLogo))
@@ -212,14 +212,8 @@ namespace Vista
                 try
                 {
                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(rutaLogo);
-
-
                     logo.ScaleToFit(100, 100);
-
-
                     logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
-
-
                     documento.Add(logo);
                 }
                 catch (Exception ex)
@@ -232,7 +226,6 @@ namespace Vista
                 MessageBox.Show("La imagen no se encuentra en la ruta especificada.");
             }
 
-
             documento.Add(new Paragraph("Factura de Compra KB Sport3"));
             documento.Add(new Paragraph("\n"));
 
@@ -242,7 +235,6 @@ namespace Vista
                 if (detallePedido.Cantidad > 0)
                 {
                     Camisa camisa = camisasBD.ObtenerCamisaPorId(detallePedido.IdCamisa);
-
 
                     decimal totalCamisa = camisa.Precio * detallePedido.Cantidad;
                     documento.Add(new Paragraph($"Talla: {camisa.Talla}"));
@@ -254,12 +246,8 @@ namespace Vista
                 }
             }
 
-
             documento.Add(new Paragraph($"Total a pagar: {totalFactura.ToString("C")}"));
-
-
             documento.Close();
-
 
             MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3.pdf'.");
         }
@@ -282,12 +270,23 @@ namespace Vista
         private void Chatvoz_Click(object sender, EventArgs e)
         {
             SpeechSynthesizer synth = new SpeechSynthesizer();
-            synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, Liga BetPlay Dimayor, Premier League y Serie A.");
+            synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, LaLiga BetPlay Dimayor, LaLiga Premier League y LaLiga Serie A.");
         }
 
         private void buttonGPT_Click(object sender, EventArgs e)
         {
+            string pregunta = textBoxPreguntaCliente.Text;
+            string respuesta = ProcesarPreguntaCliente(pregunta);
+            MessageBox.Show(respuesta);
+        }
 
+        private string ProcesarPreguntaCliente(string pregunta)
+        {
+            if (pregunta.Contains("ligas"))
+            {
+                return "Las ligas disponibles en nuestro catálogo son: LaLiga EA Sports, Premier League, Serie A y Liga BetPlay Dimayor.";
+            }
+            return "Lo siento, no tengo una respuesta para esa pregunta.";
         }
     }
 }

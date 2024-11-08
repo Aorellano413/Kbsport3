@@ -3,13 +3,12 @@ using System;
 using System.Data;
 using Entidades;
 
+
 namespace Persistencia
 {
     public class DatosPedido
     {
         ConexionDAL conexion = new ConexionDAL();
-
-
         public int InsertarPedido(Pedido pedido)
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
@@ -19,12 +18,10 @@ namespace Persistencia
                 {
                     cmd.Parameters.AddWithValue("@fechaPedido", pedido.FechaPedido);
                     cmd.ExecuteNonQuery();
-                    return (int)cmd.LastInsertedId; 
+                    return (int)cmd.LastInsertedId;
                 }
             }
         }
-
-
         public void InsertarDetallePedido(DetallePedido detalle, int idPedido)
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
@@ -39,11 +36,9 @@ namespace Persistencia
                     cmd.ExecuteNonQuery();
                 }
             }
-
             DescontarStockCamisa(detalle.IdCamisa, detalle.Cantidad);
         }
 
-   
         public void DescontarStockCamisa(int idCamisa, int cantidad)
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
@@ -57,8 +52,6 @@ namespace Persistencia
                 }
             }
         }
-
-
         public DataTable ObtenerPedidos()
         {
             DataTable dt = new DataTable();
@@ -75,7 +68,6 @@ namespace Persistencia
             }
             return dt;
         }
-
         public DataTable ObtenerDetallesPedido(int idPedido)
         {
             DataTable dt = new DataTable();
