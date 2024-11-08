@@ -46,7 +46,7 @@
             this.dataGridViewMostrarTelas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewMostrarTelas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewMostrarTelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMostrarTelas.Location = new System.Drawing.Point(12, 71);
+            this.dataGridViewMostrarTelas.Location = new System.Drawing.Point(12, 96);
             this.dataGridViewMostrarTelas.Name = "dataGridViewMostrarTelas";
             this.dataGridViewMostrarTelas.ReadOnly = true;
             this.dataGridViewMostrarTelas.RowHeadersVisible = false;
@@ -58,12 +58,12 @@
             // 
             this.buttonRestablecerTelas.FlatAppearance.BorderSize = 0;
             this.buttonRestablecerTelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRestablecerTelas.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestablecerTelas.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestablecerTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecerTelas.Image")));
             this.buttonRestablecerTelas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRestablecerTelas.Location = new System.Drawing.Point(174, 31);
+            this.buttonRestablecerTelas.Location = new System.Drawing.Point(188, 46);
             this.buttonRestablecerTelas.Name = "buttonRestablecerTelas";
-            this.buttonRestablecerTelas.Size = new System.Drawing.Size(185, 34);
+            this.buttonRestablecerTelas.Size = new System.Drawing.Size(147, 34);
             this.buttonRestablecerTelas.TabIndex = 1;
             this.buttonRestablecerTelas.Text = "RESTABLECER";
             this.buttonRestablecerTelas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -72,7 +72,7 @@
             // 
             // textBoxBuscarTelas
             // 
-            this.textBoxBuscarTelas.Location = new System.Drawing.Point(12, 39);
+            this.textBoxBuscarTelas.Location = new System.Drawing.Point(12, 57);
             this.textBoxBuscarTelas.Name = "textBoxBuscarTelas";
             this.textBoxBuscarTelas.Size = new System.Drawing.Size(156, 20);
             this.textBoxBuscarTelas.TabIndex = 2;
@@ -83,7 +83,7 @@
             this.buttonAtrasTelas.FlatAppearance.BorderSize = 0;
             this.buttonAtrasTelas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtrasTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasTelas.Image")));
-            this.buttonAtrasTelas.Location = new System.Drawing.Point(746, 3);
+            this.buttonAtrasTelas.Location = new System.Drawing.Point(12, 7);
             this.buttonAtrasTelas.Name = "buttonAtrasTelas";
             this.buttonAtrasTelas.Size = new System.Drawing.Size(42, 26);
             this.buttonAtrasTelas.TabIndex = 3;

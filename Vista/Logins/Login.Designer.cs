@@ -56,7 +56,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.buttonInvitado);
             this.panel1.Controls.Add(this.buttonNuevoUsuario);
             this.panel1.Controls.Add(this.buttonExitLogin);
@@ -77,12 +77,12 @@
             // 
             this.buttonInvitado.FlatAppearance.BorderSize = 0;
             this.buttonInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInvitado.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInvitado.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInvitado.Image = ((System.Drawing.Image)(resources.GetObject("buttonInvitado.Image")));
             this.buttonInvitado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonInvitado.Location = new System.Drawing.Point(3, 4);
             this.buttonInvitado.Name = "buttonInvitado";
-            this.buttonInvitado.Size = new System.Drawing.Size(218, 63);
+            this.buttonInvitado.Size = new System.Drawing.Size(175, 63);
             this.buttonInvitado.TabIndex = 13;
             this.buttonInvitado.Text = "INGRESAR INVITADO";
             this.buttonInvitado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -93,12 +93,12 @@
             // 
             this.buttonNuevoUsuario.FlatAppearance.BorderSize = 0;
             this.buttonNuevoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNuevoUsuario.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNuevoUsuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonNuevoUsuario.Image = ((System.Drawing.Image)(resources.GetObject("buttonNuevoUsuario.Image")));
             this.buttonNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNuevoUsuario.Location = new System.Drawing.Point(76, 312);
+            this.buttonNuevoUsuario.Location = new System.Drawing.Point(93, 312);
             this.buttonNuevoUsuario.Name = "buttonNuevoUsuario";
-            this.buttonNuevoUsuario.Size = new System.Drawing.Size(198, 60);
+            this.buttonNuevoUsuario.Size = new System.Drawing.Size(177, 60);
             this.buttonNuevoUsuario.TabIndex = 12;
             this.buttonNuevoUsuario.Text = "Ingresar como cliente";
             this.buttonNuevoUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

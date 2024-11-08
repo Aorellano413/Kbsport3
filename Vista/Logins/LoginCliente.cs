@@ -27,12 +27,12 @@ namespace Vista
 
         private void buttonBorrarCliente_Click(object sender, EventArgs e)
         {
-
             txtCedula.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             txtTelefono.Clear();
             txtDireccion.Clear();
+            textBoxCorreo.Clear(); 
         }
 
         private void buttonAceptarCliente_Click(object sender, EventArgs e)
@@ -62,7 +62,8 @@ namespace Vista
                     Nombre = txtNombre.Text,
                     Apellido = txtApellido.Text,
                     Telefono = txtTelefono.Text,
-                    Direccion = txtDireccion.Text
+                    Direccion = txtDireccion.Text,
+                    CorreoElectronico = textBoxCorreo.Text 
                 };
 
                 servicioUsuario.AgregarCliente(cliente);
@@ -82,6 +83,5 @@ namespace Vista
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

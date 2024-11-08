@@ -50,7 +50,7 @@
             this.labelPagar = new System.Windows.Forms.Label();
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
-            this.buttonPDF = new System.Windows.Forms.Button();
+            this.Chatvoz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             this.flowLayoutPanelCamisasVentas.Location = new System.Drawing.Point(206, 74);
             this.flowLayoutPanelCamisasVentas.Name = "flowLayoutPanelCamisasVentas";
-            this.flowLayoutPanelCamisasVentas.Size = new System.Drawing.Size(916, 474);
+            this.flowLayoutPanelCamisasVentas.Size = new System.Drawing.Size(916, 432);
             this.flowLayoutPanelCamisasVentas.TabIndex = 0;
             // 
             // buttonAtrasCliente
@@ -135,7 +135,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(73, 201);
+            this.label3.Location = new System.Drawing.Point(81, 333);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 23);
             this.label3.TabIndex = 30;
@@ -144,7 +144,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 191);
+            this.pictureBox3.Location = new System.Drawing.Point(31, 323);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(44, 41);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -155,7 +155,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(73, 280);
+            this.label4.Location = new System.Drawing.Point(81, 385);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 23);
             this.label4.TabIndex = 28;
@@ -164,7 +164,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 270);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 375);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(44, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -174,9 +174,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 364);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 425);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 129);
+            this.pictureBox1.Size = new System.Drawing.Size(163, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -185,14 +185,14 @@
             // 
             this.buttonRestablecerCatalogo.FlatAppearance.BorderSize = 0;
             this.buttonRestablecerCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRestablecerCatalogo.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestablecerCatalogo.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestablecerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecerCatalogo.Image")));
             this.buttonRestablecerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRestablecerCatalogo.Location = new System.Drawing.Point(17, 19);
+            this.buttonRestablecerCatalogo.Location = new System.Drawing.Point(12, 87);
             this.buttonRestablecerCatalogo.Name = "buttonRestablecerCatalogo";
-            this.buttonRestablecerCatalogo.Size = new System.Drawing.Size(138, 34);
+            this.buttonRestablecerCatalogo.Size = new System.Drawing.Size(165, 34);
             this.buttonRestablecerCatalogo.TabIndex = 0;
-            this.buttonRestablecerCatalogo.Text = "Restablecer";
+            this.buttonRestablecerCatalogo.Text = "Restablecer catalogo";
             this.buttonRestablecerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRestablecerCatalogo.UseVisualStyleBackColor = true;
             // 
@@ -200,7 +200,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 64);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 29);
             this.label1.TabIndex = 24;
@@ -208,7 +208,7 @@
             // 
             // textBoxFiltrar
             // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(17, 109);
+            this.textBoxFiltrar.Location = new System.Drawing.Point(17, 61);
             this.textBoxFiltrar.Name = "textBoxFiltrar";
             this.textBoxFiltrar.Size = new System.Drawing.Size(152, 20);
             this.textBoxFiltrar.TabIndex = 25;
@@ -218,17 +218,21 @@
             // 
             this.buttonConfirmar.FlatAppearance.BorderSize = 0;
             this.buttonConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmar.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("buttonConfirmar.Image")));
-            this.buttonConfirmar.Location = new System.Drawing.Point(1008, 593);
+            this.buttonConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonConfirmar.Location = new System.Drawing.Point(961, 562);
             this.buttonConfirmar.Name = "buttonConfirmar";
-            this.buttonConfirmar.Size = new System.Drawing.Size(45, 42);
+            this.buttonConfirmar.Size = new System.Drawing.Size(161, 61);
             this.buttonConfirmar.TabIndex = 17;
+            this.buttonConfirmar.Text = "Realizar Compra";
+            this.buttonConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonConfirmar.UseVisualStyleBackColor = true;
             this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
             // 
             // txtEfectivo
             // 
-            this.txtEfectivo.Location = new System.Drawing.Point(621, 584);
+            this.txtEfectivo.Location = new System.Drawing.Point(548, 570);
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(100, 20);
             this.txtEfectivo.TabIndex = 21;
@@ -237,7 +241,7 @@
             // 
             this.labelTotalApagar.AutoSize = true;
             this.labelTotalApagar.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalApagar.Location = new System.Drawing.Point(347, 574);
+            this.labelTotalApagar.Location = new System.Drawing.Point(347, 561);
             this.labelTotalApagar.Name = "labelTotalApagar";
             this.labelTotalApagar.Size = new System.Drawing.Size(23, 29);
             this.labelTotalApagar.TabIndex = 20;
@@ -247,7 +251,7 @@
             // 
             this.labelEfectivo.AutoSize = true;
             this.labelEfectivo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEfectivo.Location = new System.Drawing.Point(511, 574);
+            this.labelEfectivo.Location = new System.Drawing.Point(445, 561);
             this.labelEfectivo.Name = "labelEfectivo";
             this.labelEfectivo.Size = new System.Drawing.Size(97, 29);
             this.labelEfectivo.TabIndex = 18;
@@ -257,7 +261,7 @@
             // 
             this.labelPagar.AutoSize = true;
             this.labelPagar.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPagar.Location = new System.Drawing.Point(206, 574);
+            this.labelPagar.Location = new System.Drawing.Point(201, 561);
             this.labelPagar.Name = "labelPagar";
             this.labelPagar.Size = new System.Drawing.Size(140, 29);
             this.labelPagar.TabIndex = 19;
@@ -267,7 +271,7 @@
             // 
             this.labelCambioRegreso.AutoSize = true;
             this.labelCambioRegreso.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambioRegreso.Location = new System.Drawing.Point(880, 575);
+            this.labelCambioRegreso.Location = new System.Drawing.Point(835, 562);
             this.labelCambioRegreso.Name = "labelCambioRegreso";
             this.labelCambioRegreso.Size = new System.Drawing.Size(23, 29);
             this.labelCambioRegreso.TabIndex = 23;
@@ -277,21 +281,27 @@
             // 
             this.labelCambio.AutoSize = true;
             this.labelCambio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambio.Location = new System.Drawing.Point(787, 575);
+            this.labelCambio.Location = new System.Drawing.Point(733, 561);
             this.labelCambio.Name = "labelCambio";
             this.labelCambio.Size = new System.Drawing.Size(75, 29);
             this.labelCambio.TabIndex = 22;
             this.labelCambio.Text = "CAMBIO:";
             // 
-            // buttonPDF
+            // Chatvoz
             // 
-            this.buttonPDF.FlatAppearance.BorderSize = 0;
-            this.buttonPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPDF.Location = new System.Drawing.Point(1059, 584);
-            this.buttonPDF.Name = "buttonPDF";
-            this.buttonPDF.Size = new System.Drawing.Size(75, 51);
-            this.buttonPDF.TabIndex = 24;
-            this.buttonPDF.UseVisualStyleBackColor = true;
+            this.Chatvoz.FlatAppearance.BorderSize = 0;
+            this.Chatvoz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Chatvoz.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Chatvoz.Image = ((System.Drawing.Image)(resources.GetObject("Chatvoz.Image")));
+            this.Chatvoz.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Chatvoz.Location = new System.Drawing.Point(961, 512);
+            this.Chatvoz.Name = "Chatvoz";
+            this.Chatvoz.Size = new System.Drawing.Size(161, 53);
+            this.Chatvoz.TabIndex = 24;
+            this.Chatvoz.Text = "CHAT VOZ PARA LAS LIGAS";
+            this.Chatvoz.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Chatvoz.UseVisualStyleBackColor = true;
+            this.Chatvoz.Click += new System.EventHandler(this.Chatvoz_Click);
             // 
             // Catalogo
             // 
@@ -299,7 +309,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1134, 635);
-            this.Controls.Add(this.buttonPDF);
+            this.Controls.Add(this.Chatvoz);
             this.Controls.Add(this.labelCambioRegreso);
             this.Controls.Add(this.labelCambio);
             this.Controls.Add(this.buttonConfirmar);
@@ -348,6 +358,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button buttonPDF;
+        private System.Windows.Forms.Button Chatvoz;
     }
 }

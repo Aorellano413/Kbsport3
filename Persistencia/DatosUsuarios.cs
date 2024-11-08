@@ -8,7 +8,6 @@ namespace Persistencia
     {
         private ConexionDAL conexionDAL = new ConexionDAL();
 
-
         public Cliente ObtenerCliente(int cedula)
         {
             using (var connection = conexionDAL.AbrirConexion())
@@ -26,7 +25,8 @@ namespace Persistencia
                             Nombre = reader.GetString("Nombre"),
                             Apellido = reader.GetString("Apellido"),
                             Telefono = reader.GetString("Telefono"),
-                            Direccion = reader.GetString("Direccion")
+                            Direccion = reader.GetString("Direccion"),
+                            CorreoElectronico = reader.GetString("CorreoElectronico") 
                         };
                     }
                 }
@@ -34,19 +34,19 @@ namespace Persistencia
             return null;
         }
 
-
-
         public void AgregarCliente(Cliente cliente)
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion) VALUES (@cedula, @nombre, @apellido, @telefono, @direccion)";
+                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion, CorreoElectronico) " +
+                               "VALUES (@cedula, @nombre, @apellido, @telefono, @direccion, @correo)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@cedula", cliente.Cedula);
                 cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
                 cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
                 cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
                 cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                cmd.Parameters.AddWithValue("@correo", cliente.CorreoElectronico); 
 
                 cmd.ExecuteNonQuery();
             }
@@ -79,6 +79,5 @@ namespace Persistencia
             }
             return null;
         }
-
     }
 }
