@@ -156,7 +156,7 @@ namespace Vista
                                 IdCamisa = idCamisa
                             };
 
-                     
+
                             pedidosBD.AgregarDetallePedido(detalle);
                             detallesPedido.Add(detalle);
 
@@ -164,7 +164,7 @@ namespace Vista
                             foreach (var tela in telas)
                             {
                                 int cantidadTotal = tela.Cantidad * cantidadSeleccionada;
-                                
+
                                 inventarioBD.DescontarStockTela(tela.IdTelaCamisa, cantidadTotal);
                             }
 
@@ -274,20 +274,8 @@ namespace Vista
             synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, LaLiga BetPlay Dimayor, LaLiga Premier League y LaLiga Serie A.");
         }
 
-        private void buttonGPT_Click(object sender, EventArgs e)
-        {
-            string pregunta = textBoxPreguntaCliente.Text;
-            string respuesta = ProcesarPreguntaCliente(pregunta);
-            MessageBox.Show(respuesta);
-        }
 
-        private string ProcesarPreguntaCliente(string pregunta)
-        {
-            if (pregunta.Contains("ligas"))
-            {
-                return "Las ligas disponibles en nuestro catálogo son: LaLiga EA Sports, Premier League, Serie A y Liga BetPlay Dimayor.";
-            }
-            return "Lo siento, no tengo una respuesta para esa pregunta.";
-        }
     }
+
+
 }

@@ -15,9 +15,23 @@ namespace Logica
         }
         public void AgregarDetallePedido(DetallePedido detalle)
         {
-            datos.InsertarDetallePedido(detalle, detalle.IdPedido);
-            inventarioBD.DescontarStockTela(detalle.IdCamisa, detalle.Cantidad);
+            if (detalle.Cantidad > 0)
+            {
+       
+                if (detalle.Precio == 0)
+                {
+                    detalle.Precio = datos.ObtenerPrecioCamisa(detalle.IdCamisa);
+                }
+
+             
+                detalle.Precio *= detalle.Cantidad;
+
+                datos.InsertarDetallePedido(detalle, detalle.IdPedido);
+                inventarioBD.DescontarStockTela(detalle.IdCamisa, detalle.Cantidad);
+            }
         }
+
+
         public DataTable ObtenerPedidos()
         {
             return datos.ObtenerPedidos();
