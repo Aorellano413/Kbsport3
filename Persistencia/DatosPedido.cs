@@ -26,7 +26,7 @@ namespace Persistencia
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
             {
-                // Verificar si ya existe un detalle con el mismo pedido y camisa
+                
                 string queryCheck = "SELECT id_detalle, cantidad, precio FROM DETALLE_PEDIDOS WHERE id_pedido = @idPedido AND id_camisa = @idCamisa;";
                 using (MySqlCommand cmdCheck = new MySqlCommand(queryCheck, connection))
                 {
@@ -37,7 +37,6 @@ namespace Persistencia
                     {
                         if (reader.Read())
                         {
-                            // Si existe, actualiza la cantidad y el precio
                             int idDetalle = reader.GetInt32("id_detalle");
                             int cantidadExistente = reader.GetInt32("cantidad");
                             decimal precioExistente = reader.GetDecimal("precio");
@@ -58,7 +57,7 @@ namespace Persistencia
                         }
                         else
                         {
-                            // Si no existe, inserta un nuevo detalle
+                         
                             reader.Close();
                             string queryInsert = "INSERT INTO DETALLE_PEDIDOS (cantidad, precio, id_pedido, id_camisa) VALUES (@cantidad, @precio, @idPedido, @idCamisa);";
                             using (MySqlCommand cmdInsert = new MySqlCommand(queryInsert, connection))

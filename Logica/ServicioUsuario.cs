@@ -1,11 +1,13 @@
 ﻿using Entidades;
 using Persistencia;
+using System.Collections.Generic;
 
 namespace Logica
 {
     public class ServicioUsuario
     {
         private DatosUsuario datosUsuario = new DatosUsuario();
+
 
         public Administrador Autenticar(string nombreUsuario, string contraseña)
         {
@@ -14,8 +16,9 @@ namespace Logica
 
         public Cliente ObtenerClientePorCedula(int cedula)
         {
-            return datosUsuario.ObtenerCliente(cedula);
+            return datosUsuario.ObtenerClientePorCedula(cedula); 
         }
+
 
         public void AgregarCliente(Cliente cliente)
         {
@@ -25,9 +28,14 @@ namespace Logica
 
         public bool ValidarCedulaExistente(int cedula)
         {
-            Cliente clienteExistente = ObtenerClientePorCedula(cedula);
 
+            Cliente clienteExistente = ObtenerClientePorCedula(cedula);
             return clienteExistente != null;
+        }
+
+        public List<Cliente> ObtenerTodosClientes()
+        {
+            return datosUsuario.ObtenerTodosClientes();
         }
     }
 }

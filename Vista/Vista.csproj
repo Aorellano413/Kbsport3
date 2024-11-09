@@ -162,6 +162,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inventarios\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventarios\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="DescripcionCamisa\Equipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     <Compile Include="GestionTelas\AgregarTela.Designer.cs">
       <DependentUpon>AgregarTela.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Inventarios\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DescripcionCamisa\Equipo.resx">
       <DependentUpon>Equipo.cs</DependentUpon>
     </EmbeddedResource>

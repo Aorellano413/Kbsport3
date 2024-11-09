@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Entidades;
 using MySql.Data.MySqlClient;
 
@@ -7,6 +8,38 @@ namespace Persistencia
     public class DatosUsuario
     {
         private ConexionDAL conexionDAL = new ConexionDAL();
+
+        public List<Cliente> ObtenerTodosClientes()
+        {
+            List<Cliente> clientes = new List<Cliente>();
+
+            using (var connection = conexionDAL.AbrirConexion())
+            {
+                string query = "SELECT * FROM CLIENTES"; 
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                       
+                        clientes.Add(new Cliente
+                        {
+                            Cedula = reader.GetInt32("Cedula"),
+                            Nombre = reader.GetString("Nombre"),
+                            Apellido = reader.GetString("Apellido"),
+                            Telefono = reader.GetString("Telefono"),
+                            Direccion = reader.GetString("Direccion"),
+                            Correo_electronico = reader.GetString("correo_electronico")
+                        });
+                    }
+                }
+            }
+
+            return clientes; 
+        }
+
+
 
         public Cliente ObtenerCliente(int cedula)
         {
@@ -26,7 +59,7 @@ namespace Persistencia
                             Apellido = reader.GetString("Apellido"),
                             Telefono = reader.GetString("Telefono"),
                             Direccion = reader.GetString("Direccion"),
-                            Correo_electronico = reader.GetString("correo_electronico") // Corregido aquí
+                            Correo_electronico = reader.GetString("correo_electronico") 
                         };
                     }
                 }
@@ -38,7 +71,7 @@ namespace Persistencia
         {
             using (var connection = conexionDAL.AbrirConexion())
             {
-                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion, correo_electronico) " + // Corregido aquí
+                string query = "INSERT INTO CLIENTES (Cedula, Nombre, Apellido, Telefono, Direccion, correo_electronico) " + 
                                "VALUES (@cedula, @nombre, @apellido, @telefono, @direccion, @correo)";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@cedula", cliente.Cedula);
@@ -50,6 +83,36 @@ namespace Persistencia
 
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        public Cliente ObtenerClientePorCedula(int cedula)
+        {
+            using (var connection = conexionDAL.AbrirConexion())
+            {
+                string query = "SELECT Cedula, Nombre, Apellido, Telefono, Direccion, correo_electronico FROM CLIENTES WHERE Cedula = @cedula";
+
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@cedula", cedula);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Cliente
+                            {
+                                Cedula = reader.GetInt32("Cedula"),
+                                Nombre = reader.GetString("Nombre"),
+                                Apellido = reader.GetString("Apellido"),
+                                Telefono = reader.GetString("Telefono"),
+                                Direccion = reader.GetString("Direccion"),
+                                Correo_electronico = reader.GetString("correo_electronico")
+                            };
+                        }
+                    }
+                }
+            }
+            return null;  
         }
 
         public Administrador ObtenerAdministrador(string usuario, string contraseña)

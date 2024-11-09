@@ -188,9 +188,9 @@
             this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(887, 217);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 29);
+            this.label4.Size = new System.Drawing.Size(92, 29);
             this.label4.TabIndex = 8;
-            this.label4.Text = "INFORME";
+            this.label4.Text = "INFORMES";
             // 
             // label5
             // 

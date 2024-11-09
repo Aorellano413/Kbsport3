@@ -100,7 +100,9 @@ namespace Vista
 
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-
+            Clientes clientes = new Clientes();
+            clientes.Show();
+            this.Close();
         }
     }
 }
