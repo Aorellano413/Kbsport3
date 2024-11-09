@@ -232,7 +232,7 @@
             // 
             // txtEfectivo
             // 
-            this.txtEfectivo.Location = new System.Drawing.Point(548, 570);
+            this.txtEfectivo.Location = new System.Drawing.Point(591, 568);
             this.txtEfectivo.Name = "txtEfectivo";
             this.txtEfectivo.Size = new System.Drawing.Size(100, 20);
             this.txtEfectivo.TabIndex = 21;
@@ -251,7 +251,7 @@
             // 
             this.labelEfectivo.AutoSize = true;
             this.labelEfectivo.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEfectivo.Location = new System.Drawing.Point(445, 561);
+            this.labelEfectivo.Location = new System.Drawing.Point(488, 559);
             this.labelEfectivo.Name = "labelEfectivo";
             this.labelEfectivo.Size = new System.Drawing.Size(97, 29);
             this.labelEfectivo.TabIndex = 18;
@@ -271,7 +271,7 @@
             // 
             this.labelCambioRegreso.AutoSize = true;
             this.labelCambioRegreso.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambioRegreso.Location = new System.Drawing.Point(835, 562);
+            this.labelCambioRegreso.Location = new System.Drawing.Point(844, 561);
             this.labelCambioRegreso.Name = "labelCambioRegreso";
             this.labelCambioRegreso.Size = new System.Drawing.Size(23, 29);
             this.labelCambioRegreso.TabIndex = 23;
@@ -281,7 +281,7 @@
             // 
             this.labelCambio.AutoSize = true;
             this.labelCambio.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCambio.Location = new System.Drawing.Point(733, 561);
+            this.labelCambio.Location = new System.Drawing.Point(742, 560);
             this.labelCambio.Name = "labelCambio";
             this.labelCambio.Size = new System.Drawing.Size(75, 29);
             this.labelCambio.TabIndex = 22;

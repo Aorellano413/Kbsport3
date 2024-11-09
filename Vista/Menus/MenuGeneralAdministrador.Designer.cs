@@ -129,7 +129,7 @@
             this.ButtonMenuCliente.FlatAppearance.BorderSize = 0;
             this.ButtonMenuCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonMenuCliente.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMenuCliente.Image")));
-            this.ButtonMenuCliente.Location = new System.Drawing.Point(822, 276);
+            this.ButtonMenuCliente.Location = new System.Drawing.Point(822, 297);
             this.ButtonMenuCliente.Name = "ButtonMenuCliente";
             this.ButtonMenuCliente.Size = new System.Drawing.Size(200, 155);
             this.ButtonMenuCliente.TabIndex = 3;
