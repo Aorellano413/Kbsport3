@@ -154,16 +154,36 @@ namespace Persistencia
         }
 
 
-        public DataTable ObtenerCamisasPorLiga(string liga)
+        public DataTable ObtenerCamisasPorLiga(string nombreLiga)
         {
             DataTable dt = new DataTable();
             try
             {
                 using (MySqlConnection conn = conexion.AbrirConexion())
                 {
-                    string query = "SELECT * FROM Kb_sport3.Camisas WHERE liga LIKE @liga;";
+                    string query = @"
+                SELECT 
+                    c.id_camisa,
+                    l.nombre AS Liga,
+                    e.nombre AS Equipo,
+                    t.nombre AS Tela,
+                    c.talla,
+                    c.precio,
+                    c.stock,
+                    c.foto
+                FROM 
+                    Kb_sport3.Camisas c
+                JOIN 
+                    Kb_sport3.Liga l ON c.id_liga = l.id_liga
+                JOIN 
+                    Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+                JOIN 
+                    Kb_sport3.Telas t ON c.id_tela = t.id_tela
+                WHERE 
+                    l.nombre LIKE @nombreLiga;";
+
                     MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@liga", "%" + liga + "%");
+                    cmd.Parameters.AddWithValue("@nombreLiga", "%" + nombreLiga + "%");
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     adapter.Fill(dt);
@@ -175,6 +195,7 @@ namespace Persistencia
             }
             return dt;
         }
+
 
         public bool InsertarCamisa(Camisa camisa)
         {

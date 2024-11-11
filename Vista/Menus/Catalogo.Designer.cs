@@ -35,14 +35,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLiga = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonTALLAXL = new System.Windows.Forms.Button();
+            this.buttonL = new System.Windows.Forms.Button();
+            this.buttonTALLAS = new System.Windows.Forms.Button();
+            this.buttonTallaM = new System.Windows.Forms.Button();
+            this.buttonDimayor = new System.Windows.Forms.Button();
+            this.buttonPremier = new System.Windows.Forms.Button();
+            this.buttonSerieA = new System.Windows.Forms.Button();
+            this.buttonEA = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRestablecerCatalogo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.buttonConfirmar = new System.Windows.Forms.Button();
             this.txtEfectivo = new System.Windows.Forms.TextBox();
             this.labelTotalApagar = new System.Windows.Forms.Label();
@@ -117,19 +124,140 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.label1);
+            this.panelLiga.Controls.Add(this.buttonTALLAXL);
+            this.panelLiga.Controls.Add(this.buttonL);
+            this.panelLiga.Controls.Add(this.buttonTALLAS);
+            this.panelLiga.Controls.Add(this.buttonTallaM);
+            this.panelLiga.Controls.Add(this.buttonDimayor);
+            this.panelLiga.Controls.Add(this.buttonPremier);
+            this.panelLiga.Controls.Add(this.buttonSerieA);
+            this.panelLiga.Controls.Add(this.buttonEA);
             this.panelLiga.Controls.Add(this.label3);
             this.panelLiga.Controls.Add(this.pictureBox3);
             this.panelLiga.Controls.Add(this.label4);
             this.panelLiga.Controls.Add(this.pictureBox2);
             this.panelLiga.Controls.Add(this.pictureBox1);
             this.panelLiga.Controls.Add(this.buttonRestablecerCatalogo);
-            this.panelLiga.Controls.Add(this.label1);
-            this.panelLiga.Controls.Add(this.textBoxFiltrar);
             this.panelLiga.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLiga.Location = new System.Drawing.Point(0, 55);
             this.panelLiga.Name = "panelLiga";
             this.panelLiga.Size = new System.Drawing.Size(200, 580);
             this.panelLiga.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 29);
+            this.label1.TabIndex = 25;
+            this.label1.Text = " - - - - - - - - - - - - -";
+            // 
+            // buttonTALLAXL
+            // 
+            this.buttonTALLAXL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTALLAXL.FlatAppearance.BorderSize = 0;
+            this.buttonTALLAXL.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTALLAXL.Location = new System.Drawing.Point(144, 236);
+            this.buttonTALLAXL.Name = "buttonTALLAXL";
+            this.buttonTALLAXL.Size = new System.Drawing.Size(38, 38);
+            this.buttonTALLAXL.TabIndex = 37;
+            this.buttonTALLAXL.Text = "XL";
+            this.buttonTALLAXL.UseVisualStyleBackColor = true;
+            
+            // 
+            // buttonL
+            // 
+            this.buttonL.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonL.FlatAppearance.BorderSize = 0;
+            this.buttonL.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonL.Location = new System.Drawing.Point(100, 236);
+            this.buttonL.Name = "buttonL";
+            this.buttonL.Size = new System.Drawing.Size(38, 38);
+            this.buttonL.TabIndex = 36;
+            this.buttonL.Text = "L";
+            this.buttonL.UseVisualStyleBackColor = true;
+            // 
+            // buttonTALLAS
+            // 
+            this.buttonTALLAS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTALLAS.FlatAppearance.BorderSize = 0;
+            this.buttonTALLAS.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTALLAS.Location = new System.Drawing.Point(56, 236);
+            this.buttonTALLAS.Name = "buttonTALLAS";
+            this.buttonTALLAS.Size = new System.Drawing.Size(38, 38);
+            this.buttonTALLAS.TabIndex = 35;
+            this.buttonTALLAS.Text = "S";
+            this.buttonTALLAS.UseVisualStyleBackColor = true;
+        
+            // 
+            // buttonTallaM
+            // 
+            this.buttonTallaM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTallaM.FlatAppearance.BorderSize = 0;
+            this.buttonTallaM.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTallaM.Location = new System.Drawing.Point(12, 236);
+            this.buttonTallaM.Name = "buttonTallaM";
+            this.buttonTallaM.Size = new System.Drawing.Size(38, 38);
+            this.buttonTallaM.TabIndex = 34;
+            this.buttonTallaM.Text = "M";
+            this.buttonTallaM.UseVisualStyleBackColor = true;
+           
+            // 
+            // buttonDimayor
+            // 
+            this.buttonDimayor.BackColor = System.Drawing.Color.White;
+            this.buttonDimayor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDimayor.FlatAppearance.BorderSize = 0;
+            this.buttonDimayor.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDimayor.Location = new System.Drawing.Point(40, 69);
+            this.buttonDimayor.Name = "buttonDimayor";
+            this.buttonDimayor.Size = new System.Drawing.Size(120, 23);
+            this.buttonDimayor.TabIndex = 33;
+            this.buttonDimayor.Text = " BetPlay Dimayor";
+            this.buttonDimayor.UseVisualStyleBackColor = false;
+            this.buttonDimayor.Click += new System.EventHandler(this.buttonDimayor_Click);
+            // 
+            // buttonPremier
+            // 
+            this.buttonPremier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPremier.FlatAppearance.BorderSize = 0;
+            this.buttonPremier.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPremier.Location = new System.Drawing.Point(40, 98);
+            this.buttonPremier.Name = "buttonPremier";
+            this.buttonPremier.Size = new System.Drawing.Size(120, 23);
+            this.buttonPremier.TabIndex = 32;
+            this.buttonPremier.Text = "Premier League";
+            this.buttonPremier.UseVisualStyleBackColor = true;
+            this.buttonPremier.Click += new System.EventHandler(this.buttonPremier_Click);
+            // 
+            // buttonSerieA
+            // 
+            this.buttonSerieA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSerieA.FlatAppearance.BorderSize = 0;
+            this.buttonSerieA.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSerieA.Location = new System.Drawing.Point(40, 127);
+            this.buttonSerieA.Name = "buttonSerieA";
+            this.buttonSerieA.Size = new System.Drawing.Size(120, 23);
+            this.buttonSerieA.TabIndex = 31;
+            this.buttonSerieA.Text = "Serie A";
+            this.buttonSerieA.UseVisualStyleBackColor = true;
+            this.buttonSerieA.Click += new System.EventHandler(this.buttonSerieA_Click);
+            // 
+            // buttonEA
+            // 
+            this.buttonEA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEA.FlatAppearance.BorderSize = 0;
+            this.buttonEA.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEA.Location = new System.Drawing.Point(40, 156);
+            this.buttonEA.Name = "buttonEA";
+            this.buttonEA.Size = new System.Drawing.Size(120, 23);
+            this.buttonEA.TabIndex = 0;
+            this.buttonEA.Text = " EA Sports";
+            this.buttonEA.UseVisualStyleBackColor = true;
+            this.buttonEA.Click += new System.EventHandler(this.buttonEA_Click);
             // 
             // label3
             // 
@@ -188,31 +316,13 @@
             this.buttonRestablecerCatalogo.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestablecerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecerCatalogo.Image")));
             this.buttonRestablecerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRestablecerCatalogo.Location = new System.Drawing.Point(12, 87);
+            this.buttonRestablecerCatalogo.Location = new System.Drawing.Point(15, 19);
             this.buttonRestablecerCatalogo.Name = "buttonRestablecerCatalogo";
             this.buttonRestablecerCatalogo.Size = new System.Drawing.Size(165, 34);
             this.buttonRestablecerCatalogo.TabIndex = 0;
             this.buttonRestablecerCatalogo.Text = "Restablecer catalogo";
             this.buttonRestablecerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRestablecerCatalogo.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 29);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Busqueda por liga:";
-            // 
-            // textBoxFiltrar
-            // 
-            this.textBoxFiltrar.Location = new System.Drawing.Point(17, 61);
-            this.textBoxFiltrar.Name = "textBoxFiltrar";
-            this.textBoxFiltrar.Size = new System.Drawing.Size(152, 20);
-            this.textBoxFiltrar.TabIndex = 25;
-            this.textBoxFiltrar.TextChanged += new System.EventHandler(this.textBoxFiltrar_TextChanged);
             // 
             // buttonConfirmar
             // 
@@ -349,8 +459,6 @@
         private System.Windows.Forms.Label labelPagar;
         private System.Windows.Forms.Label labelCambioRegreso;
         private System.Windows.Forms.Label labelCambio;
-        private System.Windows.Forms.TextBox textBoxFiltrar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonRestablecerCatalogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -359,5 +467,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Chatvoz;
+        private System.Windows.Forms.Button buttonEA;
+        private System.Windows.Forms.Button buttonDimayor;
+        private System.Windows.Forms.Button buttonPremier;
+        private System.Windows.Forms.Button buttonSerieA;
+        private System.Windows.Forms.Button buttonTALLAXL;
+        private System.Windows.Forms.Button buttonL;
+        private System.Windows.Forms.Button buttonTALLAS;
+        private System.Windows.Forms.Button buttonTallaM;
+        private System.Windows.Forms.Label label1;
     }
 }

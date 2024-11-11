@@ -33,11 +33,13 @@ namespace Vista
 
         private void CargarCamisasConFotos(string liga = null)
         {
-            DataTable camisas = camisasBD.ObtenerTodasLasCamisas();
-            flowLayoutPanelCamisasVentas.Controls.Clear();
+
+            DataTable camisas = liga == null ? camisasBD.ObtenerTodasLasCamisas() : camisasBD.ObtenerCamisasPorLiga(liga);
+            flowLayoutPanelCamisasVentas.Controls.Clear(); 
 
             foreach (DataRow fila in camisas.Rows)
             {
+             
                 if (liga != null && fila["liga"].ToString().ToLower() != liga.ToLower())
                 {
                     continue;
@@ -46,33 +48,37 @@ namespace Vista
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
 
+    
                 PictureBox pictureBoxFoto = new PictureBox
                 {
-                    Size = new Size(100, 100),
+                    Size = new Size(100, 100), 
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Image = System.Drawing.Image.FromFile(fila["foto"].ToString())
                 };
 
+         
                 Label labelInfo = new Label
                 {
                     Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nPrecio: ${fila["precio"]}",
                     AutoSize = true
                 };
 
-
+       
                 Panel panelCamisa = new Panel
                 {
                     BorderStyle = BorderStyle.FixedSingle,
-                    Size = new Size(150, 200),
+                    Size = new Size(150, 200), 
                     Margin = new Padding(10),
                     Tag = fila["id_camisa"]
                 };
 
+    
                 panelCamisa.Controls.Add(pictureBoxFoto);
-                pictureBoxFoto.Location = new Point(25, 10);
+                pictureBoxFoto.Location = new Point(25, 10); 
                 panelCamisa.Controls.Add(labelInfo);
-                labelInfo.Location = new Point(10, 120);
+                labelInfo.Location = new Point(10, 120); 
 
+     
                 panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
                 pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
                 labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
@@ -156,7 +162,6 @@ namespace Vista
                                 IdCamisa = idCamisa
                             };
 
-
                             pedidosBD.AgregarDetallePedido(detalle);
                             detallesPedido.Add(detalle);
 
@@ -167,7 +172,6 @@ namespace Vista
 
                                 inventarioBD.DescontarStockTela(tela.IdTelaCamisa, cantidadTotal);
                             }
-
                         }
                     }
 
@@ -194,7 +198,6 @@ namespace Vista
                 MessageBox.Show("Por favor, ingrese una cantidad válida de efectivo.");
             }
         }
-
 
         private void CrearPDF(List<DetallePedido> detallesPedido)
         {
@@ -253,12 +256,6 @@ namespace Vista
             MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3.pdf'.");
         }
 
-        private void textBoxFiltrar_TextChanged(object sender, EventArgs e)
-        {
-            string filtro = textBoxFiltrar.Text;
-            CargarCamisasConFotos(filtro);
-        }
-
         private int ObtenerCantidadSeleccionada(Panel panelCamisa)
         {
             if (camisasSeleccionadas.TryGetValue((int)panelCamisa.Tag, out int cantidad))
@@ -274,8 +271,26 @@ namespace Vista
             synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, LaLiga BetPlay Dimayor, LaLiga Premier League y LaLiga Serie A.");
         }
 
+        private void buttonEA_Click(object sender, EventArgs e)
+        {
+            CargarCamisasConFotos("EA Sports");
+        }
+
+        private void buttonDimayor_Click(object sender, EventArgs e)
+        {
+            CargarCamisasConFotos("BetPlay Dimayor");
+        }
+
+        private void buttonPremier_Click(object sender, EventArgs e)
+        {
+            CargarCamisasConFotos("Premier League");
+        }
+
+        private void buttonSerieA_Click(object sender, EventArgs e)
+        {
+            CargarCamisasConFotos("Serie A");
+        }
+
 
     }
-
-
 }
