@@ -31,54 +31,62 @@ namespace Vista
             CargarCamisasConFotos();
         }
 
-        private void CargarCamisasConFotos(string liga = null)
+        private void CargarCamisasConFotos(string liga = null, string talla = null)
         {
+            DataTable camisas;
 
-            DataTable camisas = liga == null ? camisasBD.ObtenerTodasLasCamisas() : camisasBD.ObtenerCamisasPorLiga(liga);
-            flowLayoutPanelCamisasVentas.Controls.Clear(); 
+          
+            if (liga != null && talla != null)
+            {
+                camisas = camisasBD.ObtenerCamisasPorLigaYtalla(liga, talla);
+            }
+            else if (liga != null)
+            {
+                camisas = camisasBD.ObtenerCamisasPorLiga(liga);
+            }
+            else if (talla != null)
+            {
+                camisas = camisasBD.ObtenerCamisasPorTalla(talla);
+            }
+            else
+            {
+                camisas = camisasBD.ObtenerTodasLasCamisas();
+            }
+
+            flowLayoutPanelCamisasVentas.Controls.Clear();
 
             foreach (DataRow fila in camisas.Rows)
             {
-             
-                if (liga != null && fila["liga"].ToString().ToLower() != liga.ToLower())
-                {
-                    continue;
-                }
-
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
+                string tallaCamisa = fila["talla"].ToString();
 
-    
                 PictureBox pictureBoxFoto = new PictureBox
                 {
-                    Size = new Size(100, 100), 
+                    Size = new Size(100, 100),
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Image = System.Drawing.Image.FromFile(fila["foto"].ToString())
                 };
 
-         
                 Label labelInfo = new Label
                 {
-                    Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nPrecio: ${fila["precio"]}",
+                    Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nTalla: {tallaCamisa}\nPrecio: ${fila["precio"]}",
                     AutoSize = true
                 };
 
-       
                 Panel panelCamisa = new Panel
                 {
                     BorderStyle = BorderStyle.FixedSingle,
-                    Size = new Size(150, 200), 
+                    Size = new Size(150, 200),
                     Margin = new Padding(10),
                     Tag = fila["id_camisa"]
                 };
 
-    
                 panelCamisa.Controls.Add(pictureBoxFoto);
-                pictureBoxFoto.Location = new Point(25, 10); 
+                pictureBoxFoto.Location = new Point(25, 10);
                 panelCamisa.Controls.Add(labelInfo);
-                labelInfo.Location = new Point(10, 120); 
+                labelInfo.Location = new Point(10, 120);
 
-     
                 panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
                 pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
                 labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
@@ -86,6 +94,7 @@ namespace Vista
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
+
 
         private void SeleccionarCamisa(Panel panelCamisa, DataRow datosCamisa)
         {
@@ -271,26 +280,67 @@ namespace Vista
             synth.Speak("Las ligas disponibles en nuestro catalogo son : LaLiga EA Sports, LaLiga BetPlay Dimayor, LaLiga Premier League y LaLiga Serie A.");
         }
 
+        private string ligaSeleccionada = null;
+        private string tallaSeleccionada = null;
+
         private void buttonEA_Click(object sender, EventArgs e)
         {
-            CargarCamisasConFotos("EA Sports");
+            ligaSeleccionada = "EA Sports";
+            tallaSeleccionada = null; 
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonDimayor_Click(object sender, EventArgs e)
         {
-            CargarCamisasConFotos("BetPlay Dimayor");
+            ligaSeleccionada = "BetPlay Dimayor";
+            tallaSeleccionada = null;  
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonPremier_Click(object sender, EventArgs e)
         {
-            CargarCamisasConFotos("Premier League");
+            ligaSeleccionada = "Premier League";
+            tallaSeleccionada = null;  
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonSerieA_Click(object sender, EventArgs e)
         {
-            CargarCamisasConFotos("Serie A");
+            ligaSeleccionada = "Serie A";
+            tallaSeleccionada = null;  
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
+        private void buttonTallaM_Click(object sender, EventArgs e)
+        {
+            tallaSeleccionada = "M";
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
+        }
+
+        private void buttonTALLAS_Click(object sender, EventArgs e)
+        {
+            tallaSeleccionada = "S";
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
+        }
+
+        private void buttonL_Click(object sender, EventArgs e)
+        {
+            tallaSeleccionada = "L";
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
+        }
+
+        private void buttonTALLAXL_Click(object sender, EventArgs e)
+        {
+            tallaSeleccionada = "XL";
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
+        }
+
+        private void buttonRestablecerCatalogo_Click(object sender, EventArgs e)
+        {
+            ligaSeleccionada = null; 
+            tallaSeleccionada = null;  
+            CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
+        }
 
     }
 }

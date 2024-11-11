@@ -195,6 +195,95 @@ namespace Persistencia
             }
             return dt;
         }
+        public DataTable ObtenerCamisasPorLigaYtalla(string nombreLiga, string talla)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+                    string query = @"
+            SELECT 
+                c.id_camisa,
+                l.nombre AS Liga,
+                e.nombre AS Equipo,
+                t.nombre AS Tela,
+                c.talla,
+                c.precio,
+                c.stock,
+                c.foto
+            FROM 
+                Kb_sport3.Camisas c
+            JOIN 
+                Kb_sport3.Liga l ON c.id_liga = l.id_liga
+            JOIN 
+                Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+            JOIN 
+                Kb_sport3.Telas t ON c.id_tela = t.id_tela
+            WHERE 
+                l.nombre LIKE @nombreLiga AND c.talla LIKE @talla;";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nombreLiga", "%" + nombreLiga + "%");
+                    cmd.Parameters.AddWithValue("@talla", "%" + talla + "%");
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener las camisas por liga y talla: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable ObtenerCamisasPorTalla(string talla)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+             
+                using (MySqlConnection conn = conexion.AbrirConexion())
+                {
+                   
+                    string query = @"
+                SELECT 
+                    c.id_camisa,
+                    l.nombre AS Liga,
+                    e.nombre AS Equipo,
+                    t.nombre AS Tela,
+                    c.talla,
+                    c.precio,
+                    c.stock,
+                    c.foto
+                FROM 
+                    Kb_sport3.Camisas c
+                JOIN 
+                    Kb_sport3.Liga l ON c.id_liga = l.id_liga
+                JOIN 
+                    Kb_sport3.Equipo e ON c.id_equipo = e.id_equipo
+                JOIN 
+                    Kb_sport3.Telas t ON c.id_tela = t.id_tela
+                WHERE 
+                    c.talla LIKE @talla;";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@talla", "%" + talla + "%"); 
+
+                  
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+            }
+            catch (Exception ex)
+            {
+    
+                Console.WriteLine("Error al obtener las camisas por talla: " + ex.Message);
+            }
+            return dt; 
+        }
+
 
 
         public bool InsertarCamisa(Camisa camisa)

@@ -80,5 +80,15 @@ namespace Logica
         {
             return datos.ObtenerCamisaPorId(idCamisa);
         }
+
+        public DataTable ObtenerCamisasPorLigaYtalla(string liga, string talla)
+        {
+            return datos.ObtenerCamisasPorLigaYtalla(liga, talla);  
+        }
+
+         public DataTable ObtenerCamisasPorTalla(string talla)
+        {
+            return datos.ObtenerCamisasPorTalla(talla);
+        }
     }
 }

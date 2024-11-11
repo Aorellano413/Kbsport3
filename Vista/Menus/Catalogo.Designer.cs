@@ -166,7 +166,7 @@
             this.buttonTALLAXL.TabIndex = 37;
             this.buttonTALLAXL.Text = "XL";
             this.buttonTALLAXL.UseVisualStyleBackColor = true;
-            
+            this.buttonTALLAXL.Click += new System.EventHandler(this.buttonTALLAXL_Click);
             // 
             // buttonL
             // 
@@ -179,6 +179,7 @@
             this.buttonL.TabIndex = 36;
             this.buttonL.Text = "L";
             this.buttonL.UseVisualStyleBackColor = true;
+            this.buttonL.Click += new System.EventHandler(this.buttonL_Click);
             // 
             // buttonTALLAS
             // 
@@ -191,7 +192,7 @@
             this.buttonTALLAS.TabIndex = 35;
             this.buttonTALLAS.Text = "S";
             this.buttonTALLAS.UseVisualStyleBackColor = true;
-        
+            this.buttonTALLAS.Click += new System.EventHandler(this.buttonTALLAS_Click);
             // 
             // buttonTallaM
             // 
@@ -204,7 +205,7 @@
             this.buttonTallaM.TabIndex = 34;
             this.buttonTallaM.Text = "M";
             this.buttonTallaM.UseVisualStyleBackColor = true;
-           
+            this.buttonTallaM.Click += new System.EventHandler(this.buttonTallaM_Click);
             // 
             // buttonDimayor
             // 
@@ -323,6 +324,7 @@
             this.buttonRestablecerCatalogo.Text = "Restablecer catalogo";
             this.buttonRestablecerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRestablecerCatalogo.UseVisualStyleBackColor = true;
+            this.buttonRestablecerCatalogo.Click += new System.EventHandler(this.buttonRestablecerCatalogo_Click);
             // 
             // buttonConfirmar
             // 
