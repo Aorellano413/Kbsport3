@@ -23,9 +23,6 @@ namespace Logica
                     detalle.Precio = datos.ObtenerPrecioCamisa(detalle.IdCamisa);
                 }
 
-             
-                detalle.Precio *= detalle.Cantidad;
-
                 datos.InsertarDetallePedido(detalle, detalle.IdPedido);
                 inventarioBD.DescontarStockTela(detalle.IdCamisa, detalle.Cantidad);
             }
