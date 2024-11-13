@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Logica;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Vista
 {
     public partial class InformeEmpresa : Form
     {
+        PedidosBD pedidosBD = new PedidosBD();
+
         public InformeEmpresa()
         {
             InitializeComponent();
@@ -20,9 +17,25 @@ namespace Vista
 
         private void buttonAtrasInforme_Click(object sender, EventArgs e)
         {
-            MenuGeneralAdministrador menuGeneralAdministrador  = new MenuGeneralAdministrador();
+
+            MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
             menuGeneralAdministrador.Show();
             this.Close();
+        }
+
+        private void INFORME_Click(object sender, EventArgs e)
+        {
+
+            int anoSeleccionado = DateTime.Now.Year;
+
+        
+            DataTable dtPedidosPorAno = pedidosBD.ObtenerPedidosPorAnoKB(anoSeleccionado);
+
+
+            dataGridViewInforme.DataSource = dtPedidosPorAno;
+
+
+            dataGridViewInforme.Columns["CantidadPedidos"].Visible = false;
         }
     }
 }

@@ -36,8 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerInforme2 = new System.Windows.Forms.DateTimePicker();
+            this.INFORME = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInforme)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +48,7 @@
             this.ButtonRestblecerInforme.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonRestblecerInforme.Image = ((System.Drawing.Image)(resources.GetObject("ButtonRestblecerInforme.Image")));
             this.ButtonRestblecerInforme.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonRestblecerInforme.Location = new System.Drawing.Point(372, 88);
+            this.ButtonRestblecerInforme.Location = new System.Drawing.Point(567, 64);
             this.ButtonRestblecerInforme.Name = "ButtonRestblecerInforme";
             this.ButtonRestblecerInforme.Size = new System.Drawing.Size(133, 38);
             this.ButtonRestblecerInforme.TabIndex = 0;
@@ -59,7 +58,7 @@
             // 
             // dateTimePickerInforme1
             // 
-            this.dateTimePickerInforme1.Location = new System.Drawing.Point(105, 78);
+            this.dateTimePickerInforme1.Location = new System.Drawing.Point(112, 78);
             this.dateTimePickerInforme1.Name = "dateTimePickerInforme1";
             this.dateTimePickerInforme1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerInforme1.TabIndex = 1;
@@ -74,12 +73,12 @@
             this.dataGridViewInforme.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewInforme.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewInforme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInforme.Location = new System.Drawing.Point(23, 171);
+            this.dataGridViewInforme.Location = new System.Drawing.Point(23, 129);
             this.dataGridViewInforme.Name = "dataGridViewInforme";
             this.dataGridViewInforme.ReadOnly = true;
             this.dataGridViewInforme.RowHeadersVisible = false;
             this.dataGridViewInforme.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewInforme.Size = new System.Drawing.Size(677, 319);
+            this.dataGridViewInforme.Size = new System.Drawing.Size(677, 372);
             this.dataGridViewInforme.TabIndex = 2;
             // 
             // buttonAtrasInforme
@@ -109,11 +108,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(349, 9);
+            this.label1.Location = new System.Drawing.Point(274, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 29);
+            this.label1.Size = new System.Drawing.Size(160, 29);
             this.label1.TabIndex = 5;
-            this.label1.Text = "INFORME";
+            this.label1.Text = "INFORME MENUSAL";
             // 
             // label2
             // 
@@ -121,26 +120,26 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(52, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 5;
-            this.label2.Text = "DESDE";
+            this.label2.Text = "FILTRAR:";
             // 
-            // label3
+            // INFORME
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "HASTA";
-            // 
-            // dateTimePickerInforme2
-            // 
-            this.dateTimePickerInforme2.Location = new System.Drawing.Point(102, 120);
-            this.dateTimePickerInforme2.Name = "dateTimePickerInforme2";
-            this.dateTimePickerInforme2.Size = new System.Drawing.Size(203, 20);
-            this.dateTimePickerInforme2.TabIndex = 7;
+            this.INFORME.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.INFORME.FlatAppearance.BorderSize = 0;
+            this.INFORME.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.INFORME.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.INFORME.Image = ((System.Drawing.Image)(resources.GetObject("INFORME.Image")));
+            this.INFORME.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.INFORME.Location = new System.Drawing.Point(334, 64);
+            this.INFORME.Name = "INFORME";
+            this.INFORME.Size = new System.Drawing.Size(135, 51);
+            this.INFORME.TabIndex = 6;
+            this.INFORME.Text = "GENERAR INFORME";
+            this.INFORME.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.INFORME.UseVisualStyleBackColor = true;
+            this.INFORME.Click += new System.EventHandler(this.INFORME_Click);
             // 
             // InformeEmpresa
             // 
@@ -148,8 +147,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(741, 528);
-            this.Controls.Add(this.dateTimePickerInforme2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.INFORME);
             this.Controls.Add(this.ButtonRestblecerInforme);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -175,7 +173,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePickerInforme2;
+        private System.Windows.Forms.Button INFORME;
     }
 }

@@ -17,7 +17,7 @@ namespace Logica
         {
             if (detalle.Cantidad > 0)
             {
-       
+
                 if (detalle.Precio == 0)
                 {
                     detalle.Precio = datos.ObtenerPrecioCamisa(detalle.IdCamisa);
@@ -37,5 +37,17 @@ namespace Logica
         {
             return datos.ObtenerDetallesPedido(idPedido);
         }
+
+        public DataTable ObtenerPedidosPorRangoFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            return datos.ObtenerPedidosPorRangoFechas(fechaInicio, fechaFin);
+        }
+
+        public DataTable ObtenerPedidosPorAnoKB(int ano)
+        {
+            return datos.ObtenerPedidosPorAnoKB(ano); 
+        }
+
+
     }
 }
