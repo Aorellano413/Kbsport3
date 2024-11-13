@@ -321,6 +321,7 @@
             // 
             // flowLayoutPanelCamisasinvitado
             // 
+            this.flowLayoutPanelCamisasinvitado.AutoScroll = true;
             this.flowLayoutPanelCamisasinvitado.Location = new System.Drawing.Point(206, 74);
             this.flowLayoutPanelCamisasinvitado.Name = "flowLayoutPanelCamisasinvitado";
             this.flowLayoutPanelCamisasinvitado.Size = new System.Drawing.Size(916, 432);

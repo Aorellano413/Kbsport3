@@ -32,6 +32,7 @@
             this.flowLayoutPanelCamisasVentas = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonSalirCliente1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAtrasCliente = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLiga = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
-            this.buttonAtrasCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -67,6 +67,7 @@
             // 
             // flowLayoutPanelCamisasVentas
             // 
+            this.flowLayoutPanelCamisasVentas.AutoScroll = true;
             this.flowLayoutPanelCamisasVentas.Location = new System.Drawing.Point(206, 74);
             this.flowLayoutPanelCamisasVentas.Name = "flowLayoutPanelCamisasVentas";
             this.flowLayoutPanelCamisasVentas.Size = new System.Drawing.Size(916, 432);
@@ -97,6 +98,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1134, 55);
             this.panel1.TabIndex = 10;
+            // 
+            // buttonAtrasCliente
+            // 
+            this.buttonAtrasCliente.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasCliente.Image")));
+            this.buttonAtrasCliente.Location = new System.Drawing.Point(3, 9);
+            this.buttonAtrasCliente.Name = "buttonAtrasCliente";
+            this.buttonAtrasCliente.Size = new System.Drawing.Size(47, 32);
+            this.buttonAtrasCliente.TabIndex = 25;
+            this.buttonAtrasCliente.UseVisualStyleBackColor = true;
+            this.buttonAtrasCliente.Click += new System.EventHandler(this.buttonAtrasCliente_Click);
             // 
             // label2
             // 
@@ -402,18 +415,6 @@
             this.Chatvoz.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Chatvoz.UseVisualStyleBackColor = true;
             this.Chatvoz.Click += new System.EventHandler(this.Chatvoz_Click);
-            // 
-            // buttonAtrasCliente
-            // 
-            this.buttonAtrasCliente.FlatAppearance.BorderSize = 0;
-            this.buttonAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtrasCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasCliente.Image")));
-            this.buttonAtrasCliente.Location = new System.Drawing.Point(3, 9);
-            this.buttonAtrasCliente.Name = "buttonAtrasCliente";
-            this.buttonAtrasCliente.Size = new System.Drawing.Size(47, 32);
-            this.buttonAtrasCliente.TabIndex = 25;
-            this.buttonAtrasCliente.UseVisualStyleBackColor = true;
-            this.buttonAtrasCliente.Click += new System.EventHandler(this.buttonAtrasCliente_Click);
             // 
             // Catalogo
             // 
