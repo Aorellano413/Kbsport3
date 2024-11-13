@@ -34,7 +34,6 @@ namespace Vista
         {
             DataTable camisas;
 
-
             if (liga != null && talla != null)
             {
                 camisas = camisasBD.ObtenerCamisasPorLigaYtalla(liga, talla);
@@ -59,6 +58,7 @@ namespace Vista
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
                 string tallaCamisa = fila["talla"].ToString();
+                int stockDisponible = Convert.ToInt32(fila["stock"]); 
 
                 PictureBox pictureBoxFoto = new PictureBox
                 {
@@ -69,7 +69,7 @@ namespace Vista
 
                 Label labelInfo = new Label
                 {
-                    Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nTalla: {tallaCamisa}\nPrecio: ${fila["precio"]}",
+                    Text = $"Equipo: {fila["equipo"]}\nTela: {nombreTela}\nTalla: {tallaCamisa}\nPrecio: ${fila["precio"]}\nStock: {stockDisponible}",
                     AutoSize = true
                 };
 
@@ -93,6 +93,7 @@ namespace Vista
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
+
 
 
         private void SeleccionarCamisa(Panel panelCamisa, DataRow datosCamisa)
