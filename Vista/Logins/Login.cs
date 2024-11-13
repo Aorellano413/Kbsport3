@@ -68,9 +68,8 @@ namespace Vista
 
         private void buttonInvitado_Click(object sender, EventArgs e)
         {
-            esInvitado = true;
-            Catalogo catalogo = new Catalogo();
-            catalogo.Show();
+           CatalogoInvitado catalogoInvitado = new CatalogoInvitado();
+            catalogoInvitado.Show();
             this.Hide();
         }
 

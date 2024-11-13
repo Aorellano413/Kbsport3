@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo));
             this.flowLayoutPanelCamisasVentas = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonAtrasCliente = new System.Windows.Forms.Button();
-            this.buttonSalirCliente = new System.Windows.Forms.Button();
+            this.buttonSalirCliente1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLiga = new System.Windows.Forms.Panel();
@@ -58,6 +57,7 @@
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
+            this.buttonAtrasCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -72,38 +72,26 @@
             this.flowLayoutPanelCamisasVentas.Size = new System.Drawing.Size(916, 432);
             this.flowLayoutPanelCamisasVentas.TabIndex = 0;
             // 
-            // buttonAtrasCliente
+            // buttonSalirCliente1
             // 
-            this.buttonAtrasCliente.FlatAppearance.BorderSize = 0;
-            this.buttonAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtrasCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasCliente.Image")));
-            this.buttonAtrasCliente.Location = new System.Drawing.Point(3, 9);
-            this.buttonAtrasCliente.Name = "buttonAtrasCliente";
-            this.buttonAtrasCliente.Size = new System.Drawing.Size(47, 32);
-            this.buttonAtrasCliente.TabIndex = 8;
-            this.buttonAtrasCliente.UseVisualStyleBackColor = true;
-            this.buttonAtrasCliente.Click += new System.EventHandler(this.buttonAtrasCliente_Click);
-            // 
-            // buttonSalirCliente
-            // 
-            this.buttonSalirCliente.FlatAppearance.BorderSize = 0;
-            this.buttonSalirCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSalirCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalirCliente.Image")));
-            this.buttonSalirCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSalirCliente.Location = new System.Drawing.Point(1083, 12);
-            this.buttonSalirCliente.Name = "buttonSalirCliente";
-            this.buttonSalirCliente.Size = new System.Drawing.Size(39, 29);
-            this.buttonSalirCliente.TabIndex = 9;
-            this.buttonSalirCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonSalirCliente.UseVisualStyleBackColor = true;
-            this.buttonSalirCliente.Click += new System.EventHandler(this.buttonSalirCliente_Click);
+            this.buttonSalirCliente1.FlatAppearance.BorderSize = 0;
+            this.buttonSalirCliente1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSalirCliente1.Image = ((System.Drawing.Image)(resources.GetObject("buttonSalirCliente1.Image")));
+            this.buttonSalirCliente1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSalirCliente1.Location = new System.Drawing.Point(1083, 12);
+            this.buttonSalirCliente1.Name = "buttonSalirCliente1";
+            this.buttonSalirCliente1.Size = new System.Drawing.Size(39, 29);
+            this.buttonSalirCliente1.TabIndex = 9;
+            this.buttonSalirCliente1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonSalirCliente1.UseVisualStyleBackColor = true;
+            this.buttonSalirCliente1.Click += new System.EventHandler(this.buttonSalirCliente_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.buttonSalirCliente);
             this.panel1.Controls.Add(this.buttonAtrasCliente);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.buttonSalirCliente1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -415,6 +403,18 @@
             this.Chatvoz.UseVisualStyleBackColor = true;
             this.Chatvoz.Click += new System.EventHandler(this.Chatvoz_Click);
             // 
+            // buttonAtrasCliente
+            // 
+            this.buttonAtrasCliente.FlatAppearance.BorderSize = 0;
+            this.buttonAtrasCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtrasCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasCliente.Image")));
+            this.buttonAtrasCliente.Location = new System.Drawing.Point(3, 9);
+            this.buttonAtrasCliente.Name = "buttonAtrasCliente";
+            this.buttonAtrasCliente.Size = new System.Drawing.Size(47, 32);
+            this.buttonAtrasCliente.TabIndex = 25;
+            this.buttonAtrasCliente.UseVisualStyleBackColor = true;
+            this.buttonAtrasCliente.Click += new System.EventHandler(this.buttonAtrasCliente_Click);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,8 +450,7 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCamisasVentas;
-        private System.Windows.Forms.Button buttonAtrasCliente;
-        private System.Windows.Forms.Button buttonSalirCliente;
+        private System.Windows.Forms.Button buttonSalirCliente1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLiga;
         private System.Windows.Forms.Button buttonConfirmar;
@@ -478,5 +477,6 @@
         private System.Windows.Forms.Button buttonTALLAS;
         private System.Windows.Forms.Button buttonTallaM;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonAtrasCliente;
     }
 }

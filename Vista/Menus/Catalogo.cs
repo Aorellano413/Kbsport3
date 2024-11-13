@@ -20,7 +20,6 @@ namespace Vista
         private CamisasBD camisasBD = new CamisasBD();
         private Panel panelSeleccionado = null;
         private decimal totalAPagar = 0;
-        public static bool esInvitado { get; private set; } = false;
 
         private Dictionary<int, int> camisasSeleccionadas = new Dictionary<int, int>();
 
@@ -35,7 +34,7 @@ namespace Vista
         {
             DataTable camisas;
 
-          
+
             if (liga != null && talla != null)
             {
                 camisas = camisasBD.ObtenerCamisasPorLigaYtalla(liga, talla);
@@ -126,14 +125,6 @@ namespace Vista
 
             MessageBox.Show($"Has seleccionado la camisa del equipo {equipoSeleccionado}, Talla: {tallaSeleccionada}, Precio: {precioSeleccionado:C}.\nTotal a pagar: {totalAPagar:C}");
         }
-
-        private void buttonAtrasCliente_Click(object sender, EventArgs e)
-        {
-            MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-            menuGeneralAdministrador.Show();
-            this.Close();
-        }
-
         private void buttonSalirCliente_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -286,28 +277,28 @@ namespace Vista
         private void buttonEA_Click(object sender, EventArgs e)
         {
             ligaSeleccionada = "EA Sports";
-            tallaSeleccionada = null; 
+            tallaSeleccionada = null;
             CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonDimayor_Click(object sender, EventArgs e)
         {
             ligaSeleccionada = "BetPlay Dimayor";
-            tallaSeleccionada = null;  
+            tallaSeleccionada = null;
             CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonPremier_Click(object sender, EventArgs e)
         {
             ligaSeleccionada = "Premier League";
-            tallaSeleccionada = null;  
+            tallaSeleccionada = null;
             CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
         private void buttonSerieA_Click(object sender, EventArgs e)
         {
             ligaSeleccionada = "Serie A";
-            tallaSeleccionada = null;  
+            tallaSeleccionada = null;
             CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
@@ -337,10 +328,16 @@ namespace Vista
 
         private void buttonRestablecerCatalogo_Click(object sender, EventArgs e)
         {
-            ligaSeleccionada = null; 
-            tallaSeleccionada = null;  
+            ligaSeleccionada = null;
+            tallaSeleccionada = null;
             CargarCamisasConFotos(ligaSeleccionada, tallaSeleccionada);
         }
 
+        private void buttonAtrasCliente_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Close();
+        }
     }
 }
