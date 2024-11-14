@@ -51,9 +51,13 @@ namespace Vista
                 camisas = camisasBD.ObtenerTodasLasCamisas();
             }
 
+
+            var camisasOrdenadas = camisas.AsEnumerable()
+                                           .OrderByDescending(row => row.Field<decimal>("precio"));
+
             flowLayoutPanelCamisasVentas.Controls.Clear();
 
-            foreach (DataRow fila in camisas.Rows)
+            foreach (DataRow fila in camisasOrdenadas)
             {
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
@@ -93,6 +97,7 @@ namespace Vista
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
+
 
 
 
@@ -203,10 +208,12 @@ namespace Vista
         public void CrearPDF(List<DetallePedido> detallesPedido)
         {
             string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string rutaPDF = Path.Combine(rutaEscritorio, "FacturaKB_Sport3.pdf");
+
+
+            string fechaHora = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+            string rutaPDF = Path.Combine(rutaEscritorio, $"FacturaKB_Sport3_{fechaHora}.pdf");
 
             Document documento = new Document(PageSize.A5.Rotate());
-
             PdfWriter.GetInstance(documento, new FileStream(rutaPDF, FileMode.Create));
             documento.Open();
 
@@ -245,12 +252,13 @@ namespace Vista
             };
             documento.Add(siglasEmpresa);
 
-            var fechaHora = new Paragraph($"Fecha: {DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")}")
+
+            var fechaFactura = new Paragraph($"Fecha: {DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")}")
             {
                 Font = FontFactory.GetFont("Perpetua", 12, BaseColor.GRAY),
                 Alignment = Element.ALIGN_CENTER
             };
-            documento.Add(fechaHora);
+            documento.Add(fechaFactura);
 
             documento.Add(new Paragraph("\n"));
 
@@ -298,8 +306,10 @@ namespace Vista
 
             documento.Close();
 
-            MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3.pdf'.");
+            MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3_{fechaHora}.pdf'.");
         }
+
+
 
         private int ObtenerCantidadSeleccionada(Panel panelCamisa)
         {
