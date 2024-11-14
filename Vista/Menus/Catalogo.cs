@@ -58,7 +58,7 @@ namespace Vista
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
                 string tallaCamisa = fila["talla"].ToString();
-                int stockDisponible = Convert.ToInt32(fila["stock"]); 
+                int stockDisponible = Convert.ToInt32(fila["stock"]);
 
                 PictureBox pictureBoxFoto = new PictureBox
                 {
@@ -200,14 +200,14 @@ namespace Vista
             }
         }
 
-        private void CrearPDF(List<DetallePedido> detallesPedido)
+        public void CrearPDF(List<DetallePedido> detallesPedido)
         {
             string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string rutaPDF = Path.Combine(rutaEscritorio, "FacturaKB_Sport3.pdf");
 
-            Document documento = new Document(PageSize.A4);
-            PdfWriter.GetInstance(documento, new FileStream(rutaPDF, FileMode.Create));
+            Document documento = new Document(PageSize.A5.Rotate());
 
+            PdfWriter.GetInstance(documento, new FileStream(rutaPDF, FileMode.Create));
             documento.Open();
 
             string rutaLogo = @"E:\Universidad\BASE DE DATOS\Krsport3.png";
@@ -231,8 +231,41 @@ namespace Vista
                 MessageBox.Show("La imagen no se encuentra en la ruta especificada.");
             }
 
-            documento.Add(new Paragraph("Factura de Compra KB Sport3"));
+            var tituloFactura = new Paragraph("FACTURA KB_SPORT3")
+            {
+                Font = FontFactory.GetFont("Times New Roman", 24, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
+                Alignment = Element.ALIGN_CENTER
+            };
+            documento.Add(tituloFactura);
+
+            var siglasEmpresa = new Paragraph("KB3")
+            {
+                Font = FontFactory.GetFont("Times New Roman", 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
+                Alignment = Element.ALIGN_CENTER
+            };
+            documento.Add(siglasEmpresa);
+
+            var fechaHora = new Paragraph($"Fecha: {DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")}")
+            {
+                Font = FontFactory.GetFont("Perpetua", 12, BaseColor.GRAY),
+                Alignment = Element.ALIGN_CENTER
+            };
+            documento.Add(fechaHora);
+
             documento.Add(new Paragraph("\n"));
+
+            PdfPTable tabla = new PdfPTable(5);
+            tabla.WidthPercentage = 100;
+
+            PdfPCell cell = new PdfPCell(new Phrase("Equipo", FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD)))
+            {
+                BackgroundColor = BaseColor.LIGHT_GRAY
+            };
+            tabla.AddCell(cell);
+            tabla.AddCell(new PdfPCell(new Phrase("Talla", FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD))) { BackgroundColor = BaseColor.LIGHT_GRAY });
+            tabla.AddCell(new PdfPCell(new Phrase("Precio", FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD))) { BackgroundColor = BaseColor.LIGHT_GRAY });
+            tabla.AddCell(new PdfPCell(new Phrase("Cantidad", FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD))) { BackgroundColor = BaseColor.LIGHT_GRAY });
+            tabla.AddCell(new PdfPCell(new Phrase("Total", FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD))) { BackgroundColor = BaseColor.LIGHT_GRAY });
 
             decimal totalFactura = 0;
             foreach (var detallePedido in detallesPedido)
@@ -240,18 +273,29 @@ namespace Vista
                 if (detallePedido.Cantidad > 0)
                 {
                     Camisa camisa = camisasBD.ObtenerCamisaPorId(detallePedido.IdCamisa);
-
                     decimal totalCamisa = camisa.Precio * detallePedido.Cantidad;
-                    documento.Add(new Paragraph($"Talla: {camisa.Talla}"));
-                    documento.Add(new Paragraph($"Precio: {camisa.Precio.ToString("C")}"));
-                    documento.Add(new Paragraph($"Cantidad: {detallePedido.Cantidad}"));
-                    documento.Add(new Paragraph($"Total: {totalCamisa.ToString("C")}\n"));
+
+                    tabla.AddCell(new PdfPCell(new Phrase(camisa.IdEquipo.ToString(), FontFactory.GetFont("Perpetua", 12))) { HorizontalAlignment = Element.ALIGN_CENTER });
+                    tabla.AddCell(new PdfPCell(new Phrase(camisa.Talla, FontFactory.GetFont("Perpetua", 12))) { HorizontalAlignment = Element.ALIGN_CENTER });
+                    tabla.AddCell(new PdfPCell(new Phrase(camisa.Precio.ToString("C"), FontFactory.GetFont("Perpetua", 12))) { HorizontalAlignment = Element.ALIGN_CENTER });
+                    tabla.AddCell(new PdfPCell(new Phrase(detallePedido.Cantidad.ToString(), FontFactory.GetFont("Perpetua", 12))) { HorizontalAlignment = Element.ALIGN_CENTER });
+                    tabla.AddCell(new PdfPCell(new Phrase(totalCamisa.ToString("C"), FontFactory.GetFont("Perpetua", 12))) { HorizontalAlignment = Element.ALIGN_CENTER });
 
                     totalFactura += totalCamisa;
                 }
             }
 
-            documento.Add(new Paragraph($"Total a pagar: {totalFactura.ToString("C")}"));
+            documento.Add(tabla);
+
+            documento.Add(new Paragraph("\n"));
+
+            var totalPagar = new Paragraph($"Total a pagar: {totalFactura.ToString("C")}")
+            {
+                Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
+                Alignment = Element.ALIGN_CENTER
+            };
+            documento.Add(totalPagar);
+
             documento.Close();
 
             MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3.pdf'.");
