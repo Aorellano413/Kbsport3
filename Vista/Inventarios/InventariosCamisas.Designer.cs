@@ -42,7 +42,7 @@
             this.dataGridViewStockCamisas.AllowUserToAddRows = false;
             this.dataGridViewStockCamisas.AllowUserToDeleteRows = false;
             this.dataGridViewStockCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewStockCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewStockCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonDevolverStock);
             this.Controls.Add(this.buttonSalirStock);

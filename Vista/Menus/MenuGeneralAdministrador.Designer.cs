@@ -36,7 +36,7 @@
             this.NOMBRE = new System.Windows.Forms.Label();
             this.buttonGestionarCamisas = new System.Windows.Forms.Button();
             this.ButtonStockCamisetas = new System.Windows.Forms.Button();
-            this.ButtonMenuCliente = new System.Windows.Forms.Button();
+            this.ButtonProducto = new System.Windows.Forms.Button();
             this.buttonInforme = new System.Windows.Forms.Button();
             this.buttonAtrasAdministrador = new System.Windows.Forms.Button();
             this.buttonCerrarAdministrador = new System.Windows.Forms.Button();
@@ -124,17 +124,17 @@
             this.ButtonStockCamisetas.UseVisualStyleBackColor = true;
             this.ButtonStockCamisetas.Click += new System.EventHandler(this.ButtonStockCamisetas_Click);
             // 
-            // ButtonMenuCliente
+            // ButtonProducto
             // 
-            this.ButtonMenuCliente.FlatAppearance.BorderSize = 0;
-            this.ButtonMenuCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonMenuCliente.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMenuCliente.Image")));
-            this.ButtonMenuCliente.Location = new System.Drawing.Point(822, 297);
-            this.ButtonMenuCliente.Name = "ButtonMenuCliente";
-            this.ButtonMenuCliente.Size = new System.Drawing.Size(200, 155);
-            this.ButtonMenuCliente.TabIndex = 3;
-            this.ButtonMenuCliente.UseVisualStyleBackColor = true;
-            this.ButtonMenuCliente.Click += new System.EventHandler(this.ButtonMenuCliente_Click);
+            this.ButtonProducto.FlatAppearance.BorderSize = 0;
+            this.ButtonProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonProducto.Image = ((System.Drawing.Image)(resources.GetObject("ButtonProducto.Image")));
+            this.ButtonProducto.Location = new System.Drawing.Point(822, 297);
+            this.ButtonProducto.Name = "ButtonProducto";
+            this.ButtonProducto.Size = new System.Drawing.Size(200, 155);
+            this.ButtonProducto.TabIndex = 3;
+            this.ButtonProducto.UseVisualStyleBackColor = true;
+            this.ButtonProducto.Click += new System.EventHandler(this.ButtonProducto_Click);
             // 
             // buttonInforme
             // 
@@ -196,11 +196,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(868, 455);
+            this.label5.Location = new System.Drawing.Point(861, 455);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(123, 29);
+            this.label5.Size = new System.Drawing.Size(137, 29);
             this.label5.TabIndex = 9;
-            this.label5.Text = "MENU CLIENTE";
+            this.label5.Text = "MAYOR / MENOR";
             // 
             // label6
             // 
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1094, 750);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClientes);
@@ -350,7 +350,7 @@
             this.Controls.Add(this.buttonCerrarAdministrador);
             this.Controls.Add(this.buttonAtrasAdministrador);
             this.Controls.Add(this.buttonInforme);
-            this.Controls.Add(this.ButtonMenuCliente);
+            this.Controls.Add(this.ButtonProducto);
             this.Controls.Add(this.ButtonStockCamisetas);
             this.Controls.Add(this.buttonGestionarCamisas);
             this.Controls.Add(this.panel1);
@@ -369,7 +369,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonGestionarCamisas;
         private System.Windows.Forms.Button ButtonStockCamisetas;
-        private System.Windows.Forms.Button ButtonMenuCliente;
+        private System.Windows.Forms.Button ButtonProducto;
         private System.Windows.Forms.Button buttonInforme;
         private System.Windows.Forms.Button buttonAtrasAdministrador;
         private System.Windows.Forms.Button buttonCerrarAdministrador;

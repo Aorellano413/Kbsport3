@@ -120,14 +120,14 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonEliminarTela.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAOsAAADrASts18IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABO0lEQVRYR93XMUoDYRDF8QUvoSheIVYqlvY2ojdQO0XQJjcIwRt4AL2AlbESOyvLQEARC1srFcT8
-        Z9lBkCHszHxb6INfsQv7PsKGR1IFMocBXvHd+MIDNtF5DiGHvmPSeG7uvWEeneYKcthGffWTc8j9nfqq
-        w8hB9/j9Sfch97fqq/+QFewWIl2uLOMD8k5LkC7pbJ1TWEUZJ2idG1glGSO0zjoOClvD30of14XswZ0z
-        WO8y4gjuHMMqi9iGO7LpVlnEKtyRb61VFrEAdxZhlXl9Qn5DuCMPycNWqccjwnmCVepxi3DuYJV6XCCc
-        S1ilHkOEU2KMQiOkKTFGoRHSlBij0AhpSoxRaIQ02TEKj5AmO0apEdJkxig1QprMGKVGSJMZo9QIaaTE
-        Km9D/sim08MLrANmGWMJM1JVU6p9ve+ViXCmAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAE7SURBVFhH3dcx
+        SgNhEMXxBS+hKF4hViqW9jaiN1A7RdAmNwjBG3gAvYCVsRI7K8tAQBELWysVxPxn2UGQIezMfFvog1+x
+        C/s+woZHUgUyhwFe8d34wgM20XkOIYe+Y9J4bu69YR6d5gpy2EZ99ZNzyP2d+qrDyEH3+P1J9yH3t+qr
+        /5AV7BYiXa4s4wPyTkuQLulsnVNYRRknaJ0bWCUZI7TOOg4KW8PfSh/XhezBnTNY7zLiCO4cwyqL2IY7
+        sulWWcQq3JFvrVUWsQB3FmGVeX1CfkO4Iw/Jw1apxyPCeYJV6nGLcO5glXpcIJxLWKUeQ4RTYoxCI6Qp
+        MUahEdKUGKPQCGlKjFFohDTZMQqPkCY7RqkR0mTGKDVCmswYpUZIkxmj1AhppMQqb0P+yKbTwwusA2YZ
+        YwkzUlVTqn2975WJcKYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="buttonAtrasTela.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

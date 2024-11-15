@@ -42,10 +42,7 @@ namespace Vista
             this.Close();
         }
 
-        private void ButtonMenuCliente_Click(object sender, EventArgs e)
-        {
         
-        }
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
         {
@@ -100,6 +97,13 @@ namespace Vista
         {
             Clientes clientes = new Clientes();
             clientes.Show();
+            this.Close();
+        }
+
+        private void ButtonProducto_Click(object sender, EventArgs e)
+        {
+            Productos productos = new Productos();  
+            productos.Show();
             this.Close();
         }
     }

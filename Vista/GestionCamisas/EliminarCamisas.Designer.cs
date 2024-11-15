@@ -45,7 +45,7 @@
             this.dataGridViewEliminarCamisas.AllowUserToAddRows = false;
             this.dataGridViewEliminarCamisas.AllowUserToDeleteRows = false;
             this.dataGridViewEliminarCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewEliminarCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewEliminarCamisas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewEliminarCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEliminarCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewEliminarCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);

@@ -44,7 +44,7 @@
             // 
             this.dataGridViewAsignarValores.AllowUserToDeleteRows = false;
             this.dataGridViewAsignarValores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewAsignarValores.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewAsignarValores.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewAsignarValores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewAsignarValores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewAsignarValores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 407);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonBuscarCamisas);

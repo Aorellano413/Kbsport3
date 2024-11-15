@@ -42,7 +42,7 @@
             this.dataGridViewEliminarTela.AllowUserToAddRows = false;
             this.dataGridViewEliminarTela.AllowUserToDeleteRows = false;
             this.dataGridViewEliminarTela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewEliminarTela.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewEliminarTela.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewEliminarTela.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewEliminarTela.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewEliminarTela.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(570, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAtrasTela);

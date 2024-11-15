@@ -50,7 +50,7 @@
             this.dataGridViewModificarTelas.AllowUserToAddRows = false;
             this.dataGridViewModificarTelas.AllowUserToDeleteRows = false;
             this.dataGridViewModificarTelas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewModificarTelas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewModificarTelas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewModificarTelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewModificarTelas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewModificarTelas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(570, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonAtrasModificarTelas);

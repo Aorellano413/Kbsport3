@@ -188,7 +188,7 @@
             this.dataGridViewCamisas.AllowUserToAddRows = false;
             this.dataGridViewCamisas.AllowUserToDeleteRows = false;
             this.dataGridViewCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCamisas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dataGridViewCamisas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridViewCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridViewCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(814, 677);
             this.Controls.Add(this.textBoxTalla);
             this.Controls.Add(this.comboBoxliga);
