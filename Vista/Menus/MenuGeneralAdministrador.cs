@@ -44,9 +44,7 @@ namespace Vista
 
         private void ButtonMenuCliente_Click(object sender, EventArgs e)
         {
-            Catalogo catalogo = new Catalogo();
-            catalogo.Show();
-            this.Close();
+        
         }
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)

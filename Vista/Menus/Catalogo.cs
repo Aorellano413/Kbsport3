@@ -10,6 +10,7 @@ using Entidades;
 using Logica;
 using System.Linq;
 using System.Speech.Synthesis;
+using Persistencia;
 
 namespace Vista
 {
@@ -18,15 +19,19 @@ namespace Vista
         private PedidosBD pedidosBD = new PedidosBD();
         private InventarioBD inventarioBD = new InventarioBD();
         private CamisasBD camisasBD = new CamisasBD();
+        private DatosFactura datosFactura = new DatosFactura();
+        private Cliente clienteActual; 
         private Panel panelSeleccionado = null;
         private decimal totalAPagar = 0;
 
         private Dictionary<int, int> camisasSeleccionadas = new Dictionary<int, int>();
 
-        public Catalogo()
+        public Catalogo(Cliente cliente)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            this.clienteActual = cliente;
             CargarCamisasConFotos();
         }
 
@@ -145,10 +150,21 @@ namespace Vista
                     decimal cambio = efectivoIngresado - totalAPagar;
                     labelCambioRegreso.Text = cambio.ToString("C");
 
+                    
+                    Factura factura = new Factura
+                    {
+                        FechaFactura = DateTime.Now,
+                        Total = totalAPagar,
+                        Cliente = clienteActual
+                    };
+
+                    datosFactura.InsertarFactura(factura);
+
+                   
                     Pedido pedido = new Pedido
                     {
                         FechaPedido = DateTime.Now,
-                        Id = 1
+                        Id = factura.Id 
                     };
 
                     int idPedido = pedidosBD.CrearPedido(pedido);
@@ -183,11 +199,12 @@ namespace Vista
 
                     if (detallesPedido.Count > 0)
                     {
-                        CrearPDF(detallesPedido);
+                        CrearPDF(detallesPedido); // Generar el PDF con los detalles del pedido
                     }
 
                     MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3.");
 
+                    // Resetear valores de la interfaz
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -204,6 +221,7 @@ namespace Vista
                 MessageBox.Show("Por favor, ingrese una cantidad válida de efectivo.");
             }
         }
+
 
         public void CrearPDF(List<DetallePedido> detallesPedido)
         {

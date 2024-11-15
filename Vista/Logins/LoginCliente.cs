@@ -32,7 +32,7 @@ namespace Vista
             txtApellido.Clear();
             txtTelefono.Clear();
             txtDireccion.Clear();
-            textBoxCorreo.Clear(); 
+            textBoxCorreo.Clear();
         }
 
         private void buttonAceptarCliente_Click(object sender, EventArgs e)
@@ -43,18 +43,19 @@ namespace Vista
 
                 ServicioUsuario servicioUsuario = new ServicioUsuario();
 
+
                 Cliente clienteExistente = servicioUsuario.ObtenerClientePorCedula(cedula);
 
                 if (clienteExistente != null)
                 {
                     MessageBox.Show("Ya has ingresado anteriormente, bienvenido nuevamente.",
                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Catalogo catalogo = new Catalogo();
+                    Catalogo catalogo = new Catalogo(clienteExistente);
                     catalogo.Show();
                     this.Close();
                     return;
                 }
+
 
                 Cliente cliente = new Cliente
                 {
@@ -63,14 +64,15 @@ namespace Vista
                     Apellido = txtApellido.Text,
                     Telefono = txtTelefono.Text,
                     Direccion = txtDireccion.Text,
-                    Correo_electronico = textBoxCorreo.Text 
+                    Correo_electronico = textBoxCorreo.Text
                 };
 
                 servicioUsuario.AgregarCliente(cliente);
 
                 MessageBox.Show("Cliente registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Catalogo catalogoNuevo = new Catalogo();
+  
+                Catalogo catalogoNuevo = new Catalogo(cliente);
                 catalogoNuevo.Show();
                 this.Close();
             }
