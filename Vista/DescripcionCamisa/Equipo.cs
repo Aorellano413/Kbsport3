@@ -21,7 +21,14 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            MostrarEquipos();
 
+        }
+
+        public void MostrarEquipos()
+        {
+            DataTable dt = inventario.MostrarEquipos();
+            dataGridViewEquipo.DataSource = dt;
         }
 
         private void buttonBorrarEquipo_Click(object sender, EventArgs e)

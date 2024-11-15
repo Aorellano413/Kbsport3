@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCedulaClientes = new System.Windows.Forms.TextBox();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            this.ContClientes = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
@@ -100,7 +101,7 @@
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(48, 153);
+            this.dataGridViewClientes.Location = new System.Drawing.Point(48, 130);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.ReadOnly = true;
             this.dataGridViewClientes.RowHeadersVisible = false;
@@ -108,12 +109,23 @@
             this.dataGridViewClientes.Size = new System.Drawing.Size(694, 181);
             this.dataGridViewClientes.TabIndex = 18;
             // 
+            // ContClientes
+            // 
+            this.ContClientes.AutoSize = true;
+            this.ContClientes.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContClientes.Location = new System.Drawing.Point(44, 324);
+            this.ContClientes.Name = "ContClientes";
+            this.ContClientes.Size = new System.Drawing.Size(16, 19);
+            this.ContClientes.TabIndex = 19;
+            this.ContClientes.Text = "0";
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(784, 368);
+            this.Controls.Add(this.ContClientes);
             this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.textBoxCedulaClientes);
             this.Controls.Add(this.label1);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCedulaClientes;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
+        private System.Windows.Forms.Label ContClientes;
     }
 }

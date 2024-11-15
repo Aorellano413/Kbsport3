@@ -157,7 +157,27 @@ namespace Persistencia
             }
         }
 
-       
+        public DataTable MostrarEquipos()
+        {
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "SELECT * FROM Kb_sport3.equipo;";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+
+
 
         public void InsertarLiga(Liga liga)
         {
@@ -171,5 +191,27 @@ namespace Persistencia
                 }
             }
         }
+
+
+        public DataTable MostrarLigas()
+        {
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection connection = conexion.AbrirConexion())
+            {
+                string query = "SELECT * FROM Kb_sport3.liga;";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+
     }
 }

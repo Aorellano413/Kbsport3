@@ -34,6 +34,7 @@
             this.buttonRestablecer = new System.Windows.Forms.Button();
             this.buttonSalirStock = new System.Windows.Forms.Button();
             this.buttonDevolverStock = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockCamisas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,17 +49,17 @@
             this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewStockCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStockCamisas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewStockCamisas.Location = new System.Drawing.Point(28, 67);
+            this.dataGridViewStockCamisas.Location = new System.Drawing.Point(28, 109);
             this.dataGridViewStockCamisas.Name = "dataGridViewStockCamisas";
             this.dataGridViewStockCamisas.ReadOnly = true;
             this.dataGridViewStockCamisas.RowHeadersVisible = false;
             this.dataGridViewStockCamisas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStockCamisas.Size = new System.Drawing.Size(731, 371);
+            this.dataGridViewStockCamisas.Size = new System.Drawing.Size(731, 295);
             this.dataGridViewStockCamisas.TabIndex = 0;
             // 
             // textBoxNombreCamisas
             // 
-            this.textBoxNombreCamisas.Location = new System.Drawing.Point(28, 33);
+            this.textBoxNombreCamisas.Location = new System.Drawing.Point(28, 68);
             this.textBoxNombreCamisas.Name = "textBoxNombreCamisas";
             this.textBoxNombreCamisas.Size = new System.Drawing.Size(120, 20);
             this.textBoxNombreCamisas.TabIndex = 2;
@@ -71,7 +72,7 @@
             this.buttonRestablecer.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRestablecer.Image = ((System.Drawing.Image)(resources.GetObject("buttonRestablecer.Image")));
             this.buttonRestablecer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRestablecer.Location = new System.Drawing.Point(180, 23);
+            this.buttonRestablecer.Location = new System.Drawing.Point(620, 55);
             this.buttonRestablecer.Name = "buttonRestablecer";
             this.buttonRestablecer.Size = new System.Drawing.Size(139, 38);
             this.buttonRestablecer.TabIndex = 3;
@@ -107,12 +108,23 @@
             this.buttonDevolverStock.UseVisualStyleBackColor = true;
             this.buttonDevolverStock.Click += new System.EventHandler(this.buttonDevolverStock_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "BUSCAR CAMISA :";
+            // 
             // InventariosCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDevolverStock);
             this.Controls.Add(this.buttonSalirStock);
             this.Controls.Add(this.buttonRestablecer);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button buttonRestablecer;
         private System.Windows.Forms.Button buttonSalirStock;
         private System.Windows.Forms.Button buttonDevolverStock;
+        private System.Windows.Forms.Label label1;
     }
 }

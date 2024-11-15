@@ -14,14 +14,20 @@ namespace Vista
     public partial class Liga : Form
     {
         InventarioBD inventario = new InventarioBD();
+        public string Nombre { get; internal set; }
 
         public Liga()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            MostrarLigas();
         }
-
-        public string Nombre { get; internal set; }
+        public void MostrarLigas()
+        {
+            DataTable dt = inventario.MostrarLigas();
+            dataGridViewLiga.DataSource = dt;
+        }
+   
 
         private void buttonAceptarLiga_Click(object sender, EventArgs e)
         {

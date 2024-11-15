@@ -52,5 +52,15 @@ namespace Logica
         {
             datos.DescontarStockTela(idTela, cantidad);
         }
+
+        public DataTable MostrarEquipos()
+        {
+            return datos.MostrarEquipos();
+        }
+
+        public DataTable MostrarLigas()
+        {
+            return datos.MostrarLigas();
+        }
     }
 }

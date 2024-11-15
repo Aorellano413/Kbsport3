@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using Entidades;
 using Logica;
@@ -16,6 +17,10 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            
+            ContClientes.Font = new Font(ContClientes.Font.FontFamily, 16, FontStyle.Bold);
+
             InicializarColumnas();
             CargarClientes();
         }
@@ -41,10 +46,16 @@ namespace Vista
                 {
                     dt.Rows.Add(cliente.Cedula, cliente.Nombre, cliente.Apellido, cliente.Telefono, cliente.Direccion, cliente.Correo_electronico);
                 }
+                ContClientes.Text = $"Total de clientes: {clientes.Count}";
+            }
+            else
+            {
+                ContClientes.Text = "Total de clientes: 0";
             }
 
             dataGridViewClientes.DataSource = dt;
         }
+
 
         private void textBoxCedulaClientes_TextChanged(object sender, EventArgs e)
         {

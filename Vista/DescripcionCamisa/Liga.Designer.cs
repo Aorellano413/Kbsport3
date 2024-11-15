@@ -36,7 +36,9 @@
             this.buttonAceptarLiga = new System.Windows.Forms.Button();
             this.txtLiga = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.dataGridViewLiga = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiga)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -47,7 +49,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(563, 43);
+            this.panel1.Size = new System.Drawing.Size(784, 43);
             this.panel1.TabIndex = 0;
             // 
             // buttonRegresarliga
@@ -55,7 +57,7 @@
             this.buttonRegresarliga.FlatAppearance.BorderSize = 0;
             this.buttonRegresarliga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegresarliga.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegresarliga.Image")));
-            this.buttonRegresarliga.Location = new System.Drawing.Point(517, 1);
+            this.buttonRegresarliga.Location = new System.Drawing.Point(3, 1);
             this.buttonRegresarliga.Name = "buttonRegresarliga";
             this.buttonRegresarliga.Size = new System.Drawing.Size(43, 39);
             this.buttonRegresarliga.TabIndex = 12;
@@ -66,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 9);
+            this.label1.Location = new System.Drawing.Point(265, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(219, 29);
             this.label1.TabIndex = 11;
@@ -77,7 +79,7 @@
             this.buttonBorrarLiga.FlatAppearance.BorderSize = 0;
             this.buttonBorrarLiga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBorrarLiga.Image = ((System.Drawing.Image)(resources.GetObject("buttonBorrarLiga.Image")));
-            this.buttonBorrarLiga.Location = new System.Drawing.Point(376, 141);
+            this.buttonBorrarLiga.Location = new System.Drawing.Point(547, 72);
             this.buttonBorrarLiga.Name = "buttonBorrarLiga";
             this.buttonBorrarLiga.Size = new System.Drawing.Size(37, 39);
             this.buttonBorrarLiga.TabIndex = 10;
@@ -89,7 +91,7 @@
             this.buttonAceptarLiga.FlatAppearance.BorderSize = 0;
             this.buttonAceptarLiga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAceptarLiga.Image = ((System.Drawing.Image)(resources.GetObject("buttonAceptarLiga.Image")));
-            this.buttonAceptarLiga.Location = new System.Drawing.Point(265, 141);
+            this.buttonAceptarLiga.Location = new System.Drawing.Point(446, 72);
             this.buttonAceptarLiga.Name = "buttonAceptarLiga";
             this.buttonAceptarLiga.Size = new System.Drawing.Size(38, 39);
             this.buttonAceptarLiga.TabIndex = 9;
@@ -113,12 +115,31 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "LIGA DE EQUIPO DE FUTBOL";
             // 
+            // dataGridViewLiga
+            // 
+            this.dataGridViewLiga.AllowUserToAddRows = false;
+            this.dataGridViewLiga.AllowUserToDeleteRows = false;
+            this.dataGridViewLiga.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewLiga.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewLiga.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewLiga.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewLiga.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewLiga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLiga.Location = new System.Drawing.Point(35, 128);
+            this.dataGridViewLiga.Name = "dataGridViewLiga";
+            this.dataGridViewLiga.ReadOnly = true;
+            this.dataGridViewLiga.RowHeadersVisible = false;
+            this.dataGridViewLiga.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewLiga.Size = new System.Drawing.Size(694, 181);
+            this.dataGridViewLiga.TabIndex = 20;
+            // 
             // Liga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(563, 217);
+            this.ClientSize = new System.Drawing.Size(784, 368);
+            this.Controls.Add(this.dataGridViewLiga);
             this.Controls.Add(this.buttonBorrarLiga);
             this.Controls.Add(this.buttonAceptarLiga);
             this.Controls.Add(this.panel1);
@@ -129,6 +150,7 @@
             this.Text = "Liga";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +165,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonRegresarliga;
+        private System.Windows.Forms.DataGridView dataGridViewLiga;
     }
 }

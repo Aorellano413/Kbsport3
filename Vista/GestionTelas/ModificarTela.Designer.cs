@@ -39,7 +39,7 @@
             // 
             // textBoxBuscarModificarTela
             // 
-            this.textBoxBuscarModificarTela.Location = new System.Drawing.Point(12, 40);
+            this.textBoxBuscarModificarTela.Location = new System.Drawing.Point(12, 94);
             this.textBoxBuscarModificarTela.Name = "textBoxBuscarModificarTela";
             this.textBoxBuscarModificarTela.Size = new System.Drawing.Size(126, 20);
             this.textBoxBuscarModificarTela.TabIndex = 1;
@@ -55,7 +55,7 @@
             this.dataGridViewModificarTelas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewModificarTelas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewModificarTelas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewModificarTelas.Location = new System.Drawing.Point(12, 100);
+            this.dataGridViewModificarTelas.Location = new System.Drawing.Point(12, 130);
             this.dataGridViewModificarTelas.Name = "dataGridViewModificarTelas";
             this.dataGridViewModificarTelas.RowHeadersVisible = false;
             this.dataGridViewModificarTelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -69,9 +69,9 @@
             this.buttonModificarTela.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModificarTela.Image = ((System.Drawing.Image)(resources.GetObject("buttonModificarTela.Image")));
             this.buttonModificarTela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonModificarTela.Location = new System.Drawing.Point(186, 340);
+            this.buttonModificarTela.Location = new System.Drawing.Point(398, 24);
             this.buttonModificarTela.Name = "buttonModificarTela";
-            this.buttonModificarTela.Size = new System.Drawing.Size(151, 77);
+            this.buttonModificarTela.Size = new System.Drawing.Size(151, 70);
             this.buttonModificarTela.TabIndex = 3;
             this.buttonModificarTela.Text = "Modificar";
             this.buttonModificarTela.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -85,7 +85,7 @@
             this.buttonAtrasModificarTelas.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtrasModificarTelas.Image = ((System.Drawing.Image)(resources.GetObject("buttonAtrasModificarTelas.Image")));
             this.buttonAtrasModificarTelas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAtrasModificarTelas.Location = new System.Drawing.Point(520, 2);
+            this.buttonAtrasModificarTelas.Location = new System.Drawing.Point(2, 1);
             this.buttonAtrasModificarTelas.Name = "buttonAtrasModificarTelas";
             this.buttonAtrasModificarTelas.Size = new System.Drawing.Size(38, 35);
             this.buttonAtrasModificarTelas.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Location = new System.Drawing.Point(12, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 19);
             this.label1.TabIndex = 5;
