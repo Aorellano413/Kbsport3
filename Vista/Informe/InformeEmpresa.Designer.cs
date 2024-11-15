@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.INFORME = new System.Windows.Forms.Button();
+            this.buttonPDFInforme = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInforme)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +47,11 @@
             this.ButtonRestblecerInforme.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonRestblecerInforme.Image = ((System.Drawing.Image)(resources.GetObject("ButtonRestblecerInforme.Image")));
             this.ButtonRestblecerInforme.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ButtonRestblecerInforme.Location = new System.Drawing.Point(567, 64);
+            this.ButtonRestblecerInforme.Location = new System.Drawing.Point(561, 67);
             this.ButtonRestblecerInforme.Name = "ButtonRestblecerInforme";
-            this.ButtonRestblecerInforme.Size = new System.Drawing.Size(133, 38);
+            this.ButtonRestblecerInforme.Size = new System.Drawing.Size(139, 38);
             this.ButtonRestblecerInforme.TabIndex = 0;
-            this.ButtonRestblecerInforme.Text = "RESTABECER";
+            this.ButtonRestblecerInforme.Text = "RESTABLECER";
             this.ButtonRestblecerInforme.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ButtonRestblecerInforme.UseVisualStyleBackColor = true;
             // 
@@ -113,7 +114,7 @@
             this.INFORME.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INFORME.Image = ((System.Drawing.Image)(resources.GetObject("INFORME.Image")));
             this.INFORME.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.INFORME.Location = new System.Drawing.Point(299, 64);
+            this.INFORME.Location = new System.Drawing.Point(51, 64);
             this.INFORME.Name = "INFORME";
             this.INFORME.Size = new System.Drawing.Size(135, 51);
             this.INFORME.TabIndex = 6;
@@ -122,12 +123,30 @@
             this.INFORME.UseVisualStyleBackColor = true;
             this.INFORME.Click += new System.EventHandler(this.INFORME_Click);
             // 
+            // buttonPDFInforme
+            // 
+            this.buttonPDFInforme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPDFInforme.FlatAppearance.BorderSize = 0;
+            this.buttonPDFInforme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPDFInforme.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPDFInforme.Image = ((System.Drawing.Image)(resources.GetObject("buttonPDFInforme.Image")));
+            this.buttonPDFInforme.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPDFInforme.Location = new System.Drawing.Point(265, 64);
+            this.buttonPDFInforme.Name = "buttonPDFInforme";
+            this.buttonPDFInforme.Size = new System.Drawing.Size(123, 51);
+            this.buttonPDFInforme.TabIndex = 7;
+            this.buttonPDFInforme.Text = "GENERAR PDF\r\n";
+            this.buttonPDFInforme.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonPDFInforme.UseVisualStyleBackColor = true;
+            this.buttonPDFInforme.Click += new System.EventHandler(this.buttonPDFInforme_Click);
+            // 
             // InformeEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(741, 528);
+            this.Controls.Add(this.buttonPDFInforme);
             this.Controls.Add(this.INFORME);
             this.Controls.Add(this.ButtonRestblecerInforme);
             this.Controls.Add(this.panel1);
@@ -150,5 +169,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button INFORME;
+        private System.Windows.Forms.Button buttonPDFInforme;
     }
 }
