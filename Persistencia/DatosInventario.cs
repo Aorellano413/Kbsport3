@@ -148,6 +148,20 @@ namespace Persistencia
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
             {
+                string checkQuery = "SELECT COUNT(*) FROM Kb_sport3.equipo WHERE nombre = @nombre";
+                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                {
+                    checkCmd.Parameters.AddWithValue("@nombre", equipo.Nombre);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+         
+                        throw new Exception("El equipo ya existe en la base de datos.");
+                    }
+                }
+
+  
                 string query = "INSERT INTO Kb_sport3.equipo (nombre) VALUES (@nombre)";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -183,6 +197,20 @@ namespace Persistencia
         {
             using (MySqlConnection connection = conexion.AbrirConexion())
             {
+
+                string checkQuery = "SELECT COUNT(*) FROM Kb_sport3.liga WHERE nombre = @nombre";
+                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                {
+                    checkCmd.Parameters.AddWithValue("@nombre", liga.Nombre);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+
+                        throw new Exception("La liga ya existe en la base de datos.");
+                    }
+                }
+
                 string query = "INSERT INTO Kb_sport3.liga (nombre) VALUES (@nombre)";
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -191,6 +219,7 @@ namespace Persistencia
                 }
             }
         }
+
 
 
         public DataTable MostrarLigas()

@@ -27,7 +27,7 @@ namespace Vista
             DataTable dt = inventario.MostrarLigas();
             dataGridViewLiga.DataSource = dt;
         }
-   
+
 
         private void buttonAceptarLiga_Click(object sender, EventArgs e)
         {
@@ -44,12 +44,14 @@ namespace Vista
                 MessageBox.Show("Liga guardada exitosamente.");
 
                 txtLiga.Clear();
+                MostrarLigas();  
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message); 
             }
         }
+
 
 
         private void buttonBorrarLiga_Click(object sender, EventArgs e)

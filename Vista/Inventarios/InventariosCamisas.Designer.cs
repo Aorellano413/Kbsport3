@@ -29,33 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventariosCamisas));
-            this.dataGridViewStockCamisas = new System.Windows.Forms.DataGridView();
             this.textBoxNombreCamisas = new System.Windows.Forms.TextBox();
             this.buttonRestablecer = new System.Windows.Forms.Button();
             this.buttonSalirStock = new System.Windows.Forms.Button();
             this.buttonDevolverStock = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewStockCamisas = new System.Windows.Forms.DataGridView();
+            this.IMAGEN = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStockCamisas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridViewStockCamisas
-            // 
-            this.dataGridViewStockCamisas.AllowUserToAddRows = false;
-            this.dataGridViewStockCamisas.AllowUserToDeleteRows = false;
-            this.dataGridViewStockCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridViewStockCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewStockCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridViewStockCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStockCamisas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewStockCamisas.Location = new System.Drawing.Point(28, 109);
-            this.dataGridViewStockCamisas.Name = "dataGridViewStockCamisas";
-            this.dataGridViewStockCamisas.ReadOnly = true;
-            this.dataGridViewStockCamisas.RowHeadersVisible = false;
-            this.dataGridViewStockCamisas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStockCamisas.Size = new System.Drawing.Size(731, 295);
-            this.dataGridViewStockCamisas.TabIndex = 0;
             // 
             // textBoxNombreCamisas
             // 
@@ -79,6 +61,7 @@
             this.buttonRestablecer.Text = "RESTABLECER";
             this.buttonRestablecer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRestablecer.UseVisualStyleBackColor = true;
+            this.buttonRestablecer.Click += new System.EventHandler(this.buttonRestablecer_Click);
             // 
             // buttonSalirStock
             // 
@@ -118,18 +101,44 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "BUSCAR CAMISA :";
             // 
+            // dataGridViewStockCamisas
+            // 
+            this.dataGridViewStockCamisas.AllowUserToAddRows = false;
+            this.dataGridViewStockCamisas.AllowUserToDeleteRows = false;
+            this.dataGridViewStockCamisas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStockCamisas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewStockCamisas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewStockCamisas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewStockCamisas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridViewStockCamisas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStockCamisas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IMAGEN});
+            this.dataGridViewStockCamisas.Location = new System.Drawing.Point(12, 111);
+            this.dataGridViewStockCamisas.Name = "dataGridViewStockCamisas";
+            this.dataGridViewStockCamisas.ReadOnly = true;
+            this.dataGridViewStockCamisas.RowHeadersVisible = false;
+            this.dataGridViewStockCamisas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStockCamisas.Size = new System.Drawing.Size(760, 256);
+            this.dataGridViewStockCamisas.TabIndex = 20;
+            // 
+            // IMAGEN
+            // 
+            this.IMAGEN.HeaderText = "IMAGEN";
+            this.IMAGEN.Name = "IMAGEN";
+            this.IMAGEN.ReadOnly = true;
+            // 
             // InventariosCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridViewStockCamisas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDevolverStock);
             this.Controls.Add(this.buttonSalirStock);
             this.Controls.Add(this.buttonRestablecer);
             this.Controls.Add(this.textBoxNombreCamisas);
-            this.Controls.Add(this.dataGridViewStockCamisas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InventariosCamisas";
             this.Text = "StockCamisetas";
@@ -140,12 +149,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridViewStockCamisas;
         private System.Windows.Forms.TextBox textBoxNombreCamisas;
         private System.Windows.Forms.Button buttonRestablecer;
         private System.Windows.Forms.Button buttonSalirStock;
         private System.Windows.Forms.Button buttonDevolverStock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridViewStockCamisas;
+        private System.Windows.Forms.DataGridViewImageColumn IMAGEN;
     }
 }

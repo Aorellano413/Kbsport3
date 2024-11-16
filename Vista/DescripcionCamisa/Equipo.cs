@@ -42,22 +42,23 @@ namespace Vista
 
             try
             {
-
-                Entidades.Equipo nuevoEquipo = new Entidades.Equipo
+                Entidades.Equipo equipoNuevo = new Entidades.Equipo
                 {
                     Nombre = nombre
                 };
 
-                inventario.InsertarEquipo(nuevoEquipo);
+                inventario.InsertarEquipo(equipoNuevo);
                 MessageBox.Show("Equipo guardado exitosamente.");
 
                 textBoxEquipo.Clear();
+                MostrarEquipos();  
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);  
             }
         }
+
 
 
         private void buttonAtrasEquipo_Click(object sender, EventArgs e)
