@@ -335,26 +335,31 @@ namespace Vista
             try
             {
                
-                var correoDestino = "pipeorellano19@gmail.com";  
+                var correoCliente = clienteActual.Correo_electronico; 
+
+                
+                var correoDestino = "pipeorellano19@gmail.com";
 
                 var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
-                    Port = 587, 
-                    Credentials = new NetworkCredential("pipeorellano19@gmail.com", "fqiu adbp omcl sple"), 
-                    EnableSsl = true,  
+                    Port = 587,
+                    Credentials = new NetworkCredential("pipeorellano19@gmail.com", "fqiu adbp omcl sple"),
+                    EnableSsl = true,
                 };
 
                 var mensaje = new MailMessage
                 {
-                    From = new MailAddress("pipeorellano19@gmail.com"),  
+                    From = new MailAddress("pipeorellano19@gmail.com"),
                     Subject = "Factura KB Sport3",
                     Body = "Adjunto te enviamos la factura de tu compra.",
                     IsBodyHtml = true,
                 };
 
+                
                 mensaje.To.Add(correoDestino);  
+                mensaje.To.Add(correoCliente);  
 
-                mensaje.Attachments.Add(new Attachment(rutaPDF)); 
+                mensaje.Attachments.Add(new Attachment(rutaPDF));  
 
                 smtpClient.Send(mensaje);  
 
