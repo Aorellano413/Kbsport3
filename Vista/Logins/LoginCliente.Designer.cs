@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginCliente));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.buttonIGCliente = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonRegresarCliente = new System.Windows.Forms.Button();
             this.buttonExitCliente = new System.Windows.Forms.Button();
@@ -52,9 +51,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxCorreo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.buttonIGCliente = new System.Windows.Forms.Button();
+            this.buttonWppCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,34 +60,30 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.buttonWppCliente);
             this.panel1.Controls.Add(this.buttonIGCliente);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 450);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 60);
             this.panel1.TabIndex = 0;
             // 
-            // label5
+            // buttonIGCliente
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(549, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 29);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "301 5318600";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(496, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 56);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
+            this.buttonIGCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonIGCliente.FlatAppearance.BorderSize = 0;
+            this.buttonIGCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIGCliente.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIGCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonIGCliente.Image")));
+            this.buttonIGCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIGCliente.Location = new System.Drawing.Point(12, 4);
+            this.buttonIGCliente.Name = "buttonIGCliente";
+            this.buttonIGCliente.Size = new System.Drawing.Size(129, 48);
+            this.buttonIGCliente.TabIndex = 39;
+            this.buttonIGCliente.Text = "Kb_sport3";
+            this.buttonIGCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonIGCliente.UseVisualStyleBackColor = true;
+            this.buttonIGCliente.Click += new System.EventHandler(this.buttonIGCliente_Click);
             // 
             // panel2
             // 
@@ -298,22 +292,22 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "CORREO E:";
             // 
-            // buttonIGCliente
+            // buttonWppCliente
             // 
-            this.buttonIGCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonIGCliente.FlatAppearance.BorderSize = 0;
-            this.buttonIGCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIGCliente.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonIGCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonIGCliente.Image")));
-            this.buttonIGCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonIGCliente.Location = new System.Drawing.Point(12, 4);
-            this.buttonIGCliente.Name = "buttonIGCliente";
-            this.buttonIGCliente.Size = new System.Drawing.Size(129, 48);
-            this.buttonIGCliente.TabIndex = 39;
-            this.buttonIGCliente.Text = "Kb_sport3";
-            this.buttonIGCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonIGCliente.UseVisualStyleBackColor = true;
-            this.buttonIGCliente.Click += new System.EventHandler(this.buttonIGCliente_Click);
+            this.buttonWppCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWppCliente.FlatAppearance.BorderSize = 0;
+            this.buttonWppCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWppCliente.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWppCliente.Image = ((System.Drawing.Image)(resources.GetObject("buttonWppCliente.Image")));
+            this.buttonWppCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonWppCliente.Location = new System.Drawing.Point(529, 9);
+            this.buttonWppCliente.Name = "buttonWppCliente";
+            this.buttonWppCliente.Size = new System.Drawing.Size(129, 48);
+            this.buttonWppCliente.TabIndex = 40;
+            this.buttonWppCliente.Text = "301 5318600";
+            this.buttonWppCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonWppCliente.UseVisualStyleBackColor = true;
+            this.buttonWppCliente.Click += new System.EventHandler(this.buttonWppCliente_Click);
             // 
             // LoginCliente
             // 
@@ -342,8 +336,6 @@
             this.Name = "LoginCliente";
             this.Text = "LoginNuevoUsuario";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -366,8 +358,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExitCliente;
         private System.Windows.Forms.Button buttonRegresarCliente;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombre;
@@ -378,5 +368,6 @@
         private System.Windows.Forms.TextBox textBoxCorreo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonIGCliente;
+        private System.Windows.Forms.Button buttonWppCliente;
     }
 }

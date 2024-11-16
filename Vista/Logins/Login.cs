@@ -83,8 +83,21 @@ namespace Vista
 
         private void buttonWpp_Click(object sender, EventArgs e)
         {
-
+            string url = "https://w.app/Kbsport3";
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true 
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
+            }
         }
+
 
         private void buttonIG_Click(object sender, EventArgs e)
         {

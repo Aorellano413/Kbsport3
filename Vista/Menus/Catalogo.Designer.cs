@@ -44,8 +44,6 @@
             this.buttonPremier = new System.Windows.Forms.Button();
             this.buttonSerieA = new System.Windows.Forms.Button();
             this.buttonEA = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRestablecerCatalogo = new System.Windows.Forms.Button();
             this.buttonConfirmar = new System.Windows.Forms.Button();
@@ -57,9 +55,9 @@
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
             this.buttonIGCatalogo = new System.Windows.Forms.Button();
+            this.buttonWppCatalogo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +121,7 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.buttonWppCatalogo);
             this.panelLiga.Controls.Add(this.buttonIGCatalogo);
             this.panelLiga.Controls.Add(this.label1);
             this.panelLiga.Controls.Add(this.buttonTALLAXL);
@@ -133,8 +132,6 @@
             this.panelLiga.Controls.Add(this.buttonPremier);
             this.panelLiga.Controls.Add(this.buttonSerieA);
             this.panelLiga.Controls.Add(this.buttonEA);
-            this.panelLiga.Controls.Add(this.label3);
-            this.panelLiga.Controls.Add(this.pictureBox3);
             this.panelLiga.Controls.Add(this.pictureBox1);
             this.panelLiga.Controls.Add(this.buttonRestablecerCatalogo);
             this.panelLiga.Dock = System.Windows.Forms.DockStyle.Left;
@@ -257,26 +254,6 @@
             this.buttonEA.Text = " EA Sports";
             this.buttonEA.UseVisualStyleBackColor = true;
             this.buttonEA.Click += new System.EventHandler(this.buttonEA_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(81, 333);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 23);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "301 5318600";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(31, 323);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -410,6 +387,23 @@
             this.buttonIGCatalogo.UseVisualStyleBackColor = true;
             this.buttonIGCatalogo.Click += new System.EventHandler(this.buttonIGCatalogo_Click);
             // 
+            // buttonWppCatalogo
+            // 
+            this.buttonWppCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWppCatalogo.FlatAppearance.BorderSize = 0;
+            this.buttonWppCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWppCatalogo.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWppCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("buttonWppCatalogo.Image")));
+            this.buttonWppCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonWppCatalogo.Location = new System.Drawing.Point(31, 308);
+            this.buttonWppCatalogo.Name = "buttonWppCatalogo";
+            this.buttonWppCatalogo.Size = new System.Drawing.Size(129, 48);
+            this.buttonWppCatalogo.TabIndex = 39;
+            this.buttonWppCatalogo.Text = "301 5318600";
+            this.buttonWppCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonWppCatalogo.UseVisualStyleBackColor = true;
+            this.buttonWppCatalogo.Click += new System.EventHandler(this.buttonWppCatalogo_Click);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,7 +428,6 @@
             this.panel1.PerformLayout();
             this.panelLiga.ResumeLayout(false);
             this.panelLiga.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -457,8 +450,6 @@
         private System.Windows.Forms.Button buttonRestablecerCatalogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button Chatvoz;
         private System.Windows.Forms.Button buttonEA;
         private System.Windows.Forms.Button buttonDimayor;
@@ -471,5 +462,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAtrasCliente;
         private System.Windows.Forms.Button buttonIGCatalogo;
+        private System.Windows.Forms.Button buttonWppCatalogo;
     }
 }

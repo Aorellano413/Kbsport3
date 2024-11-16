@@ -71,7 +71,7 @@ namespace Vista
 
                 MessageBox.Show("Cliente registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-  
+
                 Catalogo catalogoNuevo = new Catalogo(cliente);
                 catalogoNuevo.Show();
                 this.Close();
@@ -102,5 +102,24 @@ namespace Vista
                 MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
             }
         }
+
+        private void buttonWppCliente_Click(object sender, EventArgs e)
+        {
+
+            string url = "https://w.app/Kbsport3";
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
+            }
+        }
     }
 }
+
