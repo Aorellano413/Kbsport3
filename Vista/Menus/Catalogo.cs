@@ -11,6 +11,9 @@ using Logica;
 using System.Linq;
 using System.Speech.Synthesis;
 using Persistencia;
+using System.Net.Mail;
+using System.Net;
+
 
 namespace Vista
 {
@@ -313,7 +316,6 @@ namespace Vista
 
             documento.Add(new Paragraph("\n"));
 
-    
             var mensajeAgradecimiento = new Paragraph("Gracias por preferir a la tienda KB_Sport3 no olvides seguirnos en nuestra redes sociales")
             {
                 Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
@@ -324,10 +326,45 @@ namespace Vista
             documento.Close();
 
             MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3_{fechaHora}.pdf'.");
+
+            EnviarFacturaPorCorreo(rutaPDF);
         }
 
+        private void EnviarFacturaPorCorreo(string rutaPDF)
+        {
+            try
+            {
+               
+                var correoDestino = "pipeorellano19@gmail.com";  
 
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587, 
+                    Credentials = new NetworkCredential("pipeorellano19@gmail.com", "fqiu adbp omcl sple"), 
+                    EnableSsl = true,  
+                };
 
+                var mensaje = new MailMessage
+                {
+                    From = new MailAddress("pipeorellano19@gmail.com"),  
+                    Subject = "Factura KB Sport3",
+                    Body = "Adjunto te enviamos la factura de tu compra.",
+                    IsBodyHtml = true,
+                };
+
+                mensaje.To.Add(correoDestino);  
+
+                mensaje.Attachments.Add(new Attachment(rutaPDF)); 
+
+                smtpClient.Send(mensaje);  
+
+                MessageBox.Show("Factura enviada al correo electrónico.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al enviar el correo: " + ex.Message);
+            }
+        }
 
         private int ObtenerCantidadSeleccionada(Panel panelCamisa)
         {
