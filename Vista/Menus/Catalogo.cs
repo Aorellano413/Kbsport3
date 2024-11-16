@@ -199,12 +199,12 @@ namespace Vista
 
                     if (detallesPedido.Count > 0)
                     {
-                        CrearPDF(detallesPedido); // Generar el PDF con los detalles del pedido
+                        CrearPDF(detallesPedido); 
                     }
 
                     MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3.");
 
-                    // Resetear valores de la interfaz
+                    
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -226,8 +226,6 @@ namespace Vista
         public void CrearPDF(List<DetallePedido> detallesPedido)
         {
             string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-
             string fechaHora = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             string rutaPDF = Path.Combine(rutaEscritorio, $"FacturaKB_Sport3_{fechaHora}.pdf");
 
@@ -251,10 +249,6 @@ namespace Vista
                     MessageBox.Show("Error al agregar la imagen: " + ex.Message);
                 }
             }
-            else
-            {
-                MessageBox.Show("La imagen no se encuentra en la ruta especificada.");
-            }
 
             var tituloFactura = new Paragraph("FACTURA KB_SPORT3")
             {
@@ -263,20 +257,15 @@ namespace Vista
             };
             documento.Add(tituloFactura);
 
-            var siglasEmpresa = new Paragraph("KB3")
+            var datosCliente = new Paragraph($"Cliente: {clienteActual.Nombre} {clienteActual.Apellido}\n" +
+                                              $"Cédula: {clienteActual.Cedula}\n" +
+                                              $"Correo: {clienteActual.Correo_electronico}\n" +
+                                              $"Fecha: {DateTime.Now:dd/MM/yyyy h:mm:ss tt}")
             {
-                Font = FontFactory.GetFont("Times New Roman", 18, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
-                Alignment = Element.ALIGN_CENTER
+                Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
+                Alignment = Element.ALIGN_LEFT
             };
-            documento.Add(siglasEmpresa);
-
-
-            var fechaFactura = new Paragraph($"Fecha: {DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")}")
-            {
-                Font = FontFactory.GetFont("Perpetua", 12, BaseColor.GRAY),
-                Alignment = Element.ALIGN_CENTER
-            };
-            documento.Add(fechaFactura);
+            documento.Add(datosCliente);
 
             documento.Add(new Paragraph("\n"));
 
@@ -322,10 +311,21 @@ namespace Vista
             };
             documento.Add(totalPagar);
 
+            documento.Add(new Paragraph("\n"));
+
+    
+            var mensajeAgradecimiento = new Paragraph("Gracias por preferir a la tienda KB_Sport3 no olvides seguirnos en nuestra redes sociales")
+            {
+                Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
+                Alignment = Element.ALIGN_LEFT
+            };
+            documento.Add(mensajeAgradecimiento);
+
             documento.Close();
 
             MessageBox.Show($"El PDF de la factura se ha guardado en el escritorio como 'FacturaKB_Sport3_{fechaHora}.pdf'.");
         }
+
 
 
 
