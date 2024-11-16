@@ -46,8 +46,6 @@
             this.buttonEA = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRestablecerCatalogo = new System.Windows.Forms.Button();
             this.buttonConfirmar = new System.Windows.Forms.Button();
@@ -58,10 +56,10 @@
             this.labelCambioRegreso = new System.Windows.Forms.Label();
             this.labelCambio = new System.Windows.Forms.Label();
             this.Chatvoz = new System.Windows.Forms.Button();
+            this.buttonIGCatalogo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelLiga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +123,7 @@
             // panelLiga
             // 
             this.panelLiga.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelLiga.Controls.Add(this.buttonIGCatalogo);
             this.panelLiga.Controls.Add(this.label1);
             this.panelLiga.Controls.Add(this.buttonTALLAXL);
             this.panelLiga.Controls.Add(this.buttonL);
@@ -136,8 +135,6 @@
             this.panelLiga.Controls.Add(this.buttonEA);
             this.panelLiga.Controls.Add(this.label3);
             this.panelLiga.Controls.Add(this.pictureBox3);
-            this.panelLiga.Controls.Add(this.label4);
-            this.panelLiga.Controls.Add(this.pictureBox2);
             this.panelLiga.Controls.Add(this.pictureBox1);
             this.panelLiga.Controls.Add(this.buttonRestablecerCatalogo);
             this.panelLiga.Dock = System.Windows.Forms.DockStyle.Left;
@@ -281,26 +278,6 @@
             this.pictureBox3.TabIndex = 29;
             this.pictureBox3.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(81, 385);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 23);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Kb_sport3";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(31, 375);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 27;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -416,6 +393,23 @@
             this.Chatvoz.UseVisualStyleBackColor = true;
             this.Chatvoz.Click += new System.EventHandler(this.Chatvoz_Click);
             // 
+            // buttonIGCatalogo
+            // 
+            this.buttonIGCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonIGCatalogo.FlatAppearance.BorderSize = 0;
+            this.buttonIGCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIGCatalogo.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIGCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("buttonIGCatalogo.Image")));
+            this.buttonIGCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIGCatalogo.Location = new System.Drawing.Point(31, 371);
+            this.buttonIGCatalogo.Name = "buttonIGCatalogo";
+            this.buttonIGCatalogo.Size = new System.Drawing.Size(129, 48);
+            this.buttonIGCatalogo.TabIndex = 38;
+            this.buttonIGCatalogo.Text = "Kb_sport3";
+            this.buttonIGCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonIGCatalogo.UseVisualStyleBackColor = true;
+            this.buttonIGCatalogo.Click += new System.EventHandler(this.buttonIGCatalogo_Click);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,7 +435,6 @@
             this.panelLiga.ResumeLayout(false);
             this.panelLiga.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -466,8 +459,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button Chatvoz;
         private System.Windows.Forms.Button buttonEA;
         private System.Windows.Forms.Button buttonDimayor;
@@ -479,5 +470,6 @@
         private System.Windows.Forms.Button buttonTallaM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAtrasCliente;
+        private System.Windows.Forms.Button buttonIGCatalogo;
     }
 }

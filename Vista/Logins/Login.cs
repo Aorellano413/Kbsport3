@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 
+
 namespace Vista
 {
     public partial class FormLogin : Form
@@ -79,5 +80,28 @@ namespace Vista
             loginCliente.Show();
             this.Hide();
         }
+
+        private void buttonWpp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonIG_Click(object sender, EventArgs e)
+        {
+            string url = "https://instagram.com/kb_sport3?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr";
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true 
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
+            }
+        }
+
     }
 }

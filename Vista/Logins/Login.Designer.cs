@@ -44,14 +44,10 @@
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.HorFecha = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonWpp = new System.Windows.Forms.Button();
+            this.buttonIG = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -215,45 +211,39 @@
             this.HorFecha.Enabled = true;
             this.HorFecha.Tick += new System.EventHandler(this.HorFecha_Tick);
             // 
-            // pictureBox2
+            // buttonWpp
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(7, 275);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.buttonWpp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonWpp.FlatAppearance.BorderSize = 0;
+            this.buttonWpp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonWpp.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWpp.Image = ((System.Drawing.Image)(resources.GetObject("buttonWpp.Image")));
+            this.buttonWpp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonWpp.Location = new System.Drawing.Point(30, 241);
+            this.buttonWpp.Name = "buttonWpp";
+            this.buttonWpp.Size = new System.Drawing.Size(129, 48);
+            this.buttonWpp.TabIndex = 14;
+            this.buttonWpp.Text = "301 5318600";
+            this.buttonWpp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonWpp.UseVisualStyleBackColor = true;
+            this.buttonWpp.Click += new System.EventHandler(this.buttonWpp_Click);
             // 
-            // label1
+            // buttonIG
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 285);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 23);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Kb_sport3";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(7, 228);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(44, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 23);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "301 5318600";
+            this.buttonIG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonIG.FlatAppearance.BorderSize = 0;
+            this.buttonIG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIG.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonIG.Image = ((System.Drawing.Image)(resources.GetObject("buttonIG.Image")));
+            this.buttonIG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIG.Location = new System.Drawing.Point(30, 296);
+            this.buttonIG.Name = "buttonIG";
+            this.buttonIG.Size = new System.Drawing.Size(129, 48);
+            this.buttonIG.TabIndex = 15;
+            this.buttonIG.Text = "Kb_sport3";
+            this.buttonIG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonIG.UseVisualStyleBackColor = true;
+            this.buttonIG.Click += new System.EventHandler(this.buttonIG_Click);
             // 
             // FormLogin
             // 
@@ -261,10 +251,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(700, 381);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.buttonIG);
+            this.Controls.Add(this.buttonWpp);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelHora);
             this.Controls.Add(this.pictureBox1);
@@ -275,8 +263,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,12 +282,10 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer HorFecha;
         private System.Windows.Forms.Button buttonExitLogin;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonNuevoUsuario;
         private System.Windows.Forms.Button buttonInvitado;
+        private System.Windows.Forms.Button buttonWpp;
+        private System.Windows.Forms.Button buttonIG;
     }
 }
 

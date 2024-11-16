@@ -412,5 +412,22 @@ namespace Vista
             formLogin.Show();
             this.Close();
         }
+
+        private void buttonIGCatalogo_Click(object sender, EventArgs e)
+        {
+            string url = "https://instagram.com/kb_sport3?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr";
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
+            }
+        }
     }
 }
