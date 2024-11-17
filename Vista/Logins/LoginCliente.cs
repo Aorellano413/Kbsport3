@@ -39,24 +39,67 @@ namespace Vista
         {
             try
             {
+         
+                if (txtCedula.Text.Length != 10)
+                {
+                    MessageBox.Show("La cédula debe tener 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
+                    string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                    string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                    string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                    string.IsNullOrWhiteSpace(txtDireccion.Text) ||
+                    string.IsNullOrWhiteSpace(textBoxCorreo.Text))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+   
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtNombre.Text, @"^[a-zA-Z]+$"))
+                {
+                    MessageBox.Show("El nombre solo debe contener letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtApellido.Text, @"^[a-zA-Z]+$"))
+                {
+                    MessageBox.Show("El apellido solo debe contener letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelefono.Text, @"^\d+$"))
+                {
+                    MessageBox.Show("El teléfono debe contener solo números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 int cedula = int.Parse(txtCedula.Text);
+                string correo = textBoxCorreo.Text;
 
                 ServicioUsuario servicioUsuario = new ServicioUsuario();
 
-
                 Cliente clienteExistente = servicioUsuario.ObtenerClientePorCedula(cedula);
-
                 if (clienteExistente != null)
                 {
                     MessageBox.Show("Ya has ingresado anteriormente, bienvenido nuevamente.",
-                                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Catalogo catalogo = new Catalogo(clienteExistente);
                     catalogo.Show();
                     this.Close();
                     return;
                 }
 
+                Cliente clienteConCorreo = servicioUsuario.ObtenerClientePorCorreo(correo);
+                if (clienteConCorreo != null)
+                {
+                    MessageBox.Show("El correo electrónico ya está registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
+          
                 Cliente cliente = new Cliente
                 {
                     Cedula = cedula,
@@ -64,13 +107,12 @@ namespace Vista
                     Apellido = txtApellido.Text,
                     Telefono = txtTelefono.Text,
                     Direccion = txtDireccion.Text,
-                    Correo_electronico = textBoxCorreo.Text
+                    Correo_electronico = correo
                 };
 
                 servicioUsuario.AgregarCliente(cliente);
 
                 MessageBox.Show("Cliente registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
 
                 Catalogo catalogoNuevo = new Catalogo(cliente);
                 catalogoNuevo.Show();
@@ -85,6 +127,8 @@ namespace Vista
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void buttonIGCliente_Click(object sender, EventArgs e)
         {

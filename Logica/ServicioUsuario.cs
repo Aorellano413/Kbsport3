@@ -42,5 +42,11 @@ namespace Logica
         {
             return datosUsuario.ObtenerTodosClientes();
         }
+
+        public Cliente ObtenerClientePorCorreo(string correo)
+        {
+           
+            return datosUsuario.ObtenerClientePorCorreo(correo);
+        }
     }
 }

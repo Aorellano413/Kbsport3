@@ -115,6 +115,37 @@ namespace Persistencia
             return null;  
         }
 
+        public Cliente ObtenerClientePorCorreo(string correo)
+        {
+            using (var connection = conexionDAL.AbrirConexion())
+            {
+                string query = "SELECT Cedula, Nombre, Apellido, Telefono, Direccion, correo_electronico FROM CLIENTES WHERE correo_electronico = @correo";
+
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@correo", correo);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Cliente
+                            {
+                                Cedula = reader.GetInt32("Cedula"),
+                                Nombre = reader.GetString("Nombre"),
+                                Apellido = reader.GetString("Apellido"),
+                                Telefono = reader.GetString("Telefono"),
+                                Direccion = reader.GetString("Direccion"),
+                                Correo_electronico = reader.GetString("correo_electronico")
+                            };
+                        }
+                    }
+                }
+            }
+            return null; 
+        }
+
+
         public Administrador ObtenerAdministrador(string usuario, string contraseña)
         {
             using (var connection = conexionDAL.AbrirConexion())
@@ -171,8 +202,6 @@ namespace Persistencia
             }
             return null;
         }
-
-
 
     }
 }
