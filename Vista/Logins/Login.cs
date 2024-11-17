@@ -9,6 +9,7 @@ namespace Vista
     {
         private ServicioUsuario servicioUsuario = new ServicioUsuario();
         public static bool esInvitado { get; private set; } = false;
+        public static bool esEmpleado { get; private set; } = false;
 
         public FormLogin()
         {
@@ -45,29 +46,35 @@ namespace Vista
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-
             var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
             if (administrador != null)
             {
+         
+                FormLogin.esEmpleado = false;
+                FormLogin.esInvitado = false;
 
                 MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
                 menuGeneralAdministrador.Show();
                 this.Hide();
                 return;
             }
-
 
             var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
             if (empleado != null)
             {
+                
+                FormLogin.esEmpleado = true;
+                FormLogin.esInvitado = false;
 
                 MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
                 menuGeneralAdministrador.Show();
                 this.Hide();
                 return;
             }
+
             MessageBox.Show("Usuario o contraseña incorrectos");
         }
+
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
         {

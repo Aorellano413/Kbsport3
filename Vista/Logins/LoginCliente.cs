@@ -39,15 +39,37 @@ namespace Vista
         {
             try
             {
-         
-                if (txtCedula.Text.Length != 10)
+
+                if (txtCedula.Visible && txtCedula.Text.Length != 10)
                 {
                     MessageBox.Show("La cédula debe tener 10 dígitos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(txtCedula.Text) ||
-                    string.IsNullOrWhiteSpace(txtNombre.Text) ||
+
+                if (string.IsNullOrWhiteSpace(txtCedula.Text))
+                {
+                    MessageBox.Show("La cédula es obligatoria.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int cedula = int.Parse(txtCedula.Text);
+                ServicioUsuario servicioUsuario = new ServicioUsuario();
+
+                Cliente clienteExistente = servicioUsuario.ObtenerClientePorCedula(cedula);
+                if (clienteExistente != null)
+                {
+       
+                    MessageBox.Show("Ya has ingresado anteriormente, bienvenido nuevamente.",
+                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Catalogo catalogo = new Catalogo(clienteExistente);
+                    catalogo.Show();
+                    this.Close();
+                    return;
+                }
+
+            
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                     string.IsNullOrWhiteSpace(txtApellido.Text) ||
                     string.IsNullOrWhiteSpace(txtTelefono.Text) ||
                     string.IsNullOrWhiteSpace(txtDireccion.Text) ||
@@ -57,7 +79,6 @@ namespace Vista
                     return;
                 }
 
-   
                 if (!System.Text.RegularExpressions.Regex.IsMatch(txtNombre.Text, @"^[a-zA-Z]+$"))
                 {
                     MessageBox.Show("El nombre solo debe contener letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -76,21 +97,7 @@ namespace Vista
                     return;
                 }
 
-                int cedula = int.Parse(txtCedula.Text);
                 string correo = textBoxCorreo.Text;
-
-                ServicioUsuario servicioUsuario = new ServicioUsuario();
-
-                Cliente clienteExistente = servicioUsuario.ObtenerClientePorCedula(cedula);
-                if (clienteExistente != null)
-                {
-                    MessageBox.Show("Ya has ingresado anteriormente, bienvenido nuevamente.",
-                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Catalogo catalogo = new Catalogo(clienteExistente);
-                    catalogo.Show();
-                    this.Close();
-                    return;
-                }
 
                 Cliente clienteConCorreo = servicioUsuario.ObtenerClientePorCorreo(correo);
                 if (clienteConCorreo != null)
@@ -99,7 +106,7 @@ namespace Vista
                     return;
                 }
 
-          
+               
                 Cliente cliente = new Cliente
                 {
                     Cedula = cedula,
@@ -127,8 +134,6 @@ namespace Vista
                 MessageBox.Show("Ocurrió un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void buttonIGCliente_Click(object sender, EventArgs e)
         {

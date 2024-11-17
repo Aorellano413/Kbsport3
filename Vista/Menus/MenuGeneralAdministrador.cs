@@ -17,7 +17,15 @@ namespace Vista
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             NOMBRE.Text = "Andres Orellano";
+
+            if (FormLogin.esEmpleado)
+            {
+               
+            }
         }
+
+
+
 
         private void buttonAgregarCamisetas_Click(object sender, EventArgs e)
         {
@@ -37,12 +45,23 @@ namespace Vista
 
         private void buttonInforme_Click(object sender, EventArgs e)
         {
-            InformeEmpresa informeEmpresa = new InformeEmpresa();
-            informeEmpresa.Show();
-            this.Close();
+            if (FormLogin.esEmpleado)
+            {
+                
+                MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                
+                InformeEmpresa informeEmpresa = new InformeEmpresa();
+                informeEmpresa.Show();
+                this.Close();
+            }
         }
 
-        
+
+
+
 
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
         {
@@ -79,25 +98,53 @@ namespace Vista
 
         private void buttonEquipo_Click(object sender, EventArgs e)
         {
-            Equipo equipo = new Equipo();
-            equipo.Show();
-            this.Close();
+
+            if (FormLogin.esEmpleado)
+            {
+
+                MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Equipo equipo = new Equipo();
+                equipo.Show();
+                this.Close();
+            }
+            
         }
 
      
 
         private void buttonLiga_Click(object sender, EventArgs e)
         {
-            Liga liga = new Liga();
-            liga.Show();
-            this.Close();
+
+            if (FormLogin.esEmpleado)
+            {
+
+                MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Liga liga = new Liga();
+                liga.Show();
+                this.Close();
+            }
         }
 
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            Clientes clientes = new Clientes();
-            clientes.Show();
-            this.Close();
+            if (FormLogin.esEmpleado)
+            {
+
+                MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Clientes clientes = new Clientes();
+                clientes.Show();
+                this.Close();
+            }
+            
         }
 
         private void ButtonProducto_Click(object sender, EventArgs e)
