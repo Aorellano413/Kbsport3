@@ -1,6 +1,9 @@
 ﻿using Logica;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista.Logins;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Vista
@@ -15,6 +18,7 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+     
         }
 
         private void HorFecha_Tick(object sender, EventArgs e)
@@ -46,35 +50,55 @@ namespace Vista
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-            var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
-            if (administrador != null)
+            this.Hide();
+
+            FormCargando formCargando = new FormCargando();
+            formCargando.Show();
+
+            Task.Run(async () =>
             {
-         
-                FormLogin.esEmpleado = false;
-                FormLogin.esInvitado = false;
+               
+                await Task.Delay(6400);
 
-                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                menuGeneralAdministrador.Show();
-                this.Hide();
-                return;
-            }
+                var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
+                if (administrador != null)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        formCargando.Close();
 
-            var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
-            if (empleado != null)
-            {
-                
-                FormLogin.esEmpleado = true;
-                FormLogin.esInvitado = false;
+                        FormLogin.esEmpleado = false;
+                        FormLogin.esInvitado = false;
 
-                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                menuGeneralAdministrador.Show();
-                this.Hide();
-                return;
-            }
+                        MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                        menuGeneralAdministrador.Show();
+                    }));
+                    return;
+                }
 
-            MessageBox.Show("Usuario o contraseña incorrectos");
+                var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
+                if (empleado != null)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        formCargando.Close();
+
+                        FormLogin.esEmpleado = true;
+                        FormLogin.esInvitado = false;
+
+                        MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                        menuGeneralAdministrador.Show();
+                    }));
+                    return;
+                }
+
+                Invoke(new Action(() =>
+                {
+                    formCargando.Close();
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }));
+            });
         }
-
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
         {

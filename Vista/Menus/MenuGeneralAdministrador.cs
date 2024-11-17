@@ -16,16 +16,19 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            NOMBRE.Text = "Andres Orellano";
+
 
             if (FormLogin.esEmpleado)
             {
-               
+                NOMBRE.Text = "Daniel Florez";
             }
+            else
+            {
+                NOMBRE.Text = "Andres Orellano";
+            }
+
+
         }
-
-
-
 
         private void buttonAgregarCamisetas_Click(object sender, EventArgs e)
         {
@@ -47,12 +50,12 @@ namespace Vista
         {
             if (FormLogin.esEmpleado)
             {
-                
+
                 MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                
+
                 InformeEmpresa informeEmpresa = new InformeEmpresa();
                 informeEmpresa.Show();
                 this.Close();
@@ -110,11 +113,8 @@ namespace Vista
                 equipo.Show();
                 this.Close();
             }
-            
+
         }
-
-     
-
         private void buttonLiga_Click(object sender, EventArgs e)
         {
 
@@ -144,12 +144,12 @@ namespace Vista
                 clientes.Show();
                 this.Close();
             }
-            
+
         }
 
         private void ButtonProducto_Click(object sender, EventArgs e)
         {
-            Productos productos = new Productos();  
+            Productos productos = new Productos();
             productos.Show();
             this.Close();
         }
