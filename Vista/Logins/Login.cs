@@ -46,19 +46,27 @@ namespace Vista
             string contraseña = textBoxContraseña.Text;
 
 
-            var usuario = servicioUsuario.Autenticar(nombreUsuario, contraseña);
-
-            if (usuario != null)
+            var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
+            if (administrador != null)
             {
 
                 MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
                 menuGeneralAdministrador.Show();
                 this.Hide();
+                return;
             }
-            else
+
+
+            var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
+            if (empleado != null)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+
+                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                menuGeneralAdministrador.Show();
+                this.Hide();
+                return;
             }
+            MessageBox.Show("Usuario o contraseña incorrectos");
         }
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
@@ -69,7 +77,7 @@ namespace Vista
 
         private void buttonInvitado_Click(object sender, EventArgs e)
         {
-           CatalogoInvitado catalogoInvitado = new CatalogoInvitado();
+            CatalogoInvitado catalogoInvitado = new CatalogoInvitado();
             catalogoInvitado.Show();
             this.Hide();
         }
@@ -89,7 +97,7 @@ namespace Vista
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
                     FileName = url,
-                    UseShellExecute = true 
+                    UseShellExecute = true
                 });
             }
             catch (Exception ex)
@@ -107,7 +115,7 @@ namespace Vista
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
                     FileName = url,
-                    UseShellExecute = true 
+                    UseShellExecute = true
                 });
             }
             catch (Exception ex)

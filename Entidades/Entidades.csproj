@@ -158,6 +158,7 @@
     <Compile Include="CamisaTela.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="DetallePedido.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Equipo.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="FacturaCamisa.cs" />

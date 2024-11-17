@@ -14,6 +14,11 @@ namespace Logica
             return datosUsuario.ObtenerAdministrador(nombreUsuario, contraseña);
         }
 
+        public Empleado AutenticarEmpleado(string nombreUsuario, string contraseña)
+        {
+            return datosUsuario.ObtenerEmpleado(nombreUsuario, contraseña);
+        }
+
         public Cliente ObtenerClientePorCedula(int cedula)
         {
             return datosUsuario.ObtenerClientePorCedula(cedula); 

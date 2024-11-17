@@ -142,5 +142,37 @@ namespace Persistencia
             }
             return null;
         }
+
+        public Empleado ObtenerEmpleado(string usuario, string contraseña)
+        {
+            using (var connection = conexionDAL.AbrirConexion())
+            {
+   
+                string query = "SELECT id, Usuario, contrasena FROM Empleado WHERE Usuario = @usuario AND contrasena = @contraseña";
+
+                using (var cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Empleado
+                            {
+                                Id = reader.GetInt32("id"),
+                                Usuario = reader.GetString("Usuario"),
+                                Contraseña = reader.GetString("contrasena")  
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+
+
     }
 }
