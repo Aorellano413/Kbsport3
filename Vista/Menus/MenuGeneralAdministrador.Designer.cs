@@ -36,7 +36,7 @@
             this.NOMBRE = new System.Windows.Forms.Label();
             this.buttonGestionarCamisas = new System.Windows.Forms.Button();
             this.ButtonStockCamisetas = new System.Windows.Forms.Button();
-            this.ButtonProducto = new System.Windows.Forms.Button();
+            this.ButtonCataCliente = new System.Windows.Forms.Button();
             this.buttonInforme = new System.Windows.Forms.Button();
             this.buttonAtrasAdministrador = new System.Windows.Forms.Button();
             this.buttonCerrarAdministrador = new System.Windows.Forms.Button();
@@ -124,17 +124,17 @@
             this.ButtonStockCamisetas.UseVisualStyleBackColor = true;
             this.ButtonStockCamisetas.Click += new System.EventHandler(this.ButtonStockCamisetas_Click);
             // 
-            // ButtonProducto
+            // ButtonCataCliente
             // 
-            this.ButtonProducto.FlatAppearance.BorderSize = 0;
-            this.ButtonProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonProducto.Image = ((System.Drawing.Image)(resources.GetObject("ButtonProducto.Image")));
-            this.ButtonProducto.Location = new System.Drawing.Point(822, 297);
-            this.ButtonProducto.Name = "ButtonProducto";
-            this.ButtonProducto.Size = new System.Drawing.Size(200, 155);
-            this.ButtonProducto.TabIndex = 3;
-            this.ButtonProducto.UseVisualStyleBackColor = true;
-            this.ButtonProducto.Click += new System.EventHandler(this.ButtonProducto_Click);
+            this.ButtonCataCliente.FlatAppearance.BorderSize = 0;
+            this.ButtonCataCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCataCliente.Image = ((System.Drawing.Image)(resources.GetObject("ButtonCataCliente.Image")));
+            this.ButtonCataCliente.Location = new System.Drawing.Point(822, 297);
+            this.ButtonCataCliente.Name = "ButtonCataCliente";
+            this.ButtonCataCliente.Size = new System.Drawing.Size(200, 155);
+            this.ButtonCataCliente.TabIndex = 3;
+            this.ButtonCataCliente.UseVisualStyleBackColor = true;
+            this.ButtonCataCliente.Click += new System.EventHandler(this.ButtonCataCliente_Click);
             // 
             // buttonInforme
             // 
@@ -196,11 +196,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(861, 455);
+            this.label5.Location = new System.Drawing.Point(876, 455);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 29);
+            this.label5.Size = new System.Drawing.Size(93, 29);
             this.label5.TabIndex = 9;
-            this.label5.Text = "MAYOR / MENOR";
+            this.label5.Text = "CATALOGO";
             // 
             // label6
             // 
@@ -350,7 +350,7 @@
             this.Controls.Add(this.buttonCerrarAdministrador);
             this.Controls.Add(this.buttonAtrasAdministrador);
             this.Controls.Add(this.buttonInforme);
-            this.Controls.Add(this.ButtonProducto);
+            this.Controls.Add(this.ButtonCataCliente);
             this.Controls.Add(this.ButtonStockCamisetas);
             this.Controls.Add(this.buttonGestionarCamisas);
             this.Controls.Add(this.panel1);
@@ -369,7 +369,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonGestionarCamisas;
         private System.Windows.Forms.Button ButtonStockCamisetas;
-        private System.Windows.Forms.Button ButtonProducto;
+        private System.Windows.Forms.Button ButtonCataCliente;
         private System.Windows.Forms.Button buttonInforme;
         private System.Windows.Forms.Button buttonAtrasAdministrador;
         private System.Windows.Forms.Button buttonCerrarAdministrador;

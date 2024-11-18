@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -147,11 +148,22 @@ namespace Vista
 
         }
 
-        private void ButtonProducto_Click(object sender, EventArgs e)
+        private void ButtonCataCliente_Click(object sender, EventArgs e)
         {
-            Productos productos = new Productos();
-            productos.Show();
+         
+            Cliente cliente = ObtenerCliente(); 
+
+            Catalogo catalogo = new Catalogo(cliente);
+            catalogo.Show(); 
             this.Close();
         }
+
+        private Cliente ObtenerCliente()
+        {
+           
+            return new Cliente(); 
+        }
+
+
     }
 }
