@@ -65,8 +65,6 @@ namespace Vista
 
 
 
-
-
         private void buttonCerrarAdministrador_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -150,18 +148,28 @@ namespace Vista
 
         private void ButtonCataCliente_Click(object sender, EventArgs e)
         {
-         
-            Cliente cliente = ObtenerCliente(); 
 
-            Catalogo catalogo = new Catalogo(cliente);
-            catalogo.Show(); 
-            this.Close();
+            if (FormLogin.esEmpleado)
+            {
+
+                MessageBox.Show("No tienes acceso a esta sección.", "Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+                Cliente cliente = ObtenerCliente();
+
+                Catalogo catalogo = new Catalogo(cliente);
+                catalogo.Show();
+                this.Close();
+            }
+
         }
 
         private Cliente ObtenerCliente()
         {
-           
-            return new Cliente(); 
+
+            return new Cliente();
         }
 
 
