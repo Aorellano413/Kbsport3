@@ -23,7 +23,7 @@ namespace Vista
         private InventarioBD inventarioBD = new InventarioBD();
         private CamisasBD camisasBD = new CamisasBD();
         private DatosFactura datosFactura = new DatosFactura();
-        private Cliente clienteActual; 
+        private Cliente clienteActual;
         private Panel panelSeleccionado = null;
         private decimal totalAPagar = 0;
 
@@ -59,7 +59,6 @@ namespace Vista
                 camisas = camisasBD.ObtenerTodasLasCamisas();
             }
 
-
             var camisasOrdenadas = camisas.AsEnumerable()
                                            .OrderByDescending(row => row.Field<decimal>("precio"));
 
@@ -67,10 +66,15 @@ namespace Vista
 
             foreach (DataRow fila in camisasOrdenadas)
             {
+                int stockDisponible = Convert.ToInt32(fila["stock"]);
+                if (stockDisponible == 0)
+                {
+                    continue;
+                }
+
                 List<CamisaTela> telas = camisasBD.ObtenerTelasDeCamisa(Convert.ToInt32(fila["id_camisa"]));
                 string nombreTela = telas.Count > 0 ? telas[0].NombreTela : "Desconocida";
                 string tallaCamisa = fila["talla"].ToString();
-                int stockDisponible = Convert.ToInt32(fila["stock"]);
 
                 PictureBox pictureBoxFoto = new PictureBox
                 {
@@ -98,16 +102,22 @@ namespace Vista
                 panelCamisa.Controls.Add(labelInfo);
                 labelInfo.Location = new Point(10, 120);
 
-                panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
-                pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
-                labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                if (stockDisponible == 0)
+                {
+                    panelCamisa.Enabled = false;
+                    labelInfo.ForeColor = Color.Gray;
+                }
+                else
+                {
+
+                    panelCamisa.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                    pictureBoxFoto.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                    labelInfo.Click += (sender, e) => SeleccionarCamisa(panelCamisa, fila);
+                }
 
                 flowLayoutPanelCamisasVentas.Controls.Add(panelCamisa);
             }
         }
-
-
-
 
         private void SeleccionarCamisa(Panel panelCamisa, DataRow datosCamisa)
         {
@@ -153,7 +163,7 @@ namespace Vista
                     decimal cambio = efectivoIngresado - totalAPagar;
                     labelCambioRegreso.Text = cambio.ToString("C");
 
-                    
+
                     Factura factura = new Factura
                     {
                         FechaFactura = DateTime.Now,
@@ -163,11 +173,11 @@ namespace Vista
 
                     datosFactura.InsertarFactura(factura);
 
-                   
+
                     Pedido pedido = new Pedido
                     {
                         FechaPedido = DateTime.Now,
-                        Id = factura.Id 
+                        Id = factura.Id
                     };
 
                     int idPedido = pedidosBD.CrearPedido(pedido);
@@ -202,12 +212,12 @@ namespace Vista
 
                     if (detallesPedido.Count > 0)
                     {
-                        CrearPDF(detallesPedido); 
+                        CrearPDF(detallesPedido);
                     }
 
                     MessageBox.Show("Compra exitosa. Gracias por preferir KB Sport3.");
 
-                    
+
                     totalAPagar = 0;
                     labelTotalApagar.Text = totalAPagar.ToString("C");
                     txtEfectivo.Clear();
@@ -334,10 +344,10 @@ namespace Vista
         {
             try
             {
-               
-                var correoCliente = clienteActual.Correo_electronico; 
 
-                
+                var correoCliente = clienteActual.Correo_electronico;
+
+
                 var correoDestino = "pipeorellano19@gmail.com";
 
                 var smtpClient = new SmtpClient("smtp.gmail.com")
@@ -355,13 +365,13 @@ namespace Vista
                     IsBodyHtml = true,
                 };
 
-                
-                mensaje.To.Add(correoDestino);  
-                mensaje.To.Add(correoCliente);  
 
-                mensaje.Attachments.Add(new Attachment(rutaPDF));  
+                mensaje.To.Add(correoDestino);
+                mensaje.To.Add(correoCliente);
 
-                smtpClient.Send(mensaje);  
+                mensaje.Attachments.Add(new Attachment(rutaPDF));
+
+                smtpClient.Send(mensaje);
 
                 MessageBox.Show("Factura enviada al correo electrónico.");
             }
