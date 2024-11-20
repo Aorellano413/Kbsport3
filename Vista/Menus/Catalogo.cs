@@ -235,17 +235,20 @@ namespace Vista
             }
         }
 
-
         public void CrearPDF(List<DetallePedido> detallesPedido)
         {
             string rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string fechaHora = DateTime.Now.ToString("yyyyMMdd_HHmmss");
             string rutaPDF = Path.Combine(rutaEscritorio, $"FacturaKB_Sport3_{fechaHora}.pdf");
 
-            Document documento = new Document(PageSize.A5.Rotate());
+          
+            iTextSharp.text.Rectangle tamañoPagina = new iTextSharp.text.Rectangle(iTextSharp.text.PageSize.A5.Width, iTextSharp.text.PageSize.A5.Height - 100);
+
+            Document documento = new Document(tamañoPagina);
             PdfWriter.GetInstance(documento, new FileStream(rutaPDF, FileMode.Create));
             documento.Open();
 
+      
             string rutaLogo = @"E:\Universidad\BASE DE DATOS\Krsport3.png";
 
             if (File.Exists(rutaLogo))
@@ -253,8 +256,8 @@ namespace Vista
                 try
                 {
                     iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(rutaLogo);
-                    logo.ScaleToFit(100, 100);
-                    logo.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                    logo.ScaleToFit(60, 60); 
+                    logo.Alignment = iTextSharp.text.Element.ALIGN_LEFT; 
                     documento.Add(logo);
                 }
                 catch (Exception ex)
@@ -263,24 +266,16 @@ namespace Vista
                 }
             }
 
-            var tituloFactura = new Paragraph("FACTURA KB_SPORT3")
-            {
-                Font = FontFactory.GetFont("Times New Roman", 24, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
-                Alignment = Element.ALIGN_CENTER
-            };
-            documento.Add(tituloFactura);
-
             var datosCliente = new Paragraph($"Cliente: {clienteActual.Nombre} {clienteActual.Apellido}\n" +
                                               $"Cédula: {clienteActual.Cedula}\n" +
                                               $"Correo: {clienteActual.Correo_electronico}\n" +
                                               $"Fecha: {DateTime.Now:dd/MM/yyyy h:mm:ss tt}")
             {
                 Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
-                Alignment = Element.ALIGN_LEFT
+                Alignment = Element.ALIGN_LEFT,
+                SpacingAfter = 5
             };
             documento.Add(datosCliente);
-
-            documento.Add(new Paragraph("\n"));
 
             PdfPTable tabla = new PdfPTable(5);
             tabla.WidthPercentage = 100;
@@ -315,21 +310,19 @@ namespace Vista
 
             documento.Add(tabla);
 
-            documento.Add(new Paragraph("\n"));
-
             var totalPagar = new Paragraph($"Total a pagar: {totalFactura.ToString("C")}")
             {
                 Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
-                Alignment = Element.ALIGN_CENTER
+                Alignment = Element.ALIGN_CENTER,
+                SpacingBefore = 5
             };
             documento.Add(totalPagar);
-
-            documento.Add(new Paragraph("\n"));
 
             var mensajeAgradecimiento = new Paragraph("Gracias por preferir a la tienda KB_Sport3 no olvides seguirnos en nuestra redes sociales")
             {
                 Font = FontFactory.GetFont("Perpetua", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK),
-                Alignment = Element.ALIGN_LEFT
+                Alignment = Element.ALIGN_LEFT,
+                SpacingBefore = 5
             };
             documento.Add(mensajeAgradecimiento);
 
@@ -339,6 +332,11 @@ namespace Vista
 
             EnviarFacturaPorCorreo(rutaPDF);
         }
+
+
+
+
+
 
         private void EnviarFacturaPorCorreo(string rutaPDF)
         {
