@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxliga = new System.Windows.Forms.ComboBox();
             this.textBoxTalla = new System.Windows.Forms.TextBox();
+            this.buttonModificar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAgregarCamisas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCamisas)).BeginInit();
@@ -142,7 +143,7 @@
             this.buttonRegistrarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegistrarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonRegistrarCamisas.Image")));
             this.buttonRegistrarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(432, 141);
+            this.buttonRegistrarCamisas.Location = new System.Drawing.Point(444, 78);
             this.buttonRegistrarCamisas.Name = "buttonRegistrarCamisas";
             this.buttonRegistrarCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonRegistrarCamisas.TabIndex = 26;
@@ -158,7 +159,7 @@
             this.buttonEliminarCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminarCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonEliminarCamisas.Image")));
             this.buttonEliminarCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEliminarCamisas.Location = new System.Drawing.Point(640, 78);
+            this.buttonEliminarCamisas.Location = new System.Drawing.Point(444, 281);
             this.buttonEliminarCamisas.Name = "buttonEliminarCamisas";
             this.buttonEliminarCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonEliminarCamisas.TabIndex = 27;
@@ -174,7 +175,7 @@
             this.buttonValoresCamisas.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonValoresCamisas.Image = ((System.Drawing.Image)(resources.GetObject("buttonValoresCamisas.Image")));
             this.buttonValoresCamisas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonValoresCamisas.Location = new System.Drawing.Point(432, 71);
+            this.buttonValoresCamisas.Location = new System.Drawing.Point(444, 141);
             this.buttonValoresCamisas.Name = "buttonValoresCamisas";
             this.buttonValoresCamisas.Size = new System.Drawing.Size(104, 40);
             this.buttonValoresCamisas.TabIndex = 28;
@@ -203,7 +204,7 @@
             // 
             // pictureBoxFoto
             // 
-            this.pictureBoxFoto.Location = new System.Drawing.Point(624, 187);
+            this.pictureBoxFoto.Location = new System.Drawing.Point(618, 78);
             this.pictureBoxFoto.Name = "pictureBoxFoto";
             this.pictureBoxFoto.Size = new System.Drawing.Size(163, 118);
             this.pictureBoxFoto.TabIndex = 31;
@@ -216,7 +217,7 @@
             this.buttonFotoAñadir.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFotoAñadir.Image = ((System.Drawing.Image)(resources.GetObject("buttonFotoAñadir.Image")));
             this.buttonFotoAñadir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFotoAñadir.Location = new System.Drawing.Point(640, 141);
+            this.buttonFotoAñadir.Location = new System.Drawing.Point(635, 206);
             this.buttonFotoAñadir.Name = "buttonFotoAñadir";
             this.buttonFotoAñadir.Size = new System.Drawing.Size(133, 40);
             this.buttonFotoAñadir.TabIndex = 32;
@@ -300,12 +301,29 @@
             this.textBoxTalla.Size = new System.Drawing.Size(130, 20);
             this.textBoxTalla.TabIndex = 46;
             // 
+            // buttonModificar
+            // 
+            this.buttonModificar.FlatAppearance.BorderSize = 0;
+            this.buttonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonModificar.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModificar.Image = ((System.Drawing.Image)(resources.GetObject("buttonModificar.Image")));
+            this.buttonModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonModificar.Location = new System.Drawing.Point(444, 215);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(104, 40);
+            this.buttonModificar.TabIndex = 47;
+            this.buttonModificar.Text = "MODIFICAR";
+            this.buttonModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            // 
             // AgregarCamisas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(814, 677);
+            this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.textBoxTalla);
             this.Controls.Add(this.comboBoxliga);
             this.Controls.Add(this.comboBoxEquipo);
@@ -362,5 +380,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxliga;
         private System.Windows.Forms.TextBox textBoxTalla;
+        private System.Windows.Forms.Button buttonModificar;
     }
 }

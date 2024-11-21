@@ -209,6 +209,11 @@ namespace Vista
             }
         }
 
-    
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            Modificar modificar = new Modificar(); 
+            modificar.Show();
+            this.Close();
+        }
     }
 }

@@ -342,6 +342,22 @@ namespace Persistencia
             }
         }
 
+        public void ModificarCamisa(int idCamisa, int nuevoStock, decimal nuevoPrecio)
+        {
+            using (MySqlConnection conn = conexion.AbrirConexion())
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                    "UPDATE CAMISAS SET stock = @stock, precio = @precio WHERE id_camisa = @idCamisa",
+                    conn
+                );
+
+                cmd.Parameters.AddWithValue("@stock", nuevoStock);
+                cmd.Parameters.AddWithValue("@precio", nuevoPrecio);
+                cmd.Parameters.AddWithValue("@idCamisa", idCamisa);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         public List<Liga> ObtenerLigas()
         {

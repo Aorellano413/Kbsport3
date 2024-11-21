@@ -91,7 +91,11 @@ namespace Logica
             return datos.ObtenerCamisasPorTalla(talla);
         }
 
-        
+        public void ModificarCamisa(int idCamisa, int nuevoStock, decimal nuevoPrecio)
+        {
+            datos.ModificarCamisa(idCamisa, nuevoStock, nuevoPrecio);
+        }
+
 
     }
 }
