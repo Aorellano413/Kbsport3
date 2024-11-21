@@ -133,22 +133,36 @@ namespace Vista
         {
             if (dataGridViewModificarCamisas.SelectedRows.Count > 0)
             {
-               
+              
                 DataGridViewRow filaSeleccionada = dataGridViewModificarCamisas.SelectedRows[0];
 
-                
+               
                 int idCamisa = Convert.ToInt32(filaSeleccionada.Cells["id_camisa"].Value);
 
-           
+            
                 if (int.TryParse(filaSeleccionada.Cells["stock"].Value?.ToString(), out int nuevoStock) &&
                     decimal.TryParse(filaSeleccionada.Cells["precio"].Value?.ToString(), out decimal nuevoPrecio))
                 {
-       
+                   
+                    if (nuevoStock < 0 || nuevoStock > 200)
+                    {
+                        MessageBox.Show("El stock debe ser un número entre 0 y 200.", "Stock inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (nuevoPrecio < 0 || nuevoPrecio > 250000)
+                    {
+                        MessageBox.Show("El precio debe ser un valor entre 0 y 250,000.", "Precio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                  
                     camisasBD.ModificarCamisa(idCamisa, nuevoStock, nuevoPrecio);
 
-      
+                    
                     MessageBox.Show("Camisa modificada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+         
                     CargarCamisas();
                 }
                 else
@@ -161,6 +175,7 @@ namespace Vista
                 MessageBox.Show("Por favor, selecciona una camisa para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
     }
 }

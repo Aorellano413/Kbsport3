@@ -88,6 +88,7 @@ namespace Vista
 
         private void buttonRegistrarCamisas_Click(object sender, EventArgs e)
         {
+        
             if (comboBoxliga.SelectedItem == null ||
                 string.IsNullOrWhiteSpace(textBoxPrecio.Text) ||
                 string.IsNullOrWhiteSpace(textBoxStcok.Text) ||
@@ -102,9 +103,26 @@ namespace Vista
             }
 
 
-            string precio = textBoxPrecio.Text;
-            string stock = textBoxStcok.Text;
-            string talla = textBoxTalla.Text;
+            if (!int.TryParse(textBoxStcok.Text, out int stock) || stock < 0 || stock > 200)
+            {
+                MessageBox.Show("El stock debe ser un número entre 0 y 200.", "Stock inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxPrecio.Text, out decimal precio) || precio < 0 || precio > 250000)
+            {
+                MessageBox.Show("El precio debe ser un valor entre 0 y 250,000.", "Precio inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            string talla = textBoxTalla.Text.Trim();
+            if (string.IsNullOrWhiteSpace(talla))
+            {
+                MessageBox.Show("La talla no puede estar vacía.", "Talla inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             int ligaId = ((Entidades.Liga)comboBoxliga.SelectedItem).Id_liga;
             string ligaNombre = ((Entidades.Liga)comboBoxliga.SelectedItem).Nombre;
@@ -114,7 +132,6 @@ namespace Vista
 
             int equipoId = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Id_equipo;
             string equipoNombre = ((Entidades.Equipo)comboBoxEquipo.SelectedItem).Nombre;
-
 
             DataRow nuevaFila = dt.NewRow();
             nuevaFila["LIGA"] = ligaNombre;
@@ -127,15 +144,14 @@ namespace Vista
 
             dt.Rows.Add(nuevaFila);
 
-
             Camisa nuevaCamisa = new Camisa
             {
                 IdLiga = ligaId,
                 IdEquipo = equipoId,
                 Talla = talla,
-                Precio = Convert.ToDecimal(precio),
+                Precio = precio,
                 IdTela = telaId,
-                Stock = Convert.ToInt32(stock),
+                Stock = stock,
                 Foto = rutaImagenSeleccionada
             };
 
@@ -143,10 +159,12 @@ namespace Vista
             {
                 Id_tela = telaId,
                 Nombre = telaNombre,
-                Stock = Convert.ToInt32(stock)
+                Stock = stock
             };
 
+
             camisasBD.InsertarCamisa(nuevaCamisa);
+
 
             comboBoxliga.SelectedIndex = -1;
             textBoxPrecio.Clear();
@@ -157,6 +175,7 @@ namespace Vista
             rutaImagenSeleccionada = null;
             pictureBoxFoto.Image = null;
 
+            MessageBox.Show("Camisa registrada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonCerrarCamisas_Click(object sender, EventArgs e)
