@@ -333,11 +333,6 @@ namespace Vista
             EnviarFacturaPorCorreo(rutaPDF);
         }
 
-
-
-
-
-
         private void EnviarFacturaPorCorreo(string rutaPDF)
         {
             try

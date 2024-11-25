@@ -1,0 +1,219 @@
+-- BASE DE DATOS KB_SPORT3 - 2024
+ USE Kb_sport3;
+-- Tabla PersonaAdministrador (1:1 con Administradores)
+CREATE TABLE PersonaAdministrador (
+    id_persona_administrador INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(20) NOT NULL UNIQUE,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL
+);
+
+-- Tabla Administradores (1:1 con PersonaAdministrador)
+CREATE TABLE Administradores (
+    id_administrador INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(50) NOT NULL,
+    contraseña VARCHAR(50) NOT NULL,
+    id_persona_administrador INT UNIQUE, -- Relación 1:1
+    FOREIGN KEY (id_persona_administrador) REFERENCES PersonaAdministrador(id_persona_administrador)
+);
+
+-- Crear la tabla Empleado con solo usuario y contraseña
+CREATE TABLE Empleado (
+    id INT AUTO_INCREMENT PRIMARY KEY,   
+    usuario VARCHAR(50) UNIQUE NOT NULL, 
+    contrasena VARCHAR(255) NOT NULL     
+);
+
+-- Tabla Clientes (asociados por Cédula en Pedidos)
+CREATE TABLE Clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    cedula VARCHAR(20) NOT NULL UNIQUE,
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    correo_electronico VARCHAR(100) NOT NULL
+);
+
+-- Tabla Telas (1:N con Camisas)
+CREATE TABLE Telas (
+    id_tela INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    stock INT NOT NULL
+);
+
+CREATE TABLE Seguimiento_Telas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mensaje VARCHAR(255),
+    fecha_hora DATETIME NOT NULL ,
+    usuario VARCHAR(50) NOT NULL 
+);
+
+DELIMITER $$
+
+CREATE TRIGGER AfterInsertTela
+AFTER INSERT ON Telas
+FOR EACH ROW
+BEGIN
+    -- Inserta evidencia en la tabla Log_Telas, incluyendo el usuario
+    INSERT INTO Seguimiento_Telas (mensaje, fecha_hora, usuario)
+    VALUES (CONCAT('Se ha insertado una nueva tela: ', NEW.nombre, 
+                   ' con ID: ', NEW.id_tela), NOW(), 'usuario_actual');
+END$$
+
+DELIMITER ;
+
+
+DROP TRIGGER IF EXISTS AfterInsertTela;
+
+-- Tabla Liga (1:N con Equipos y Camisas)
+CREATE TABLE Liga (
+    id_liga INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla Equipo 
+CREATE TABLE Equipo (
+    id_equipo INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+-- Tabla de Camisas
+CREATE TABLE Camisas (
+    id_camisa INT AUTO_INCREMENT PRIMARY KEY,
+    id_tela INT NOT NULL,
+    id_equipo INT NOT NULL,
+    id_liga INT NOT NULL,
+    talla VARCHAR(10) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    foto VARCHAR(255),
+    stock INT NOT NULL,
+    FOREIGN KEY (id_tela) REFERENCES Telas(id_tela) ON DELETE CASCADE,
+    FOREIGN KEY (id_equipo) REFERENCES Equipo(id_equipo) ON DELETE CASCADE,
+    FOREIGN KEY (id_liga) REFERENCES Liga(id_liga) ON DELETE CASCADE
+);
+
+-- Tabla Telas_Camisas para relación muchos a muchos entre Telas y Camisas
+CREATE TABLE Telas_Camisas (
+    id_tela INT,
+    id_camisa INT,
+    cantidad INT NOT NULL DEFAULT 0,
+    PRIMARY KEY (id_tela, id_camisa),
+    FOREIGN KEY (id_tela) REFERENCES Telas(id_tela) ON DELETE CASCADE,
+    FOREIGN KEY (id_camisa) REFERENCES Camisas(id_camisa) ON DELETE CASCADE
+);
+
+CREATE TABLE Facturas (
+    id_factura INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_factura  DATETIME NOT NULL,
+    cedula_cliente VARCHAR(20) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (cedula_cliente) REFERENCES Clientes(cedula) ON DELETE CASCADE
+);
+
+-- Agregar la columna id_pedido en la tabla Facturas
+ALTER TABLE Facturas
+ADD COLUMN id_pedido INT;
+
+-- Establecer la clave foránea para asociar Facturas con Pedidos
+ALTER TABLE Facturas
+ADD CONSTRAINT fk_factura_pedido
+FOREIGN KEY (id_pedido) REFERENCES PEDIDOS(id_pedido) ON DELETE CASCADE;
+
+-- Tabla Pedidos
+CREATE TABLE PEDIDOS (
+    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+     fecha_pedido DATE NOT NULL DEFAULT (CURRENT_DATE)
+);
+
+ALTER TABLE PEDIDOS
+ADD COLUMN fecha_inicio DATE,
+ADD COLUMN fecha_fin DATE;
+
+-- Tabla Detalle_Pedidos
+CREATE TABLE Detalle_Pedidos (
+    id_detalle INT AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    id_camisa INT,
+    id_pedido INT,
+    FOREIGN KEY (id_camisa) REFERENCES Camisas(id_camisa) ON DELETE CASCADE,
+    FOREIGN KEY (id_pedido) REFERENCES Pedidos(id_pedido) ON DELETE CASCADE
+);
+
+DESCRIBE DETALLE_PEDIDOS;
+
+CREATE TABLE Ventas (
+    id_venta INT PRIMARY KEY,
+    id_camisa INT,
+    cantidad INT,
+    fecha TIMESTAMP,
+    FOREIGN KEY (id_camisa) REFERENCES Camisas(id_camisa)
+);
+
+-- Insertar PersonaAdministrador
+INSERT INTO PersonaAdministrador (cedula, nombre, apellido, telefono, direccion) 
+VALUES ('1003315183', 'Andres', 'Orellano', '3022826211', 'Manzana A casa 13 Barrio Mayales');
+
+-- Insertar Administrador (relación 1:1 con PersonaAdministrador)
+INSERT INTO Administradores (usuario, contraseña, id_persona_administrador)
+VALUES ('kb_sport3', 'kb123', 1);
+
+-- Insertar un nuevo empleado con usuario y contraseña
+INSERT INTO Kb_sport3.Empleado (usuario, contrasena)
+VALUES ('empleado', 'empleado123');
+
+-- evidencia de los select
+
+-- eviencia de la tabla  camisas con nombres
+SELECT 
+    c.id_camisa,
+    l.nombre AS Liga,
+    e.nombre AS Equipo,
+    t.nombre AS Tela,
+    c.talla,
+    c.precio,
+    c.stock,
+    c.foto
+FROM 
+    Camisas c
+JOIN 
+    Liga l ON c.id_liga = l.id_liga
+JOIN 
+    Equipo e ON c.id_equipo = e.id_equipo
+JOIN 
+    Telas t ON c.id_tela = t.id_tela;
+  
+ -- evidencia de tabla tela
+ select * from telas;
+ 
+  -- evidencia de tabla Seguimiento_Telas
+ SELECT * FROM Seguimiento_Telas;
+
+ --  evidencia de tabla camisas
+ select * from camisas;
+ 
+-- evidencia de la tabla telas_camisas
+ select * from telas_camisas;
+ 
+ -- evidencia de tabla liga
+ select * from liga;
+
+-- evidencia de tabla equipo
+select * from  equipo;
+
+-- evidencia de tabla clientes
+ select * from clientes;
+ 
+ -- evidencia de tabla pedidos
+select * from pedidos;
+
+ -- evidencia de tabla facturas
+select * from facturas;
+
+ -- evidencia de tabla detalle_pedidos
+ select * from detalle_pedidos;
+
+DROP TRIGGER IF EXISTS AfterInsertTelas;

@@ -1,0 +1,14 @@
+-- BASE DE DATOS KB_SPORT3 - 2024
+USE Empleado;
+
+-- Asignar permisos específicos sobre la tabla Telas
+GRANT INSERT, UPDATE, DELETE ON Kb_sport3.Telas TO 'Empleado'@'localhost';
+
+-- Aplicar los cambios
+FLUSH PRIVILEGES;
+
+-- mirar los permisos del empelado
+SHOW GRANTS FOR 'Empleado'@'localhost';
+
+-- observamos la tabla telas desde el usuario empleado
+SELECT * FROM Kb_sport3.Telas;
