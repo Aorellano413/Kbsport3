@@ -41,35 +41,62 @@ namespace Vista
                 return;
             }
 
+      
+            if (comboBoxTipo.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione un rol (Administrador o Empleado).");
+                return;
+            }
+
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-            var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
-            if (administrador != null)
-            {
-                FormLogin.esEmpleado = false;
-                FormLogin.esInvitado = false;
+            string rolSeleccionado = comboBoxTipo.SelectedItem.ToString();
 
-                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                menuGeneralAdministrador.Show();
-                this.Hide();
-                return;
+            if (rolSeleccionado == "Administrador")
+            {
+                
+                var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
+                if (administrador != null)
+                {
+                    FormLogin.esEmpleado = false;
+                    FormLogin.esInvitado = false;
+
+                    MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                    menuGeneralAdministrador.Show();
+                    this.Hide();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos para Administrador.");
+                    return;
+                }
+            }
+            else if (rolSeleccionado == "Empleado")
+            {
+        
+                var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
+                if (empleado != null)
+                {
+                    FormLogin.esEmpleado = true;
+                    FormLogin.esInvitado = false;
+
+                    MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                    menuGeneralAdministrador.Show();
+                    this.Hide();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos para Empleado.");
+                    return;
+                }
             }
 
-            var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
-            if (empleado != null)
-            {
-                FormLogin.esEmpleado = true;
-                FormLogin.esInvitado = false;
-
-                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                menuGeneralAdministrador.Show();
-                this.Hide();
-                return;
-            }
-
-            MessageBox.Show("Usuario o contraseña incorrectos");
+            MessageBox.Show("Por favor, seleccione un rol.");
         }
+
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
         {
