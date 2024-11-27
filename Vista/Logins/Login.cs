@@ -1,11 +1,6 @@
 ﻿using Logica;
 using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vista.Logins;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
-
 namespace Vista
 {
     public partial class FormLogin : Form
@@ -18,7 +13,6 @@ namespace Vista
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-     
         }
 
         private void HorFecha_Tick(object sender, EventArgs e)
@@ -50,61 +44,37 @@ namespace Vista
             string nombreUsuario = textBoxUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-            this.Hide();
-
-            FormCargando formCargando = new FormCargando();
-            formCargando.Show();
-
-            Task.Run(async () =>
+            var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
+            if (administrador != null)
             {
-               
-                await Task.Delay(6400);
+                FormLogin.esEmpleado = false;
+                FormLogin.esInvitado = false;
 
-                var administrador = servicioUsuario.Autenticar(nombreUsuario, contraseña);
-                if (administrador != null)
-                {
-                    Invoke(new Action(() =>
-                    {
-                        formCargando.Close();
+                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                menuGeneralAdministrador.Show();
+                this.Hide();
+                return;
+            }
 
-                        FormLogin.esEmpleado = false;
-                        FormLogin.esInvitado = false;
+            var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
+            if (empleado != null)
+            {
+                FormLogin.esEmpleado = true;
+                FormLogin.esInvitado = false;
 
-                        MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                        menuGeneralAdministrador.Show();
-                    }));
-                    return;
-                }
+                MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
+                menuGeneralAdministrador.Show();
+                this.Hide();
+                return;
+            }
 
-                var empleado = servicioUsuario.AutenticarEmpleado(nombreUsuario, contraseña);
-                if (empleado != null)
-                {
-                    Invoke(new Action(() =>
-                    {
-                        formCargando.Close();
-
-                        FormLogin.esEmpleado = true;
-                        FormLogin.esInvitado = false;
-
-                        MenuGeneralAdministrador menuGeneralAdministrador = new MenuGeneralAdministrador();
-                        menuGeneralAdministrador.Show();
-                    }));
-                    return;
-                }
-
-                Invoke(new Action(() =>
-                {
-                    formCargando.Close();
-                    MessageBox.Show("Usuario o contraseña incorrectos");
-                }));
-            });
+            MessageBox.Show("Usuario o contraseña incorrectos");
         }
 
         private void buttonExitLogin_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
 
         private void buttonInvitado_Click(object sender, EventArgs e)
         {
@@ -137,7 +107,6 @@ namespace Vista
             }
         }
 
-
         private void buttonIG_Click(object sender, EventArgs e)
         {
             string url = "https://instagram.com/kb_sport3?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr";
@@ -154,6 +123,5 @@ namespace Vista
                 MessageBox.Show($"No se pudo abrir el enlace: {ex.Message}");
             }
         }
-
     }
 }

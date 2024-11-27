@@ -162,12 +162,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logins\FormCargando.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logins\FormCargando.Designer.cs">
-      <DependentUpon>FormCargando.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menus\Catalogo-Invitado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,9 +272,6 @@
     <Compile Include="GestionTelas\AgregarTela.Designer.cs">
       <DependentUpon>AgregarTela.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Logins\FormCargando.resx">
-      <DependentUpon>FormCargando.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menus\Catalogo-Invitado.resx">
       <DependentUpon>Catalogo-Invitado.cs</DependentUpon>
     </EmbeddedResource>
